@@ -1,30 +1,13 @@
-SNG-710 PATCH 14 - עומר צדיקביץ׳
+SNG-710 PATCH 17 - Omer YouTube embed
 
-Apply after Patch 13.
+Apply after Patch 16.
 
-Updated from the annotated pages supplied by the user:
-- אב לארבעה ילדים
-- נולד ב-7.3.1973
-- גדל באשדוד
-- התגורר בכפר עזה
-- מנהל המחשוב במועצה האזורית שער הנגב
-- בוגר אורט בית הספר לקציני ים אשדוד
-- מקום האירוע והקבורה
-- הר הרצל, לוח 93
+Fix:
+- Moves Omer Tzadikovich's YouTube memorial video out of the sidebar.
+- The video now appears as a clear full-width block immediately after the
+  personal-details header and before the life story.
+- Uses the exact YouTube embed supplied by the user:
+  https://www.youtube.com/embed/DOzJfE6xz8I?si=7W08GD6AJw_V1usV
+- Removes the old sidebar video block so the video is shown only once.
 
-Biography cleanup:
-- Removed the crossed-out wording "בצעירותו".
-- Removed duplicated/generic paragraphs marked for deletion.
-- Removed the duplicate death paragraph.
-- Organized the long text into:
-  סיפור חיים
-  שבעה באוקטובר
-  זיכרון ומילים מהלב
-- Uses short hyphens in changed content.
-
-Media:
-- Added the supplied memorial video as assets/media/omer_z.mp4
-- The private page shows it under "סרטון לזכרו".
-- The photographed annotated pages themselves are not included in the website.
-
-No other person's content is changed.
+No biography text or other people's pages are changed.
