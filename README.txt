@@ -1,24 +1,13 @@
-SNG-710 PATCH 10 - service details deduplication
+SNG-710 PATCH 11 - שחף ברגשטין
 
-Apply after Patch 09.
+Apply after Patch 10.
 
-Fix:
-People with an official serviceRecord no longer repeat the rank and military
-unit in the role line.
+Updates:
+- New main portrait supplied by the user.
+- Official service block: רב סמל מתקדם / חיל רגלים.
+- Parents: בן שלומית ודב.
+- Full biography replaced with the supplied version.
+- Personal facts, burial place and summary updated.
+- Uses only short hyphens in changed visible text.
 
-Format:
-rank • unit
-complementary civilian/community role only
-
-Examples:
-אופיר ליבשטיין
-רב סמל ראשון • חיל מערך הגנת הגבולות
-ראש המועצה האזורית שער הנגב וחבר כיתת הכוננות של כפר עזה
-
-אורי רוסו
-רב סרן • חיל מערך הגנת הגבולות
-מהנדס, לוחם אש וחבר כיתת הכוננות של כפר עזה
-
-If no complementary role exists, the extra role row is removed/hidden.
-
-No biographies, personal facts, images or CSS design are changed.
+No CSS/design files are changed.
