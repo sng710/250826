@@ -1,0 +1,22 @@
+SOURCE NOTES - יהונתן חג׳בי
+================================
+
+Verified public-source points used in Patch 22:
+
+1. כאן 7.10.360 - יהונתן חג'בי, יכיני
+   https://www.710360.kan.org.il/yakhini/hajbi
+   Supports:
+   - יהונתן slept in the residential unit of his uncle, Ariel Zehavi.
+   - Ariel Zehavi was the security coordinator (רבש"ץ) of Yakhini.
+   - The family believes the terrorists had prior information that the security coordinator lived at that location.
+   - The terrorist movement in the moshav was documented by security cameras.
+
+2. ynet - תחקיר יכיני
+   https://www.ynet.co.il/news/article/hyp5gy8qgl
+   Supports:
+   - Ariel, Yakhini's security coordinator, was on vacation in Thailand.
+   - The terrorist group reached the area of the security coordinator's house.
+
+Not stated as fact in the site:
+- I did NOT write that Ariel personally watched the entire event live on CCTV from Thailand,
+  because I did not find a reliable public source verifying that precise claim.

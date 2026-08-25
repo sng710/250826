@@ -1,42 +1,38 @@
-SNG-710 PATCH 21 - content cleanup + wide stories
+SNG-710 PATCH 22 - content QA cleanup + Yehonatan Hagbi
 
-Apply after Patch 20.
+Apply after Patch 21.
 
-GLOBAL PAGE CHANGES
-- Removed "בקצרה" from all 96 individual pages.
-- Story section is now full-width / wider for easier reading.
-- Gallery, links and other optional cards remain below the story.
-- Removed the summary paragraph from the homepage popup.
-- Removed the requested phrase:
-  "שנפלו בשבעה באוקטובר ובימים שלאחריו"
-  from the small top dedication.
-- Removed 142 old embedded section-label remnants:
-  "שבעה באוקטובר והימים שאחריו"
-  "זיכרון ומילים מהלב"
-  "האירוע והימים שאחריו"
+GLOBAL QA CLEANUP
+- Replaced all 96 legacy summary/meta descriptions with neutral memorial metadata.
+  This removes broken, duplicated and sensitive summary fragments.
+- Removed the remaining generic October 7 background intros from:
+  Ofir Libstein, Yam Goldstein Almog and Shlomo Zvi Ron.
+- Simplified Tami Peleg Ziv's relationship field to:
+  רעייתו של איתן זיו ז״ל
+- Removed or softened the sensitive / graphic / insufficiently sourced passages
+  identified in the Patch 21 audit, including the specific combat-rescue causal
+  claims that were not clearly attributed.
 
-PREVIOUS REVIEW ITEMS REMOVED/CLEANED
-- Dana Galkovitz: incorrect old 7-October label removed.
-- Dorit Wertheim: erroneous "רעייתו" wording removed from the event sentence.
-- Tami Peleg Ziv: erroneous "ורעייתה" wording removed.
-- Yaron Cohen: contradictory age-21 wording removed; duplicate parent detail removed.
-- Aran Goren: internal age aligned to 33, matching the visible story/details.
-- Guy Admoni: intimate disability-care quote removed; "חנון" wording removed;
-  detailed found-body description removed.
-- Omer Harmash: sensitive/negative wording and marijuana tattoo detail removed;
-  repetitive final summary removed.
-- Tova Goren: "משוגעת" removed from the quoted adjective list.
-- Neta Epstein: the previously flagged graphic Irene quote removed.
-- Michal Admoni: "נכה ומיוסרת" removed; detailed found-body passage removed.
-- Eliyahu Madmoni: graphic phosphorus-burn description removed.
-- Mira Stahl: paragraph about the family dogs being found dead removed.
-- Kutz family pages: detailed "found embracing" body descriptions removed.
-- Oded Shahar Schwartz: repeated explanation of his brother's death removed
-  from the later paragraph.
-- Shlomi Davidovich, Nira Ronen and David Katzir: repetitive summary
-  paragraphs identified in the review removed.
+YEHONATAN HAGBI
+- Keeps both parents in the top field:
+  בן קרן זהבי וניר חג׳בי
+- Removes father-specific material from the life story itself.
+- Reduces the cow section while preserving his deep love of animals.
+- Adds verified context that he slept in the unit of his uncle Ariel Zehavi,
+  the Yakhini security coordinator.
+- Adds the family-reported reason the terrorists headed toward the house,
+  explicitly attributed to the family / Kan 7.10.360 investigation.
+- Notes that Ariel was on vacation in Thailand.
+- Notes that the events were documented on the moshav security cameras.
+- Does NOT state that Ariel personally watched everything live on CCTV from
+  Thailand, because that precise claim was not verified in a reliable public source.
+- Adds the supplied YouTube memorial embed:
+  https://www.youtube.com/embed/PJag2TV7C3E?si=F2Q21u98Z8DbLcF_
 
 PRESERVED
+- No "בקצרה" cards.
+- Wide life-story layout.
 - Omer Tzadikovich's YouTube embed.
-- Ziv Papa Shapira's two QR/barcode images.
-- All remaining personal-story paragraphs and family facts.
+- Ziv Papa Shapira's two QR images.
+
+See SOURCE_NOTES_PATCH22.txt for the sources used for Yehonatan's event update.
