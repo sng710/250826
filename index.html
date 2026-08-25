@@ -3,78 +3,69 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>רקמה אנושית אחת</title>
-<meta name="description" content="רקמה אנושית אחת — אתר זיכרון לנופלות ולנופלים משער הנגב.">
-<meta name="theme-color" content="#17395f">
-<meta property="og:title" content="רקמה אנושית אחת — שער הנגב">
-<meta property="og:description" content="אתר זיכרון לנופלות ולנופלים, עם תמונות ופרטים אישיים.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://sng710.github.io/sng-710/assets/bg/leaf-landscape.webp">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="assets/bg/leaf-landscape.webp" type="image/webp">
-<link rel="stylesheet" href="assets/css/styles.css?v=112">
+<title>רקמה אנושית אחת | שער הנגב זוכרת</title>
+<meta name="description" content="רקמה אנושית אחת — אתר הזיכרון לנופלות ולנופלים של קהילות שער הנגב.">
+<meta name="theme-color" content="#153652">
+<link rel="stylesheet" href="assets/css/site.css?v=200">
 </head>
-<body>
-<a class="skip-link" href="#desktopAllGrid">דילוג לרשימת ההנצחה</a>
-<div class="rekama-wrap">
-<main class="full-list-side-layout" aria-label="אתר הזיכרון של שער הנגב">
-  <section class="pdf-bg full-list-hero" aria-label="רקמה אנושית אחת">
-    <header class="fade-hero full-list-hero-inner">
-      <p class="eyebrow">שער הנגב זוכרת</p>
-      <span class="rule" aria-hidden="true"></span>
-      <div class="title-lockup">
-        <p class="poem"><span class="reveal-line">וְאִם אֶחָד מֵאִתָּנוּ</span><span class="reveal-line">הוֹלֵךְ מֵעִמָּנוּ</span><span class="reveal-line">מַשֶּׁהוּ מֵת בָּנוּ</span><span class="reveal-line">וּמַשֶּׁהוּ נִשְׁאָר אִתּוֹ.</span></p>
-        <h1 class="main-title"><span class="reveal-line">רקמה</span><span class="reveal-line">אנושית</span><span class="reveal-line">אחת</span></h1>
-      </div>
-      <span class="rule" aria-hidden="true"></span>
-      <p class="dedication full-list-dedication"><span class="reveal-line">נזכור בכבוד ובאהבה את כל הנופלות והנופלים,</span><span class="reveal-line">ונישא את זכרם בליבנו כחלק בלתי נפרד מהסיפור שלנו</span><span class="reveal-line">ומהתקווה לעתיד של שלום וביטחון לכולנו.</span></p>
-      <nav class="hero-index" aria-label="ניווט ברשימת ההנצחה">
-        <a href="#desktopAllGrid">לכל הנופלות והנופלים</a>
-        <a href="#previousYearsDivider">לנופלות ולנופלים משנים קודמות</a>
-      </nav>
-    </header>
-  </section>
-
-  <div class="toolbar" role="search" aria-label="חיפוש ברשימת ההנצחה">
-    <label class="search-control" for="searchInput">
-      <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="m20.7 19.3-4.2-4.2a7 7 0 1 0-1.4 1.4l4.2 4.2a1 1 0 0 0 1.4-1.4ZM5 11a6 6 0 1 1 12 0 6 6 0 0 1-12 0Z"/></svg>
-      <input id="searchInput" type="search" placeholder="חיפוש לפי שם או יישוב" aria-label="חיפוש לפי שם או יישוב" autocomplete="off" enterkeyhint="search">
-    </label>
-    <span id="statusText" class="tool-meta"></span>
+<body class="home-page">
+<a class="skip-link" href="#memorialGrid">דילוג לרשימת ההנצחה</a>
+<header class="hero" aria-labelledby="siteTitle">
+  <div class="hero-inner gentle-enter">
+    <p class="eyebrow">שער הנגב זוכרת</p>
+    <h1 id="siteTitle">רקמה אנושית אחת</h1>
+    <div class="hero-rule" aria-hidden="true"></div>
+    <blockquote class="poem">
+      <span>וְאִם אֶחָד מֵאִתָּנוּ</span>
+      <span>הוֹלֵךְ מֵעִמָּנוּ</span>
+      <span>מַשֶּׁהוּ מֵת בָּנוּ</span>
+      <span>וּמַשֶּׁהוּ נִשְׁאָר אִתּוֹ.</span>
+    </blockquote>
+    <p class="dedication">נזכור בכבוד ובאהבה את הנופלות והנופלים, ונישא את זכרם בליבנו כחלק בלתי נפרד מהסיפור שלנו ומהתקווה לעתיד של שלום וביטחון.</p>
+    <nav class="hero-links" aria-label="ניווט ברשימת ההנצחה">
+      <a href="#memorialGrid">לרשימת ההנצחה</a>
+      <a href="#previousYearsDivider">לשנים קודמות</a>
+    </nav>
   </div>
+</header>
 
-  <section class="desktop-memory-panel full-list-only-panel" id="fullListPanel" aria-label="רשימת כל הנופלות והנופלים">
-    <div class="desktop-memory-panel-body" id="fullListBody">
-      <div id="emptySearch" class="empty-search" role="status">לא נמצאו תוצאות לחיפוש הזה.</div>
-      <div class="desktop-memory-all-grid" id="desktopAllGrid" aria-label="כל התמונות ברשימה מלאה"></div>
+<main>
+  <section class="index-section" aria-label="רשימת ההנצחה">
+    <div class="toolbar" role="search">
+      <label class="search-control" for="searchInput">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m20.7 19.3-4.2-4.2a7 7 0 1 0-1.4 1.4l4.2 4.2a1 1 0 0 0 1.4-1.4ZM5 11a6 6 0 1 1 12 0 6 6 0 0 1-12 0Z"/></svg>
+        <input id="searchInput" type="search" placeholder="חיפוש לפי שם או יישוב" aria-label="חיפוש לפי שם או יישוב" autocomplete="off" enterkeyhint="search">
+      </label>
+      <span id="statusText" class="result-count" aria-live="polite"></span>
     </div>
+    <div id="emptySearch" class="empty-search" hidden>לא נמצאו תוצאות לחיפוש הזה.</div>
+    <div class="memorial-grid" id="memorialGrid"></div>
   </section>
-  </main>
-</div>
-
+</main>
 
 <div class="lightbox" id="lightbox" aria-hidden="true" inert>
   <div class="lightbox-backdrop" data-close="1"></div>
   <article class="lightbox-card" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle">
-    <button class="lightbox-close" type="button" id="lightboxClose" data-close="1" aria-label="סגירה" title="סגירה">×</button>
-    <div class="lightbox-top">
-      <figure class="lightbox-media">
-        <div class="lightbox-img" id="lightboxImg"></div>
-        <div class="lightbox-gallery" id="lightboxGallery" hidden aria-hidden="true"></div>
-      </figure>
+    <button class="lightbox-close" type="button" id="lightboxClose" data-close="1" aria-label="סגירה">×</button>
+    <div class="lightbox-layout">
+      <figure class="lightbox-media"><div class="lightbox-img" id="lightboxImg"></div></figure>
       <div class="lightbox-details">
-        <h2 class="lightbox-title" id="lightboxTitle"></h2>
-        <div class="lightbox-place" id="lightboxPlace"></div>
-        <div class="lightbox-actions"><button class="person-link-button" type="button" id="copyPersonLink" aria-label="העתקת קישור ישיר לאדם זה">העתקת קישור אישי</button></div>
-        <div class="lightbox-text" id="lightboxText"></div>
+        <p class="lightbox-kicker" id="lightboxPlace"></p>
+        <h2 id="lightboxTitle"></h2>
+        <div id="lightboxService"></div>
+        <p class="lightbox-role" id="lightboxRole"></p>
+        <ul class="preview-facts" id="lightboxFacts"></ul>
+        <p class="lightbox-summary" id="lightboxSummary"></p>
+        <div class="lightbox-actions">
+          <a class="primary-button" id="personPageLink" href="#">לדף האישי</a>
+          <button class="secondary-button" type="button" id="copyPersonLink">העתקת קישור</button>
+        </div>
       </div>
     </div>
   </article>
 </div>
 
-
-<script src="assets/js/people-data.js?v=112" defer></script>
-<script src="assets/js/app.js?v=112" defer></script>
-
+<script src="assets/js/people.js?v=200" defer></script>
+<script src="assets/js/app.js?v=200" defer></script>
 </body>
 </html>
