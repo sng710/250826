@@ -307,7 +307,7 @@ window.MEMORIAL_PEOPLE = [
     "serviceRecord": null,
     "portrait": {
       "fit": "cover",
-      "position": "50% 37%"
+      "position": "50% 50%"
     },
     "isPreviousYears": false,
     "page": "people/yehonatan_h/",
@@ -945,7 +945,7 @@ window.MEMORIAL_PEOPLE = [
     "id": "amir_n",
     "name": "נעים אמיר ז\"ל",
     "place": "ארז",
-    "image": "assets/img/amir_n.webp",
+    "image": "assets/img/amir_n_p.webp",
     "age": 27,
     "role": "רס\"ן במילואים וחבר כיתת הכוננות של קיבוץ ארז; חבר כיתת הכוננות בקיבוץ ארז",
     "summary": "דף הנצחה לזכר נעים אמיר ז\"ל במסגרת ״רקמה אנושית אחת״.",
@@ -961,7 +961,7 @@ window.MEMORIAL_PEOPLE = [
     "serviceRecord": null,
     "portrait": {
       "fit": "cover",
-      "position": "20% 42%"
+      "position": "50% 50%"
     },
     "isPreviousYears": false,
     "page": "people/amir_n/",
@@ -1135,7 +1135,7 @@ window.MEMORIAL_PEOPLE = [
     "id": "techelet_z",
     "name": "זוהר תכלת ז\"ל",
     "place": "נחל עוז",
-    "image": "assets/img/techelet_z.webp",
+    "image": "assets/img/techelet_z_p.webp",
     "age": 18,
     "role": "חברת קהילת נחל עוז",
     "summary": "דף הנצחה לזכר זוהר תכלת ז\"ל במסגרת ״רקמה אנושית אחת״.",
@@ -1150,7 +1150,7 @@ window.MEMORIAL_PEOPLE = [
     "serviceRecord": null,
     "portrait": {
       "fit": "cover",
-      "position": "50% 42%"
+      "position": "50% 50%"
     },
     "isPreviousYears": false,
     "page": "people/techelet_z/",
@@ -1177,7 +1177,7 @@ window.MEMORIAL_PEOPLE = [
     "id": "arad_p",
     "name": "פנסה ארד סמוקהון ז\"ל",
     "place": "נחל עוז",
-    "image": "assets/img/arad_p.webp",
+    "image": "assets/img/arad_p_p.webp",
     "age": 39,
     "role": "אזרח תאילנד, עובד חקלאות",
     "summary": "דף הנצחה לזכר פנסה ארד סמוקהון ז\"ל במסגרת ״רקמה אנושית אחת״.",
@@ -1188,7 +1188,7 @@ window.MEMORIAL_PEOPLE = [
     "serviceRecord": null,
     "portrait": {
       "fit": "cover",
-      "position": "50% 35%"
+      "position": "50% 50%"
     },
     "isPreviousYears": false,
     "page": "people/arad_p/",
@@ -1202,7 +1202,7 @@ window.MEMORIAL_PEOPLE = [
     "id": "ziv_h",
     "name": "חג'בי זיו ז\"ל",
     "place": "גבים",
-    "image": "assets/img/ziv_h.webp",
+    "image": "assets/img/ziv_h_p.webp",
     "age": 29,
     "role": "מוזיקאי ונגן גיטרה, אוהב ספורט, תרבות וריקוד",
     "summary": "דף הנצחה לזכר חג'בי זיו ז\"ל במסגרת ״רקמה אנושית אחת״.",
@@ -1218,7 +1218,7 @@ window.MEMORIAL_PEOPLE = [
     "serviceRecord": null,
     "portrait": {
       "fit": "cover",
-      "position": "50% 18%"
+      "position": "50% 50%"
     },
     "isPreviousYears": false,
     "page": "people/ziv_h/",
@@ -1462,7 +1462,7 @@ window.MEMORIAL_PEOPLE = [
     "serviceRecord": null,
     "portrait": {
       "fit": "cover",
-      "position": "50% 12%"
+      "position": "50% 0%"
     },
     "isPreviousYears": false,
     "page": "people/michal_a/",
@@ -2200,7 +2200,7 @@ window.MEMORIAL_PEOPLE = [
     "serviceRecord": null,
     "portrait": {
       "fit": "cover",
-      "position": "50% 88%"
+      "position": "50% 8%"
     },
     "isPreviousYears": false,
     "page": "people/tamar_p/",
@@ -3092,7 +3092,7 @@ window.MEMORIAL_PEOPLE = [
     "id": "yuval_b",
     "name": "בויום יובל ז\"ל",
     "place": "כפר עזה",
-    "image": "assets/img/yuval_b.webp",
+    "image": "assets/img/yuval_b-1.webp",
     "age": 21,
     "role": "תושב כפר עזה",
     "summary": "דף הנצחה לזכר בויום יובל ז\"ל במסגרת ״רקמה אנושית אחת״.",
@@ -3107,7 +3107,7 @@ window.MEMORIAL_PEOPLE = [
     "serviceRecord": null,
     "portrait": {
       "fit": "cover",
-      "position": "50% 23%"
+      "position": "50% 45%"
     },
     "isPreviousYears": false,
     "page": "people/yuval_b/",
@@ -3134,7 +3134,7 @@ window.MEMORIAL_PEOPLE = [
       "יובל נזכר כמוזיקאי מוכשר, פסנתרן בחסד, אדם רגיש, עדין וטוב לב. אדם שהפיץ אור, אהבה וצלילים, ושהותיר אחריו מנגינה שלא תיפסק."
     ],
     "photos": [
-      "assets/img/yuval_b-1.webp"
+      "assets/img/yuval_b.webp"
     ]
   },
   {
@@ -3292,7 +3292,7 @@ window.MEMORIAL_PEOPLE = [
     "id": "yotam_h",
     "name": "חיים יותם ז\"ל",
     "place": "כפר עזה",
-    "image": "assets/img/yotam_h.webp",
+    "image": "assets/img/yotam_h-1.webp",
     "age": 28,
     "role": "תושב כפר עזה שנחטף לרצועת עזה",
     "summary": "דף הנצחה לזכר חיים יותם ז\"ל במסגרת ״רקמה אנושית אחת״.",
@@ -3307,7 +3307,7 @@ window.MEMORIAL_PEOPLE = [
     "serviceRecord": null,
     "portrait": {
       "fit": "cover",
-      "position": "50% 50%"
+      "position": "50% 35%"
     },
     "isPreviousYears": false,
     "page": "people/yotam_h/",
@@ -3343,7 +3343,7 @@ window.MEMORIAL_PEOPLE = [
       "המוזיקה שלו, התופים, החיוך, ההומור והגבורה יישארו בלב כל אוהביו."
     ],
     "photos": [
-      "assets/img/yotam_h-1.webp"
+      "assets/img/yotam_h.webp"
     ]
   },
   {
