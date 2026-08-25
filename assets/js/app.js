@@ -1,4 +1,4 @@
-const DATA_URL = 'assets/data/people.json?v=106';
+const DATA_URL = 'assets/data/people.json?v=112';
 
 const searchInput = document.getElementById('searchInput');
 const statusText = document.getElementById('statusText');
@@ -12,10 +12,12 @@ const lightboxText = document.getElementById('lightboxText');
 const lightboxGallery = document.getElementById('lightboxGallery');
 const lightboxClose = document.getElementById('lightboxClose');
 const copyPersonLink = document.getElementById('copyPersonLink');
+const reducedMotionQuery = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : { matches: false };
 
 let people = [];
 let activeLightboxPersonKey = '';
 let lastFocusedBeforeLightbox = null;
+let cardObserver = null;
 
 function esc(s) {
   return String(s || '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
@@ -69,6 +71,114 @@ function personImageMarkup(person) {
   ].join(';');
 
   return `<img class="memorial-portrait portrait-fit-${fit}" src="${esc(src)}" alt="${esc(person.name || '')}" loading="lazy" decoding="async" style="${style}">`;
+}
+
+
+function uniqueStrings(values) {
+  const seen = new Set();
+  return (Array.isArray(values) ? values : []).map(value => String(value || '').trim()).filter(value => {
+    if (!value || seen.has(value)) return false;
+    seen.add(value);
+    return true;
+  });
+}
+
+function galleryPhotos(person) {
+  const images = uniqueStrings([person && person.image, ...(Array.isArray(person && person.photos) ? person.photos : [])]);
+  return images.filter(src => !/^https?:\/\//i.test(src));
+}
+
+function imageMarkupForSource(person, src) {
+  return personImageMarkup({ ...person, image: src, portrait: src === person.image ? person.portrait : { fit: 'cover', position: '50% 50%' } });
+}
+
+function renderLightboxGallery(person) {
+  if (!lightboxGallery) return;
+  const photos = galleryPhotos(person);
+  lightboxGallery.innerHTML = '';
+
+  if (photos.length < 2) {
+    lightboxGallery.hidden = true;
+    lightboxGallery.setAttribute('aria-hidden', 'true');
+    return;
+  }
+
+  photos.forEach((src, index) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'lightbox-gallery-thumb';
+    button.setAttribute('aria-label', `תמונה ${index + 1} מתוך ${photos.length} — ${person.name || ''}`);
+    button.dataset.imageSrc = src;
+    button.innerHTML = `<img src="${esc(src)}" alt="" loading="lazy" decoding="async">`;
+    button.addEventListener('click', () => {
+      if (!lightboxImg) return;
+      lightboxGallery.querySelectorAll('.lightbox-gallery-thumb').forEach(item => item.classList.toggle('is-active', item === button));
+      lightboxImg.classList.add('is-crossfading');
+      window.setTimeout(() => {
+        if (!lightboxImg || activeLightboxPersonKey !== personKey(person)) return;
+        lightboxImg.innerHTML = imageMarkupForSource(person, src);
+        requestAnimationFrame(() => lightboxImg.classList.remove('is-crossfading'));
+      }, reducedMotionQuery.matches ? 0 : 140);
+    });
+    if (index === 0) button.classList.add('is-active');
+    lightboxGallery.appendChild(button);
+  });
+
+  lightboxGallery.hidden = false;
+  lightboxGallery.setAttribute('aria-hidden', 'false');
+}
+
+function captureGridRects() {
+  const positions = new Map();
+  if (!desktopAllGrid || reducedMotionQuery.matches) return positions;
+  desktopAllGrid.querySelectorAll('.memory-slot[data-person-key]').forEach(card => {
+    positions.set(card.dataset.personKey, card.getBoundingClientRect());
+  });
+  return positions;
+}
+
+function ensureCardObserver() {
+  if (cardObserver || !('IntersectionObserver' in window) || reducedMotionQuery.matches) return cardObserver;
+  cardObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      cardObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -4% 0px' });
+  return cardObserver;
+}
+
+function observeMemoryCards() {
+  if (!desktopAllGrid) return;
+  const cards = desktopAllGrid.querySelectorAll('.memory-slot');
+  if (reducedMotionQuery.matches || !('IntersectionObserver' in window)) {
+    cards.forEach(card => card.classList.add('is-visible'));
+    return;
+  }
+  document.documentElement.classList.add('motion-ready');
+  const observer = ensureCardObserver();
+  cards.forEach(card => {
+    if (!card.classList.contains('is-visible')) observer.observe(card);
+  });
+}
+
+function animateGridFrom(previousRects) {
+  if (!desktopAllGrid || !previousRects.size || reducedMotionQuery.matches || typeof Element.prototype.animate !== 'function') return;
+  requestAnimationFrame(() => {
+    desktopAllGrid.querySelectorAll('.memory-slot[data-person-key]').forEach(card => {
+      const oldRect = previousRects.get(card.dataset.personKey);
+      if (!oldRect) return;
+      const newRect = card.getBoundingClientRect();
+      const dx = oldRect.left - newRect.left;
+      const dy = oldRect.top - newRect.top;
+      if (Math.abs(dx) < 1 && Math.abs(dy) < 1) return;
+      card.animate(
+        [{ transform: `translate(${dx}px, ${dy}px)` }, { transform: 'translate(0, 0)' }],
+        { duration: 420, easing: 'cubic-bezier(0.16, 1, 0.3, 1)' }
+      );
+    });
+  });
 }
 
 function matches(person, query) {
@@ -257,6 +367,7 @@ function buildFactsMarkup(person) {
 
 function renderGrid() {
   if (!desktopAllGrid) return;
+  const previousRects = captureGridRects();
   const items = orderedHomepagePeople(filteredPeople());
   desktopAllGrid.innerHTML = '';
 
@@ -266,6 +377,7 @@ function renderGrid() {
     if (person.isPreviousYears && !previousYearsHeadingAdded) {
       const divider = document.createElement('div');
       divider.className = 'memory-period-divider';
+      divider.id = 'previousYearsDivider';
       divider.setAttribute('role', 'separator');
       divider.innerHTML = '<span>נופלות ונופלים משנים קודמות</span>';
       desktopAllGrid.appendChild(divider);
@@ -273,8 +385,11 @@ function renderGrid() {
     }
 
     const btn = document.createElement('button');
+    const key = personKey(person);
     btn.type = 'button';
     btn.className = 'memory-slot';
+    btn.dataset.personKey = key;
+    if (previousRects.has(key)) btn.classList.add('is-visible');
     btn.innerHTML = `
       <span class="photo-holder">${personImageMarkup(person)}</span>
       <span class="slot-name">${esc(person.name || '')}</span>
@@ -289,6 +404,9 @@ function renderGrid() {
   if (emptySearch) {
     emptySearch.classList.toggle('show', items.length === 0);
   }
+
+  observeMemoryCards();
+  animateGridFrom(previousRects);
 }
 
 function setPersonHash(person) {
@@ -321,9 +439,11 @@ function openLightbox(person, updateHash = true) {
   lightboxPlace.textContent = '';
   lightboxImg.innerHTML = personImageMarkup(person);
   lightboxText.innerHTML = buildFactsMarkup(person);
-  if (lightboxGallery) {
-    lightboxGallery.innerHTML = '';
-    lightboxGallery.hidden = true;
+  renderLightboxGallery(person);
+  const card = lightbox.querySelector('.lightbox-card');
+  if (card) {
+    card.classList.remove('content-reveal');
+    requestAnimationFrame(() => card.classList.add('content-reveal'));
   }
   if (copyPersonLink) {
     copyPersonLink.style.display = 'none';
@@ -373,7 +493,10 @@ function closeLightbox(event, clearHash = true) {
   if (lightboxGallery) {
     lightboxGallery.innerHTML = '';
     lightboxGallery.hidden = true;
+    lightboxGallery.setAttribute('aria-hidden', 'true');
   }
+  const card = lightbox.querySelector('.lightbox-card');
+  if (card) card.classList.remove('content-reveal');
   if (clearHash) clearPersonHash();
 }
 
@@ -421,6 +544,13 @@ async function initApp() {
     lightboxClose.addEventListener('click', closeLightbox, true);
   }
   if (lightbox) {
+    lightbox.addEventListener('pointerdown', event => {
+      const target = event.target;
+      if (target && target.closest && target.closest('.lightbox-close')) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+    }, true);
     lightbox.addEventListener('click', event => {
       const target = event.target;
       if (target === lightbox || (target && target.closest && target.closest('[data-close="1"], #lightboxClose, .lightbox-close'))) {
@@ -433,6 +563,18 @@ async function initApp() {
     if (!lightbox || !lightbox.classList.contains('is-open')) return;
     if (event.key === 'Escape') closeLightbox(event);
   });
+
+  if (reducedMotionQuery && typeof reducedMotionQuery.addEventListener === 'function') {
+    reducedMotionQuery.addEventListener('change', event => {
+      document.documentElement.classList.toggle('motion-ready', !event.matches && 'IntersectionObserver' in window);
+      if (event.matches && cardObserver) {
+        cardObserver.disconnect();
+        cardObserver = null;
+        document.querySelectorAll('.memory-slot').forEach(card => card.classList.add('is-visible'));
+      }
+      if (!event.matches) observeMemoryCards();
+    });
+  }
 
   window.addEventListener('hashchange', openPersonFromUrl);
   window.setTimeout(openPersonFromUrl, 120);
