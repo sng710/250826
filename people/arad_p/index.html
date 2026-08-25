@@ -1,65 +1,78 @@
-<!DOCTYPE html>
-
-<html dir="rtl" lang="he">
+<!doctype html>
+<html lang="he" dir="rtl">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>פנסה ארד סמוקהון | רקמה אנושית אחת</title>
-<meta content="פנסה ארד סומקואן ז״ל, בן 39, מנחל עוז, אזרח תאילנד, עובד חקלאות. חבריו לעבודה ומכריו בקיבוץ תיארו אותו כעובד חרוץ, מסור ונאמן, שהיה חלק בלתי נפרד מהעשייה החקלאית בקיבוץ. זכרו הוא חלק מסיפורם של העובדים הזרים שנפגעו באותו יום קשה" name="description"/>
-<meta content="#304a7d" name="theme-color"/>
-<link href="../../assets/css/site.css?v=205" rel="stylesheet"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>פנסה ארד סמוקהון | רקמה אנושית אחת</title>
+  <meta name="description" content="פנסה ארד סומקואן ז״ל, בן 39, מנחל עוז, אזרח תאילנד, עובד חקלאות. חבריו לעבודה ומכריו בקיבוץ תיארו אותו כעובד חרוץ, מסור ונאמן, שהיה חלק בלתי נפרד מהעשייה החקלאית בקיבוץ. זכרו הוא חלק מסיפורם של העובדים הזרים שנפגעו באותו יום קשה">
+  <meta name="theme-color" content="#304a7d">
+  <link rel="stylesheet" href="../../assets/css/site.css?v=215">
 </head>
+
 <body class="person-page">
-<!-- HEADER -->
-<header class="person-topbar">
-<div class="person-topbar-inner">
-<a class="person-brand" href="../../index.html">רקמה אנושית אחת</a>
-<a class="back-link" href="../../index.html">← חזרה לרשימת ההנצחה</a>
-</div>
-</header>
-<main class="person-main">
-<!-- PERSONAL DETAILS / HERO -->
-<section class="person-intro">
-<figure class="person-portrait">
-<img alt="פנסה ארד סמוקהון" src="../../assets/img/arad_p.webp" style="--fit:cover;--pos:50% 35%"/>
-</figure>
-<div class="person-head">
-<p class="place">נחל עוז</p>
-<h1>פנסה ארד סמוקהון ז"ל</h1>
-<p class="role">אזרח תאילנד, עובד חקלאות</p>
-<!-- FACTS: edit one item per line -->
-<div class="facts-panel"><div class="fact">מקום אירוע: נחל עוז</div></div>
-</div>
-</section>
-<div class="story-layout">
-<!-- LONG FORM CONTENT -->
-<div class="story-stack">
-<section class="story-section">
-<h2>סיפור חיים</h2>
-<div class="story-copy">
-<p>
-              פנסה ארד סומקואן ז״ל, בן 39, מנחל עוז, אזרח תאילנד, עובד חקלאות. חבריו לעבודה ומכריו בקיבוץ תיארו אותו
-              כעובד חרוץ, מסור ונאמן, שהיה חלק בלתי נפרד מהעשייה החקלאית בקיבוץ. זכרו הוא חלק מסיפורם של העובדים הזרים
-              שנפגעו באותו יום קשה
-            </p>
-</div>
-</section>
-</div>
-<!-- SIDEBAR -->
-<aside class="person-aside">
-<section class="aside-card">
-<h2>בקצרה</h2>
-<div class="aside-summary">
-            פנסה ארד סומקואן ז״ל, בן 39, מנחל עוז, אזרח תאילנד, עובד
-            חקלאות. חבריו לעבודה ומכריו בקיבוץ תיארו אותו כעובד
-            חרוץ, מסור ונאמן, שהיה חלק בלתי נפרד מהעשייה החקלאית
-            בקיבוץ. זכרו הוא חלק מסיפורם של העובדים הזרים שנפגעו
-            באותו יום קשה
-          </div>
-</section>
-</aside>
-</div>
-<p class="page-footer">יהי זכרו ברוך</p>
-</main>
+  <!-- =========================================================
+       HEADER
+       ========================================================= -->
+  <header class="person-topbar">
+    <div class="person-topbar-inner">
+      <a class="person-brand" href="../../index.html">רקמה אנושית אחת</a>
+      <a class="back-link" href="../../index.html">← חזרה לרשימת ההנצחה</a>
+    </div>
+  </header>
+
+  <main class="person-main">
+    <!-- =========================================================
+         1. PORTRAIT + NAME + PERSONAL DETAILS
+         ========================================================= -->
+    <section class="person-intro">
+      <figure class="person-portrait">
+        <img
+          src="../../assets/img/arad_p.webp"
+          alt="פנסה ארד סמוקהון"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+          style="--fit:cover; --pos:50% 35%;"
+        >
+      </figure>
+
+      <div class="person-head">
+        <p class="place">נחל עוז</p>
+        <h1>פנסה ארד סמוקהון ז"ל</h1>
+        <p class="role">אזרח תאילנד, עובד חקלאות</p>
+
+        <div class="facts-panel">
+          <div class="fact">מקום אירוע: נחל עוז</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         2. SAME CONTENT LAYOUT FOR EVERY PERSON
+         ========================================================= -->
+    <div class="story-layout">
+      <article class="story-section">
+        <h2>סיפור חיים</h2>
+
+        <div class="story-copy">
+          <p>
+            פנסה ארד סומקואן ז״ל, בן 39, מנחל עוז, אזרח תאילנד, עובד חקלאות. חבריו לעבודה ומכריו בקיבוץ תיארו אותו כעובד חרוץ, מסור ונאמן, שהיה חלק בלתי נפרד מהעשייה החקלאית בקיבוץ. זכרו הוא חלק מסיפורם של העובדים הזרים שנפגעו באותו יום קשה
+          </p>
+        </div>
+      </article>
+
+      <!-- =======================================================
+           3. SIDEBAR
+           ======================================================= -->
+      <aside class="person-aside">
+        <section class="aside-card summary-card">
+          <h2>בקצרה</h2>
+          <div class="aside-summary">פנסה ארד סומקואן ז״ל, בן 39, מנחל עוז, אזרח תאילנד, עובד חקלאות. חבריו לעבודה ומכריו בקיבוץ תיארו אותו כעובד חרוץ, מסור ונאמן, שהיה חלק בלתי נפרד מהעשייה החקלאית בקיבוץ. זכרו הוא חלק מסיפורם של העובדים הזרים שנפגעו באותו יום קשה</div>
+        </section>
+      </aside>
+    </div>
+
+    <p class="page-footer">יהי זכרו ברוך</p>
+  </main>
 </body>
 </html>
