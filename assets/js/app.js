@@ -1,6 +1,6 @@
 const people=Array.isArray(window.MEMORIAL_PEOPLE)?window.MEMORIAL_PEOPLE:[];
 const grid=document.getElementById('memorialGrid'),search=document.getElementById('searchInput'),count=document.getElementById('statusText'),empty=document.getElementById('emptySearch');
-const box=document.getElementById('lightbox'),closeBtn=document.getElementById('lightboxClose'),boxImg=document.getElementById('lightboxImg'),boxTitle=document.getElementById('lightboxTitle'),boxPlace=document.getElementById('lightboxPlace'),boxRole=document.getElementById('lightboxRole'),boxFacts=document.getElementById('lightboxFacts'),boxSummary=document.getElementById('lightboxSummary'),boxService=document.getElementById('lightboxService'),pageLink=document.getElementById('personPageLink'),copyBtn=document.getElementById('copyPersonLink');
+const box=document.getElementById('lightbox'),closeBtn=document.getElementById('lightboxClose'),boxImg=document.getElementById('lightboxImg'),boxTitle=document.getElementById('lightboxTitle'),boxPlace=document.getElementById('lightboxPlace'),boxRole=document.getElementById('lightboxRole'),boxFacts=document.getElementById('lightboxFacts'),boxService=document.getElementById('lightboxService'),pageLink=document.getElementById('personPageLink'),copyBtn=document.getElementById('copyPersonLink');
 let lastFocus=null,active=null;
 function e(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function norm(s){return String(s||'').replace(/[״“”]/g,'"').replace(/[׳‘’]/g,"'").replace(/ז\s*["'׳״]{0,2}\s*ל/g,'').replace(/[()\[\]{}.,/:;!?+\-־\u2013\u2014]+/g,' ').replace(/\s+/g,' ').trim().toLowerCase()}
@@ -26,7 +26,6 @@ function openPreview(p,hash=true){
   boxPlace.textContent=p.place||'';
   boxRole.textContent=p.role||'';
   boxRole.hidden=!String(p.role||'').trim();
-  boxSummary.textContent=p.summary||'';
   boxService.innerHTML=service(p);
   boxFacts.innerHTML=(p.generalDetails||[]).map(x=>`<li>${e(x)}</li>`).join('');
   boxImg.innerHTML=pic(p);
