@@ -1,25 +1,40 @@
-SNG-710 PATCH 23 - portrait circle framing audit
+SNG-710 PATCH 24 - add previous-years records
 
-Apply after Patch 22.
+Apply after Patch 23.
 
-Reviewed all homepage circular portraits from the supplied PDF and the current image assets.
-Only portraits that materially benefited from reframing were changed.
+USER-SUPPLIED RECORDS
+- Supplied entries: 61
+- Existing duplicates skipped: 3
+  * מיכאל דמבסקי
+  * עזרא (עוזי) אפרים
+  * ירון כהן
+- New records added: 58
+- Total memorial records after patch: 154
 
-Tighter portrait crops created:
-- אמיר נעים
-- תכלת זוהר
-- פנסה ארד סמוקהון
-- זיו חג'בי
+FOR EACH NEW RECORD, ONLY THE SUPPLIED CORE DATA IS DISPLAYED
+- name
+- rank, when supplied
+- parents
+- fallen/deceased date
+- age
 
-Circle position corrected:
-- יהונתן חג'בי
-- תמר סינדי פלש
-- מיכל אדמוני
+NOT ADDED YET
+- active portrait image
+- unit
+- locality
+- life story
+- gallery
 
-Better existing close portrait selected:
-- יובל בויום
-- יותם חיים
-Their previous main images were preserved in their inner-page galleries.
+The Izkor page URL and supplied image URL are retained only as non-visible source
+fields in people.js for future work.
 
-No biography text or family data changed.
-No photos were generated or altered stylistically; changes are crop/framing only.
+The scraped UI text was NOT added:
+- לסיפור חייו / לסיפור חייה
+- הקדשה אישית
+- הדלקת נר
+- נמצאו ... חללים
+- מיון לפי
+
+All new records are marked isPreviousYears=true and therefore appear after
+the October 7/current memorial group under the existing
+"נופלות ונופלים משנים קודמות" divider.

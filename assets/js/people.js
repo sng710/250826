@@ -4844,5 +4844,2093 @@ window.MEMORIAL_PEOPLE = [
       "כמה עמודים הוקדשו לזכרו בספר \"בדרכם\" בהוצאת איחוד הקבוצות והקיבוצים לזכרם של חברי האיחוד שנפלו במערכה."
     ],
     "photos": []
+  },
+  {
+    "id": "uri_rosen",
+    "name": "רוזן אורי (ג'ימי) ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 22,
+    "role": "",
+    "summary": "דף הנצחה לזכר רוזן אורי (ג'ימי) ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "אורי",
+    "generalDetails": [
+      "בן טובה ומשה",
+      "נפל ביום כ\"ח בחשון תשי\"ז, 2.11.1956",
+      "בן 22 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "רב טוראי",
+      "unit": "",
+      "displayName": "אורי (ג'ימי) רוזן",
+      "parents": "בן טובה ומשה",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "כ\"ח בחשון תשי\"ז",
+      "date": "2.11.1956",
+      "age": "בן 22 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/uri_rosen/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%90%D7%95%D7%A8%D7%99%20%D7%A8%D7%95%D7%96%D7%9F/en_ba01dee0787068714931355e79cc7f5d",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/044404.jpg"
+  },
+  {
+    "id": "yitzhak_yehuda_g",
+    "name": "גליקו יצחק-יהודה (בבה) ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 20,
+    "role": "",
+    "summary": "דף הנצחה לזכר גליקו יצחק-יהודה (בבה) ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "יצחק-יהודה",
+    "generalDetails": [
+      "בן דודו וויטל חיים",
+      "נפל ביום כ\"ה בניסן תשכ\"ב, 28.4.1962",
+      "בן 20 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "יצחק-יהודה (בבה) גליקו",
+      "parents": "בן דודו וויטל חיים",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "כ\"ה בניסן תשכ\"ב",
+      "date": "28.4.1962",
+      "age": "בן 20 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/yitzhak_yehuda_g/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%99%D7%A6%D7%97%D7%A7-%D7%99%D7%94%D7%95%D7%93%D7%94%20%D7%92%D7%9C%D7%99%D7%A7%D7%95/en_e2c2578a8b9ae4b9f00d6764cc51e8d7",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/090492.jpg"
+  },
+  {
+    "id": "yitzhak_bab",
+    "name": "בבסקי יצחק ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 18,
+    "role": "",
+    "summary": "דף הנצחה לזכר בבסקי יצחק ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "יצחק",
+    "generalDetails": [
+      "בן ג'ני ויצחק",
+      "נפל ביום י\"ז בחשון תשט\"ז, 2.11.1955",
+      "בן 18 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "יצחק בבסקי",
+      "parents": "בן ג'ני ויצחק",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "י\"ז בחשון תשט\"ז",
+      "date": "2.11.1955",
+      "age": "בן 18 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/yitzhak_bab/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%99%D7%A6%D7%97%D7%A7%20%D7%91%D7%91%D7%A1%D7%A7%D7%99/en_a07e108b866d59a06a217f141b2ef86f",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/090025.jpg"
+  },
+  {
+    "id": "michael_misok",
+    "name": "מיסוק מיכאל ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 20,
+    "role": "",
+    "summary": "דף הנצחה לזכר מיסוק מיכאל ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "מיכאל",
+    "generalDetails": [
+      "בן רוזה ודויד-יצחק",
+      "נפל ביום ט\"ו באדר א' תשכ\"ב, 19.2.1962",
+      "בן 20 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "מיכאל מיסוק",
+      "parents": "בן רוזה ודויד-יצחק",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "ט\"ו באדר א' תשכ\"ב",
+      "date": "19.2.1962",
+      "age": "בן 20 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/michael_misok/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%9E%D7%99%D7%9B%D7%90%D7%9C%20%D7%9E%D7%99%D7%A1%D7%95%D7%A7/en_9192e496aa97d7f7a266f6f396a66e24",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/091386.jpg"
+  },
+  {
+    "id": "zeev_brikman",
+    "name": "בריקמן זאב ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 19,
+    "role": "",
+    "summary": "דף הנצחה לזכר בריקמן זאב ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "זאב",
+    "generalDetails": [
+      "בן שרה ויחזקאל",
+      "נפל ביום י\"ז בטבת תשל\"ח, 26.12.1977",
+      "בן 19 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "זאב בריקמן",
+      "parents": "בן שרה ויחזקאל",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "י\"ז בטבת תשל\"ח",
+      "date": "26.12.1977",
+      "age": "בן 19 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/zeev_brikman/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%96%D7%90%D7%91%20%D7%91%D7%A8%D7%99%D7%A7%D7%9E%D7%9F/en_c9d4b82e7e8dd8b4970be101c66804f0",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/097558.jpg"
+  },
+  {
+    "id": "eliezer_kilinski",
+    "name": "קילינסקי אליעזר ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 19,
+    "role": "",
+    "summary": "דף הנצחה לזכר קילינסקי אליעזר ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "אליעזר",
+    "generalDetails": [
+      "בן אלקה ובוריס",
+      "נפל ביום ה' באדר א' תשי\"ז, 6.2.1957",
+      "בן 19 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "אליעזר קילינסקי",
+      "parents": "בן אלקה ובוריס",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "ה' באדר א' תשי\"ז",
+      "date": "6.2.1957",
+      "age": "בן 19 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/eliezer_kilinski/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%90%D7%9C%D7%99%D7%A2%D7%96%D7%A8%20%D7%A7%D7%99%D7%9C%D7%99%D7%A0%D7%A1%D7%A7%D7%99/en_61dc08d1bd1928b0a5ab93071c66abef",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/091928.jpg"
+  },
+  {
+    "id": "yaakov_alush",
+    "name": "אלוש יעקב-מצליח ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 27,
+    "role": "",
+    "summary": "דף הנצחה לזכר אלוש יעקב-מצליח ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "יעקב-מצליח",
+    "generalDetails": [
+      "בן נסריה ומסעוד",
+      "נפל ביום ד' בשבט תשי\"ב, 31.1.1952",
+      "בן 27 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "יעקב-מצליח אלוש",
+      "parents": "בן נסריה ומסעוד",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "ד' בשבט תשי\"ב",
+      "date": "31.1.1952",
+      "age": "בן 27 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/yaakov_alush/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%99%D7%A2%D7%A7%D7%91-%D7%9E%D7%A6%D7%9C%D7%99%D7%97%20%D7%90%D7%9C%D7%95%D7%A9/en_b9ba6549a4f5cc03a0c6eb33392156c5",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/090145.jpg"
+  },
+  {
+    "id": "natan_rossi",
+    "name": "רוסי נתן (גואלטיירו) ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 21,
+    "role": "",
+    "summary": "דף הנצחה לזכר רוסי נתן (גואלטיירו) ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "נתן",
+    "generalDetails": [
+      "בן אמיליה וגד",
+      "נפל ביום י\"א בתמוז תש\"ח, 18.7.1948",
+      "בן 21 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "נתן (גואלטיירו) רוסי",
+      "parents": "בן אמיליה וגד",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "י\"א בתמוז תש\"ח",
+      "date": "18.7.1948",
+      "age": "בן 21 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/natan_rossi/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%A0%D7%AA%D7%9F%20%D7%A8%D7%95%D7%A1%D7%99/en_7ed474a2a0a9adc8c7db8bac1dd80bd5",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/020896.jpg"
+  },
+  {
+    "id": "david_magen",
+    "name": "מגן דויד (דוידקה) ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 23,
+    "role": "",
+    "summary": "דף הנצחה לזכר מגן דויד (דוידקה) ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "דויד",
+    "generalDetails": [
+      "בן חוה ומיכאל",
+      "נפל ביום ט\"ז באייר תש\"ח, 25.5.1948",
+      "בן 23 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "סגן",
+      "unit": "",
+      "displayName": "דויד (דוידקה) מגן",
+      "parents": "בן חוה ומיכאל",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "ט\"ז באייר תש\"ח",
+      "date": "25.5.1948",
+      "age": "בן 23 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/david_magen/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%93%D7%95%D7%99%D7%93%20%D7%9E%D7%92%D7%9F/en_2e6a581bbc0f1300aab2773f02cf5d69",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/091318.jpg"
+  },
+  {
+    "id": "asher_hershkovitz",
+    "name": "הרשקוביץ אשר ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 22,
+    "role": "",
+    "summary": "דף הנצחה לזכר הרשקוביץ אשר ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "אשר",
+    "generalDetails": [
+      "בן רבקה ויוסף",
+      "נפל ביום י\"ח בתשרי תש\"ט, 21.10.1948",
+      "בן 22 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "אשר הרשקוביץ",
+      "parents": "בן רבקה ויוסף",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "י\"ח בתשרי תש\"ט",
+      "date": "21.10.1948",
+      "age": "בן 22 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/asher_hershkovitz/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%90%D7%A9%D7%A8%20%D7%94%D7%A8%D7%A9%D7%A7%D7%95%D7%91%D7%99%D7%A5/en_627a7c3e282b0f6a5a730b04e2bdbfcf",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/007315.jpg"
+  },
+  {
+    "id": "gershon_kalo",
+    "name": "קאלו גרשון (סילויו) ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 24,
+    "role": "",
+    "summary": "דף הנצחה לזכר קאלו גרשון (סילויו) ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "גרשון",
+    "generalDetails": [
+      "בן צעירה ופיו-פצפקו",
+      "נפל ביום י\"א בתמוז תש\"ח, 18.7.1948",
+      "בן 24 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "גרשון (סילויו) קאלו",
+      "parents": "בן צעירה ופיו-פצפקו",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "י\"א בתמוז תש\"ח",
+      "date": "18.7.1948",
+      "age": "בן 24 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/gershon_kalo/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%92%D7%A8%D7%A9%D7%95%D7%9F%20%D7%A7%D7%90%D7%9C%D7%95/en_cb1ef39b002f2d67b20ca36ed78a1d65",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/088882.jpg"
+  },
+  {
+    "id": "tzur_golan",
+    "name": "גולן צור ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 21,
+    "role": "",
+    "summary": "דף הנצחה לזכר גולן צור ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "צור",
+    "generalDetails": [
+      "בן צביה ודב",
+      "נפל ביום י\"ט בתשרי תש\"ן, 17.10.1989",
+      "בן 21 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "סגן משנה",
+      "unit": "",
+      "displayName": "צור גולן",
+      "parents": "בן צביה ודב",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "י\"ט בתשרי תש\"ן",
+      "date": "17.10.1989",
+      "age": "בן 21 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/tzur_golan/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%A6%D7%95%D7%A8%20%D7%92%D7%95%D7%9C%D7%9F/en_79d6652f0d72163ec0f962f61f9c609d",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/512186.jpg"
+  },
+  {
+    "id": "nadav_cohen",
+    "name": "כהן נדב ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 20,
+    "role": "",
+    "summary": "דף הנצחה לזכר כהן נדב ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "נדב",
+    "generalDetails": [
+      "בן רבקה וישראל",
+      "נפל ביום י\"א בתשרי תשל\"ד, 7.10.1973",
+      "בן 20 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "סמל ראשון",
+      "unit": "",
+      "displayName": "נדב כהן",
+      "parents": "בן רבקה וישראל",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "י\"א בתשרי תשל\"ד",
+      "date": "7.10.1973",
+      "age": "בן 20 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/nadav_cohen/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%A0%D7%93%D7%91%20%D7%9B%D7%94%D7%9F/en_9addfa575a9ee60f67da6d91f5b9505e",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/093951.jpg"
+  },
+  {
+    "id": "haim_bonhardi",
+    "name": "בונהרדי חיים (מוקי) ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 25,
+    "role": "",
+    "summary": "דף הנצחה לזכר בונהרדי חיים (מוקי) ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "חיים",
+    "generalDetails": [
+      "בן מרגרט ואדוארד",
+      "נפל ביום ט\"ו באייר תש\"ח, 24.5.1948",
+      "בן 25 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "סגן",
+      "unit": "",
+      "displayName": "חיים (מוקי) בונהרדי",
+      "parents": "בן מרגרט ואדוארד",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "ט\"ו באייר תש\"ח",
+      "date": "24.5.1948",
+      "age": "בן 25 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/haim_bonhardi/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%97%D7%99%D7%99%D7%9D%20%D7%91%D7%95%D7%A0%D7%94%D7%A8%D7%93%D7%99/en_b80813c2d05c7692ac30cb48c7340ea5",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/007972.jpg"
+  },
+  {
+    "id": "hans_katzenstein",
+    "name": "כצנשטיין הנס ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 32,
+    "role": "",
+    "summary": "דף הנצחה לזכר כצנשטיין הנס ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "הנס",
+    "generalDetails": [
+      "בן אסתר הנרייטה ושמעון",
+      "נפל ביום י' בתמוז תש\"ח, 17.7.1948",
+      "בן 32 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "הנס כצנשטיין",
+      "parents": "בן אסתר הנרייטה ושמעון",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "י' בתמוז תש\"ח",
+      "date": "17.7.1948",
+      "age": "בן 32 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/hans_katzenstein/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%94%D7%A0%D7%A1%20%D7%9B%D7%A6%D7%A0%D7%A9%D7%98%D7%99%D7%99%D7%9F/en_38da4a5ee13e00d4afe73de5103c9519",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/091175.jpg"
+  },
+  {
+    "id": "amiram_asa",
+    "name": "אסא עמירם ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 19,
+    "role": "",
+    "summary": "דף הנצחה לזכר אסא עמירם ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "עמירם",
+    "generalDetails": [
+      "בן רחל ויעקב",
+      "נפל ביום כ\"ז באייר תשכ\"ז, 6.6.1967",
+      "בן 19 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "סמל",
+      "unit": "",
+      "displayName": "עמירם אסא",
+      "parents": "בן רחל ויעקב",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "כ\"ז באייר תשכ\"ז",
+      "date": "6.6.1967",
+      "age": "בן 19 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/amiram_asa/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%A2%D7%9E%D7%99%D7%A8%D7%9D%20%D7%90%D7%A1%D7%90/en_001506be649b018032f9f3a62e652265",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/090187.jpg"
+  },
+  {
+    "id": "gidon_globter",
+    "name": "גלובטר גדעון (גידי) ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 25,
+    "role": "",
+    "summary": "דף הנצחה לזכר גלובטר גדעון (גידי) ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "גדעון",
+    "generalDetails": [
+      "בן דורה ושמואל",
+      "נפל ביום ח' בטבת תש\"ח, 21.12.1947",
+      "בן 25 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "גדעון (גידי) גלובטר",
+      "parents": "בן דורה ושמואל",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "ח' בטבת תש\"ח",
+      "date": "21.12.1947",
+      "age": "בן 25 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/gidon_globter/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%92%D7%93%D7%A2%D7%95%D7%9F%20%D7%92%D7%9C%D7%95%D7%91%D7%98%D7%A8/en_9e4d4b82a922972c8dbd05743e8ae4f6",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/090478.jpg"
+  },
+  {
+    "id": "uzi_heinberg",
+    "name": "היינברג עוזי ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 20,
+    "role": "",
+    "summary": "דף הנצחה לזכר היינברג עוזי ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "עוזי",
+    "generalDetails": [
+      "בן שושנה וגבריאל",
+      "נפל ביום ג' באלול תשכ\"ח, 27.8.1968",
+      "בן 20 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "עוזי היינברג",
+      "parents": "בן שושנה וגבריאל",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "ג' באלול תשכ\"ח",
+      "date": "27.8.1968",
+      "age": "בן 20 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/uzi_heinberg/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%A2%D7%95%D7%96%D7%99%20%D7%94%D7%99%D7%99%D7%A0%D7%91%D7%A8%D7%92/en_74d16424737a72a7a1ff2101ddeca6ef",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/090662.jpg"
+  },
+  {
+    "id": "zeev_rechnitz",
+    "name": "רכניץ זאב ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 21,
+    "role": "",
+    "summary": "דף הנצחה לזכר רכניץ זאב ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "זאב",
+    "generalDetails": [
+      "בן הילדה ואיזידור",
+      "נפל ביום ו' בתשרי תש\"ט, 9.10.1948",
+      "בן 21 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "זאב רכניץ",
+      "parents": "בן הילדה ואיזידור",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "ו' בתשרי תש\"ט",
+      "date": "9.10.1948",
+      "age": "בן 21 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/zeev_rechnitz/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%96%D7%90%D7%91%20%D7%A8%D7%9B%D7%A0%D7%99%D7%A5/en_7466e156084f5d39ca291c515218caf0",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/092116.jpg"
+  },
+  {
+    "id": "dan_yaakobi",
+    "name": "יעקבי דן ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 26,
+    "role": "",
+    "summary": "דף הנצחה לזכר יעקבי דן ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "דן",
+    "generalDetails": [
+      "בן חנה ומשה",
+      "נפל ביום ח' בחשון תשל\"ד, 3.11.1973",
+      "בן 26 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "סמל ראשון",
+      "unit": "",
+      "displayName": "דן יעקבי",
+      "parents": "בן חנה ומשה",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "ח' בחשון תשל\"ד",
+      "date": "3.11.1973",
+      "age": "בן 26 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/dan_yaakobi/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%93%D7%9F%20%D7%99%D7%A2%D7%A7%D7%91%D7%99/en_1a509cc9c876c7ad6bb604ca8bc1f836",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/095608.jpg"
+  },
+  {
+    "id": "hanan_taussig",
+    "name": "טאוסיג חנן ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 29,
+    "role": "",
+    "summary": "דף הנצחה לזכר טאוסיג חנן ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "חנן",
+    "generalDetails": [
+      "בן חיים",
+      "נפל ביום ח' בטבת תש\"ח, 21.12.1947",
+      "בן 29 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "חנן טאוסיג",
+      "parents": "בן חיים",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "ח' בטבת תש\"ח",
+      "date": "21.12.1947",
+      "age": "בן 29 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/hanan_taussig/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%97%D7%A0%D7%9F%20%D7%98%D7%90%D7%95%D7%A1%D7%99%D7%92/en_ace7bc59fce922af62858fb29eecc331",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/090949.jpg"
+  },
+  {
+    "id": "tziona_staviski",
+    "name": "סטביסקי ציונה ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 20,
+    "role": "",
+    "summary": "דף הנצחה לזכר סטביסקי ציונה ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "ציונה",
+    "generalDetails": [
+      "בת רייזי וליאו",
+      "נפלה ביום י\"ב באייר תשכ\"ח, 9.5.1968",
+      "בת 20 בנופלה"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי ראשון",
+      "unit": "",
+      "displayName": "ציונה סטביסקי",
+      "parents": "בת רייזי וליאו",
+      "fallenLabel": "נפלה ביום",
+      "hebrewDate": "י\"ב באייר תשכ\"ח",
+      "date": "9.5.1968",
+      "age": "בת 20 בנופלה"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/tziona_staviski/",
+    "gender": "female",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%A6%D7%99%D7%95%D7%A0%D7%94%20%D7%A1%D7%98%D7%91%D7%99%D7%A1%D7%A7%D7%99/en_0390b95e768250f6ac25ff4837557dc5",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/091528.jpg"
+  },
+  {
+    "id": "lior_yekutiel",
+    "name": "יקותיאל ליאור ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 19,
+    "role": "",
+    "summary": "דף הנצחה לזכר יקותיאל ליאור ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "ליאור",
+    "generalDetails": [
+      "בן מרים ואמנון",
+      "נפל ביום ט\"ו בתמוז תשל\"ז, 1.7.1977",
+      "בן 19 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "ליאור יקותיאל",
+      "parents": "בן מרים ואמנון",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "ט\"ו בתמוז תשל\"ז",
+      "date": "1.7.1977",
+      "age": "בן 19 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/lior_yekutiel/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%9C%D7%99%D7%90%D7%95%D7%A8%20%D7%99%D7%A7%D7%95%D7%AA%D7%99%D7%90%D7%9C/en_df7739cdb3b2e02e34ccd4a91aa58ca4",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/097451.jpg"
+  },
+  {
+    "id": "orly_artzi",
+    "name": "ארצי אורלי ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 20,
+    "role": "",
+    "summary": "דף הנצחה לזכר ארצי אורלי ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "אורלי",
+    "generalDetails": [
+      "בן הלינה וברוך",
+      "נפל ביום כ\"א בכסלו תשל\"ה, 4.12.1974",
+      "בן 20 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "סמל ראשון",
+      "unit": "",
+      "displayName": "אורלי ארצי",
+      "parents": "בן הלינה וברוך",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "כ\"א בכסלו תשל\"ה",
+      "date": "4.12.1974",
+      "age": "בן 20 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/orly_artzi/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%90%D7%95%D7%A8%D7%9C%D7%99%20%D7%90%D7%A8%D7%A6%D7%99/en_2113f8c3e259d56236cd081809acded6",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/096007.jpg"
+  },
+  {
+    "id": "otniel_shamir",
+    "name": "שמיר עתניאל (עתי) ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 25,
+    "role": "",
+    "summary": "דף הנצחה לזכר שמיר עתניאל (עתי) ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "עתניאל",
+    "generalDetails": [
+      "בן מרים ומשה",
+      "נפל ביום כ\"ט באייר תשכ\"ז, 8.6.1967",
+      "בן 25 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "סרן",
+      "unit": "",
+      "displayName": "עתניאל (עתי) שמיר",
+      "parents": "בן מרים ומשה",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "כ\"ט באייר תשכ\"ז",
+      "date": "8.6.1967",
+      "age": "בן 25 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/otniel_shamir/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%A2%D7%AA%D7%A0%D7%99%D7%90%D7%9C%20%D7%A9%D7%9E%D7%99%D7%A8/en_e6d70c78cbb861ac24734175143ace0b",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/092268.jpg"
+  },
+  {
+    "id": "shabtai_nahon",
+    "name": "נהון שבתאי ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 20,
+    "role": "",
+    "summary": "דף הנצחה לזכר נהון שבתאי ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "שבתאי",
+    "generalDetails": [
+      "בן אסתר ואברהם",
+      "נפל ביום כ\"ו בתשרי תשל\"ד, 22.10.1973",
+      "בן 20 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "רב טוראי",
+      "unit": "",
+      "displayName": "שבתאי נהון",
+      "parents": "בן אסתר ואברהם",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "כ\"ו בתשרי תשל\"ד",
+      "date": "22.10.1973",
+      "age": "בן 20 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/shabtai_nahon/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%A9%D7%91%D7%AA%D7%90%D7%99%20%D7%A0%D7%94%D7%95%D7%9F/en_8909c76f302db8abe7a4ca7e5dfb1b4e",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/095076.jpg"
+  },
+  {
+    "id": "yiftach_geva",
+    "name": "גבע יפתח ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 19.5,
+    "role": "",
+    "summary": "דף הנצחה לזכר גבע יפתח ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "יפתח",
+    "generalDetails": [
+      "בן מיכל ותני",
+      "נפל ביום ט' בשבט תשנ\"ח, 4.2.1998",
+      "בן 19.5 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "סמל",
+      "unit": "",
+      "displayName": "יפתח גבע",
+      "parents": "בן מיכל ותני",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "ט' בשבט תשנ\"ח",
+      "date": "4.2.1998",
+      "age": "בן 19.5 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/yiftach_geva/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%99%D7%A4%D7%AA%D7%97%20%D7%92%D7%91%D7%A2/en_fbb83069e21ba3f518f5c63a70851450",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/515130.jpg"
+  },
+  {
+    "id": "eliyahu_saybahi",
+    "name": "סייבהי אליהו ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 21,
+    "role": "",
+    "summary": "דף הנצחה לזכר סייבהי אליהו ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "אליהו",
+    "generalDetails": [
+      "בן מסעודה ויחיא",
+      "נפל ביום ז' באלול תשמ\"ג, 16.8.1983",
+      "בן 21 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "סמל",
+      "unit": "",
+      "displayName": "אליהו סייבהי",
+      "parents": "בן מסעודה ויחיא",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "ז' באלול תשמ\"ג",
+      "date": "16.8.1983",
+      "age": "בן 21 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/eliyahu_saybahi/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%90%D7%9C%D7%99%D7%94%D7%95%20%D7%A1%D7%99%D7%99%D7%91%D7%94%D7%99/en_563e7fb879703e8e8334f44af28ff36c",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/510559.jpg"
+  },
+  {
+    "id": "david_hazan",
+    "name": "חזן דויד ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 27,
+    "role": "",
+    "summary": "דף הנצחה לזכר חזן דויד ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "דויד",
+    "generalDetails": [
+      "בן שמחה ומרדכי",
+      "נפל ביום י\"ז בתשרי תשי\"ב, 17.10.1951",
+      "בן 27 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "דויד חזן",
+      "parents": "בן שמחה ומרדכי",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "י\"ז בתשרי תשי\"ב",
+      "date": "17.10.1951",
+      "age": "בן 27 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/david_hazan/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%93%D7%95%D7%99%D7%93%20%D7%97%D7%96%D7%9F/en_b65d70994cea060607adbcb5eca613c4",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/088745.jpg"
+  },
+  {
+    "id": "yosef_levi",
+    "name": "לוי יוסף ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 19,
+    "role": "",
+    "summary": "דף הנצחה לזכר לוי יוסף ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "יוסף",
+    "generalDetails": [
+      "בן אנג'ל ומשה",
+      "נפל ביום י\"א בניסן תשט\"ו, 3.4.1955",
+      "בן 19 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "יוסף לוי",
+      "parents": "בן אנג'ל ומשה",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "י\"א בניסן תשט\"ו",
+      "date": "3.4.1955",
+      "age": "בן 19 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/yosef_levi/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%99%D7%95%D7%A1%D7%A3%20%D7%9C%D7%95%D7%99/en_ec9f9a016823049a27b0da24c411d2a8",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/defaults/person.jpg"
+  },
+  {
+    "id": "marius_aharon",
+    "name": "אהרון מריוס ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 33,
+    "role": "",
+    "summary": "דף הנצחה לזכר אהרון מריוס ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "מריוס",
+    "generalDetails": [
+      "בן אדית וזיסו",
+      "נפל ביום כ\"ד בתמוז תש\"ן, 17.7.1990",
+      "בן 33 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "סמל",
+      "unit": "",
+      "displayName": "מריוס אהרון",
+      "parents": "בן אדית וזיסו",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "כ\"ד בתמוז תש\"ן",
+      "date": "17.7.1990",
+      "age": "בן 33 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/marius_aharon/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%9E%D7%A8%D7%99%D7%95%D7%A1%20%D7%90%D7%94%D7%A8%D7%95%D7%9F/en_ece86520648879d0934c9fceff065484",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/512378.jpg"
+  },
+  {
+    "id": "yaakov_tuchman",
+    "name": "טוכמן בן-ארי יעקב (טומי) ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 18.5,
+    "role": "",
+    "summary": "דף הנצחה לזכר טוכמן בן-ארי יעקב (טומי) ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "יעקב",
+    "generalDetails": [
+      "בן מאשה ושרגא",
+      "נפל ביום כ\"ט בחשון תשי\"ד, 7.11.1953",
+      "בן 18.5 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "יעקב (טומי) טוכמן בן-ארי",
+      "parents": "בן מאשה ושרגא",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "כ\"ט בחשון תשי\"ד",
+      "date": "7.11.1953",
+      "age": "בן 18.5 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/yaakov_tuchman/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%99%D7%A2%D7%A7%D7%91%20%D7%98%D7%95%D7%9B%D7%9E%D7%9F%20%D7%91%D7%9F-%D7%90%D7%A8%D7%99/en_9ecdccc1c42729cab3eaeac3740181d5",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/045984.jpg"
+  },
+  {
+    "id": "roi_rotberg",
+    "name": "רוטברג רועי ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 21,
+    "role": "",
+    "summary": "דף הנצחה לזכר רוטברג רועי ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "רועי",
+    "generalDetails": [
+      "בן יעל ושמריהו",
+      "נפל ביום י\"ח באייר תשט\"ז, 29.4.1956",
+      "בן 21 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "סגן",
+      "unit": "",
+      "displayName": "רועי רוטברג",
+      "parents": "בן יעל ושמריהו",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "י\"ח באייר תשט\"ז",
+      "date": "29.4.1956",
+      "age": "בן 21 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/roi_rotberg/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%A8%D7%95%D7%A2%D7%99%20%D7%A8%D7%95%D7%98%D7%91%D7%A8%D7%92/en_7c6b20d3a06e06115a2f3682b7ac9a65",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/044216.jpg"
+  },
+  {
+    "id": "yaakov_grubler",
+    "name": "גרובלר יעקב ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 19,
+    "role": "",
+    "summary": "דף הנצחה לזכר גרובלר יעקב ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "יעקב",
+    "generalDetails": [
+      "בן רחל ואביגדור",
+      "נפל ביום כ\"ו בסיון תשט\"ז, 4.6.1956",
+      "בן 19 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "יעקב גרובלר",
+      "parents": "בן רחל ואביגדור",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "כ\"ו בסיון תשט\"ז",
+      "date": "4.6.1956",
+      "age": "בן 19 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/yaakov_grubler/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%99%D7%A2%D7%A7%D7%91%20%D7%92%D7%A8%D7%95%D7%91%D7%9C%D7%A8/en_8ff473d819fd9dcabe86db0476dcede5",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/044227.jpg"
+  },
+  {
+    "id": "moshe_benhari",
+    "name": "בן-הרי משה (מוישלה) ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 21,
+    "role": "",
+    "summary": "דף הנצחה לזכר בן-הרי משה (מוישלה) ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "משה",
+    "generalDetails": [
+      "בן ריבה ויצחק",
+      "נפל ביום כ\"ד באייר תשכ\"ח, 21.5.1968",
+      "בן 21 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "משה (מוישלה) בן-הרי",
+      "parents": "בן ריבה ויצחק",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "כ\"ד באייר תשכ\"ח",
+      "date": "21.5.1968",
+      "age": "בן 21 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/moshe_benhari/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%9E%D7%A9%D7%94%20%D7%91%D7%9F-%D7%94%D7%A8%D7%99/en_726c4986a9e33eff828c01fba0aebe05",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/046533.jpg"
+  },
+  {
+    "id": "ram_inbar",
+    "name": "ענבר רם ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 22,
+    "role": "",
+    "summary": "דף הנצחה לזכר ענבר רם ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "רם",
+    "generalDetails": [
+      "בן מלי וזאב",
+      "נפל ביום ט\"ז באדר א' תשנ\"ב, 20.2.1992",
+      "בן 22 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "סמל ראשון",
+      "unit": "",
+      "displayName": "רם ענבר",
+      "parents": "בן מלי וזאב",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "ט\"ז באדר א' תשנ\"ב",
+      "date": "20.2.1992",
+      "age": "בן 22 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/ram_inbar/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%A8%D7%9D%20%D7%A2%D7%A0%D7%91%D7%A8/en_016d3a3a0d1236df1a1a85f9dc5774d8",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/513365.jpg"
+  },
+  {
+    "id": "yaakov_migovski",
+    "name": "מיגובסקי מגד יעקב ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 21,
+    "role": "",
+    "summary": "דף הנצחה לזכר מיגובסקי מגד יעקב ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "יעקב",
+    "generalDetails": [
+      "בן רבקה ואפרים",
+      "נפל ביום ב' בחשון תשט\"ז, 18.10.1955",
+      "בן 21 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "יעקב מיגובסקי מגד",
+      "parents": "בן רבקה ואפרים",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "ב' בחשון תשט\"ז",
+      "date": "18.10.1955",
+      "age": "בן 21 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/yaakov_migovski/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%99%D7%A2%D7%A7%D7%91%20%D7%9E%D7%99%D7%92%D7%95%D7%91%D7%A1%D7%A7%D7%99%20%D7%9E%D7%92%D7%93/en_817d575fa30aa2a685dcf29499f73b46",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/044683.jpg"
+  },
+  {
+    "id": "tal_nir",
+    "name": "ניר טל ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 19,
+    "role": "",
+    "summary": "דף הנצחה לזכר ניר טל ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "טל",
+    "generalDetails": [
+      "בת יהודית וראובן",
+      "נפלה ביום ט' בניסן תשנ\"ה, 9.4.1995",
+      "בת 19 בנופלה"
+    ],
+    "serviceRecord": {
+      "rank": "רב טוראי",
+      "unit": "",
+      "displayName": "טל ניר",
+      "parents": "בת יהודית וראובן",
+      "fallenLabel": "נפלה ביום",
+      "hebrewDate": "ט' בניסן תשנ\"ה",
+      "date": "9.4.1995",
+      "age": "בת 19 בנופלה"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/tal_nir/",
+    "gender": "female",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%98%D7%9C%20%D7%A0%D7%99%D7%A8/en_06a25aeed5681b34a5ca839428be1ead",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/514287.jpg"
+  },
+  {
+    "id": "shoshana_zlotnik",
+    "name": "זלוטניק שושנה (רוזה'לה) ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 30,
+    "role": "",
+    "summary": "דף הנצחה לזכר זלוטניק שושנה (רוזה'לה) ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "שושנה",
+    "generalDetails": [
+      "בת שרה ויצחק",
+      "נפלה ביום ו' באייר תש\"ח, 15.5.1948",
+      "בת 30 בנופלה"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "שושנה (רוזה'לה) זלוטניק",
+      "parents": "בת שרה ויצחק",
+      "fallenLabel": "נפלה ביום",
+      "hebrewDate": "ו' באייר תש\"ח",
+      "date": "15.5.1948",
+      "age": "בת 30 בנופלה"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/shoshana_zlotnik/",
+    "gender": "female",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%A9%D7%95%D7%A9%D7%A0%D7%94%20%D7%96%D7%9C%D7%95%D7%98%D7%A0%D7%99%D7%A7/en_c1c4b9b52b4f343bffcd04f1a082e946",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/088968.jpg"
+  },
+  {
+    "id": "shlomo_zuckerman",
+    "name": "צוקרמן שלמה ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 20,
+    "role": "",
+    "summary": "דף הנצחה לזכר צוקרמן שלמה ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "שלמה",
+    "generalDetails": [
+      "בן בלה והרשקו",
+      "נפל ביום ט' באייר תש\"ח, 17.5.1948",
+      "בן 20 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "שלמה צוקרמן",
+      "parents": "בן בלה והרשקו",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "ט' באייר תש\"ח",
+      "date": "17.5.1948",
+      "age": "בן 20 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/shlomo_zuckerman/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%A9%D7%9C%D7%9E%D7%94%20%D7%A6%D7%95%D7%A7%D7%A8%D7%9E%D7%9F/en_f4d27b60b25c2e1215d3adca5ac3513a",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/091847.jpg"
+  },
+  {
+    "id": "aizik_shvartzman",
+    "name": "שוארצמן אייזיק ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 33,
+    "role": "",
+    "summary": "דף הנצחה לזכר שוארצמן אייזיק ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "אייזיק",
+    "generalDetails": [
+      "בן רוזה ודויד",
+      "נפל ביום י\"א באייר תש\"ח, 20.5.1948",
+      "בן 33 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "אייזיק שוארצמן",
+      "parents": "בן רוזה ודויד",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "י\"א באייר תש\"ח",
+      "date": "20.5.1948",
+      "age": "בן 33 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/aizik_shvartzman/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%90%D7%99%D7%99%D7%96%D7%99%D7%A7%20%D7%A9%D7%95%D7%90%D7%A8%D7%A6%D7%9E%D7%9F/en_7d69996a95e7b68c33aa07aee555e36d",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/088967.jpg"
+  },
+  {
+    "id": "haim_goldenberg",
+    "name": "גולדנברג חיים (קארול) ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 18,
+    "role": "",
+    "summary": "דף הנצחה לזכר גולדנברג חיים (קארול) ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "חיים",
+    "generalDetails": [
+      "בן רייזה ודויד",
+      "נפל ביום ט\"ז באייר תש\"ח, 25.5.1948",
+      "בן 18 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "חיים (קארול) גולדנברג",
+      "parents": "בן רייזה ודויד",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "ט\"ז באייר תש\"ח",
+      "date": "25.5.1948",
+      "age": "בן 18 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/haim_goldenberg/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%97%D7%99%D7%99%D7%9D%20%D7%92%D7%95%D7%9C%D7%93%D7%A0%D7%91%D7%A8/en_21bfb63ad25d44b9ea69f6e75ec8011a",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/defaults/person.jpg"
+  },
+  {
+    "id": "moshe_shikar",
+    "name": "שיקר משה ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 20,
+    "role": "",
+    "summary": "דף הנצחה לזכר שיקר משה ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "משה",
+    "generalDetails": [
+      "בן שרה וישראל",
+      "נפל ביום כ\"ה באייר תש\"ח, 3.6.1948",
+      "בן 20 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "משה שיקר",
+      "parents": "בן שרה וישראל",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "כ\"ה באייר תש\"ח",
+      "date": "3.6.1948",
+      "age": "בן 20 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/moshe_shikar/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%9E%D7%A9%D7%94%20%D7%A9%D7%99%D7%A7%D7%A8/en_d300f8faaabaa2fc8ac9d15a91a39b7a",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/004071.jpg"
+  },
+  {
+    "id": "yaakov_markovitz",
+    "name": "מרקוביץ יעקב ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 26.5,
+    "role": "",
+    "summary": "דף הנצחה לזכר מרקוביץ יעקב ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "יעקב",
+    "generalDetails": [
+      "בן שרה וצבי",
+      "נפל ביום כ\"ג בתמוז תש\"ח, 30.7.1948",
+      "בן 26.5 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "יעקב מרקוביץ",
+      "parents": "בן שרה וצבי",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "כ\"ג בתמוז תש\"ח",
+      "date": "30.7.1948",
+      "age": "בן 26.5 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/yaakov_markovitz/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%99%D7%A2%D7%A7%D7%91%20%D7%9E%D7%A8%D7%A7%D7%95%D7%91%D7%99%D7%A5/en_187b2a1022addb2ee54747d183124fc6",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/091449.jpg"
+  },
+  {
+    "id": "amos_shahar_shoratz",
+    "name": "שחר שורץ עמוס ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 23,
+    "role": "",
+    "summary": "דף הנצחה לזכר שחר שורץ עמוס ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "עמוס",
+    "generalDetails": [
+      "בן שרה ומרדכי",
+      "נפל ביום ב' בסיון תשכ\"ז, 10.6.1967",
+      "בן 23 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "סגן",
+      "unit": "",
+      "displayName": "עמוס שחר שורץ",
+      "parents": "בן שרה ומרדכי",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "ב' בסיון תשכ\"ז",
+      "date": "10.6.1967",
+      "age": "בן 23 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/amos_shahar_shoratz/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%A2%D7%9E%D7%95%D7%A1%20%D7%A9%D7%97%D7%A8%20%D7%A9%D7%95%D7%A8%D7%A5/en_bc5b976fe84df57934da9d756ce18605",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/045738.jpg"
+  },
+  {
+    "id": "asaf_siboni",
+    "name": "סיבוני אסף-יעקב ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 21,
+    "role": "",
+    "summary": "דף הנצחה לזכר סיבוני אסף-יעקב ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "אסף-יעקב",
+    "generalDetails": [
+      "בן שלומית וסידנה",
+      "נפל ביום כ\"ח בשבט תשנ\"ז, 4.2.1997",
+      "בן 21 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "סמל ראשון",
+      "unit": "",
+      "displayName": "אסף-יעקב סיבוני",
+      "parents": "בן שלומית וסידנה",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "כ\"ח בשבט תשנ\"ז",
+      "date": "4.2.1997",
+      "age": "בן 21 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/asaf_siboni/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%90%D7%A1%D7%A3-%D7%99%D7%A2%D7%A7%D7%91%20%D7%A1%D7%99%D7%91%D7%95%D7%A0%D7%99/en_1c0316973cd90112c6509ce50888fde1",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/514800.jpg"
+  },
+  {
+    "id": "baruch_yachin",
+    "name": "יכין ברוך ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 57,
+    "role": "",
+    "summary": "דף הנצחה לזכר יכין ברוך ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "ברוך",
+    "generalDetails": [
+      "בן מירה ונתן",
+      "נפטר לאחר השירות ביום י\"ג בסיון תשס\"ה, 20.6.2005",
+      "בן 57 בפטירתו"
+    ],
+    "serviceRecord": {
+      "rank": "",
+      "unit": "",
+      "displayName": "ברוך יכין",
+      "parents": "בן מירה ונתן",
+      "fallenLabel": "נפטר לאחר השירות ביום",
+      "hebrewDate": "י\"ג בסיון תשס\"ה",
+      "date": "20.6.2005",
+      "age": "בן 57 בפטירתו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/baruch_yachin/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%91%D7%A8%D7%95%D7%9A%20%D7%99%D7%9B%D7%99%D7%9F/en_0ef80a4ef295e3ee47380cec4cf441bc",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/800226.jpg"
+  },
+  {
+    "id": "shmuel_kleiman",
+    "name": "קליימן שמואל סמי ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 34,
+    "role": "",
+    "summary": "דף הנצחה לזכר קליימן שמואל סמי ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "שמואל",
+    "generalDetails": [
+      "בן בתיה וצבי",
+      "נפל ביום ב' בסיון תש\"ח, 9.6.1948",
+      "בן 34 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "שמואל סמי קליימן",
+      "parents": "בן בתיה וצבי",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "ב' בסיון תש\"ח",
+      "date": "9.6.1948",
+      "age": "בן 34 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/shmuel_kleiman/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%A1%D7%9E%D7%99%20%D7%A7%D7%9C%D7%99%D7%99%D7%9E%D7%9F/en_50672fb9bb9739c6aebdbaffdc302fb9",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/040127.jpg"
+  },
+  {
+    "id": "shmuel_mintz",
+    "name": "מינץ שמואל ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 20,
+    "role": "",
+    "summary": "דף הנצחה לזכר מינץ שמואל ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "שמואל",
+    "generalDetails": [
+      "בן רבקה ושלום",
+      "נפל ביום כ\"ו בחשון תשי\"ז, 31.10.1956",
+      "בן 20 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "רב טוראי",
+      "unit": "",
+      "displayName": "שמואל מינץ",
+      "parents": "בן רבקה ושלום",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "כ\"ו בחשון תשי\"ז",
+      "date": "31.10.1956",
+      "age": "בן 20 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/shmuel_mintz/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%9E%D7%99%D7%A0%D7%A5/en_db017143752c172a14e4c70c501d4f5f",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/044307.jpg"
+  },
+  {
+    "id": "yaakov_yitzhaki",
+    "name": "יצחקי יעקב (קובוש) ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 21,
+    "role": "",
+    "summary": "דף הנצחה לזכר יצחקי יעקב (קובוש) ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "יעקב",
+    "generalDetails": [
+      "בן רבקה וגדליהו",
+      "נפל ביום ט\"ו באייר תשי\"ח, 5.5.1958",
+      "בן 21 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "יעקב (קובוש) יצחקי",
+      "parents": "בן רבקה וגדליהו",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "ט\"ו באייר תשי\"ח",
+      "date": "5.5.1958",
+      "age": "בן 21 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/yaakov_yitzhaki/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%99%D7%A2%D7%A7%D7%91%20%D7%99%D7%A6%D7%97%D7%A7%D7%99/en_21dedcd93b11e2d722318ab4372b521e",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/044767.jpg"
+  },
+  {
+    "id": "asaf_rabinovitz",
+    "name": "רבינוביץ אסף ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 25,
+    "role": "",
+    "summary": "דף הנצחה לזכר רבינוביץ אסף ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "אסף",
+    "generalDetails": [
+      "בן אליה וגרשון",
+      "נפל ביום א' בסיון תשכ\"ז, 9.6.1967",
+      "בן 25 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "סרן",
+      "unit": "",
+      "displayName": "אסף רבינוביץ",
+      "parents": "בן אליה וגרשון",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "א' בסיון תשכ\"ז",
+      "date": "9.6.1967",
+      "age": "בן 25 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/asaf_rabinovitz/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%90%D7%A1%D7%A3%20%D7%A8%D7%91%D7%99%D7%A0%D7%95%D7%91%D7%99%D7%A5/en_febc47a47d967e73e9777c73ea048d91",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/092012.jpg"
+  },
+  {
+    "id": "avraham_benabu",
+    "name": "בן-אבו אברהם ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 26,
+    "role": "",
+    "summary": "דף הנצחה לזכר בן-אבו אברהם ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "אברהם",
+    "generalDetails": [
+      "בן שמחה ואליהו",
+      "נפל ביום כ\"ב בסיון תשכ\"ט, 7.6.1969",
+      "בן 26 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "אברהם בן-אבו",
+      "parents": "בן שמחה ואליהו",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "כ\"ב בסיון תשכ\"ט",
+      "date": "7.6.1969",
+      "age": "בן 26 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/avraham_benabu/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%90%D7%91%D7%A8%D7%94%D7%9D%20%D7%91%D7%9F-%D7%90%D7%91%D7%95/en_4f2b760f5eee3f61fdd1947b443fc41f",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/046969.jpg"
+  },
+  {
+    "id": "zeev_lavi",
+    "name": "לביא לבצלטר זאב (זאביק) ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 21,
+    "role": "",
+    "summary": "דף הנצחה לזכר לביא לבצלטר זאב (זאביק) ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "זאב",
+    "generalDetails": [
+      "בן בתיה ואברהם",
+      "נפל ביום ט' בתשרי תש\"ל, 20.9.1969",
+      "בן 21 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "רב טוראי",
+      "unit": "",
+      "displayName": "זאב (זאביק) לביא לבצלטר",
+      "parents": "בן בתיה ואברהם",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "ט' בתשרי תש\"ל",
+      "date": "20.9.1969",
+      "age": "בן 21 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/zeev_lavi/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%96%D7%90%D7%91%20%D7%9C%D7%91%D7%99%D7%90%20%D7%9C%D7%91%D7%A6%D7%9C%D7%98%D7%A8/en_a0f9600ea5382994e205382f4f717439",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/047281.jpg"
+  },
+  {
+    "id": "yuri_haranash",
+    "name": "חרנש יורי ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 24,
+    "role": "",
+    "summary": "דף הנצחה לזכר חרנש יורי ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "יורי",
+    "generalDetails": [
+      "בן חנה ואהרון",
+      "נפל ביום ט\"ו בכסלו תשל\"ד, 10.12.1973",
+      "בן 24 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "סרן",
+      "unit": "",
+      "displayName": "יורי חרנש",
+      "parents": "בן חנה ואהרון",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "ט\"ו בכסלו תשל\"ד",
+      "date": "10.12.1973",
+      "age": "בן 24 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/yuri_haranash/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%99%D7%95%D7%A8%D7%99%20%D7%97%D7%A8%D7%A0%D7%A9/en_8f94c682f01791992c6d13cc89e5106b",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/095888.jpg"
+  },
+  {
+    "id": "hagai_benshmuel",
+    "name": "בן-שמואל חגי-לאון ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 30,
+    "role": "",
+    "summary": "דף הנצחה לזכר בן-שמואל חגי-לאון ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "חגי-לאון",
+    "generalDetails": [
+      "בן אסתר ויעקב",
+      "נפל ביום י\"ט באב תשל\"ד, 7.8.1974",
+      "בן 30 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "רב טוראי",
+      "unit": "",
+      "displayName": "חגי-לאון בן-שמואל",
+      "parents": "בן אסתר ויעקב",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "י\"ט באב תשל\"ד",
+      "date": "7.8.1974",
+      "age": "בן 30 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/hagai_benshmuel/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%97%D7%92%D7%99-%D7%9C%D7%90%D7%95%D7%9F%20%D7%91%D7%9F-%D7%A9%D7%9E%D7%95%D7%90%D7%9C/en_d3fc5458869fc16e07aaeec297ab828c",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/096682.jpg"
+  },
+  {
+    "id": "david_salomon",
+    "name": "סלומון דוד ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 53,
+    "role": "",
+    "summary": "דף הנצחה לזכר סלומון דוד ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "דוד",
+    "generalDetails": [
+      "בן סימה ושמואל",
+      "נפל ביום ג' באדר תשמ\"ה, 24.2.1985",
+      "בן 53 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "דוד סלומון",
+      "parents": "בן סימה ושמואל",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "ג' באדר תשמ\"ה",
+      "date": "24.2.1985",
+      "age": "בן 53 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/david_salomon/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%93%D7%95%D7%93%20%D7%A1%D7%9C%D7%95%D7%9E%D7%95%D7%9F/en_de7a7a6ab510709e68761dad17f8e5e5",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/510992.jpg"
+  },
+  {
+    "id": "tzvi_goldfeld",
+    "name": "גולדפלד צבי ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 21,
+    "role": "",
+    "summary": "דף הנצחה לזכר גולדפלד צבי ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "צבי",
+    "generalDetails": [
+      "בן צילה ויצחק",
+      "נפל ביום י' בטבת תשכ\"ט, 31.12.1968",
+      "בן 21 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "צבי גולדפלד",
+      "parents": "בן צילה ויצחק",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "י' בטבת תשכ\"ט",
+      "date": "31.12.1968",
+      "age": "בן 21 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/tzvi_goldfeld/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%A6%D7%91%D7%99%20%D7%92%D7%95%D7%9C%D7%93%D7%A4%D7%9C%D7%93/en_c518b96f2db3160261ebe213f96671f9",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/046993.jpg"
+  },
+  {
+    "id": "yitzhak_dabah",
+    "name": "דבאח יצחק (זכי) ז\"ל",
+    "place": "",
+    "image": "",
+    "age": 24,
+    "role": "",
+    "summary": "דף הנצחה לזכר דבאח יצחק (זכי) ז\"ל במסגרת ״רקמה אנושית אחת״.",
+    "firstNameHebrew": "יצחק",
+    "generalDetails": [
+      "בן אסתר ושלמה",
+      "נפל ביום ט\"ז באלול תשכ\"ז, 21.9.1967",
+      "בן 24 בנופלו"
+    ],
+    "serviceRecord": {
+      "rank": "טוראי",
+      "unit": "",
+      "displayName": "יצחק (זכי) דבאח",
+      "parents": "בן אסתר ושלמה",
+      "fallenLabel": "נפל ביום",
+      "hebrewDate": "ט\"ז באלול תשכ\"ז",
+      "date": "21.9.1967",
+      "age": "בן 24 בנופלו"
+    },
+    "portrait": {
+      "fit": "cover",
+      "position": "50% 38%"
+    },
+    "isPreviousYears": true,
+    "page": "people/yitzhak_dabah/",
+    "gender": "male",
+    "fullStory": [],
+    "photos": [],
+    "sourceUrl": "https://www.izkor.gov.il/%D7%99%D7%A6%D7%97%D7%A7%20%D7%93%D7%91%D7%90%D7%97/en_1e9dc1467de15654c8ab1f7c36546faa",
+    "sourceImageUrl": "https://www.izkor.gov.il/assets/person/images/090571.jpg"
   }
 ];
