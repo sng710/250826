@@ -325,3 +325,315 @@ img { max-width: 100%; }
   .gentle-enter, .lightbox-backdrop, .lightbox-card { animation: none !important; }
   .memory-card, .portrait-ring { transition: none; }
 }
+
+/* =========================================================
+   ORIGINAL ATTACHED DESIGN - visual restoration
+   ========================================================= */
+:root {
+  --heritage-blue: #304a7d;
+  --heritage-blue-deep: #263f6d;
+  --heritage-blue-dark: #20385f;
+  --heritage-cyan: #55b8d4;
+  --heritage-white: #f8f7f3;
+  --heritage-soft: #e3e9ed;
+  --heritage-serif: "David Libre", "Noto Serif Hebrew", "Frank Ruhl Libre", "Times New Roman", serif;
+  --heritage-sans: "Arial Hebrew", "Noto Sans Hebrew", "Heebo", Arial, sans-serif;
+}
+
+body {
+  font-family: var(--heritage-sans);
+  background: var(--heritage-blue-deep);
+  color: var(--heritage-white);
+}
+
+.hero {
+  min-height: 650px;
+  padding: 28px 28px 58px;
+  background:
+    linear-gradient(90deg, rgba(35, 58, 99, .70) 0%, rgba(48, 74, 125, .88) 52%, rgba(48, 74, 125, .98) 100%),
+    url('../img/leaf-bg.webp') 38% center / cover no-repeat;
+  text-align: initial;
+  place-items: center;
+}
+.hero::after { display: none; }
+.hero-inner { width: min(1050px, 100%); margin: auto; }
+.eyebrow {
+  text-align: center;
+  color: var(--heritage-soft);
+  font-size: .92rem;
+  letter-spacing: .22em;
+  margin: 0 0 22px;
+}
+.hero-rule {
+  width: 100%;
+  max-width: none;
+  height: 1px;
+  margin: 0;
+  background: linear-gradient(90deg, transparent 0%, var(--heritage-cyan) 10%, var(--heritage-cyan) 90%, transparent 100%);
+  opacity: .9;
+}
+.hero-composition {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr);
+  gap: clamp(48px, 8vw, 110px);
+  align-items: center;
+  padding: 44px 38px 42px;
+}
+.hero h1 {
+  grid-column: 1;
+  margin: 0;
+  text-align: right;
+  font-family: var(--heritage-serif);
+  font-size: clamp(4.4rem, 8.2vw, 7rem);
+  font-weight: 400;
+  line-height: .83;
+  letter-spacing: -.04em;
+  color: #fff;
+}
+.poem {
+  grid-column: 2;
+  margin: 0;
+  text-align: right;
+  font-family: var(--heritage-serif);
+  font-size: clamp(1.55rem, 2.75vw, 2.35rem);
+  line-height: 1.58;
+  font-weight: 400;
+  color: #fff;
+}
+.hero-rule-bottom { margin-bottom: 34px; }
+.dedication {
+  max-width: 770px;
+  text-align: center;
+  color: var(--heritage-white);
+  font-family: var(--heritage-serif);
+  font-size: 1.12rem;
+  line-height: 2;
+}
+.hero-links { margin-top: 24px; gap: 22px; }
+.hero-links a {
+  color: var(--heritage-white);
+  border-bottom: 1px solid rgba(85, 184, 212, .78);
+  padding-inline: 2px;
+}
+
+.index-section {
+  min-height: 100vh;
+  padding: 0 30px 88px;
+  background:
+    linear-gradient(rgba(45, 70, 118, .94), rgba(36, 59, 99, .98)),
+    url('../img/leaf-bg.webp') left 18% / min(980px, 72vw) auto no-repeat;
+}
+.toolbar {
+  background: rgba(43, 67, 112, .96);
+  border-bottom: 1px solid rgba(85, 184, 212, .40);
+  box-shadow: none;
+  backdrop-filter: blur(8px);
+}
+.search-control {
+  height: 48px;
+  background: rgba(255,255,255,.035);
+  border-color: rgba(248,247,243,.34);
+}
+.search-control:focus-within {
+  background: rgba(255,255,255,.055);
+  border-color: rgba(85,184,212,.9);
+}
+.search-control svg { fill: #d9e4e8; }
+.result-count { color: #dbe5e8; }
+
+.memorial-grid {
+  max-width: 1360px;
+  margin-top: 44px;
+  grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+  gap: 44px 30px;
+}
+.memory-card {
+  grid-template-rows: var(--portrait-size) 2.8em 1.5em;
+  row-gap: 13px;
+  min-height: 236px;
+}
+.memory-card:hover,
+.memory-card:focus-visible { transform: translateY(-1px); }
+.portrait-ring {
+  border: 2px solid rgba(248,247,243,.72);
+  padding: 5px;
+  background: transparent;
+  box-shadow: none;
+}
+.memory-card:hover .portrait-ring,
+.memory-card:focus-visible .portrait-ring {
+  border-color: #fff;
+  box-shadow: 0 0 0 1px rgba(85,184,212,.42);
+}
+.portrait-ring img { filter: grayscale(1) contrast(1.04); }
+.card-name {
+  color: #fff;
+  font-family: var(--heritage-serif);
+  font-size: 1.12rem;
+  font-weight: 400;
+}
+.card-place { color: #d7e1e5; }
+.period-divider {
+  color: #fff;
+  font-family: var(--heritage-serif);
+  font-weight: 400;
+}
+.period-divider::before,
+.period-divider::after { background: rgba(85,184,212,.5); }
+
+.lightbox-backdrop {
+  background: rgba(17, 34, 58, .82);
+  backdrop-filter: blur(6px);
+}
+.lightbox-card {
+  background:
+    linear-gradient(rgba(47,73,123,.96), rgba(38,62,103,.98)),
+    url('../img/leaf-bg.webp') 15% center / cover no-repeat;
+  color: var(--heritage-white);
+  border: 1px solid rgba(248,247,243,.35);
+  border-radius: 8px;
+  box-shadow: 0 24px 70px rgba(10, 24, 43, .38);
+}
+.lightbox-close {
+  background: transparent;
+  border: 1px solid rgba(248,247,243,.5);
+  color: #fff;
+}
+.lightbox-close:hover,
+.lightbox-close:focus-visible { outline-color: var(--heritage-cyan); }
+.lightbox-img {
+  border: 2px solid rgba(248,247,243,.76);
+  background: transparent;
+  box-shadow: none;
+  padding: 6px;
+}
+.lightbox-kicker,
+.lightbox-role { color: #dbe4e8; }
+.lightbox-details h2 {
+  color: #fff;
+  font-family: var(--heritage-serif);
+  font-weight: 400;
+}
+.service-line { color: #edf2f3; }
+.preview-facts { color: #e3e9eb; }
+.preview-facts li { border-top-color: rgba(85,184,212,.35); }
+.lightbox-summary { color: #fff; font-family: var(--heritage-serif); }
+.primary-button,
+.secondary-button { border-radius: 4px; }
+.primary-button {
+  background: #f6f5f0;
+  color: var(--heritage-blue-dark);
+  border-color: #f6f5f0;
+}
+.secondary-button {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(248,247,243,.55);
+}
+.primary-button:hover,
+.primary-button:focus-visible,
+.secondary-button:hover,
+.secondary-button:focus-visible { outline-color: var(--heritage-cyan); }
+
+.person-page {
+  min-height: 100vh;
+  color: var(--heritage-white);
+  background:
+    linear-gradient(90deg, rgba(39,62,104,.88), rgba(48,74,125,.97)),
+    url('../img/leaf-bg.webp') left top / cover fixed no-repeat;
+}
+.person-topbar {
+  background: rgba(34,55,92,.9);
+  color: #fff;
+  border-bottom: 1px solid rgba(85,184,212,.38);
+}
+.person-brand { font-family: var(--heritage-serif); font-weight: 400; }
+.person-intro,
+.story-section,
+.aside-card {
+  background: rgba(45,70,117,.84);
+  color: #fff;
+  border: 1px solid rgba(248,247,243,.25);
+  border-radius: 8px;
+  box-shadow: none;
+  backdrop-filter: blur(2px);
+}
+.person-intro { border-top-color: rgba(85,184,212,.65); }
+.person-portrait {
+  border: 2px solid rgba(248,247,243,.76);
+  background: transparent;
+  padding: 6px;
+  box-shadow: none;
+}
+.person-head .place,
+.person-head .role,
+.fact,
+.aside-summary,
+.story-copy p,
+.page-footer { color: #eef1f0; }
+.person-head h1,
+.story-section h2,
+.aside-card h2 {
+  color: #fff;
+  font-family: var(--heritage-serif);
+  font-weight: 400;
+}
+.fact,
+.story-section h2 { border-color: rgba(85,184,212,.32); }
+.person-source,
+.memorial-links a { color: #bfe6f0; }
+.story-copy { max-width: 70ch; }
+.story-copy p { line-height: 2; }
+.face-gallery img {
+  border: 1px solid rgba(248,247,243,.3);
+  border-radius: 6px;
+}
+.page-footer {
+  padding-top: 20px;
+  border-top: 1px solid rgba(85,184,212,.34);
+  font-family: var(--heritage-serif);
+}
+
+@media (max-width: 820px) {
+  .hero {
+    min-height: 630px;
+    padding: 44px 20px 48px;
+    background:
+      linear-gradient(rgba(42,66,110,.84), rgba(43,68,113,.95)),
+      url('../img/leaf-bg.webp') 30% center / cover no-repeat;
+  }
+  .hero-composition {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 34px 8px 32px;
+  }
+  .hero h1,
+  .poem {
+    grid-column: 1;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: clamp(3.9rem, 18vw, 5.7rem);
+    line-height: .88;
+  }
+  .poem { font-size: clamp(1.35rem, 6vw, 1.8rem); }
+  .hero-rule-bottom { margin-bottom: 26px; }
+  .dedication { font-size: 1rem; line-height: 1.9; }
+  .index-section {
+    background:
+      linear-gradient(rgba(45,70,118,.95), rgba(36,59,99,.99)),
+      url('../img/leaf-bg.webp') 20% top / auto 760px no-repeat;
+  }
+  .person-page {
+    background:
+      linear-gradient(rgba(39,62,104,.94), rgba(48,74,125,.98)),
+      url('../img/leaf-bg.webp') 25% top / auto 820px no-repeat;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero { min-height: 600px; }
+  .eyebrow { font-size: .82rem; }
+  .hero-composition { padding-inline: 0; }
+  .hero h1 { font-size: clamp(3.6rem, 20vw, 5rem); }
+}
