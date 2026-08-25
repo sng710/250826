@@ -12,7 +12,7 @@
 <meta property="og:image" content="https://sng710.github.io/sng-710/assets/bg/leaf-landscape.webp">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/bg/leaf-landscape.webp" type="image/webp">
-<link rel="stylesheet" href="assets/css/styles.css?v=105">
+<link rel="stylesheet" href="assets/css/styles.css?v=112">
 </head>
 <body>
 <a class="skip-link" href="#desktopAllGrid">דילוג לרשימת ההנצחה</a>
@@ -23,18 +23,22 @@
       <p class="eyebrow">שער הנגב זוכרת</p>
       <span class="rule" aria-hidden="true"></span>
       <div class="title-lockup">
-        <p class="poem">וְאִם אֶחָד מֵאִתָּנוּ<br>הוֹלֵךְ מֵעִמָּנוּ<br>מַשֶּׁהוּ מֵת בָּנוּ<br>וּמַשֶּׁהוּ נִשְׁאָר אִתּוֹ.</p>
-        <h1 class="main-title">רקמה<br>אנושית<br>אחת</h1>
+        <p class="poem"><span class="reveal-line">וְאִם אֶחָד מֵאִתָּנוּ</span><span class="reveal-line">הוֹלֵךְ מֵעִמָּנוּ</span><span class="reveal-line">מַשֶּׁהוּ מֵת בָּנוּ</span><span class="reveal-line">וּמַשֶּׁהוּ נִשְׁאָר אִתּוֹ.</span></p>
+        <h1 class="main-title"><span class="reveal-line">רקמה</span><span class="reveal-line">אנושית</span><span class="reveal-line">אחת</span></h1>
       </div>
       <span class="rule" aria-hidden="true"></span>
-      <p class="dedication full-list-dedication">נזכור בכבוד ובאהבה את כל הנופלות והנופלים,<br>ונישא את זכרם בליבנו כחלק בלתי נפרד מהסיפור שלנו<br>ומהתקווה לעתיד של שלום וביטחון לכולנו.</p>
+      <p class="dedication full-list-dedication"><span class="reveal-line">נזכור בכבוד ובאהבה את כל הנופלות והנופלים,</span><span class="reveal-line">ונישא את זכרם בליבנו כחלק בלתי נפרד מהסיפור שלנו</span><span class="reveal-line">ומהתקווה לעתיד של שלום וביטחון לכולנו.</span></p>
+      <nav class="hero-index" aria-label="ניווט ברשימת ההנצחה">
+        <a href="#desktopAllGrid">לכל הנופלות והנופלים</a>
+        <a href="#previousYearsDivider">לנופלות ולנופלים משנים קודמות</a>
+      </nav>
     </header>
   </section>
 
   <div class="toolbar" role="search" aria-label="חיפוש ברשימת ההנצחה">
     <label class="search-control" for="searchInput">
       <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="m20.7 19.3-4.2-4.2a7 7 0 1 0-1.4 1.4l4.2 4.2a1 1 0 0 0 1.4-1.4ZM5 11a6 6 0 1 1 12 0 6 6 0 0 1-12 0Z"/></svg>
-      <input id="searchInput" type="search" placeholder="חיפוש לפי שם או יישוב" aria-label="חיפוש לפי שם או יישוב" autocomplete="off">
+      <input id="searchInput" type="search" placeholder="חיפוש לפי שם או יישוב" aria-label="חיפוש לפי שם או יישוב" autocomplete="off" enterkeyhint="search">
     </label>
     <span id="statusText" class="tool-meta"></span>
   </div>
@@ -52,13 +56,13 @@
 <div class="lightbox" id="lightbox" aria-hidden="true" inert>
   <div class="lightbox-backdrop" data-close="1"></div>
   <article class="lightbox-card" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle">
-    <button class="lightbox-close" type="button" id="lightboxClose" data-close="1" aria-label="סגירה" title="סגירה" onpointerdown="event.preventDefault(); event.stopPropagation();">×</button>
+    <button class="lightbox-close" type="button" id="lightboxClose" data-close="1" aria-label="סגירה" title="סגירה">×</button>
     <div class="lightbox-top">
-      <div>
+      <figure class="lightbox-media">
         <div class="lightbox-img" id="lightboxImg"></div>
-        <div class="lightbox-gallery" id="lightboxGallery" hidden></div>
-      </div>
-      <div>
+        <div class="lightbox-gallery" id="lightboxGallery" hidden aria-hidden="true"></div>
+      </figure>
+      <div class="lightbox-details">
         <h2 class="lightbox-title" id="lightboxTitle"></h2>
         <div class="lightbox-place" id="lightboxPlace"></div>
         <div class="lightbox-actions"><button class="person-link-button" type="button" id="copyPersonLink" aria-label="העתקת קישור ישיר לאדם זה">העתקת קישור אישי</button></div>
@@ -69,8 +73,8 @@
 </div>
 
 
-<script src="assets/js/people-data.js?v=106" defer></script>
-<script src="assets/js/app.js?v=106" defer></script>
+<script src="assets/js/people-data.js?v=112" defer></script>
+<script src="assets/js/app.js?v=112" defer></script>
 
 </body>
 </html>
