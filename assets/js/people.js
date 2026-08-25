@@ -30,7 +30,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 42%"
     },
     "isPreviousYears": false,
-    "page": "people/ofir_l/"
+    "page": "people/ofir_l/",
+    "gender": "male"
   },
   {
     "id": "omer_z",
@@ -54,7 +55,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 39%"
     },
     "isPreviousYears": false,
-    "page": "people/omer_z/"
+    "page": "people/omer_z/",
+    "gender": "male"
   },
   {
     "id": "ilan_f",
@@ -78,7 +80,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 85%"
     },
     "isPreviousYears": false,
-    "page": "people/ilan_f/"
+    "page": "people/ilan_f/",
+    "gender": "male"
   },
   {
     "id": "shachar_a",
@@ -102,7 +105,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 12%"
     },
     "isPreviousYears": false,
-    "page": "people/shachar_a/"
+    "page": "people/shachar_a/",
+    "gender": "male"
   },
   {
     "id": "nitzan_l",
@@ -126,7 +130,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 22%"
     },
     "isPreviousYears": false,
-    "page": "people/nitzan_l/"
+    "page": "people/nitzan_l/",
+    "gender": "male"
   },
   {
     "id": "yehonatan_h",
@@ -150,7 +155,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 37%"
     },
     "isPreviousYears": false,
-    "page": "people/yehonatan_h/"
+    "page": "people/yehonatan_h/",
+    "gender": "male"
   },
   {
     "id": "aviv_k",
@@ -174,7 +180,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 12%"
     },
     "isPreviousYears": false,
-    "page": "people/aviv_k/"
+    "page": "people/aviv_k/",
+    "gender": "male"
   },
   {
     "id": "livnat_k",
@@ -198,7 +205,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 12%"
     },
     "isPreviousYears": false,
-    "page": "people/livnat_k/"
+    "page": "people/livnat_k/",
+    "gender": "female"
   },
   {
     "id": "rotem_k",
@@ -231,7 +239,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 35%"
     },
     "isPreviousYears": false,
-    "page": "people/rotem_k/"
+    "page": "people/rotem_k/",
+    "gender": "female"
   },
   {
     "id": "yonatan_k",
@@ -255,7 +264,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 50%"
     },
     "isPreviousYears": false,
-    "page": "people/yonatan_k/"
+    "page": "people/yonatan_k/",
+    "gender": "male"
   },
   {
     "id": "yiftach_k",
@@ -279,7 +289,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 81%"
     },
     "isPreviousYears": false,
-    "page": "people/yiftach_k/"
+    "page": "people/yiftach_k/",
+    "gender": "male"
   },
   {
     "id": "joshua_m",
@@ -299,7 +310,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 17%"
     },
     "isPreviousYears": false,
-    "page": "people/joshua_m/"
+    "page": "people/joshua_m/",
+    "gender": "male"
   },
   {
     "id": "tal_a",
@@ -323,7 +335,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 43%"
     },
     "isPreviousYears": false,
-    "page": "people/tal_a/"
+    "page": "people/tal_a/",
+    "gender": "male"
   },
   {
     "id": "nadav_a",
@@ -356,7 +369,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 24%"
     },
     "isPreviousYears": false,
-    "page": "people/nadav_a/"
+    "page": "people/nadav_a/",
+    "gender": "male"
   },
   {
     "id": "ori_r",
@@ -389,7 +403,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 12%"
     },
     "isPreviousYears": false,
-    "page": "people/ori_r/"
+    "page": "people/ori_r/",
+    "gender": "male"
   },
   {
     "id": "ran_p",
@@ -413,7 +428,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 12%"
     },
     "isPreviousYears": false,
-    "page": "people/ran_p/"
+    "page": "people/ran_p/",
+    "gender": "male"
   },
   {
     "id": "aviv_b",
@@ -446,7 +462,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 16%"
     },
     "isPreviousYears": false,
-    "page": "people/aviv_b/"
+    "page": "people/aviv_b/",
+    "gender": "male"
   },
   {
     "id": "amir_n",
@@ -470,7 +487,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "20% 42%"
     },
     "isPreviousYears": false,
-    "page": "people/amir_n/"
+    "page": "people/amir_n/",
+    "gender": "male"
   },
   {
     "id": "yaniv_z",
@@ -494,7 +512,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 73%"
     },
     "isPreviousYears": false,
-    "page": "people/yaniv_z/"
+    "page": "people/yaniv_z/",
+    "gender": "male"
   },
   {
     "id": "yasmin_z",
@@ -518,7 +537,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 29%"
     },
     "isPreviousYears": false,
-    "page": "people/yasmin_z/"
+    "page": "people/yasmin_z/",
+    "gender": "female"
   },
   {
     "id": "keshet_z",
@@ -542,7 +562,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "43% 42%"
     },
     "isPreviousYears": false,
-    "page": "people/keshet_z/"
+    "page": "people/keshet_z/",
+    "gender": "female"
   },
   {
     "id": "techelet_z",
@@ -566,7 +587,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 42%"
     },
     "isPreviousYears": false,
-    "page": "people/techelet_z/"
+    "page": "people/techelet_z/",
+    "gender": "female"
   },
   {
     "id": "arad_p",
@@ -586,7 +608,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 35%"
     },
     "isPreviousYears": false,
-    "page": "people/arad_p/"
+    "page": "people/arad_p/",
+    "gender": "male"
   },
   {
     "id": "ziv_h",
@@ -610,7 +633,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 18%"
     },
     "isPreviousYears": false,
-    "page": "people/ziv_h/"
+    "page": "people/ziv_h/",
+    "gender": "male"
   },
   {
     "id": "nadav_g",
@@ -634,7 +658,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 35%"
     },
     "isPreviousYears": false,
-    "page": "people/nadav_g/"
+    "page": "people/nadav_g/",
+    "gender": "male"
   },
   {
     "id": "yam_g",
@@ -667,7 +692,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 18%"
     },
     "isPreviousYears": false,
-    "page": "people/yam_g/"
+    "page": "people/yam_g/",
+    "gender": "female"
   },
   {
     "id": "neta_e",
@@ -691,7 +717,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 22%"
     },
     "isPreviousYears": false,
-    "page": "people/neta_e/"
+    "page": "people/neta_e/",
+    "gender": "male"
   },
   {
     "id": "bilha_e",
@@ -715,7 +742,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 12%"
     },
     "isPreviousYears": false,
-    "page": "people/bilha_e/"
+    "page": "people/bilha_e/",
+    "gender": "female"
   },
   {
     "id": "michal_a",
@@ -739,7 +767,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 12%"
     },
     "isPreviousYears": false,
-    "page": "people/michal_a/"
+    "page": "people/michal_a/",
+    "gender": "female"
   },
   {
     "id": "guy_a",
@@ -763,7 +792,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 42%"
     },
     "isPreviousYears": false,
-    "page": "people/guy_a/"
+    "page": "people/guy_a/",
+    "gender": "male"
   },
   {
     "id": "ram_i",
@@ -787,7 +817,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 42%"
     },
     "isPreviousYears": false,
-    "page": "people/ram_i/"
+    "page": "people/ram_i/",
+    "gender": "male"
   },
   {
     "id": "lili_i",
@@ -811,7 +842,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 12%"
     },
     "isPreviousYears": false,
-    "page": "people/lili_i/"
+    "page": "people/lili_i/",
+    "gender": "female"
   },
   {
     "id": "itay_b",
@@ -835,7 +867,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 80%"
     },
     "isPreviousYears": false,
-    "page": "people/itay_b/"
+    "page": "people/itay_b/",
+    "gender": "male"
   },
   {
     "id": "hadar_b",
@@ -859,7 +892,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 42%"
     },
     "isPreviousYears": false,
-    "page": "people/hadar_b/"
+    "page": "people/hadar_b/",
+    "gender": "female"
   },
   {
     "id": "tova_g",
@@ -883,7 +917,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 28%"
     },
     "isPreviousYears": false,
-    "page": "people/tova_g/"
+    "page": "people/tova_g/",
+    "gender": "female"
   },
   {
     "id": "aran_g",
@@ -907,7 +942,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 40%"
     },
     "isPreviousYears": false,
-    "page": "people/aran_g/"
+    "page": "people/aran_g/",
+    "gender": "female"
   },
   {
     "id": "dorit_w",
@@ -931,7 +967,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 33%"
     },
     "isPreviousYears": false,
-    "page": "people/dorit_w/"
+    "page": "people/dorit_w/",
+    "gender": "female"
   },
   {
     "id": "aviv_w",
@@ -955,7 +992,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 12%"
     },
     "isPreviousYears": false,
-    "page": "people/aviv_w/"
+    "page": "people/aviv_w/",
+    "gender": "male"
   },
   {
     "id": "gila_p",
@@ -979,7 +1017,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 48%"
     },
     "isPreviousYears": false,
-    "page": "people/gila_p/"
+    "page": "people/gila_p/",
+    "gender": "female"
   },
   {
     "id": "yizhar_p",
@@ -1003,7 +1042,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 42%"
     },
     "isPreviousYears": false,
-    "page": "people/yizhar_p/"
+    "page": "people/yizhar_p/",
+    "gender": "male"
   },
   {
     "id": "daniel_p",
@@ -1027,7 +1067,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 32%"
     },
     "isPreviousYears": false,
-    "page": "people/daniel_p/"
+    "page": "people/daniel_p/",
+    "gender": "male"
   },
   {
     "id": "yigal_p",
@@ -1051,7 +1092,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 24%"
     },
     "isPreviousYears": false,
-    "page": "people/yigal_p/"
+    "page": "people/yigal_p/",
+    "gender": "male"
   },
   {
     "id": "tamar_p",
@@ -1075,7 +1117,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 88%"
     },
     "isPreviousYears": false,
-    "page": "people/tamar_p/"
+    "page": "people/tamar_p/",
+    "gender": "female"
   },
   {
     "id": "david_s",
@@ -1099,7 +1142,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 25%"
     },
     "isPreviousYears": false,
-    "page": "people/david_s/"
+    "page": "people/david_s/",
+    "gender": "male"
   },
   {
     "id": "orly_s",
@@ -1123,7 +1167,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 88%"
     },
     "isPreviousYears": false,
-    "page": "people/orly_s/"
+    "page": "people/orly_s/",
+    "gender": "female"
   },
   {
     "id": "dikla_a",
@@ -1147,7 +1192,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 42%"
     },
     "isPreviousYears": false,
-    "page": "people/dikla_a/"
+    "page": "people/dikla_a/",
+    "gender": "female"
   },
   {
     "id": "noam_e",
@@ -1171,7 +1217,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 88%"
     },
     "isPreviousYears": false,
-    "page": "people/noam_e/"
+    "page": "people/noam_e/",
+    "gender": "male"
   },
   {
     "id": "tomer_a",
@@ -1195,7 +1242,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 27%"
     },
     "isPreviousYears": false,
-    "page": "people/tomer_a/"
+    "page": "people/tomer_a/",
+    "gender": "male"
   },
   {
     "id": "tzachi_i",
@@ -1219,7 +1267,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 40%"
     },
     "isPreviousYears": false,
-    "page": "people/tzachi_i/"
+    "page": "people/tzachi_i/",
+    "gender": "male"
   },
   {
     "id": "maayan_i",
@@ -1243,7 +1292,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 28%"
     },
     "isPreviousYears": false,
-    "page": "people/maayan_i/"
+    "page": "people/maayan_i/",
+    "gender": "female"
   },
   {
     "id": "roee_i",
@@ -1267,7 +1317,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 42%"
     },
     "isPreviousYears": false,
-    "page": "people/roee_i/"
+    "page": "people/roee_i/",
+    "gender": "male"
   },
   {
     "id": "smadar_i",
@@ -1291,7 +1342,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 31%"
     },
     "isPreviousYears": false,
-    "page": "people/smadar_i/"
+    "page": "people/smadar_i/",
+    "gender": "female"
   },
   {
     "id": "niv_r",
@@ -1315,7 +1367,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 50%"
     },
     "isPreviousYears": false,
-    "page": "people/niv_r/"
+    "page": "people/niv_r/",
+    "gender": "female"
   },
   {
     "id": "niral_z",
@@ -1339,7 +1392,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 61%"
     },
     "isPreviousYears": false,
-    "page": "people/niral_z/"
+    "page": "people/niral_z/",
+    "gender": "male"
   },
   {
     "id": "sivan_e",
@@ -1363,7 +1417,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 12%"
     },
     "isPreviousYears": false,
-    "page": "people/sivan_e/"
+    "page": "people/sivan_e/",
+    "gender": "female"
   },
   {
     "id": "naor_h",
@@ -1387,7 +1442,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 47%"
     },
     "isPreviousYears": false,
-    "page": "people/naor_h/"
+    "page": "people/naor_h/",
+    "gender": "male"
   },
   {
     "id": "elitzur_h",
@@ -1411,7 +1467,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 42%"
     },
     "isPreviousYears": false,
-    "page": "people/elitzur_h/"
+    "page": "people/elitzur_h/",
+    "gender": "male"
   },
   {
     "id": "yizhar_h",
@@ -1435,7 +1492,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 52%"
     },
     "isPreviousYears": false,
-    "page": "people/yizhar_h/"
+    "page": "people/yizhar_h/",
+    "gender": "male"
   },
   {
     "id": "eitan_z",
@@ -1459,7 +1517,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 28%"
     },
     "isPreviousYears": false,
-    "page": "people/eitan_z/"
+    "page": "people/eitan_z/",
+    "gender": "male"
   },
   {
     "id": "tami_p",
@@ -1483,7 +1542,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 50%"
     },
     "isPreviousYears": false,
-    "page": "people/tami_p/"
+    "page": "people/tami_p/",
+    "gender": "female"
   },
   {
     "id": "yuval_b",
@@ -1507,7 +1567,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 23%"
     },
     "isPreviousYears": false,
-    "page": "people/yuval_b/"
+    "page": "people/yuval_b/",
+    "gender": "male"
   },
   {
     "id": "alon_s",
@@ -1531,7 +1592,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 55%"
     },
     "isPreviousYears": false,
-    "page": "people/alon_s/"
+    "page": "people/alon_s/",
+    "gender": "male"
   },
   {
     "id": "ofir_s",
@@ -1555,7 +1617,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 42%"
     },
     "isPreviousYears": false,
-    "page": "people/ofir_s/"
+    "page": "people/ofir_s/",
+    "gender": "female"
   },
   {
     "id": "ziv_s",
@@ -1579,7 +1642,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 50%"
     },
     "isPreviousYears": false,
-    "page": "people/ziv_s/"
+    "page": "people/ziv_s/",
+    "gender": "male"
   },
   {
     "id": "yotam_h",
@@ -1603,7 +1667,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 50%"
     },
     "isPreviousYears": false,
-    "page": "people/yotam_h/"
+    "page": "people/yotam_h/",
+    "gender": "male"
   },
   {
     "id": "yuval_s",
@@ -1627,7 +1692,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 44%"
     },
     "isPreviousYears": false,
-    "page": "people/yuval_s/"
+    "page": "people/yuval_s/",
+    "gender": "male"
   },
   {
     "id": "aviad_a",
@@ -1651,7 +1717,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 36%"
     },
     "isPreviousYears": false,
-    "page": "people/aviad_a/"
+    "page": "people/aviad_a/",
+    "gender": "male"
   },
   {
     "id": "salem_p",
@@ -1675,7 +1742,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 12%"
     },
     "isPreviousYears": false,
-    "page": "people/salem_p/"
+    "page": "people/salem_p/",
+    "gender": "male"
   },
   {
     "id": "shachaf_b",
@@ -1699,7 +1767,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 62%"
     },
     "isPreviousYears": false,
-    "page": "people/shachaf_b/"
+    "page": "people/shachaf_b/",
+    "gender": "male"
   },
   {
     "id": "evgeny_g",
@@ -1723,7 +1792,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 66%"
     },
     "isPreviousYears": false,
-    "page": "people/evgeny_g/"
+    "page": "people/evgeny_g/",
+    "gender": "male"
   },
   {
     "id": "yahav_w",
@@ -1747,7 +1817,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 64%"
     },
     "isPreviousYears": false,
-    "page": "people/yahav_w/"
+    "page": "people/yahav_w/",
+    "gender": "male"
   },
   {
     "id": "avi_h",
@@ -1780,7 +1851,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 34%"
     },
     "isPreviousYears": false,
-    "page": "people/avi_h/"
+    "page": "people/avi_h/",
+    "gender": "male"
   },
   {
     "id": "maya_b",
@@ -1804,7 +1876,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 28%"
     },
     "isPreviousYears": false,
-    "page": "people/maya_b/"
+    "page": "people/maya_b/",
+    "gender": "female"
   },
   {
     "id": "omer_h",
@@ -1828,7 +1901,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 12%"
     },
     "isPreviousYears": false,
-    "page": "people/omer_h/"
+    "page": "people/omer_h/",
+    "gender": "male"
   },
   {
     "id": "shlomi_d",
@@ -1852,7 +1926,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 66%"
     },
     "isPreviousYears": false,
-    "page": "people/shlomi_d/"
+    "page": "people/shlomi_d/",
+    "gender": "male"
   },
   {
     "id": "mira_s",
@@ -1876,7 +1951,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 12%"
     },
     "isPreviousYears": false,
-    "page": "people/mira_s/"
+    "page": "people/mira_s/",
+    "gender": "female"
   },
   {
     "id": "modi_a",
@@ -1900,7 +1976,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 58%"
     },
     "isPreviousYears": false,
-    "page": "people/modi_a/"
+    "page": "people/modi_a/",
+    "gender": "male"
   },
   {
     "id": "eliyahu_o",
@@ -1924,7 +2001,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 36%"
     },
     "isPreviousYears": false,
-    "page": "people/eliyahu_o/"
+    "page": "people/eliyahu_o/",
+    "gender": "male"
   },
   {
     "id": "david_k",
@@ -1948,7 +2026,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 42%"
     },
     "isPreviousYears": false,
-    "page": "people/david_k/"
+    "page": "people/david_k/",
+    "gender": "male"
   },
   {
     "id": "eliko_r",
@@ -1972,7 +2051,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 30%"
     },
     "isPreviousYears": false,
-    "page": "people/eliko_r/"
+    "page": "people/eliko_r/",
+    "gender": "male"
   },
   {
     "id": "shoshi_b",
@@ -1996,7 +2076,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 15%"
     },
     "isPreviousYears": false,
-    "page": "people/shoshi_b/"
+    "page": "people/shoshi_b/",
+    "gender": "female"
   },
   {
     "id": "naomi_d",
@@ -2020,7 +2101,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 33%"
     },
     "isPreviousYears": false,
-    "page": "people/naomi_d/"
+    "page": "people/naomi_d/",
+    "gender": "female"
   },
   {
     "id": "shlomo_r",
@@ -2044,7 +2126,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 34%"
     },
     "isPreviousYears": false,
-    "page": "people/shlomo_r/"
+    "page": "people/shlomo_r/",
+    "gender": "male"
   },
   {
     "id": "nira_r",
@@ -2068,7 +2151,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 42%"
     },
     "isPreviousYears": false,
-    "page": "people/nira_r/"
+    "page": "people/nira_r/",
+    "gender": "female"
   },
   {
     "id": "chaim_l",
@@ -2092,7 +2176,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 50%"
     },
     "isPreviousYears": false,
-    "page": "people/chaim_l/"
+    "page": "people/chaim_l/",
+    "gender": "male"
   },
   {
     "id": "angeline_a",
@@ -2113,7 +2198,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 42%"
     },
     "isPreviousYears": false,
-    "page": "people/angeline_a/"
+    "page": "people/angeline_a/",
+    "gender": "female"
   },
   {
     "id": "seta_h",
@@ -2131,7 +2217,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 50%"
     },
     "isPreviousYears": false,
-    "page": "people/seta_h/"
+    "page": "people/seta_h/",
+    "gender": "male"
   },
   {
     "id": "daniel_t",
@@ -2154,7 +2241,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 50%"
     },
     "isPreviousYears": true,
-    "page": "people/daniel_t/"
+    "page": "people/daniel_t/",
+    "gender": "male"
   },
   {
     "id": "zeev_s",
@@ -2178,7 +2266,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 50%"
     },
     "isPreviousYears": true,
-    "page": "people/zeev_s/"
+    "page": "people/zeev_s/",
+    "gender": "male"
   },
   {
     "id": "jimmy_k",
@@ -2202,7 +2291,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 50%"
     },
     "isPreviousYears": true,
-    "page": "people/jimmy_k/"
+    "page": "people/jimmy_k/",
+    "gender": "male"
   },
   {
     "id": "oded_s",
@@ -2226,7 +2316,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 50%"
     },
     "isPreviousYears": true,
-    "page": "people/oded_s/"
+    "page": "people/oded_s/",
+    "gender": "male"
   },
   {
     "id": "eliyahu_m",
@@ -2250,7 +2341,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 50%"
     },
     "isPreviousYears": true,
-    "page": "people/eliyahu_m/"
+    "page": "people/eliyahu_m/",
+    "gender": "male"
   },
   {
     "id": "dana_g",
@@ -2274,7 +2366,8 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 50%"
     },
     "isPreviousYears": true,
-    "page": "people/dana_g/"
+    "page": "people/dana_g/",
+    "gender": "female"
   },
   {
     "id": "yaron_c",
@@ -2304,7 +2397,8 @@ window.MEMORIAL_PEOPLE = [
     },
     "portrait": {},
     "isPreviousYears": true,
-    "page": "people/yaron_c/"
+    "page": "people/yaron_c/",
+    "gender": "male"
   },
   {
     "id": "ezra_e",
@@ -2333,7 +2427,8 @@ window.MEMORIAL_PEOPLE = [
     },
     "portrait": {},
     "isPreviousYears": true,
-    "page": "people/ezra_e/"
+    "page": "people/ezra_e/",
+    "gender": "male"
   },
   {
     "id": "michael_d",
@@ -2366,6 +2461,7 @@ window.MEMORIAL_PEOPLE = [
       "position": "50% 30%"
     },
     "isPreviousYears": true,
-    "page": "people/michael_d/"
+    "page": "people/michael_d/",
+    "gender": "male"
   }
 ];
