@@ -25,6 +25,7 @@ function openPreview(p,hash=true){
   boxTitle.textContent=p.name||'';
   boxPlace.textContent=p.place||'';
   boxRole.textContent=p.role||'';
+  boxRole.hidden=!String(p.role||'').trim();
   boxSummary.textContent=p.summary||'';
   boxService.innerHTML=service(p);
   boxFacts.innerHTML=(p.generalDetails||[]).map(x=>`<li>${e(x)}</li>`).join('');

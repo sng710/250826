@@ -1,10 +1,24 @@
-SNG-710 PATCH 07 - חזרה לעיצוב המצורף
+SNG-710 PATCH 10 - service details deduplication
 
-- מחזיר את השפה החזותית של העיצוב המצורף: רקע עלה כחול, כחול עמוק, קווי טורקיז דקים, טקסט לבן ופריימים עגולים.
-- מחזיר את פתיח "רקמה אנושית אחת" לקומפוזיציה של הכותרת לצד מילות השיר.
-- מחיל את אותה שפה גם על רשימת ההנצחה, הפופאפ והדפים האישיים.
-- כל פונקציונליות Patch 06 נשמרת.
-- ההפניה של ניצן ליבשטיין ל-assets/img/nitzan_l.jpg נשמרת.
-- אין שינוי בנתוני האנשים או בסיפורי החיים.
+Apply after Patch 09.
 
-התקנה: העתיקו את תוכן הפאץ' מעל הגרסה הנוכחית ואשרו החלפה. אין צורך למחוק קבצים.
+Fix:
+People with an official serviceRecord no longer repeat the rank and military
+unit in the role line.
+
+Format:
+rank • unit
+complementary civilian/community role only
+
+Examples:
+אופיר ליבשטיין
+רב סמל ראשון • חיל מערך הגנת הגבולות
+ראש המועצה האזורית שער הנגב וחבר כיתת הכוננות של כפר עזה
+
+אורי רוסו
+רב סרן • חיל מערך הגנת הגבולות
+מהנדס, לוחם אש וחבר כיתת הכוננות של כפר עזה
+
+If no complementary role exists, the extra role row is removed/hidden.
+
+No biographies, personal facts, images or CSS design are changed.
