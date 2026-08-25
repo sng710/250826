@@ -1,0 +1,39 @@
+SNG-710 PATCH 15 - FULL CONSISTENCY AUDIT
+
+People checked: 96
+Unique IDs: 96
+Individual pages rebuilt from ONE template: 96
+
+TEXT
+- Existing biography prose was not rewritten.
+- Existing paragraph order was preserved.
+- Exact duplicate story paragraphs removed: 0
+- Exact duplicate personal facts removed: 0
+- Total biography paragraphs retained: 1938
+- Every person now has one "סיפור חיים" section only.
+- No person has mixed internal title formats anymore.
+
+IMAGES
+- Current face galleries visually reviewed.
+- Gallery images retained after duplicate-image cleanup: 59
+- Near-duplicate gallery images removed: 2
+- All gallery references resolve to real files.
+- Main portrait frames use one consistent circular crop system.
+- Gallery frames use one consistent 4:3 crop system.
+- Restored ירון כהן portrait from the previously uploaded image.
+- ניצן ליבשטיין continues to point to assets/img/nitzan_l.jpg already on the server.
+- Non-face placeholder/emblem images are no longer displayed as portraits for:
+  seta_h, daniel_t, zeev_s, jimmy_k, oded_s, eliyahu_m, dana_g
+  Those records use the neutral name placeholder until a real face photo is supplied.
+- Better existing face portraits selected for:
+  ram_i, keshet_z, yasmin_z
+
+MEDIA
+- עומר צדיקביץ׳ now uses the supplied YouTube embed:
+  https://www.youtube.com/embed/DOzJfE6xz8I?si=7W08GD6AJw_V1usV
+- The old local assets/media/omer_z.mp4 is obsolete and listed in DELETE.txt.
+- Both previously uploaded QR/barcode images were restored to זיו פפה שפירא's page.
+
+INSTALLATION
+1. Copy this patch over the current site and overwrite matching files.
+2. Delete the paths listed in DELETE.txt.
