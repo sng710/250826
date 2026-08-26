@@ -1,0 +1,8 @@
+PATCH 56 QA
+
+PASS - Full Patch 54 + Patch 55 site validator passes: 154 records / 154 loaders.
+PASS - מיכאל דמבסקי has exactly one rendered topMedia reference to YouTube qmhKavJyBo8.
+PASS - איתי ברדיצ׳סקי has exactly one rendered topMedia reference to YouTube _eaD-dKJwzE.
+PASS - שחר אביאני already has exactly one rendered topMedia reference to YouTube BHAu9BFJ66w; no duplicate added.
+PASS - assets/js/people.js passes node --check.
+PASS - No personal page loaders or template/design files changed.

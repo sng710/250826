@@ -3548,7 +3548,25 @@ window.MEMORIAL_PEOPLE = [
       "legacyHeading": "זיכרון, מורשת והנצחה"
     },
     "footerText": "יהי זכרו ברוך",
-    "portraitAlt": "ברדיצ'סקי איתי ז\"ל"
+    "portraitAlt": "ברדיצ'סקי איתי ז\"ל",
+    "featuredMedia": {
+      "type": "youtube",
+      "src": "https://www.youtube.com/embed/_eaD-dKJwzE?si=Da4LqdbtNBEBiliz",
+      "title": "סרטון לזכר איתי ברדיצ׳סקי",
+      "placement": "top"
+    },
+    "topMedia": [
+      {
+        "heading": "סרטון לזכרו",
+        "videos": [
+          {
+            "src": "https://www.youtube.com/embed/_eaD-dKJwzE?si=Da4LqdbtNBEBiliz",
+            "title": "סרטון לזכר איתי ברדיצ׳סקי"
+          }
+        ],
+        "links": []
+      }
+    ]
   },
   {
     "id": "hadar_b",
@@ -8791,7 +8809,25 @@ window.MEMORIAL_PEOPLE = [
       ]
     },
     "footerText": "יהי זכרו ברוך",
-    "portraitAlt": "מיכאל דמבסקי"
+    "portraitAlt": "מיכאל דמבסקי",
+    "featuredMedia": {
+      "type": "youtube",
+      "src": "https://www.youtube.com/embed/qmhKavJyBo8?si=MFiFiuLcpq2ssCDw",
+      "title": "סרטון לזכר מיכאל דמבסקי",
+      "placement": "top"
+    },
+    "topMedia": [
+      {
+        "heading": "סרטון לזכרו",
+        "videos": [
+          {
+            "src": "https://www.youtube.com/embed/qmhKavJyBo8?si=MFiFiuLcpq2ssCDw",
+            "title": "סרטון לזכר מיכאל דמבסקי"
+          }
+        ],
+        "links": []
+      }
+    ]
   },
   {
     "id": "uri_rosen",
