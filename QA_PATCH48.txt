@@ -1,0 +1,20 @@
+PATCH 48 QA
+
+PASS - Homepage points to assets/css/site.css?v=248.
+PASS - All person pages point to ../../assets/css/site.css?v=248.
+PASS - All person pages include ../../assets/js/person-template.js?v=248.
+PASS - All person pages include ../../assets/js/gallery-viewer.js?v=234.
+PASS - Homepage search field includes an aria-describedby live-status target.
+PASS - Updated app.js adds live result count text and dialog semantics.
+PASS - Updated gallery-viewer.js adds stronger keyboard/focus behavior.
+PASS - New person-template.js present.
+PASS - Updated site.css braces balanced.
+PASS - Updated JS files pass node --check.
+PASS - assets/favicon-sng.svg exists in /assets.
+PASS - assets/favicon-sng.png exists in /assets.
+PASS - Patch ZIP integrity checked with unzip -t.
+
+Important note:
+- The new person-page section grouping is presentation-layer logic driven by shared heuristics.
+- It preserves the original text but groups paragraphs under clearer headings for readability and consistency.
+- For records from years prior to 2023, the middle section label becomes a general day-of-death/circumstances heading for factual accuracy.

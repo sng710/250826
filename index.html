@@ -9,7 +9,7 @@
 <meta content="#304a7d" name="theme-color"/>
 <link href="assets/favicon-sng.svg" rel="icon" type="image/svg+xml"/>
 <link href="assets/favicon-sng.png" rel="icon" sizes="256x256" type="image/png"/>
-<link href="assets/css/site.css?v=244" rel="stylesheet"/>
+<link href="assets/css/site.css?v=248" rel="stylesheet"/>
 </head>
 <body class="home-page">
 <a class="skip-link" href="#memorialGrid">דילוג לרשימת ההנצחה</a>
@@ -34,15 +34,16 @@
 </nav>
 </div>
 </header>
-<main>
+<main id="mainContent">
 <section aria-label="רשימת ההנצחה" class="index-section">
 <div class="toolbar" role="search">
 <label class="search-control" for="searchInput">
 <svg aria-hidden="true" viewbox="0 0 24 24"><path d="m20.7 19.3-4.2-4.2a7 7 0 1 0-1.4 1.4l4.2 4.2a1 1 0 0 0 1.4-1.4ZM5 11a6 6 0 1 1 12 0 6 6 0 0 1-12 0Z"></path></svg>
-<input aria-label="חיפוש לפי שם או יישוב" autocomplete="off" enterkeyhint="search" id="searchInput" placeholder="חיפוש לפי שם או יישוב" type="search"/>
+<input aria-label="חיפוש לפי שם או יישוב" autocomplete="off" enterkeyhint="search" id="searchInput" aria-describedby="statusText" placeholder="חיפוש לפי שם או יישוב" type="search"/>
 </label>
 </div>
-<div class="empty-search" hidden="" id="emptySearch">לא נמצאו תוצאות לחיפוש הזה.</div>
+<p aria-live="polite" class="visually-hidden" id="statusText"></p>
+<div aria-live="polite" class="empty-search" hidden="" id="emptySearch">לא נמצאו תוצאות לחיפוש הזה.</div>
 <div class="memorial-grid" id="memorialGrid"></div>
 </section>
 </main>
@@ -67,6 +68,6 @@
 </article>
 </div>
 <script defer="" src="assets/js/people.js?v=243"></script>
-<script defer="" src="assets/js/app.js?v=236"></script>
+<script defer="" src="assets/js/app.js?v=237"></script>
 </body>
 </html>

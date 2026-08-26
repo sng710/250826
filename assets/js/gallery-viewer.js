@@ -9,7 +9,6 @@
   const mainImg = document.querySelector('.person-portrait img');
   const mainSrc = mainImg ? normalize(mainImg.currentSrc || mainImg.src) : '';
 
-  // Defensive duplicate cleanup: the main portrait must never appear again in the gallery.
   document.querySelectorAll('.face-gallery figure').forEach((figure) => {
     const img = figure.querySelector('img');
     if (img && mainSrc && normalize(img.currentSrc || img.src) === mainSrc) figure.remove();
@@ -28,6 +27,8 @@
   const overlay = document.createElement('div');
   overlay.className = 'image-viewer';
   overlay.hidden = true;
+  overlay.setAttribute('aria-hidden', 'true');
+  overlay.inert = true;
   overlay.innerHTML = `
     <div class="image-viewer-backdrop" data-close="true"></div>
     <div class="image-viewer-dialog" role="dialog" aria-modal="true" aria-label="תצוגת תמונה מלאה">
@@ -50,8 +51,10 @@
   let lastFocus = null;
 
   const refresh = () => {
-    images = [...document.querySelectorAll('.person-portrait img, .face-gallery img')];
+    images = [...document.querySelectorAll('.person-portrait img, .face-gallery img')].filter((img) => img.closest('figure, .person-portrait'));
   };
+
+  const focusables = () => [...overlay.querySelectorAll('button:not([hidden])')].filter((el) => !el.disabled);
 
   const show = (idx) => {
     refresh();
@@ -74,17 +77,23 @@
     lastFocus = document.activeElement;
     show(idx);
     overlay.hidden = false;
+    overlay.inert = false;
+    overlay.setAttribute('aria-hidden', 'false');
     document.documentElement.classList.add('image-viewer-open');
+    document.body.style.overflow = 'hidden';
     requestAnimationFrame(() => overlay.classList.add('is-open'));
-    closeBtn.focus({preventScroll:true});
+    closeBtn.focus({ preventScroll: true });
   };
 
   const close = () => {
     if (overlay.hidden) return;
     overlay.classList.remove('is-open');
+    overlay.setAttribute('aria-hidden', 'true');
+    overlay.inert = true;
     document.documentElement.classList.remove('image-viewer-open');
+    document.body.style.overflow = '';
     window.setTimeout(() => { overlay.hidden = true; }, 160);
-    if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus({preventScroll:true});
+    if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus({ preventScroll: true });
   };
 
   const makeClickable = (img) => {
@@ -113,8 +122,24 @@
 
   document.addEventListener('keydown', (event) => {
     if (overlay.hidden) return;
-    if (event.key === 'Escape') close();
+    if (event.key === 'Escape') {
+      close();
+      return;
+    }
     if (event.key === 'ArrowLeft') show(current + 1);
     if (event.key === 'ArrowRight') show(current - 1);
+    if (event.key === 'Tab') {
+      const items = focusables();
+      if (!items.length) return;
+      const first = items[0];
+      const last = items.at(-1);
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
   });
 })();
