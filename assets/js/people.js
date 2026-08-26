@@ -4416,7 +4416,7 @@ window.MEMORIAL_PEOPLE = [
     "place": "",
     "image": "",
     "age": "",
-    "role": "נפגע/ת פעולות איבה",
+    "role": "",
     "summary": "דף הנצחה לזכר טרגרמן דניאל ז\"ל במסגרת ״רקמה אנושית אחת״.",
     "firstNameHebrew": "דניאל",
     "generalDetails": [
@@ -4457,7 +4457,7 @@ window.MEMORIAL_PEOPLE = [
     "place": "",
     "image": "",
     "age": "",
-    "role": "נפגע/ת פעולות איבה",
+    "role": "",
     "summary": "דף הנצחה לזכר שגיא שינברג זאב ז\"ל במסגרת ״רקמה אנושית אחת״.",
     "firstNameHebrew": "זאב",
     "generalDetails": [
@@ -4497,7 +4497,7 @@ window.MEMORIAL_PEOPLE = [
     "place": "",
     "image": "",
     "age": "",
-    "role": "נפגע/ת פעולות איבה",
+    "role": "",
     "summary": "דף הנצחה לזכר קדושים ג'ימי ג'יימס ז\"ל במסגרת ״רקמה אנושית אחת״.",
     "firstNameHebrew": "ג'ימי",
     "generalDetails": [
@@ -4548,7 +4548,7 @@ window.MEMORIAL_PEOPLE = [
     "place": "",
     "image": "",
     "age": "",
-    "role": "נפגע/ת פעולות איבה",
+    "role": "",
     "summary": "דף הנצחה לזכר שוורץ עודד שחר ז\"ל במסגרת ״רקמה אנושית אחת״.",
     "firstNameHebrew": "עודד",
     "generalDetails": [
@@ -4589,7 +4589,7 @@ window.MEMORIAL_PEOPLE = [
     "place": "",
     "image": "",
     "age": "",
-    "role": "נפגע/ת פעולות איבה",
+    "role": "",
     "summary": "דף הנצחה לזכר מדמוני אליהו ז\"ל במסגרת ״רקמה אנושית אחת״.",
     "firstNameHebrew": "אליהו",
     "generalDetails": [
@@ -4625,7 +4625,7 @@ window.MEMORIAL_PEOPLE = [
     "place": "",
     "image": "",
     "age": "",
-    "role": "נפגע/ת פעולות איבה",
+    "role": "",
     "summary": "דף הנצחה לזכר גלקוביץ' דנה ז\"ל במסגרת ״רקמה אנושית אחת״.",
     "firstNameHebrew": "דנה",
     "generalDetails": [
