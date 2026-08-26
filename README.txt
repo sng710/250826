@@ -1,49 +1,18 @@
-SNG-710 PATCH 41 - final cleanup after Patch 39
+SNG-710 PATCH 42 - Shlomo Tzvi Ron / October 7 clarification
 
-IMPORTANT
-Apply this directly AFTER PATCH 39.
-Patch 40 is NOT required and should not be uploaded.
+Apply after Patch 41.
 
-This patch deliberately does NOT include the portrait replacements from Patch 40.
+Changed only the sentence describing Shlomo Tzvi Ron's murder so that it is
+immediately clear that it occurred during the October 7, 2023 attack:
 
-INCLUDED
-- Yehonatan Hagbi:
-  * fixes the broken school sentence
-  * keeps the existing YouTube video
-  * adds the new YouTube video
-  * adds the Mika Care link
-  * stores the new media in people.js as well as the private page
-  * combines the two videos + link into one cleaner section
+"במהלך מתקפת 7 באוקטובר 2023, בכ״ב בתשרי תשפ״ד,
+נרצח שלמה צבי רון על ידי מחבלים בביתו בקיבוץ נחל עוז,
+בן שמונים וארבע במותו."
 
-- Shlomo Tzvi Ron:
-  * changes his wife's name from חנה to חנהלה everywhere in his record
-  * fixes "איתן היה הנכד ירדן" to "איתם היה הנכד ירדן"
-  * completely removes the sentence/paragraph saying he did not manage to enter the safe room
-  * retains the concise statement that he was murdered by terrorists in his home
+The previous requested changes remain intact:
+- חנהלה remains the wife's name.
+- the safe-room sentence remains removed.
+- "איתם היה הנכד ירדן" remains corrected.
+- no additional details about the circumstances of the murder were added.
 
-- Ziv Hagbi:
-  * keeps the mother's eulogy text intact but presents it as one complete quote block
-
-- Historical flow:
-  * Hagai-Leon Ben-Shmuel: repairs ". ותוך"
-  * Yaron Cohen: repairs ". וכך זוכרת"
-
-- Sensitive-language consistency:
-  * Tzachi Idan
-  * Maayan Idan
-  * Joshua Loitu Mollel
-  * Alon Shamriz
-  * Ofir Shoshani
-  * Yahav Wiener
-
-UNCHANGED
-- Patch 40 portrait edits are NOT included.
-- No new portrait generation or face alteration.
-- No homepage order changes.
-- No gallery/image changes.
-- No family-contact changes.
-- No favicon changes.
-- No Aviv Baram change; "הוא את כולם אוהב" remains exactly as confirmed.
-- No invented information for incomplete records such as Seta Homsorn.
-
-The ZIP is correctly packaged with index.html/assets/people at the ZIP root.
+No other content or design was changed.
