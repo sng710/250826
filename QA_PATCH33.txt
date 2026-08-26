@@ -1,0 +1,130 @@
+SNG-710 - CROSS-SITE TEXT QA AFTER PATCH 32
+=================================================
+
+Scope
+-----
+154 memorial records checked.
+110 records currently contain life-story prose.
+No biography, fact, rank, family detail, date or wording was changed in Patch 33.
+This is a proposal list only.
+
+A. CLEAR TEXT / CONSISTENCY FIXES I RECOMMEND
+---------------------------------------------
+
+1. פנסה ארד סמוקהון
+Current title/top name: "פנסה ארד סמוקהון"
+Current story: "פנסה ארד סומקואן"
+Issue: surname is spelled two different ways on the same site.
+Recommendation: verify the preferred/source spelling and use it everywhere.
+Also add the missing full stop at the end of his current biography paragraph.
+
+2. דקלה ערבה
+Current displayed name uses "דקלה" while the life story begins "דיקלה ערבה".
+Recommendation: verify the family's/source spelling and standardize it throughout the page and search data.
+
+3. יורי חרנש
+Current quote contains:
+"הישרה על אנשיו אווירה על ביטחון רב"
+This reads like a transcription/OCR error.
+Suggested wording, only if confirmed against the source:
+"השרה על אנשיו אווירה של ביטחון רב".
+The story also uses the older spelling "בראזיל"; changing to "ברזיל" would be a harmless modernization unless preserving the original text verbatim is important.
+
+4. שמואל סמי קליימן
+Current final paragraph contains "ביום- השנה לנופלו".
+Recommendation: "ביום השנה לנופלו".
+The biography still contains many old source hyphenations (בית-ספר, מנוחת-עולמים, חברת-קיבוץ). These are not factual errors, but the page looks stylistically different from modern biographies. I would normalize them only if you want all historical pages modernized.
+
+5. זאב (זאביק) לביא לבצלטר
+Two quoted passages still contain the old transcription separator "- -".
+Recommendation: remove only those separator artifacts; leave the quote wording itself unchanged.
+
+6. חגי-לאון בן-שמואל
+A quoted sentence says:
+"בעוד המרחק בינו לבין אנשיו היו אותן דרגות"
+The grammar is awkward and may be a source transcription error.
+Recommendation: check the original memorial source before editing because it is a direct quote.
+
+7. נטע אפשטיין - top family field
+Current field: "ארוסה של אירן שביט".
+In unpointed Hebrew this is visually ambiguous and can look feminine.
+Recommendation: "בן זוגה וארוסה של אירן שביט" so the relationship is immediately clear.
+
+8. פנסה ארד סמוקהון - wording
+Current story says he was "בן 39, מנחל עוז" although he was described as a Thai agricultural worker.
+If he was not a resident/member of the kibbutz, I would prefer:
+"בן 39, אזרח תאילנד שעבד בחקלאות בנחל עוז".
+This avoids implying a residential status we have not verified.
+
+B. CLAIMS I WOULD VERIFY / ATTRIBUTE BEFORE FINAL PUBLICATION
+-------------------------------------------------------------
+
+These may be entirely correct. The issue is that they are unusually specific, causal or operational and should have a clear official/direct-witness source.
+
+1. אורי רוסו
+Exact claim that he fired six bullets and killed six terrorists.
+
+2. טל אילון
+Detailed combat chronology, including directing forces and hitting terrorists.
+
+3. רן פוסלושני
+Statement that his actions "saved their lives".
+
+4. זיו חג'בי
+"עזר לאנשים לברוח והציל את חייהם" - the friends' testimony is attributed, but the causal lifesaving conclusion should be sourced too.
+
+5. אילן פיורנטינו / קשת זוהר
+The statement that אילן "saved Ariel's life" is repeated across the related pages. It may be well documented, but because it is causal I would keep it explicitly attributed to the family/witness/source.
+
+6. תומר אליעז ערבה
+"סייע להציל משפחות רבות בנחל עוז" - broad rescue claim that needs a clear source.
+
+7. יהב וינר
+The safe-room account is central to his story, but the page should ideally identify it as based on שי-לי's survivor testimony (if that is indeed the source), rather than leaving the reconstruction un-attributed.
+
+8. אביב ברעם
+There are still two versions in project material of his final family message:
+"הוא את כולם אוהב" versus "אני אוהב את כולכם".
+Do not change the quote until the original WhatsApp/family source is checked.
+
+9. ג'ושוע לואיטו מולל
+The biography states that his body was returned to Israel in November 2025.
+This is a precise later-event date and should remain only with an authoritative source attached to the record.
+
+C. SENSITIVE / EDITORIAL ITEMS I WOULD CONSIDER SOFTENING
+----------------------------------------------------------
+
+1. שמואל סמי קליימן
+"נהרג מהתפוצצות אחד המוקשים בידו" is factual but quite graphic/direct.
+A gentler council-site version could be:
+"נהרג בתאונת מוקש בעת מילוי תפקידו".
+I would only change it if you want the same sensitivity standard used on the October 7 pages to apply to historical pages too.
+
+2. אסף רבינוביץ
+The paragraph describes six enemy soldiers barricaded in a house and firing at his unit before his death.
+Not graphic, but more tactical than most biographies. Optional to shorten to the fact that he fell in the battle at Ras Sudar.
+
+3. Historical biographies generally
+Some original memorial texts include descriptions such as "מזגו הביקורתי החריף", "היה סגור בתוך עצמו", or similarly candid personality judgments.
+They are source-based rather than errors, so I would NOT remove them automatically. If the goal is a warmer council memorial tone, these should be reviewed family-by-family rather than globally rewritten.
+
+D. DUPLICATION CHECK
+--------------------
+
+- Exact duplicate paragraphs inside the same person's biography: none found.
+- Exact duplicate long sentences across different pages exist mainly where two members of the same family/couple share the same event or memorial quote. Examples include יגאל ותמר סינדי פלש, ניב רביב וניראל זיני, and יונתן/יפתח קוץ. These look intentional and I would keep them.
+- The main portrait/gallery duplication cleanup from Patch 32 remains separate from text content and was not altered here.
+
+E. ITEMS THAT CURRENTLY LOOK GOOD
+---------------------------------
+
+- "נפגע/ת פעולות איבה": no occurrences.
+- "בקצרה": no individual-page section.
+- No old generic long October 7 attack paragraph has reappeared.
+- No exact within-person biography paragraph duplication detected.
+- The 44 previous-years records still awaiting biographies have not been given invented filler text.
+
+Recommended next text patch
+---------------------------
+I would first make only the clear corrections in Section A after you approve the spelling choices for פנסה and דקלה.
+Then I would handle Section B separately, only after source verification or by adding explicit attribution rather than deleting meaningful testimony.
