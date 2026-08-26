@@ -6639,7 +6639,7 @@ window.MEMORIAL_PEOPLE = [
     "id": "asaf_siboni",
     "name": "סיבוני אסף-יעקב ז\"ל",
     "place": "ניר עם",
-    "image": "assets/img/asaf_siboni.webp",
+    "image": "assets/img/asaf_siboni-49.webp",
     "age": 21,
     "role": "",
     "summary": "דף הנצחה לזכר סיבוני אסף-יעקב ז\"ל במסגרת ״רקמה אנושית אחת״.",

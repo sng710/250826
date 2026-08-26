@@ -1,0 +1,11 @@
+PATCH 49 QA
+
+PASS - Central homepage .council-lockup markup removed.
+PASS - Homepage still retains the existing small fixed council logo treatment through shared CSS.
+PASS - Asaf Siboni people.js record points to assets/img/asaf_siboni-49.webp.
+PASS - Asaf Siboni personal page points to ../../assets/img/asaf_siboni-49.webp.
+PASS - New image is valid WebP, 235x320 pixels.
+PASS - Homepage people.js cache key bumped to v=249.
+PASS - No biography text changed.
+PASS - JavaScript syntax for people.js checked.
+PASS - Patch ZIP integrity checked.
