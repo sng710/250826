@@ -2758,3 +2758,243 @@ body {
     line-height:1.88;
   }
 }
+
+/* =========================================================
+   PATCH 53 - CLEAN STORY READING FLOW / STANDALONE MEDIA
+   ========================================================= */
+
+/* "סיפור חיים" is now the sole heading for the personal-life opening. */
+.story-structured-personal{
+  padding-top:.25rem;
+  border-top:0;
+}
+
+/* A calmer editorial container: one readable text column, not forced columns. */
+.person-page .story-section,
+.person-page .unified-story-section{
+  padding:clamp(32px,4vw,50px) clamp(22px,5vw,62px) clamp(38px,4.5vw,52px);
+}
+
+.person-page .story-section > h2{
+  position:relative;
+  margin-bottom:1.55rem;
+  padding-bottom:1rem;
+  border-bottom:0;
+  font-size:clamp(2rem,1.72rem + .8vw,2.42rem);
+  line-height:1.2;
+}
+.person-page .story-section > h2::after{
+  content:"";
+  display:block;
+  width:72px;
+  height:2px;
+  margin-top:.9rem;
+  background:rgba(85,184,212,.75);
+  border-radius:999px;
+}
+
+.person-page .story-copy{
+  max-width:88ch;
+}
+
+.structured-story-copy{
+  display:block;
+}
+
+.story-structured-section{
+  padding-top:0;
+  border-top:0;
+}
+
+.story-structured-section + .story-structured-section{
+  margin-top:clamp(2.7rem,5vw,4.25rem);
+  padding-top:clamp(1.55rem,3vw,2.15rem);
+  border-top:1px solid rgba(85,184,212,.30);
+}
+
+/* Clear chapter markers for 7 October and legacy, without another large card. */
+.story-structured-section > h3{
+  position:relative;
+  width:fit-content;
+  max-width:100%;
+  margin:0 0 1.55rem;
+  padding:.28rem .85rem .34rem 0;
+  border-inline-start:3px solid rgba(85,184,212,.82);
+  color:#fff;
+  font-size:clamp(1.56rem,1.35rem + .65vw,1.98rem);
+  line-height:1.28;
+}
+
+.story-structured-attack > h3{
+  border-inline-start-color:rgba(229,169,60,.88);
+}
+
+/* Larger body type while retaining comfortable line length. */
+.story-block-text,
+.story-structured-section > .story-block-text{
+  max-width:78ch;
+  margin-inline:auto;
+}
+.story-block-text p,
+.story-structured-section > .story-block-text p,
+.story-copy > .structured-story-copy p{
+  font-size:clamp(1.20rem,1.13rem + .25vw,1.32rem);
+  line-height:1.92;
+  margin-bottom:1.2em;
+}
+
+/*
+ * Images are no longer forced to match a neighboring text column.
+ * Each image becomes a deliberate editorial pause between paragraph groups.
+ * The frame hugs the actual image instead of creating empty vertical space.
+ */
+.story-media-block,
+.story-media-block.media-left,
+.story-media-block.media-right{
+  display:block;
+  margin:0 0 clamp(2.2rem,4vw,3.25rem);
+}
+.story-media-block:last-child{
+  margin-bottom:0;
+}
+
+.story-block-media{
+  display:block;
+  width:100%;
+  height:auto;
+  min-height:0;
+  margin-top:clamp(1.15rem,2.4vw,1.75rem);
+}
+
+.story-block-media .enhanced-inline-gallery,
+.story-block-media .face-gallery{
+  display:block;
+  width:fit-content;
+  max-width:min(680px,100%);
+  height:auto;
+  min-height:0;
+}
+
+.story-media-block.media-right .story-block-media .enhanced-inline-gallery,
+.story-media-block.media-right .story-block-media .face-gallery{
+  margin-left:auto;
+  margin-right:0;
+}
+.story-media-block.media-left .story-block-media .enhanced-inline-gallery,
+.story-media-block.media-left .story-block-media .face-gallery{
+  margin-right:auto;
+  margin-left:0;
+}
+
+.story-block-media figure{
+  display:inline-flex;
+  width:auto;
+  max-width:100%;
+  height:auto;
+  min-height:0;
+  margin:0;
+  padding:8px;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(85,184,212,.30);
+  border-radius:16px;
+  background:rgba(23,43,73,.36);
+  box-shadow:0 12px 26px rgba(10,27,48,.14);
+  overflow:hidden;
+}
+
+.story-block-media img{
+  display:block;
+  width:auto;
+  height:auto;
+  max-width:100%;
+  max-height:620px;
+  object-fit:contain;
+  object-position:center;
+  border-radius:10px;
+}
+
+/* Give image-only galleries the same cleaner treatment. */
+.story-extra-gallery{
+  margin-top:1.2rem;
+  gap:16px;
+}
+.story-extra-gallery figure{
+  align-self:start;
+  padding:8px;
+}
+.story-extra-gallery img{
+  width:auto;
+  max-width:100%;
+  height:auto;
+  max-height:560px;
+  margin-inline:auto;
+  object-fit:contain;
+}
+
+/* Quotes read as part of the story but get breathing room automatically. */
+.story-block-text p:has(q),
+.story-block-text p:has(blockquote){
+  margin-block:1.35em;
+}
+
+@media (max-width:900px){
+  .person-page .story-copy{
+    max-width:100%;
+  }
+  .story-block-text,
+  .story-structured-section > .story-block-text{
+    max-width:100%;
+  }
+  .story-block-media .enhanced-inline-gallery,
+  .story-block-media .face-gallery,
+  .story-media-block.media-right .story-block-media .enhanced-inline-gallery,
+  .story-media-block.media-right .story-block-media .face-gallery,
+  .story-media-block.media-left .story-block-media .enhanced-inline-gallery,
+  .story-media-block.media-left .story-block-media .face-gallery{
+    margin-inline:auto;
+  }
+  .story-block-media img{
+    max-height:560px;
+  }
+}
+
+@media (max-width:760px){
+  .person-page .story-section,
+  .person-page .unified-story-section{
+    padding:28px 18px 34px;
+  }
+  .person-page .story-section > h2{
+    font-size:1.9rem;
+  }
+  .story-structured-section > h3{
+    font-size:1.5rem;
+    margin-bottom:1.25rem;
+  }
+  .story-block-text p,
+  .story-structured-section > .story-block-text p,
+  .story-copy > .structured-story-copy p{
+    font-size:1.14rem;
+    line-height:1.88;
+  }
+  .story-media-block,
+  .story-media-block.media-left,
+  .story-media-block.media-right{
+    margin-bottom:2.15rem;
+  }
+  .story-block-media{
+    margin-top:1rem;
+  }
+  .story-block-media img{
+    max-height:500px;
+  }
+}
+
+@media (max-width:420px){
+  .story-block-text p,
+  .story-structured-section > .story-block-text p,
+  .story-copy > .structured-story-copy p{
+    font-size:1.1rem;
+    line-height:1.86;
+  }
+}

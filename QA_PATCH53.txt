@@ -1,0 +1,11 @@
+PATCH 53 QA
+
+PASS - No personal-life subheading remains inside .story-structured-personal.
+PASS - Personal-life wrappers are div elements, avoiding an unheaded section landmark.
+PASS - The page-level "סיפור חיים" heading remains unchanged.
+PASS - Story images are no longer forced to equal text-block height.
+PASS - Images use intrinsic width/height with max constraints and object-fit: contain.
+PASS - All HTML pages point to site.css?v=253.
+PASS - Biography paragraph text matches Patch 52 exactly.
+PASS - CSS braces balanced.
+PASS - Patch ZIP integrity checked with unzip -t.
