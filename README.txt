@@ -1,43 +1,31 @@
-SNG-710 PATCH 37 - YouTube memorial embeds
+SNG-710 PATCH 38 - Ilan videos + approved QA fixes
 
-Apply after Patch 36.
+Apply after Patch 37.
 
-TOP / FEATURED VIDEOS
-- שלמה צבי רון
-- צחי עידן
-- ג׳ושוע לואיטו מולל
-- פנסה-ארד סומקואן
-- חיים ליבנה
-- מעיין עידן
-- אילן פיורנטינו
-- שושי ברוש
-- רן פוסלושני
-- נעמי דגני
-- נירה רונן
-- שחר אביאני
-- נטע אפשטיין
+ILAN FIORENTINO
+- Keeps the existing YouTube memorial video.
+- Adds the two newly supplied YouTube videos.
+- All three appear together near the top in a responsive video grid.
 
-These appear directly below the person's opening/header section and before the life story.
+TEXT QA FIXES APPLIED
+- Uri Russo: repaired the broken ravshatz emergency-call sentence.
+- Modi Amir: completely removed the dangling "ההטעיה" sentence.
+  No fragment or incomplete bridge sentence remains.
+- Nitzan Libstein: removed awkward duplicate death wording.
+- Yuri Harnash: removed "מפצעיו בעקבות פציעה" tautology.
+- Pansa-Ard Somkuan: removed the duplicated top fact; the role line remains.
+- Joshua Loitu Mollel: removed the immediate repetition of his full name.
+- Angeline Aguirre: locality changed from "פיליפינים" to "כפר עזה";
+  her Filipino identity remains in the biography.
+- Shoshi Brosh: softened graphic bullet details and removed the sentence
+  attributing an unverified mental state to the attacker.
+- Tami Peleg Ziv: softened detailed ballistic/ammunition wording while
+  preserving Asif's attributed account that Eitan tried to protect them.
+- Ziv Hagbi: softened "גופתו נמצאה" wording.
+- Yuval Salomon: softened "גופתו נמצאה" wording.
 
-SMALLER LOWER-PAGE SHARED VIDEOS
-Zohar family video is added near the bottom of:
-- יניב זוהר
-- יסמין זוהר
-- קשת זוהר
-- תכלת זוהר
-
-Arava / Elyakim family video is added near the bottom of:
-- נועם אליקים
-- דיקלה ערבה
-- תומר ערבה-אליעז
-
-Yam Goldstein Almog's supplied video is also added near the bottom of her page in the smaller format.
-
-The lower videos appear after story/gallery content and before the family-contact section/footer.
-
-PRESERVED
-- Omer Tzadikovich YouTube embed
-- Yehonatan Hagbi YouTube embed
-- all text, images, galleries, candles, QR codes, family ordering, WhatsApp contact, favicon and other content
-
-No unrelated content was changed.
+NOT CHANGED
+- Seta Homsorn's locality/details remain untouched pending verification.
+- Historical typography/hyphenation was not globally modernized.
+- No other biography, family fact, image, gallery, candle, favicon,
+  WhatsApp contact, ordering, or video was changed.
