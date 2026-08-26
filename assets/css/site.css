@@ -1626,3 +1626,139 @@ body {
   .image-viewer { transition: none !important; }
   .memorial-candle::after { animation: none !important; }
 }
+
+
+/* PATCH 35 - FAMILY CONTACT */
+.family-contact{
+  width:min(760px,100%);
+  margin:44px auto 22px;
+  padding:22px 24px;
+  text-align:center;
+  border-top:1px solid rgba(96,198,222,.42);
+  border-bottom:1px solid rgba(255,255,255,.10);
+  background:rgba(28,50,88,.28);
+  border-radius:10px;
+}
+
+.family-contact-text{
+  margin:0 auto 16px;
+  max-width:650px;
+  font-size:1rem;
+  line-height:1.8;
+  color:rgba(255,255,255,.88);
+}
+
+.family-contact-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
+  padding:10px 20px;
+  border:1px solid rgba(106,204,223,.68);
+  border-radius:999px;
+  background:rgba(255,255,255,.06);
+  color:#fff;
+  font-weight:700;
+  text-decoration:none;
+  transition:transform .18s ease, background-color .18s ease, border-color .18s ease;
+}
+
+.family-contact-btn:hover{
+  background:rgba(106,204,223,.14);
+  border-color:rgba(126,218,236,.95);
+  transform:translateY(-1px);
+}
+
+.family-contact-btn:focus-visible{
+  outline:3px solid rgba(255,255,255,.88);
+  outline-offset:3px;
+}
+
+@media (max-width:700px){
+  .family-contact{
+    margin-top:32px;
+    padding:18px 16px;
+  }
+
+  .family-contact-btn{
+    width:100%;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .family-contact-btn{
+    transition:none;
+  }
+
+  .family-contact-btn:hover{
+    transform:none;
+  }
+}
+
+
+/* PATCH 36 - FAMILY ROW SPACER */
+.family-row-spacer{height:0;min-height:0;pointer-events:none;visibility:hidden;}
+
+
+/* PATCH 37 - MEMORIAL YOUTUBE EMBEDS */
+.memorial-video-section{
+  width:min(920px,100%);
+  margin:26px auto 30px;
+  padding:22px;
+  border:1px solid rgba(255,255,255,.14);
+  border-top-color:rgba(88,190,218,.58);
+  border-radius:10px;
+  background:rgba(27,49,86,.42);
+}
+
+.memorial-video-section h2{
+  margin:0 0 15px;
+  padding-bottom:10px;
+  border-bottom:1px solid rgba(88,190,218,.24);
+  font-size:1.45rem;
+  line-height:1.3;
+  font-weight:500;
+}
+
+.memorial-video-embed{
+  position:relative;
+  width:100%;
+  aspect-ratio:16 / 9;
+  overflow:hidden;
+  border-radius:8px;
+  background:#101a2d;
+  box-shadow:0 12px 28px rgba(5,13,28,.18);
+}
+
+.memorial-video-embed iframe{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+/* Family/shared videos requested lower on the page and visually quieter. */
+.memorial-video-small{
+  width:min(620px,100%);
+  margin-top:36px;
+  padding:16px;
+  background:rgba(27,49,86,.24);
+}
+
+.memorial-video-small h2{
+  font-size:1.15rem;
+  margin-bottom:12px;
+  padding-bottom:8px;
+}
+
+@media (max-width:700px){
+  .memorial-video-section{
+    margin:18px auto 24px;
+    padding:14px;
+  }
+
+  .memorial-video-small{
+    margin-top:28px;
+  }
+}
