@@ -1,17 +1,14 @@
-SNG-710 PATCH 29 - full portrait pass + candle placeholders + cross-site text QA
+SNG-710 PATCH 30 - Neta Epstein update
 
-Apply after Patch 28.
+Apply after Patch 29.
 
-VISUAL
-- Reviewed all 104 existing portrait images in circular framing.
-- Added extra breathing room to 18 portraits that still looked too tight/cropped.
-- Uses CSS crop/scale/position only. Original people/images are not altered.
-- Guy Admoni uses contain framing so his full hat/head is no longer unnecessarily cropped.
-- Added a respectful CSS memorial-candle placeholder to all 50 records that do not yet have an image.
+- Uses ONLY the real photos supplied by the user.
+- The accidentally generated portrait from the previous assistant turn is NOT used.
+- Main portrait is a non-generative crop of the supplied smiling photo; the caption strip was cropped out.
+- Added 7 real supplied photos to Neta's gallery; duplicate/illustration-only images were not added.
+- Rebuilt the life story from the user-supplied material, removing repeated and overly graphic wording while preserving the central facts and attribution to Irene for the grenade account.
+- Top family details updated to include Irene as his fiancée.
+- Age remains 21: the supplied dates are 9.11.2001 and 7.10.2023. The supplied text also describes the planned 22nd birthday in November, which is retained in the story.
 
-TEXT QA
-- Applied only definite typo/punctuation/duplicate-role fixes and conservative sensitive-content cleanup.
-- Removed Seta Homsorn's placeholder prose until verified biography data is supplied.
-- See QA_PATCH29.txt for remaining operational/rescue claims that still need source verification.
-
-No new biographical facts were invented in this patch.
+Source consistency note:
+The supplied text names two different locations for Neta's service year (Kfar Nahar Hayarden and Bustan HaGalil). Patch 30 therefore keeps the supported general fact that he volunteered with children/people with special needs, without choosing one location until verified.
