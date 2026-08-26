@@ -1,0 +1,39 @@
+PATCH 50 AUDIT RESULTS
+
+STRUCTURE
+PASS - 154/154 personal memorial pages present.
+PASS - 87 pages marked as current-period / 7 October records.
+PASS - 67 pages marked as previous-years records.
+PASS - All 87 current-period pages that contain biography text detect a 7 October story section.
+PASS - Omer Zadikovich: "עם תחילת המתקפה..." begins the 7 October section.
+PASS - Nadav Amikam: the 7 October section begins with the lead-in "ערב לפני כן...", providing context for the following morning.
+PASS - Neta Epstein: the requested new 7 October paragraph and the added family-loss paragraph remain together inside the 7 October section.
+
+DUPLICATION
+PASS - No exact duplicate biography paragraphs found across personal pages.
+PASS - No duplicate gallery-image source found within a personal page's source markup.
+PASS - No duplicate iframe source found within a personal page's source markup.
+PASS - Runtime template additionally de-duplicates portrait/gallery images and repeated video embeds defensively.
+PASS - Omer's overly repetitive fact panel was reduced.
+
+MEDIA / FILES
+PASS - No broken local image/script/stylesheet references found in homepage or personal pages.
+PASS - All images in page markup have alt attributes.
+PASS - All iframe embeds have titles.
+PASS - External target=_blank links checked: none missing noopener.
+
+ACCESSIBILITY / HTML
+PASS - No duplicate HTML IDs detected.
+PASS - Every personal page has a skip link to #mainContent.
+PASS - Every personal page has main#mainContent.
+PASS - Shared focus-visible and reduced-motion accessibility rules retained.
+PASS - Keyboard-accessible image viewer behavior retained from previous accessibility patch.
+
+CODE
+PASS - assets/js/person-template.js passes node --check.
+PASS - assets/js/people.js passes node --check.
+PASS - Shared CSS brace balance: 0 unmatched braces.
+PASS - All personal pages reference site.css?v=250 and person-template.js?v=250.
+
+CONTENT-SAFETY NOTE
+The shared template reorganizes existing biography paragraphs into presentation sections; it does not rewrite biography wording. Patch 50's only intentional biography wording change is the Neta Epstein text explicitly supplied by the user, plus the requested added family-loss sentence. Omer's facts-panel cleanup removes repetitive summary chips only; his biography wording remains unchanged.

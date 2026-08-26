@@ -6,15 +6,6 @@
   const main = document.querySelector('.person-main');
   if (main && !main.id) main.id = 'mainContent';
 
-  if (!document.querySelector('.skip-link-person')) {
-    const skip = document.createElement('a');
-    skip.className = 'skip-link skip-link-person';
-    skip.href = '#mainContent';
-    skip.textContent = 'דילוג לתוכן הראשי';
-    document.body.insertBefore(skip, document.body.firstChild);
-  }
-
-  const intro = document.querySelector('.person-intro');
   const storyLayout = document.querySelector('.story-layout');
   const article = storyLayout?.querySelector('.story-section');
   const storyCopy = article?.querySelector('.story-copy');
@@ -31,115 +22,178 @@
   const paragraphs = [...storyCopy.querySelectorAll('p')]
     .map((p) => ({ html: p.innerHTML.trim(), text: (p.textContent || '').trim() }))
     .filter((p) => p.text);
-
   if (!paragraphs.length) return;
 
-  const galleryFigures = [
-    ...storyCopy.querySelectorAll('.face-gallery figure'),
-    ...storyLayout.querySelectorAll('.person-aside .face-gallery figure')
-  ].map((figure) => figure.cloneNode(true));
+  const portraitImg = document.querySelector('.person-portrait img');
+  const portraitSrc = portraitImg ? new URL(portraitImg.getAttribute('src'), document.baseURI).href : '';
+  const seenImageSources = new Set();
+  const galleryFigures = [];
+  [...storyCopy.querySelectorAll('.face-gallery figure'), ...storyLayout.querySelectorAll('.person-aside .face-gallery figure')]
+    .forEach((figure) => {
+      const img = figure.querySelector('img');
+      if (!img) return;
+      let src = '';
+      try { src = new URL(img.getAttribute('src'), document.baseURI).href; }
+      catch { src = img.getAttribute('src') || ''; }
+      if (!src || src === portraitSrc || seenImageSources.has(src)) return;
+      seenImageSources.add(src);
+      galleryFigures.push(figure.cloneNode(true));
+    });
 
   const linksCards = [...storyLayout.querySelectorAll('.person-aside .links-card')].map((card) => card.cloneNode(true));
 
   const videos = [...document.querySelectorAll('.memorial-video-section, .omer-video-section')];
-  if (main && intro && videos.length) {
-    const anchor = storyLayout;
-    videos.forEach((section) => main.insertBefore(section, anchor));
-  }
+  const seenVideos = new Set();
+  videos.forEach((section) => {
+    const iframe = section.querySelector('iframe');
+    const key = iframe?.getAttribute('src') || section.textContent.trim();
+    if (seenVideos.has(key)) {
+      section.remove();
+      return;
+    }
+    seenVideos.add(key);
+    storyLayout.parentNode.insertBefore(section, storyLayout);
+  });
 
-  const attackSignals = [
-    '7 באוקטובר', '7.10.2023', '07.10.2023', 'כ"ב בתשרי', 'כ״ב בתשרי', 'השבת השחורה',
-    'בבוקר שבת', 'באותו בוקר', 'בשעות הבוקר', 'כאשר החלה המתקפה', 'כאשר החלה המלחמה',
-    'עם קבלת הדיווחים', 'חדירת מחבלים', 'פרצו המחבלים', 'יצא לכיוון הנשקייה', 'יצא להילחם',
-    'נפל בקרב', 'נרצח', 'נהרג', 'נפצע', 'נורתה', 'נורה', 'המחבלים', 'הממ"ד', 'הממד'
-  ].map(normalize);
+  const mode = document.body.dataset.memorialPeriod === 'oct7' ? 'oct7' : 'previous';
+  const norms = paragraphs.map((paragraph) => normalize(paragraph.text));
 
-  const attackLeadSignals = ['ערב לפני', 'יום לפני', 'לקראת לילה', 'בליל', 'בערב החג', 'בערב שישי'].map(normalize);
+  const includesAny = (value, signals) => signals.some((signal) => value.includes(signal));
+  const mapped = (values) => values.map(normalize);
 
-  const generalSignals = [
-    'הותיר אחריו', 'הותירה אחריה', 'הובא למנוחות', 'הובאה למנוחות', 'הובא למנוחת עולמים',
-    'הועלה לדרגת', 'ספד', 'ספדה', 'כתבה', 'כתב', 'נזכר', 'נזכרת', 'ייזכר', 'תיזכר',
-    'לזכרו', 'לזכרה', 'הוקמה', 'הוקם', 'הונחה אבן הפינה', 'הוענק', 'נקרא על שמו', 'נקראה על שמה',
-    'בני משפחתו הקימו', 'בני משפחתה הקימו', 'מורשתו', 'מורשתה', 'מלגות', 'פרס', 'מיזם', 'אירוע', 'סרטון'
-  ].map(normalize);
+  const oct7DateSignals = mapped([
+    '7 באוקטובר 2023', '7.10.2023', '07.10.2023', 'השבעה באוקטובר 2023',
+    'כ"ב בתשרי תשפ"ד', 'כ״ב בתשרי תשפ״ד'
+  ]);
+  const oct7ContextSignals = mapped([
+    'עם תחילת המתקפה', 'עם פרוץ המתקפה', 'עם תחילת מתקפת', 'בבוקר שבת', 'בשבת בבוקר',
+    'באותו בוקר', 'באותו יום', 'בשעות הבוקר', 'עם הישמע האזעקות', 'לשמע האזעקות', 'כאשר החלה המתקפה',
+    'כאשר החלו האזעקות', 'חדירת מחבלים', 'מחבלים חדרו', 'מחבלים פרצו', 'פרצו המחבלים', 'הממ"ד', 'הממד',
+    'כיתת הכוננות', 'נשקייה', 'יצא להילחם', 'יצאה להילחם', 'יצא להגן', 'יצאה להגן',
+    'נחטף', 'נחטפה', 'נחטפו', 'נלקח בשבי', 'נלקחה בשבי'
+  ]);
+  const leadSignals = mapped(['ערב לפני', 'יום לפני', 'בלילה שלפני', 'לקראת לילה', 'בערב החג', 'בערב שישי']);
+  const postEventSignals = mapped([
+    'לאחר נפילתו', 'לאחר נפילתה', 'לאחר מותו', 'לאחר מותה', 'לאחר הירצחו', 'לאחר הירצחה',
+    'הובא למנוחת עולמים', 'הובאה למנוחת עולמים', 'הובא למנוחות', 'הובאה למנוחות',
+    'הותיר אחריו', 'הותירה אחריה', 'ספד', 'ספדה', 'לזכרו', 'לזכרה', 'זכרו', 'זכרה',
+    'נזכר', 'נזכרת', 'ייזכר', 'תיזכר', 'זוכרים', 'זוכרות', 'נשאר בזיכרון', 'נשארה בזיכרון',
+    'הוקמה', 'הוקם', 'הוענק', 'הוענקה', 'מונצח', 'מונצחת', 'מורשתו', 'מורשתה'
+  ]);
+  const previousEventSignals = mapped([
+    'נפל ביום', 'נפלה ביום', 'נפל בקרב', 'נפלה בקרב', 'נהרג', 'נהרגה', 'נרצח', 'נרצחה',
+    'בתאונה', 'בקרב', 'במלחמה', 'בפעולה', 'בעת מילוי תפקידו', 'בעת מילוי תפקידה'
+  ]);
 
-  const isAttack = (text) => {
-    const n = normalize(text);
-    return attackSignals.some((signal) => n.includes(signal));
-  };
+  let attackStart = -1;
+  let eventAnchor = -1;
 
-  const isGeneral = (text) => {
-    const n = normalize(text);
-    return generalSignals.some((signal) => n.includes(signal));
-  };
-
-  let attackStart = paragraphs.findIndex((paragraph) => isAttack(paragraph.text));
-  if (attackStart > 0) {
-    const prev = normalize(paragraphs[attackStart - 1].text);
-    if (attackLeadSignals.some((signal) => prev.includes(signal))) attackStart -= 1;
+  if (mode === 'oct7') {
+    eventAnchor = norms.findIndex((value) => includesAny(value, oct7DateSignals));
+    if (eventAnchor >= 0) {
+      const windowStart = Math.max(0, eventAnchor - 7);
+      for (let i = windowStart; i <= eventAnchor; i += 1) {
+        if (includesAny(norms[i], oct7ContextSignals) || includesAny(norms[i], oct7DateSignals)) {
+          attackStart = i;
+          break;
+        }
+      }
+    }
+    if (attackStart < 0) {
+      const fallbackStart = Math.max(0, Math.floor(paragraphs.length * 0.25));
+      for (let i = fallbackStart; i < paragraphs.length; i += 1) {
+        if (includesAny(norms[i], oct7ContextSignals)) {
+          attackStart = i;
+          break;
+        }
+      }
+    }
+    if (attackStart > 0 && includesAny(norms[attackStart - 1], leadSignals)) attackStart -= 1;
+    const nearAttackSignals = mapped(['מחבלים', 'ממ"ד', 'הממד', 'אזעקות', 'שעות הבוקר', 'נובה', 'חדירה']);
+    while (attackStart > 0 && includesAny(norms[attackStart - 1], nearAttackSignals)) attackStart -= 1;
+  } else {
+    const fallbackStart = Math.max(0, Math.floor(paragraphs.length * 0.45));
+    for (let i = fallbackStart; i < paragraphs.length; i += 1) {
+      if (includesAny(norms[i], previousEventSignals)) {
+        attackStart = i;
+        eventAnchor = i;
+        break;
+      }
+    }
   }
 
   let generalStart = -1;
   if (attackStart >= 0) {
-    for (let i = attackStart + 1; i < paragraphs.length; i += 1) {
-      if (isGeneral(paragraphs[i].text)) {
+    const searchFrom = Math.max(attackStart + 1, eventAnchor >= 0 ? eventAnchor + 1 : attackStart + 1);
+    for (let i = searchFrom; i < paragraphs.length; i += 1) {
+      if (includesAny(norms[i], postEventSignals)) {
         generalStart = i;
         break;
       }
     }
-  } else {
-    generalStart = paragraphs.findIndex((paragraph) => isGeneral(paragraph.text));
   }
 
   const sections = [];
-  const hasOct7 = paragraphs.some((paragraph) => {
-    const n = normalize(paragraph.text);
-    return n.includes(normalize('7 באוקטובר')) || n.includes(normalize('7.10.2023')) || n.includes(normalize('כ"ב בתשרי')) || n.includes(normalize('כ״ב בתשרי'));
-  });
-
-  if (attackStart > 0) {
-    sections.push({ key: 'personal', title: 'חיים אישיים ודרך חיים', paragraphs: paragraphs.slice(0, attackStart) });
-  } else if (attackStart === -1 && generalStart > 0) {
-    sections.push({ key: 'personal', title: 'חיים אישיים ודרך חיים', paragraphs: paragraphs.slice(0, generalStart) });
+  const earlySummaryIndex = Number.parseInt(document.body.dataset.storyAttackSummaryIndex || '', 10);
+  const earlySummary = Number.isInteger(earlySummaryIndex) && earlySummaryIndex >= 0 && earlySummaryIndex < Math.max(attackStart, 0)
+    ? paragraphs[earlySummaryIndex]
+    : null;
+  const personalParagraphs = attackStart > 0
+    ? paragraphs.slice(0, attackStart).filter((_, index) => index !== earlySummaryIndex)
+    : [];
+  if (personalParagraphs.length) {
+    sections.push({ key: 'personal', title: 'חיים אישיים ודרך חיים', paragraphs: personalParagraphs });
   }
-
   if (attackStart >= 0) {
-    const attackEnd = generalStart >= 0 ? generalStart : paragraphs.length;
-    sections.push({ key: 'attack', title: hasOct7 ? '7 באוקטובר 2023' : 'יום הנפילה והנסיבות', paragraphs: paragraphs.slice(attackStart, attackEnd) });
+    sections.push({
+      key: 'attack',
+      title: mode === 'oct7' ? 'שבת ה7.10.2023' : 'יום הנפילה והנסיבות',
+      paragraphs: earlySummary ? [earlySummary, ...paragraphs.slice(attackStart, generalStart >= 0 ? generalStart : paragraphs.length)] : paragraphs.slice(attackStart, generalStart >= 0 ? generalStart : paragraphs.length)
+    });
   }
-
   if (generalStart >= 0) {
     sections.push({ key: 'general', title: 'זיכרון, מורשת והנצחה', paragraphs: paragraphs.slice(generalStart) });
   }
-
   if (!sections.length) sections.push({ key: 'personal', title: 'סיפור חיים', paragraphs });
 
   const nonEmptySections = sections.filter((section) => section.paragraphs.length);
-  const distribution = new Map();
-  const totalImages = galleryFigures.length;
-  if (nonEmptySections.length && totalImages) {
-    const base = Math.floor(totalImages / nonEmptySections.length);
-    let extra = totalImages % nonEmptySections.length;
-    nonEmptySections.forEach((section) => {
-      const ideal = base + (extra > 0 ? 1 : 0);
-      if (extra > 0) extra -= 1;
-      distribution.set(section.key, Math.min(Math.max(ideal, 0), Math.max(section.paragraphs.length, 1)));
-    });
-  }
 
-  let assignedTotal = [...distribution.values()].reduce((sum, value) => sum + value, 0);
-  let remainingImages = totalImages - assignedTotal;
-  if (remainingImages > 0 && nonEmptySections.length) {
-    for (const section of [...nonEmptySections].sort((a, b) => b.paragraphs.length - a.paragraphs.length)) {
-      if (remainingImages <= 0) break;
-      const current = distribution.get(section.key) || 0;
-      const cap = Math.max(section.paragraphs.length, 1);
-      if (current < cap) {
-        distribution.set(section.key, current + 1);
-        remainingImages -= 1;
-      }
+  const allocateImages = (count, sectionList) => {
+    const allocations = new Map(sectionList.map((section) => [section.key, 0]));
+    if (!count || !sectionList.length) return allocations;
+
+    let remaining = count;
+    if (count >= sectionList.length) {
+      sectionList.forEach((section) => allocations.set(section.key, 1));
+      remaining -= sectionList.length;
     }
-  }
+
+    const totalWeight = sectionList.reduce((sum, section) => sum + Math.max(section.paragraphs.length, 1), 0);
+    const fractions = [];
+    sectionList.forEach((section) => {
+      const raw = remaining * Math.max(section.paragraphs.length, 1) / totalWeight;
+      const add = Math.floor(raw);
+      allocations.set(section.key, (allocations.get(section.key) || 0) + add);
+      fractions.push({ key: section.key, fraction: raw - add, length: section.paragraphs.length });
+    });
+    let used = [...allocations.values()].reduce((sum, value) => sum + value, 0);
+    fractions.sort((a, b) => b.fraction - a.fraction || b.length - a.length);
+    let cursor = 0;
+    while (used < count && fractions.length) {
+      const item = fractions[cursor % fractions.length];
+      const section = sectionList.find((entry) => entry.key === item.key);
+      const current = allocations.get(item.key) || 0;
+      if (current < Math.max(section.paragraphs.length, 1)) {
+        allocations.set(item.key, current + 1);
+        used += 1;
+      }
+      cursor += 1;
+      if (cursor > count * sectionList.length * 2) break;
+    }
+    return allocations;
+  };
+
+  const distribution = allocateImages(galleryFigures.length, nonEmptySections);
 
   const splitEvenly = (items, groups) => {
     if (!groups || groups <= 0) return [items];
@@ -185,7 +239,7 @@
     heading.textContent = section.title;
     sectionEl.appendChild(heading);
 
-    const mediaCount = Math.min(distribution.get(section.key) || 0, figureQueue.length);
+    const mediaCount = Math.min(distribution.get(section.key) || 0, figureQueue.length, section.paragraphs.length);
     if (!mediaCount) {
       sectionEl.appendChild(buildTextContainer(section.paragraphs));
     } else {
@@ -209,7 +263,6 @@
         sectionEl.appendChild(block);
       });
     }
-
     structured.appendChild(sectionEl);
   });
 
