@@ -1,18 +1,49 @@
-SNG-710 PATCH 39 - Neta portrait + Epstein family row
+SNG-710 PATCH 41 - final cleanup after Patch 39
 
-Apply after Patch 38.
+IMPORTANT
+Apply this directly AFTER PATCH 39.
+Patch 40 is NOT required and should not be uploaded.
 
-CHANGES ONLY
-1. Neta Epstein and Bilha Epstein are moved together to the THIRD desktop row.
-   Existing family-row logic keeps them adjacent.
-2. Neta Epstein's main portrait is replaced with the newly supplied real photo.
-   The same main image is used on:
-   - homepage
-   - popup
-   - private page
-3. Neta's new main portrait is NOT added to the gallery.
-4. The previous main portrait remains available through the existing gallery
-   image neta_e-5.webp, so no previous memorial photo is lost.
+This patch deliberately does NOT include the portrait replacements from Patch 40.
 
-No biography text, dates, family details, videos, gallery captions,
-WhatsApp contact, favicon, candles, or other people's content was changed.
+INCLUDED
+- Yehonatan Hagbi:
+  * fixes the broken school sentence
+  * keeps the existing YouTube video
+  * adds the new YouTube video
+  * adds the Mika Care link
+  * stores the new media in people.js as well as the private page
+  * combines the two videos + link into one cleaner section
+
+- Shlomo Tzvi Ron:
+  * changes his wife's name from חנה to חנהלה everywhere in his record
+  * fixes "איתן היה הנכד ירדן" to "איתם היה הנכד ירדן"
+  * completely removes the sentence/paragraph saying he did not manage to enter the safe room
+  * retains the concise statement that he was murdered by terrorists in his home
+
+- Ziv Hagbi:
+  * keeps the mother's eulogy text intact but presents it as one complete quote block
+
+- Historical flow:
+  * Hagai-Leon Ben-Shmuel: repairs ". ותוך"
+  * Yaron Cohen: repairs ". וכך זוכרת"
+
+- Sensitive-language consistency:
+  * Tzachi Idan
+  * Maayan Idan
+  * Joshua Loitu Mollel
+  * Alon Shamriz
+  * Ofir Shoshani
+  * Yahav Wiener
+
+UNCHANGED
+- Patch 40 portrait edits are NOT included.
+- No new portrait generation or face alteration.
+- No homepage order changes.
+- No gallery/image changes.
+- No family-contact changes.
+- No favicon changes.
+- No Aviv Baram change; "הוא את כולם אוהב" remains exactly as confirmed.
+- No invented information for incomplete records such as Seta Homsorn.
+
+The ZIP is correctly packaged with index.html/assets/people at the ZIP root.
