@@ -1,0 +1,12 @@
+PATCH 45 QA
+
+PASS - Nadav biography text compared with Patch 44: unchanged.
+PASS - Nadav inline story photo count: 7.
+PASS - Nadav stylesheet cache key updated to site.css?v=245.
+PASS - assets/favicon-sng.svg exists and is byte-identical to the existing root favicon-sng.svg.
+PASS - assets/favicon-sng.png exists and is byte-identical to the existing root favicon-sng.png.
+PASS - Updated site.css braces balanced.
+PASS - Updated site.css parsed with tinycss2 with 0 top-level parse errors.
+PASS - Patch ZIP integrity checked with unzip -t.
+
+Scope deliberately limited to Nadav's presentation and favicon path repair. No biography, facts, memorial ordering, homepage search, popup behavior, image files, or other person pages were changed.

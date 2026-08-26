@@ -1900,8 +1900,14 @@ body {
   padding:clamp(28px,4vw,48px) clamp(24px,5vw,58px);
 }
 
+/*
+ * Nadav's biography is intentionally more editorial than the other pages.
+ * Keep the seven photographs woven through the text, but stop tall images
+ * from turning the story into a narrow two-column layout for many lines.
+ */
 .nadav-page .nadav-story-copy{
-  max-width:none;
+  max-width:88ch;
+  margin-inline:auto;
 }
 
 .nadav-page .nadav-story-copy::after{
@@ -1912,41 +1918,46 @@ body {
 
 .nadav-page .nadav-inline-gallery{
   display:block;
-  width:clamp(235px,29vw,335px);
-  max-width:42%;
-  margin-top:.35rem;
-  margin-bottom:1.25rem;
+  width:clamp(230px,24vw,310px);
+  max-width:35%;
+  margin-top:.65rem;
+  margin-bottom:1.55rem;
   clear:both;
 }
 
 .nadav-page .nadav-inline-right{
   float:right;
   margin-inline-end:0;
-  margin-inline-start:clamp(18px,3vw,34px);
+  margin-inline-start:clamp(20px,3vw,32px);
 }
 
 .nadav-page .nadav-inline-left{
   float:left;
   margin-inline-start:0;
-  margin-inline-end:clamp(18px,3vw,34px);
+  margin-inline-end:clamp(20px,3vw,32px);
 }
 
 .nadav-page .nadav-inline-gallery figure{
   margin:0;
-  padding:7px;
+  padding:6px;
+  min-height:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   border:1px solid rgba(85,184,212,.28);
   border-radius:15px;
   background:linear-gradient(145deg,rgba(48,74,125,.10),rgba(36,59,99,.05));
-  box-shadow:0 12px 28px rgba(18,42,62,.12);
+  box-shadow:0 10px 24px rgba(18,42,62,.11);
   overflow:hidden;
   transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;
 }
 
 .nadav-page .nadav-inline-gallery img{
   display:block;
-  width:100%;
+  width:auto;
+  max-width:100%;
   height:auto;
-  max-height:430px;
+  max-height:360px;
   object-fit:contain;
   object-position:center;
   border:0;
@@ -1958,14 +1969,14 @@ body {
 .nadav-page .nadav-inline-gallery figure:focus-visible{
   transform:translateY(-2px);
   border-color:rgba(85,184,212,.56);
-  box-shadow:0 16px 34px rgba(18,42,62,.16);
+  box-shadow:0 14px 30px rgba(18,42,62,.15);
 }
 
 .nadav-page .nadav-story-copy > p{
   text-wrap:pretty;
 }
 
-@media (max-width:800px){
+@media (max-width:900px){
   .council-lockup{
     margin-bottom:18px;
     transform:scale(.94);
@@ -1979,11 +1990,13 @@ body {
     clear:both;
     width:min(520px,100%);
     max-width:100%;
-    margin:20px auto 26px;
+    margin:22px auto 28px;
   }
 
   .nadav-page .nadav-inline-gallery img{
-    max-height:none;
+    width:auto;
+    max-width:100%;
+    max-height:min(68vh,560px);
   }
 }
 
@@ -2015,6 +2028,14 @@ body {
 
   .nadav-page .nadav-story-section{
     padding:24px 18px 30px;
+  }
+
+  .nadav-page .nadav-inline-gallery{
+    margin-block:18px 24px;
+  }
+
+  .nadav-page .nadav-inline-gallery img{
+    max-height:480px;
   }
 }
 
