@@ -1,0 +1,7 @@
+OPTIONAL SAFE CLEANUP AFTER PATCH 54
+
+These files are no longer referenced by the new personal-page loaders:
+assets/js/person-template.js
+assets/js/gallery-viewer.js
+
+They can remain on the server without affecting the site. They are listed rather than forcibly deleted so Patch 54 can be applied safely as a simple overwrite patch.

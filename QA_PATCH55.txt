@@ -1,0 +1,9 @@
+PATCH 55 QA
+
+PASS - shared person-page template syntax checked with node --check.
+PASS - validator syntax checked with Python.
+PASS - Patch 54 data audit confirms 67 previous-years records.
+PASS - 21 previous-years records currently contain an event/circumstances section.
+PASS - all current previous-years event headings are "יום הנפילה והנסיבות".
+PASS - 0 previous-years records currently contain a 7.10 event heading.
+PASS - shared template now overrides any accidental future 7.10 heading on previous-years records.
