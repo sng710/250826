@@ -5285,7 +5285,7 @@ window.MEMORIAL_PEOPLE = [
       "age": "בן 25 בנופלו"
     },
     "portrait": {
-      "fit": "cover",
+      "fit": "contain",
       "position": "50% 38%"
     },
     "isPreviousYears": true,
@@ -5329,7 +5329,7 @@ window.MEMORIAL_PEOPLE = [
       "age": "בן 32 בנופלו"
     },
     "portrait": {
-      "fit": "cover",
+      "fit": "contain",
       "position": "50% 39%"
     },
     "isPreviousYears": true,
@@ -5373,7 +5373,7 @@ window.MEMORIAL_PEOPLE = [
       "age": "בן 19 בנופלו"
     },
     "portrait": {
-      "fit": "cover",
+      "fit": "contain",
       "position": "50% 39%"
     },
     "isPreviousYears": true,
@@ -5419,7 +5419,7 @@ window.MEMORIAL_PEOPLE = [
       "age": "בן 25 בנופלו"
     },
     "portrait": {
-      "fit": "cover",
+      "fit": "contain",
       "position": "50% 39%"
     },
     "isPreviousYears": true,
@@ -5501,7 +5501,7 @@ window.MEMORIAL_PEOPLE = [
       "age": "בן 21 בנופלו"
     },
     "portrait": {
-      "fit": "cover",
+      "fit": "contain",
       "position": "50% 38%"
     },
     "isPreviousYears": true,
@@ -5585,7 +5585,7 @@ window.MEMORIAL_PEOPLE = [
       "age": "בן 29 בנופלו"
     },
     "portrait": {
-      "fit": "cover",
+      "fit": "contain",
       "position": "50% 40%"
     },
     "isPreviousYears": true,
@@ -6494,7 +6494,7 @@ window.MEMORIAL_PEOPLE = [
       "age": "בן 21 בנופלו"
     },
     "portrait": {
-      "fit": "cover",
+      "fit": "contain",
       "position": "50% 34%"
     },
     "isPreviousYears": true,
@@ -6578,7 +6578,7 @@ window.MEMORIAL_PEOPLE = [
       "age": "בן 34 בנופלו"
     },
     "portrait": {
-      "fit": "cover",
+      "fit": "contain",
       "position": "50% 40%"
     },
     "isPreviousYears": true,
@@ -6621,7 +6621,7 @@ window.MEMORIAL_PEOPLE = [
       "age": "בן 20 בנופלו"
     },
     "portrait": {
-      "fit": "cover",
+      "fit": "contain",
       "position": "50% 40%"
     },
     "isPreviousYears": true,
@@ -6667,7 +6667,7 @@ window.MEMORIAL_PEOPLE = [
       "age": "בן 21 בנופלו"
     },
     "portrait": {
-      "fit": "cover",
+      "fit": "contain",
       "position": "50% 38%"
     },
     "isPreviousYears": true,
@@ -6709,7 +6709,7 @@ window.MEMORIAL_PEOPLE = [
       "age": "בן 25 בנופלו"
     },
     "portrait": {
-      "fit": "cover",
+      "fit": "contain",
       "position": "50% 40%"
     },
     "isPreviousYears": true,
@@ -6753,7 +6753,7 @@ window.MEMORIAL_PEOPLE = [
       "age": "בן 26 בנופלו"
     },
     "portrait": {
-      "fit": "cover",
+      "fit": "contain",
       "position": "50% 38%"
     },
     "isPreviousYears": true,
@@ -6800,7 +6800,7 @@ window.MEMORIAL_PEOPLE = [
       "age": "בן 21 בנופלו"
     },
     "portrait": {
-      "fit": "cover",
+      "fit": "contain",
       "position": "50% 38%"
     },
     "isPreviousYears": true,
@@ -6845,7 +6845,7 @@ window.MEMORIAL_PEOPLE = [
       "age": "בן 24 בנופלו"
     },
     "portrait": {
-      "fit": "cover",
+      "fit": "contain",
       "position": "50% 38%"
     },
     "isPreviousYears": true,
@@ -6892,7 +6892,7 @@ window.MEMORIAL_PEOPLE = [
       "age": "בן 30 בנופלו"
     },
     "portrait": {
-      "fit": "cover",
+      "fit": "contain",
       "position": "50% 42%"
     },
     "isPreviousYears": true,
