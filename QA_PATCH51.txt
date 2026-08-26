@@ -1,0 +1,10 @@
+PATCH 51 QA
+
+PASS - All targeted attribution formulations are absent from the updated static pages and assets/js/people.js.
+PASS - Both occurrences of the Ilan/Arial rescue sentence (Ilan and Keshet pages/data) were updated consistently.
+PASS - Ran's sentence no longer has an unclear "עליהם" after attribution removal.
+PASS - Tal's following paragraph no longer has an unclear "מהם"; it now says "מחבריו".
+PASS - Yehonatan's possible prior-information sentence remains explicitly uncertain rather than being converted into an absolute factual assertion.
+PASS - people.js passes node --check.
+PASS - Only index.html, assets/js/people.js, and the nine affected person pages differ from Patch 50 (plus patch documentation).
+PASS - ZIP integrity checked with unzip -t.
