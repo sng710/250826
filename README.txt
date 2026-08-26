@@ -1,22 +1,24 @@
-SNG-710 PATCH 43 - Nadav Amikam family gallery
+SNG-710 PATCH 44 - Nadav editorial photo layout + homepage council logo
 
-Apply after Patch 42.
+Apply after Patch 43 / the current site that already contains Nadav's 5 added family photos.
 
-Added the five user-supplied photographs to Nadav Amikam's existing gallery.
+NADAV AMIKAM ONLY
+- No biography text changed.
+- No top facts changed.
+- No image file changed or removed.
+- All 7 existing gallery images are retained.
+- The separate gallery/sidebar is removed from Nadav's page only.
+- The 7 images are distributed through the life story, alternating right/left on desktop.
+- Story text flows alongside the images.
+- On mobile, images become full-width blocks between the same paragraphs.
+- Images remain clickable in the existing full-screen image viewer.
 
-UNCHANGED
-- main portrait
-- all existing gallery photos
-- life story
-- top facts
-- role / service record
-- family information
-- page design
-- videos
-- homepage order
-- all other people
+HOMEPAGE
+- Adds a Sha'ar HaNegev Regional Council logo/identity lockup above "שער הנגב זוכרת".
+- Uses the existing council emblem and the Hebrew council name.
+- No memorial ordering, text, portraits, popup behavior or search behavior changed.
 
-The new photos were only converted/optimized to WebP for web performance.
-Their original composition and content were not edited.
-
-The main portrait is not duplicated in the gallery.
+FILES CHANGED
+- index.html
+- assets/css/site.css
+- people/nadav_a/index.html

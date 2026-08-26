@@ -1812,3 +1812,214 @@ body {
 @media (max-width:720px){
   .yehonatan-media-grid{grid-template-columns:1fr;}
 }
+
+
+/* PATCH 44 - NADAV EDITORIAL STORY + COUNCIL LOCKUP */
+
+.council-lockup{
+  width:max-content;
+  max-width:min(100%, 330px);
+  margin:0 auto 22px;
+  display:flex;
+  direction:rtl;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding:8px 14px 8px 11px;
+  border:1px solid rgba(247,243,235,.22);
+  border-radius:14px;
+  background:rgba(247,243,235,.93);
+  color:#202631;
+  box-shadow:0 8px 26px rgba(4,17,28,.13);
+}
+
+.council-lockup-mark{
+  position:relative;
+  inline-size:58px;
+  block-size:48px;
+  flex:0 0 58px;
+  overflow:hidden;
+  border-radius:8px;
+}
+
+.council-lockup-mark img{
+  position:absolute;
+  inline-size:68px;
+  block-size:68px;
+  max-width:none;
+  inset-inline-start:-5px;
+  top:-4px;
+  object-fit:cover;
+  object-position:50% 10%;
+}
+
+.council-lockup-copy{
+  position:relative;
+  display:grid;
+  min-width:145px;
+  line-height:1;
+  text-align:right;
+  padding-block:3px;
+}
+
+.council-lockup-copy::after{
+  content:"";
+  position:absolute;
+  inset-inline:0;
+  top:48%;
+  height:2px;
+  border-radius:99px;
+  background:linear-gradient(90deg,#d0a14b 0 64%,transparent 64%);
+  opacity:.78;
+  pointer-events:none;
+}
+
+.council-lockup-small{
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.01em;
+  padding-bottom:6px;
+}
+
+.council-lockup-copy strong{
+  font-family:var(--serif);
+  font-size:1.35rem;
+  line-height:1.02;
+  font-weight:800;
+  padding-top:5px;
+}
+
+.nadav-page .nadav-story-layout{
+  display:block;
+  margin-top:30px;
+}
+
+.nadav-page .nadav-story-section{
+  width:min(1120px,100%);
+  margin-inline:auto;
+  padding:clamp(28px,4vw,48px) clamp(24px,5vw,58px);
+}
+
+.nadav-page .nadav-story-copy{
+  max-width:none;
+}
+
+.nadav-page .nadav-story-copy::after{
+  content:"";
+  display:block;
+  clear:both;
+}
+
+.nadav-page .nadav-inline-gallery{
+  display:block;
+  width:clamp(235px,29vw,335px);
+  max-width:42%;
+  margin-top:.35rem;
+  margin-bottom:1.25rem;
+  clear:both;
+}
+
+.nadav-page .nadav-inline-right{
+  float:right;
+  margin-inline-end:0;
+  margin-inline-start:clamp(18px,3vw,34px);
+}
+
+.nadav-page .nadav-inline-left{
+  float:left;
+  margin-inline-start:0;
+  margin-inline-end:clamp(18px,3vw,34px);
+}
+
+.nadav-page .nadav-inline-gallery figure{
+  margin:0;
+  padding:7px;
+  border:1px solid rgba(85,184,212,.28);
+  border-radius:15px;
+  background:linear-gradient(145deg,rgba(48,74,125,.10),rgba(36,59,99,.05));
+  box-shadow:0 12px 28px rgba(18,42,62,.12);
+  overflow:hidden;
+  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;
+}
+
+.nadav-page .nadav-inline-gallery img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:430px;
+  object-fit:contain;
+  object-position:center;
+  border:0;
+  border-radius:10px;
+  background:rgba(20,39,66,.06);
+}
+
+.nadav-page .nadav-inline-gallery figure:hover,
+.nadav-page .nadav-inline-gallery figure:focus-visible{
+  transform:translateY(-2px);
+  border-color:rgba(85,184,212,.56);
+  box-shadow:0 16px 34px rgba(18,42,62,.16);
+}
+
+.nadav-page .nadav-story-copy > p{
+  text-wrap:pretty;
+}
+
+@media (max-width:800px){
+  .council-lockup{
+    margin-bottom:18px;
+    transform:scale(.94);
+    transform-origin:center top;
+  }
+
+  .nadav-page .nadav-inline-gallery,
+  .nadav-page .nadav-inline-right,
+  .nadav-page .nadav-inline-left{
+    float:none;
+    clear:both;
+    width:min(520px,100%);
+    max-width:100%;
+    margin:20px auto 26px;
+  }
+
+  .nadav-page .nadav-inline-gallery img{
+    max-height:none;
+  }
+}
+
+@media (max-width:520px){
+  .council-lockup{
+    max-width:94vw;
+    gap:9px;
+    padding:7px 11px 7px 8px;
+  }
+
+  .council-lockup-mark{
+    inline-size:50px;
+    block-size:43px;
+    flex-basis:50px;
+  }
+
+  .council-lockup-mark img{
+    inline-size:60px;
+    block-size:60px;
+  }
+
+  .council-lockup-copy{
+    min-width:132px;
+  }
+
+  .council-lockup-copy strong{
+    font-size:1.2rem;
+  }
+
+  .nadav-page .nadav-story-section{
+    padding:24px 18px 30px;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .nadav-page .nadav-inline-gallery figure{
+    transition:none;
+  }
+}
