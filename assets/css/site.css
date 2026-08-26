@@ -1367,3 +1367,53 @@ body {
     margin-top: 16px;
   }
 }
+
+
+/* PATCH 29 - CANDLE PLACEHOLDERS + PORTRAIT BREATHING ROOM */
+.portrait-ring img,
+.person-portrait img {
+  transform: scale(var(--scale, 1));
+  transform-origin: center center;
+}
+
+.portrait-ring,
+.person-portrait {
+  background: rgba(232, 233, 226, .13);
+}
+
+.memorial-candle {
+  position: relative;
+  display: grid !important;
+  place-items: center;
+  padding: 0 !important;
+  font-size: 0 !important;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 34%, rgba(245, 205, 107, .17), transparent 34%),
+    linear-gradient(180deg, rgba(236,239,234,.14), rgba(236,239,234,.045)) !important;
+}
+
+.memorial-candle::before {
+  content: "";
+  position: absolute;
+  width: 24%;
+  height: 38%;
+  left: 38%;
+  bottom: 21%;
+  border-radius: 5px 5px 8px 8px;
+  background: linear-gradient(90deg, #e6dfcc, #fff8e7 48%, #d9d0bb);
+  box-shadow: 0 7px 16px rgba(0,0,0,.16), inset -4px 0 7px rgba(117,99,68,.13);
+}
+
+.memorial-candle::after {
+  content: "";
+  position: absolute;
+  width: 17%;
+  height: 25%;
+  left: 41.5%;
+  bottom: 57%;
+  border-radius: 70% 30% 65% 35%;
+  transform: rotate(45deg);
+  background: radial-gradient(circle at 65% 62%, #fffbd8 0 22%, #f0c56c 43%, #d89035 70%, rgba(216,144,53,.25) 72% 100%);
+  box-shadow: 0 0 18px rgba(242,190,77,.28);
+}

@@ -1,0 +1,66 @@
+SNG-710 - CROSS-SITE QA AFTER PATCH 29
+========================================
+
+Scope
+-----
+154 memorial records checked.
+111 records currently contain life-story prose.
+All existing portrait images were visually reviewed in their circular framing.
+
+FIXED IN PATCH 29
+-----------------
+- Added a respectful candle placeholder to every record with no image.
+- Added per-person portrait breathing-room controls; no image pixels/people were altered.
+- Fixed Yehonatan Hagbi punctuation artifact: "אהבה. , אהב".
+- Fixed Nadav Goldstein-Almog employment sentence punctuation and "כפרי" -> "כפרית".
+- Fixed clear OCR/spelling artifacts in Shmuel Sami Kleiman: "החנדב", "שיחרור", "האוייב".
+- Softened overly graphic wording in Shmuel Mintz's childhood Holocaust passage while preserving the core history.
+- Fixed spelling and removed graphic war wording in Avraham Ben-Abu.
+- Removed body-recovery/booby-trap detail from Hagai-Leon Ben-Shmuel and fixed "החוה" -> "החווה".
+- Fixed Yuri Haranash's awkward sentence "נפטר ... מפצעיו שנפצע".
+- Removed speculative/repetitive prose from Angeline Aguirre and normalized her ז"ל spelling.
+- Removed Seta Homsorn's meta-placeholder "biography" until verified information is available; normalized ז"ל spelling.
+- Removed duplicated role fragments for Ilan Fiorentino, Tal Ayalon, Ran Poslushni and Amir Naim.
+- Removed generic "נזכר/ת בכבוד ובצניעות" role placeholders.
+
+REMAINING CLAIMS THAT SHOULD BE VERIFIED / ATTRIBUTED BEFORE FINAL PUBLICATION
+-------------------------------------------------------------------------------
+These were NOT silently changed in Patch 29:
+
+1. אורי רוסו
+   Exact claim that he fired six bullets and killed six terrorists.
+   This is unusually precise and should have an official/direct-witness source.
+
+2. טל אילון
+   Detailed combat sequence including directing forces and hitting terrorists.
+   Keep only with a clear source or explicit attribution.
+
+3. רן פוסלושני
+   The causal statement that his actions "saved their lives".
+   Prefer a direct witness attribution if retained.
+
+4. זיו חג'בי
+   "עזר לאנשים לברוח והציל את חייהם".
+   The first half is attributed to friends; the lifesaving conclusion should also be sourced.
+
+5. קשת זוהר
+   The statement that Ariel survived "thanks to" Ilan Fiorentino is causal and should be sourced/attributed.
+
+6. תומר אליעז ערבה
+   "סייע להציל משפחות רבות בנחל עוז" is a broad factual rescue claim and needs a clear source.
+
+7. יהב וינר
+   The safe-room sequence is central and likely based on survivor testimony, but the page should ideally say explicitly whose testimony it comes from.
+
+8. אביב ברעם
+   The project still contains conflicting versions of his final family message:
+   "הוא את כולם אוהב" vs. "אני אוהב את כולכם".
+   The exact original family/WhatsApp source should be checked before changing it.
+
+OTHER CHECKS
+------------
+- Exact duplicate story paragraphs within the same record: none detected after cleanup.
+- "נפגע/ת פעולות איבה": 0 occurrences.
+- "בקצרה": 0 occurrences in individual-page output.
+- The old visible count "96 נופלות ונופלים" remains removed.
+- No new biographies were invented for the previous-years records that still await data.

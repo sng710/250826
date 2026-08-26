@@ -1,24 +1,17 @@
-SNG-710 PATCH 28 - portrait framing adjustments
+SNG-710 PATCH 29 - full portrait pass + candle placeholders + cross-site text QA
 
-Apply after Patch 27.
+Apply after Patch 28.
 
-Adjusted the remaining portraits that still looked too tight inside the circular frame.
-This patch uses non-generative framing only: object-fit/object-position changes on the original images,
-with no alteration to the people in the photos.
+VISUAL
+- Reviewed all 104 existing portrait images in circular framing.
+- Added extra breathing room to 18 portraits that still looked too tight/cropped.
+- Uses CSS crop/scale/position only. Original people/images are not altered.
+- Guy Admoni uses contain framing so his full hat/head is no longer unnecessarily cropped.
+- Added a respectful CSS memorial-candle placeholder to all 50 records that do not yet have an image.
 
-Updated records:
-- קליימן שמואל סמי ז"ל
-- מינץ שמואל ז"ל
-- יצחקי יעקב (קובוש) ז"ל
-- רבינוביץ אסף ז"ל
-- בן-אבו אברהם ז"ל
-- לביא לבצלטר זאב (זאביק) ז"ל
-- חרנש יורי ז"ל
-- בן-שמואל חגי-לאון ז"ל
-- גלובטר גדעון (גידי) ז"ל
-- טאוסיג חנן ז"ל
-- בונהרדי חיים (מוקי) ז"ל
-- כצנשטיין הנס ז"ל
-- רכניץ זאב ז"ל
-- אסא עמירם ז"ל
-- סיבוני אסף-יעקב ז"ל
+TEXT QA
+- Applied only definite typo/punctuation/duplicate-role fixes and conservative sensitive-content cleanup.
+- Removed Seta Homsorn's placeholder prose until verified biography data is supplied.
+- See QA_PATCH29.txt for remaining operational/rescue claims that still need source verification.
+
+No new biographical facts were invented in this patch.
