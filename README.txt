@@ -1,12 +1,39 @@
-SNG-710 PATCH 33 - Sha'ar HaNegev favicon + text audit
+SNG-710 PATCH 34 - approved text cleanup
 
-Apply after Patch 32.
+Apply after Patch 33.
 
-CHANGED
-- Restores an explicit favicon across the homepage and all 154 individual memorial pages.
-- The favicon uses the recognizable Sha'ar HaNegev Regional Council emblem, without the wordmark because favicon sizes are too small for readable Hebrew text.
+This patch applies the text changes approved after the Patch 33 QA.
+
+UPDATED
+- Somkuan Pansa-ard: standardized spelling/transliteration and clarified that
+  he was a Thai citizen working in agriculture at Nahal Oz.
+- Dikla Arava: standardized to the IDF spelling דיקלה.
+- Yuri Harnash: corrected Brazil spelling and repaired the malformed commander quote
+  by converting it to an attributed paraphrase.
+- Shmuel Sami Kleiman: fixed spacing, softened one harsh personality phrase,
+  and softened the manner-of-death wording.
+- Zeev Lavi: removed old "- -" transcription artifacts inside quotes.
+- Hagai Ben-Shmuel: replaced a malformed source quote with an attributed paraphrase.
+- Neta Epstein: clarified the top relationship line to
+  "בן זוגה וארוסה של אירן שביט".
+- Uri Russo: removed the unsourced exact "six bullets / six terrorists" count.
+- Tal Ilon: attributed the detailed combat chronology to his readiness-squad comrades.
+- Ran Polushni: attributed the rescue conclusion to family/people in the house.
+- Ziv Hagbi: retained the attributed help-to-escape account but removed the
+  unsupported factual conclusion "saved their lives".
+- Ilan Fiorentino / Keshet Zohar: explicitly attributed the Ariel rescue conclusion
+  to the family.
+- Tomer Arava-Eliaz: removed "saved many families" and replaced it with the
+  published IDF investigation finding.
+- Yahav Wiener: attributed the detailed safe-room account to Shai-Lee's testimony.
+- Joshua Loitu Mollel: added the verified exact return date, 5.11.2025,
+  with IDF attribution.
+- Asaf Rabinovitz: softened one candid personality phrase and removed unnecessary
+  tactical detail from the death paragraph.
 
 NOT CHANGED
-- No memorial text, biography, family fact, date, rank, unit, image, gallery, video, QR code or layout was changed.
+- Aviv Baram's final WhatsApp line remains exactly:
+  "הוא את כולם אוהב"
 
-QA_PATCH33.txt contains the proposed text corrections and verification items for approval before any wording is edited.
+No design, images, galleries, candles, videos, QR codes, favicon or unrelated
+people's data were changed in this patch.

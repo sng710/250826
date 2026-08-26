@@ -1,0 +1,32 @@
+PATCH 34 - SOURCE / VERIFICATION NOTES
+======================================
+
+The following public sources were used only where the previous QA specifically
+flagged spelling or factual claims for verification:
+
+1. Somkuan Pansa-ard
+   Times of Israel:
+   https://www.timesofisrael.com/somkuan-pansa-ard-39-thai-farm-worker-was-familys-sole-support/
+   Supports the Latin spelling Somkuan Pansa-ard, age 39, Thai nationality,
+   and agricultural work at Kibbutz Nahal Oz.
+
+2. Dikla Arava / Tomer Arava-Eliaz
+   IDF investigation:
+   https://www.idf.il/263558
+   Supports the spelling דיקלה ערבה and the finding that Tomer acted bravely
+   until the moment he was shot. Patch 34 therefore removes the broader
+   unsourced statement that he "saved many families."
+
+3. Joshua Loitu Mollel
+   IDF - Operation Returning Home:
+   https://www.idf.il/en/mini-sites/operation-returning-home/all-updates/
+   The IDF announced on 6.11.2025 that the identification process had been
+   completed after Joshua's body was returned on 5.11.2025.
+   KAN 7.10.360 also records:
+   https://www.710360.kan.org.il/memorial/1201
+
+AVIV BARAM
+-----------
+Per the user's explicit confirmation, the WhatsApp sentence remains exactly:
+"הוא את כולם אוהב"
+Patch 34 does not alter it.
