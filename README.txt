@@ -1,18 +1,22 @@
-SNG-710 PATCH 42 - Shlomo Tzvi Ron / October 7 clarification
+SNG-710 PATCH 43 - Nadav Amikam family gallery
 
-Apply after Patch 41.
+Apply after Patch 42.
 
-Changed only the sentence describing Shlomo Tzvi Ron's murder so that it is
-immediately clear that it occurred during the October 7, 2023 attack:
+Added the five user-supplied photographs to Nadav Amikam's existing gallery.
 
-"במהלך מתקפת 7 באוקטובר 2023, בכ״ב בתשרי תשפ״ד,
-נרצח שלמה צבי רון על ידי מחבלים בביתו בקיבוץ נחל עוז,
-בן שמונים וארבע במותו."
+UNCHANGED
+- main portrait
+- all existing gallery photos
+- life story
+- top facts
+- role / service record
+- family information
+- page design
+- videos
+- homepage order
+- all other people
 
-The previous requested changes remain intact:
-- חנהלה remains the wife's name.
-- the safe-room sentence remains removed.
-- "איתם היה הנכד ירדן" remains corrected.
-- no additional details about the circumstances of the murder were added.
+The new photos were only converted/optimized to WebP for web performance.
+Their original composition and content were not edited.
 
-No other content or design was changed.
+The main portrait is not duplicated in the gallery.

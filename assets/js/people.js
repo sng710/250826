@@ -997,7 +997,12 @@ window.MEMORIAL_PEOPLE = [
     ],
     "photos": [
       "assets/img/nadav_a-1.webp",
-      "assets/img/nadav_a-2.webp"
+      "assets/img/nadav_a-2.webp",
+      "assets/img/nadav_a-family-01.webp",
+      "assets/img/nadav_a-family-02.webp",
+      "assets/img/nadav_a-family-03.webp",
+      "assets/img/nadav_a-family-04.webp",
+      "assets/img/nadav_a-family-05.webp"
     ]
   },
   {
