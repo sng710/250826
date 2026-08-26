@@ -1,40 +1,32 @@
-SNG-710 PATCH 24 - add previous-years records
+SNG-710 PATCH 26 - 7 historical biographies + sensitive-content cleanup
 
-Apply after Patch 23.
+Apply after Patch 25.
 
-USER-SUPPLIED RECORDS
-- Supplied entries: 61
-- Existing duplicates skipped: 3
-  * מיכאל דמבסקי
-  * עזרא (עוזי) אפרים
-  * ירון כהן
-- New records added: 58
-- Total memorial records after patch: 154
+ENRICHED EXISTING RECORDS - NO DUPLICATES CREATED
+- גדעון (גידי) גלובטר - דורות
+- חנן טאוסיג - דורות
+- חיים (מוקי) בונהרדי - דורות
+- הנס כצנשטיין - no settlement assigned because the supplied biography does not explicitly support one
+- זאב רכניץ - דורות
+- עמירם אסא - דורות
+- אסף-יעקב סיבוני - ניר עם
 
-FOR EACH NEW RECORD, ONLY THE SUPPLIED CORE DATA IS DISPLAYED
-- name
-- rank, when supplied
-- parents
-- fallen/deceased date
-- age
+FOR ALL SEVEN
+- added the user-supplied portrait and optimized it as WebP
+- added the supplied life story in the existing unified page format
+- added birth/resting-place/family facts that are explicitly present in the supplied biography
+- kept "בקצרה" removed
+- no scraped Izkor UI text was added
 
-NOT ADDED YET
-- active portrait image
-- unit
-- locality
-- life story
-- gallery
+EDITORIAL / SENSITIVE CLEANUP
+- Removed graphic descriptions of bodies, wounds and the exact manner in which people were found/killed where not needed.
+- Reduced detailed tactical/weapon descriptions in battle accounts.
+- For זאב רכניץ, removed several long generic Holocaust-history/statistics paragraphs while preserving his personal Holocaust-survivor story, Aliyah, life in Dorot and "נצר אחרון" status.
+- For אסף-יעקב סיבוני, removed private relationship information and the graphic memorial-poem excerpt; retained his family, education, service, character and commemoration.
+- Removed the malformed sentence "בן עשרים ושבעה חודשים היה בנופלו"; the official top detail remains "בן 21 בנופלו".
 
-The Izkor page URL and supplied image URL are retained only as non-visible source
-fields in people.js for future work.
+AMIRAM ASA UNIT NOTE
+The pasted heading said "חטיבת כפיר", but the supplied biography explicitly states that he volunteered to the paratroopers in 1965 and later notes his commemoration in the paratroopers album.
+Patch 26 therefore uses "חטיבת הצנחנים" rather than preserving the clearly conflicting heading.
 
-The scraped UI text was NOT added:
-- לסיפור חייו / לסיפור חייה
-- הקדשה אישית
-- הדלקת נר
-- נמצאו ... חללים
-- מיון לפי
-
-All new records are marked isPreviousYears=true and therefore appear after
-the October 7/current memorial group under the existing
-"נופלות ונופלים משנים קודמות" divider.
+No unrelated person's story or data is changed in this patch.
