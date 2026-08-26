@@ -1,0 +1,21 @@
+MAIN PORTRAIT DUPLICATES REMOVED FROM PRIVATE GALLERIES
+======================================================
+
+גורן ארן ז"ל (aran_g): assets/img/aran_g-1.webp
+אדרי אביעד ז"ל (aviad_a): assets/img/aviad_a-1.webp
+חג'בי אליצור צוריאל ז"ל (elitzur_h): assets/img/elitzur_h-1.webp
+אורגד אליהו ז"ל (eliyahu_o): assets/img/eliyahu_o-1.webp
+ברדיצ'סקי איתי ז"ל (itay_b): assets/img/itay_b-1.webp
+בן דוד מאיה ז"ל (maya_b): assets/img/maya_b-1.webp
+אדמוני מיכל ז"ל (michal_a): assets/img/michal_a-1.webp
+עמיקם נדב ז"ל (nadav_a): assets/img/nadav_a-m3.webp
+גולדשטיין אלמוג נדב יהודה ז"ל (nadav_g): assets/img/nadav_g-1.webp
+דגני נעמי ז"ל (naomi_d): assets/img/naomi_d-1.webp
+חסידים נאור ניסים ז"ל (naor_h): assets/img/naor_h-1.webp
+זיני ניראל ז"ל (niral_z): assets/img/niral_z-1.webp
+אליקים נועם ז"ל (noam_e): assets/img/noam_e-1.webp
+ברוש שושנה שושי ז"ל (shoshi_b): assets/img/shoshi_b-1.webp
+גורן טובה ז"ל (tova_g): assets/img/tova_g-1.webp
+זוהר יניב ז"ל (yaniv_z): assets/img/yaniv_z-1.webp
+חג'בי יהונתן ז"ל (yehonatan_h): assets/img/yehonatan_h-1.webp
+חג'בי יזהר ז"ל (yizhar_h): assets/img/yizhar_h-1.webp

@@ -1417,3 +1417,212 @@ body {
   background: radial-gradient(circle at 65% 62%, #fffbd8 0 22%, #f0c56c 43%, #d89035 70%, rgba(216,144,53,.25) 72% 100%);
   box-shadow: 0 0 18px rgba(242,190,77,.28);
 }
+
+
+/* PATCH 32 - PRIVATE PAGE IMAGE EXPERIENCE */
+.face-gallery-card {
+  padding: clamp(18px, 2.5vw, 28px);
+  border-color: rgba(85,184,212,.28);
+  background: linear-gradient(145deg, rgba(48,74,125,.86), rgba(36,59,99,.78));
+}
+
+.face-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+  gap: clamp(14px, 2vw, 22px);
+  align-items: start;
+}
+
+.face-gallery figure {
+  margin: 0;
+  padding: 8px;
+  border: 1px solid rgba(248,247,243,.24);
+  border-radius: 14px;
+  background: rgba(248,247,243,.075);
+  box-shadow: 0 10px 26px rgba(11,28,49,.18);
+  overflow: hidden;
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+
+.face-gallery figure:only-child {
+  max-width: min(560px, 100%);
+  margin-inline: auto;
+}
+
+.face-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
+  border: 0;
+  border-radius: 9px;
+  background: rgba(20,39,66,.42);
+}
+
+.image-zoom-target {
+  cursor: zoom-in;
+  outline: none;
+}
+
+.image-zoom-target:hover,
+.image-zoom-target:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(126,211,232,.72);
+  box-shadow: 0 14px 30px rgba(7,24,45,.25), 0 0 0 3px rgba(85,184,212,.12);
+}
+
+.person-portrait.image-zoom-target:hover,
+.person-portrait.image-zoom-target:focus-visible {
+  transform: none;
+  border-color: rgba(126,211,232,.78);
+  box-shadow: 0 12px 32px rgba(7,24,45,.28), 0 0 0 4px rgba(85,184,212,.10);
+}
+
+.image-viewer[hidden] { display: none !important; }
+.image-viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  padding: clamp(12px, 3vw, 34px);
+  opacity: 0;
+  transition: opacity .16s ease;
+}
+.image-viewer.is-open { opacity: 1; }
+.image-viewer-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(7,17,31,.92);
+  backdrop-filter: blur(7px);
+}
+.image-viewer-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(1500px, 96vw);
+  height: min(900px, 92vh);
+  display: grid;
+  grid-template-columns: 52px minmax(0,1fr) 52px;
+  align-items: center;
+  gap: 12px;
+}
+.image-viewer-figure {
+  min-width: 0;
+  min-height: 0;
+  max-height: 92vh;
+  margin: 0;
+  display: grid;
+  grid-template-rows: minmax(0,1fr) auto;
+  justify-items: center;
+  gap: 10px;
+}
+.image-viewer-image {
+  display: block;
+  max-width: 100%;
+  max-height: 84vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #16263e;
+  box-shadow: 0 24px 70px rgba(0,0,0,.42);
+}
+.image-viewer-caption {
+  max-width: 70ch;
+  color: #eef4f6;
+  text-align: center;
+  font-size: .92rem;
+}
+.image-viewer-close,
+.image-viewer-nav {
+  appearance: none;
+  border: 1px solid rgba(255,255,255,.25);
+  background: rgba(38,63,107,.78);
+  color: #fff;
+  box-shadow: 0 8px 22px rgba(0,0,0,.2);
+  cursor: pointer;
+}
+.image-viewer-close:hover,
+.image-viewer-nav:hover,
+.image-viewer-close:focus-visible,
+.image-viewer-nav:focus-visible {
+  background: rgba(63,96,151,.94);
+  border-color: rgba(126,211,232,.72);
+  outline: 3px solid rgba(85,184,212,.18);
+}
+.image-viewer-close {
+  position: absolute;
+  top: 0;
+  inset-inline-end: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  line-height: 1;
+  z-index: 2;
+}
+.image-viewer-nav {
+  width: 48px;
+  height: 62px;
+  border-radius: 14px;
+  font-size: 2rem;
+  line-height: 1;
+}
+.image-viewer-open { overflow: hidden; }
+
+/* A quieter, warmer memorial candle with a gently animated flame. */
+.memorial-candle {
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 50% 40%, rgba(255,214,115,.22) 0 14%, rgba(255,188,62,.08) 33%, transparent 58%),
+    radial-gradient(circle at 50% 78%, rgba(255,255,255,.075), transparent 52%),
+    linear-gradient(180deg, rgba(229,236,236,.12), rgba(25,49,78,.08)) !important;
+}
+.memorial-candle::before {
+  width: 25%;
+  height: 40%;
+  left: 37.5%;
+  bottom: 18%;
+  border-radius: 5px 5px 10px 10px;
+  background:
+    linear-gradient(90deg, rgba(150,132,104,.20), transparent 20% 80%, rgba(130,112,87,.18)),
+    linear-gradient(180deg, #fffaf0 0%, #eee3ca 72%, #d7c8a7 100%);
+  box-shadow:
+    0 9px 19px rgba(0,0,0,.18),
+    inset 0 2px 0 rgba(255,255,255,.8),
+    inset -5px 0 8px rgba(117,99,68,.10);
+}
+.memorial-candle::after {
+  width: 15%;
+  height: 24%;
+  left: 42.5%;
+  bottom: 58%;
+  transform-origin: 50% 92%;
+  border-radius: 72% 28% 68% 32%;
+  background: radial-gradient(circle at 64% 65%, #fffde5 0 20%, #ffd274 38%, #e99833 66%, rgba(211,119,31,.25) 78%, transparent 100%);
+  box-shadow: 0 0 14px rgba(255,208,94,.42), 0 0 30px rgba(244,169,48,.20);
+  animation: memorialFlame 2.7s ease-in-out infinite;
+}
+@keyframes memorialFlame {
+  0%,100% { transform: rotate(43deg) scale(1); filter: brightness(1); }
+  28% { transform: rotate(38deg) scale(.96,1.05); filter: brightness(1.08); }
+  57% { transform: rotate(47deg) scale(1.04,.97); filter: brightness(.98); }
+  78% { transform: rotate(41deg) scale(.98,1.03); filter: brightness(1.05); }
+}
+
+@media (max-width: 680px) {
+  .face-gallery { grid-template-columns: 1fr; }
+  .face-gallery figure { max-width: 100%; }
+  .image-viewer-dialog { grid-template-columns: 40px minmax(0,1fr) 40px; gap: 6px; }
+  .image-viewer-nav { width: 38px; height: 52px; border-radius: 11px; }
+  .image-viewer-close { top: 4px; width: 40px; height: 40px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .face-gallery figure,
+  .image-viewer { transition: none !important; }
+  .memorial-candle::after { animation: none !important; }
+}
