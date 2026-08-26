@@ -1,0 +1,45 @@
+PATCH 52 CONTENT / STRUCTURE AUDIT
+
+Scope checked: homepage + all 154 person pages.
+
+STRUCTURE
+PASS - 154 person pages present.
+PASS - 110 pages with biography/story content converted to explicit static section HTML.
+PASS - 44 pages have no biography/story block and remain simple profile/facts pages.
+PASS - 86 current-period story pages contain the explicit heading "שבת ה7.10.2023".
+PASS - 24 previous-years story pages retain a historically appropriate death/circumstances section.
+PASS - No person page references person-template.js after conversion.
+PASS - Biography paragraph-content counters match Patch 51: no story paragraph lost or duplicated by static conversion.
+
+SPECIFIC REQUESTS
+PASS - Omer Zadikevich: "עם תחילת המתקפה..." is the first paragraph in the 7 October section.
+PASS - Omer story has no duplicated biography paragraph block.
+PASS - Neta Epstein requested 7 October wording is preserved.
+PASS - Neta Epstein family-loss paragraph is preserved immediately within the 7 October section.
+PASS - Nadav uses the shared static image/text layout rather than a separate Nadav-only story layout.
+
+MEDIA
+PASS - No duplicate gallery image source remains within a person page.
+PASS - Main portrait is not repeated in an inline gallery.
+PASS - Existing supported memorial video sections remain before story content.
+PASS - No iframe is missing a title.
+PASS - No image is missing an alt attribute.
+
+LOCAL INTEGRITY
+PASS - 155 HTML files checked (homepage + 154 person pages).
+PASS - 0 duplicate HTML IDs found.
+PASS - 0 broken referenced local image/script/stylesheet paths found.
+PASS - All pages reference site.css?v=252.
+PASS - 0 target=_blank links missing rel=noopener.
+
+ACCESSIBILITY / FRONT-END
+PASS - Existing skip links and main-content targets are preserved.
+PASS - Existing focus-visible and reduced-motion rules are preserved.
+PASS - Existing keyboard-accessible image viewer is preserved.
+PASS - Updated CSS parses with 0 top-level tinycss2 errors.
+PASS - CSS brace balance is 0.
+PASS - app.js passes node --check.
+PASS - gallery-viewer.js passes node --check.
+
+NOTE
+Automated checks can catch structural accessibility regressions, but formal accessibility certification still requires manual assistive-technology testing in the deployment environment (keyboard, screen reader, zoom/reflow, contrast and browser/device combinations).

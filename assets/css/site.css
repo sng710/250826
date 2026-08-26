@@ -2511,3 +2511,250 @@ body {
     max-height:460px;
   }
 }
+
+/* =========================================================
+   PATCH 52 - EDITORIAL FINALIZATION / LARGER TYPE / MATCHED MEDIA ROWS
+   ========================================================= */
+
+/* Larger, easier-to-read type across the homepage. */
+.home-page .eyebrow{
+  font-size:1.04rem;
+}
+.home-page .poem{
+  font-size:clamp(1.42rem,2.45vw,1.95rem);
+  line-height:1.72;
+}
+.home-page .dedication{
+  max-width:800px;
+  font-size:clamp(1.1rem,1.03rem + .28vw,1.23rem);
+  line-height:1.9;
+}
+.home-page .hero-links a{
+  font-size:1.06rem;
+  padding:7px 4px;
+}
+.home-page .search-control{
+  min-height:54px;
+}
+.home-page .search-control input{
+  font-size:1.08rem;
+}
+.home-page .card-name{
+  font-size:1.23rem;
+  line-height:1.32;
+}
+.home-page .card-place{
+  font-size:.96rem;
+  line-height:1.45;
+}
+.home-page .memory-card{
+  grid-template-rows:var(--portrait-size) auto auto;
+  min-height:246px;
+}
+.home-page .period-divider{
+  font-size:1.66rem;
+}
+
+/* Larger preview-modal text without crowding the layout. */
+.lightbox-kicker{
+  font-size:1rem;
+}
+.lightbox-role{
+  font-size:1.06rem;
+  line-height:1.65;
+}
+.preview-facts{
+  font-size:1.02rem;
+  line-height:1.55;
+}
+.primary-button,
+.secondary-button{
+  font-size:1.02rem;
+}
+
+/* Person-page identity and facts. */
+.person-page .person-brand{
+  font-size:1.16rem;
+}
+.person-page .back-link{
+  font-size:1rem;
+}
+.person-page .person-head .place{
+  font-size:1.03rem;
+}
+.person-page .person-head .service-line{
+  font-size:1.07rem;
+  line-height:1.55;
+}
+.person-page .person-head .role{
+  max-width:68ch;
+  font-size:1.12rem;
+  line-height:1.72;
+}
+.person-page .fact{
+  font-size:1.06rem;
+  line-height:1.62;
+}
+.person-page .story-section > h2{
+  font-size:clamp(1.9rem,1.7rem + .65vw,2.25rem);
+}
+
+/* The story is now static HTML; no runtime section guessing is required. */
+.person-page .story-copy{
+  max-width:100ch;
+}
+.structured-story-copy{
+  gap:2rem;
+}
+.story-structured-section{
+  padding-top:1.5rem;
+}
+.story-structured-section > h3{
+  margin-bottom:1.25rem;
+  font-size:clamp(1.52rem,1.32rem + .62vw,1.95rem);
+  line-height:1.28;
+}
+.story-block-text p,
+.story-structured-section > .story-block-text p,
+.story-copy > .structured-story-copy p{
+  font-size:clamp(1.18rem,1.11rem + .25vw,1.28rem);
+  line-height:1.94;
+  margin-bottom:1.18em;
+}
+.story-structured-section > .story-block-text{
+  max-width:78ch;
+  margin-inline:auto;
+}
+
+/*
+ * Matched editorial rows:
+ * On desktop the photograph CARD stretches to exactly the height of the
+ * neighboring text block. The photo itself stays proportional with contain,
+ * so it is never cropped or distorted.
+ */
+@media (min-width:901px){
+  .story-media-block,
+  .story-media-block.media-left,
+  .story-media-block.media-right{
+    grid-template-columns:minmax(0,1fr) minmax(270px,340px);
+    align-items:stretch;
+    gap:clamp(28px,3.5vw,46px);
+    margin-bottom:2rem;
+  }
+  .story-media-block.media-left{
+    grid-template-columns:minmax(270px,340px) minmax(0,1fr);
+  }
+  .story-block-text{
+    align-self:start;
+  }
+  .story-block-media{
+    align-self:stretch;
+    display:flex;
+    min-height:100%;
+  }
+  .story-block-media .enhanced-inline-gallery,
+  .story-block-media .face-gallery{
+    display:flex;
+    width:100%;
+    height:100%;
+    min-height:100%;
+  }
+  .story-block-media figure{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    height:100%;
+    min-height:100%;
+    padding:10px;
+    border-radius:16px;
+  }
+  .story-block-media img{
+    display:block;
+    width:100%;
+    height:100%;
+    max-height:none;
+    object-fit:contain;
+    object-position:center;
+    border-radius:11px;
+  }
+}
+
+.story-extra-gallery img{
+  max-height:500px;
+  object-fit:contain;
+}
+
+.family-contact-text{
+  font-size:1.06rem;
+  line-height:1.75;
+}
+.family-contact-btn{
+  font-size:1.02rem;
+}
+.page-footer{
+  font-size:1.08rem;
+}
+
+/* Tablet/mobile: keep images natural and full-width instead of forcing height. */
+@media (max-width:900px){
+  .story-media-block,
+  .story-media-block.media-left,
+  .story-media-block.media-right{
+    gap:18px;
+    margin-bottom:1.8rem;
+  }
+  .story-block-media,
+  .story-block-media .enhanced-inline-gallery,
+  .story-block-media .face-gallery,
+  .story-block-media figure{
+    height:auto;
+    min-height:0;
+  }
+  .story-block-media{
+    width:min(520px,100%);
+  }
+  .story-block-media img{
+    width:100%;
+    height:auto;
+    max-height:580px;
+    object-fit:contain;
+  }
+}
+
+@media (max-width:760px){
+  .home-page .dedication{
+    font-size:1.08rem;
+    line-height:1.85;
+  }
+  .home-page .card-name{
+    font-size:1.12rem;
+  }
+  .home-page .card-place{
+    font-size:.92rem;
+  }
+  .person-page .person-head .role{
+    font-size:1.07rem;
+  }
+  .person-page .fact{
+    font-size:1.02rem;
+  }
+  .story-structured-section > h3{
+    font-size:1.48rem;
+  }
+  .story-block-text p,
+  .story-structured-section > .story-block-text p,
+  .story-copy > .structured-story-copy p{
+    font-size:1.12rem;
+    line-height:1.9;
+  }
+}
+
+@media (max-width:420px){
+  .story-block-text p,
+  .story-structured-section > .story-block-text p,
+  .story-copy > .structured-story-copy p{
+    font-size:1.08rem;
+    line-height:1.88;
+  }
+}

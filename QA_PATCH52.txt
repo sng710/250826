@@ -1,0 +1,14 @@
+PATCH 52 QA SUMMARY
+
+PASS - Patch is designed to apply over Patch 51.
+PASS - All story structure is explicit/static on the person pages that contain biographies.
+PASS - Runtime heuristic person-template.js is no longer referenced.
+PASS - Story wording preserved during static conversion.
+PASS - Larger typography added cross-site with responsive fallbacks.
+PASS - Desktop image cards match neighboring text-row height without stretching/cropping the underlying photo.
+PASS - Mobile/tablet image layout returns to natural proportional height.
+PASS - Nadav is on the shared cross-site story layout.
+PASS - Omer and Neta requested corrections verified.
+PASS - Local-reference / duplicate-ID / alt / iframe-title / noopener audits clean.
+PASS - CSS syntax and JS syntax checks clean.
+PASS - ZIP integrity checked after packaging.
