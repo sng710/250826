@@ -2044,3 +2044,194 @@ body {
     transition:none;
   }
 }
+
+/* PATCH 46 - SMALL COUNCIL LOGO ON ALL PAGES */
+.home-page::before,
+.person-page::before{
+  content:"";
+  position:fixed;
+  top:12px;
+  left:12px;
+  width:64px;
+  height:64px;
+  border-radius:16px;
+  background:rgba(21,39,67,.34);
+  border:1px solid rgba(85,184,212,.32);
+  box-shadow:0 12px 26px rgba(10,24,43,.18);
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+  pointer-events:none;
+  z-index:35;
+}
+
+.home-page::after,
+.person-page::after{
+  content:"";
+  position:fixed;
+  top:20px;
+  left:20px;
+  width:48px;
+  height:48px;
+  background:url("../favicon-sng.svg") center/contain no-repeat;
+  pointer-events:none;
+  z-index:36;
+}
+
+@media (max-width: 760px){
+  .home-page::before,
+  .person-page::before{
+    top:10px;
+    left:10px;
+    width:52px;
+    height:52px;
+    border-radius:14px;
+  }
+
+  .home-page::after,
+  .person-page::after{
+    top:17px;
+    left:17px;
+    width:38px;
+    height:38px;
+  }
+}
+
+@media (max-width: 460px){
+  .home-page::before,
+  .person-page::before{
+    width:46px;
+    height:46px;
+  }
+
+  .home-page::after,
+  .person-page::after{
+    top:16px;
+    left:16px;
+    width:32px;
+    height:32px;
+  }
+}
+
+/* PATCH 47 - NADAV STORY REALIGNMENT + STRONGER PARAGRAPHING */
+.nadav-page .nadav-story-copy{
+  max-width:96ch;
+  margin-inline:auto;
+}
+
+.nadav-page .nadav-story-intro{
+  max-width:88ch;
+  margin:0 auto 1.75rem;
+}
+
+.nadav-page .nadav-story-block{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) clamp(240px,28vw,330px);
+  gap:clamp(18px,3vw,34px);
+  align-items:start;
+  margin:0 auto 1.85rem;
+}
+
+.nadav-page .nadav-block-left{
+  grid-template-columns:clamp(240px,28vw,330px) minmax(0,1fr);
+}
+
+.nadav-page .nadav-block-right .nadav-story-text{grid-column:1;}
+.nadav-page .nadav-block-right .nadav-inline-gallery{grid-column:2;}
+.nadav-page .nadav-block-left .nadav-inline-gallery{grid-column:1;}
+.nadav-page .nadav-block-left .nadav-story-text{grid-column:2;}
+
+.nadav-page .nadav-story-text,
+.nadav-page .nadav-story-intro{
+  min-width:0;
+}
+
+.nadav-page .nadav-story-intro p,
+.nadav-page .nadav-story-text p{
+  margin:0 0 1.05em;
+  color:#f2f4f3;
+  font-size:1.055rem;
+  line-height:2.02;
+  text-wrap:pretty;
+}
+
+.nadav-page .nadav-story-intro p:last-child,
+.nadav-page .nadav-story-text p:last-child{
+  margin-bottom:0;
+}
+
+.nadav-page .nadav-story-block .nadav-inline-gallery{
+  float:none;
+  clear:none;
+  width:100%;
+  max-width:none;
+  margin:0;
+  align-self:start;
+}
+
+.nadav-page .nadav-story-block .nadav-inline-gallery figure{
+  margin:0;
+  padding:6px;
+  min-height:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(85,184,212,.28);
+  border-radius:15px;
+  background:linear-gradient(145deg,rgba(48,74,125,.10),rgba(36,59,99,.05));
+  box-shadow:0 10px 24px rgba(18,42,62,.11);
+  overflow:hidden;
+  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;
+}
+
+.nadav-page .nadav-story-block .nadav-inline-gallery img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:420px;
+  object-fit:contain;
+  object-position:center;
+  border:0;
+  border-radius:10px;
+  background:rgba(20,39,66,.06);
+}
+
+@media (max-width:900px){
+  .nadav-page .nadav-story-block,
+  .nadav-page .nadav-block-left{
+    grid-template-columns:1fr;
+    gap:14px;
+    margin-bottom:1.7rem;
+  }
+
+  .nadav-page .nadav-block-right .nadav-story-text,
+  .nadav-page .nadav-block-right .nadav-inline-gallery,
+  .nadav-page .nadav-block-left .nadav-story-text,
+  .nadav-page .nadav-block-left .nadav-inline-gallery{
+    grid-column:1;
+  }
+
+  .nadav-page .nadav-story-block .nadav-inline-gallery{
+    width:min(520px,100%);
+    margin-inline:auto;
+  }
+
+  .nadav-page .nadav-story-block .nadav-inline-gallery img{
+    max-height:min(68vh,560px);
+  }
+}
+
+@media (max-width:520px){
+  .nadav-page .nadav-story-intro p,
+  .nadav-page .nadav-story-text p{
+    font-size:1.02rem;
+    line-height:1.95;
+  }
+
+  .nadav-page .nadav-story-block{
+    margin-bottom:1.45rem;
+  }
+
+  .nadav-page .nadav-story-block .nadav-inline-gallery img{
+    max-height:480px;
+  }
+}

@@ -1,0 +1,12 @@
+PATCH 47 QA
+
+PASS - Nadav page points to ../../assets/css/site.css?v=247.
+PASS - Nadav biography wording preserved exactly; layout-only update.
+PASS - Nadav inline story photo count remains 7.
+PASS - Alternating inline image sequence retained.
+PASS - Updated site.css braces balanced.
+PASS - assets/favicon-sng.svg exists in /assets.
+PASS - assets/favicon-sng.png exists in /assets.
+PASS - Patch ZIP integrity checked with unzip -t.
+
+Scope deliberately limited to Nadav page readability/alignment and cumulative favicon safety.
