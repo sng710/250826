@@ -1,0 +1,9 @@
+PATCH 87 QA
+PASS - person-page.js syntax check.
+PASS - desktop homepage left panel is capped to viewport height.
+PASS - short desktop heights receive tighter responsive typography/spacing.
+PASS - mobile multi-media sections render explicit carousel controls.
+PASS - mobile carousel shows one full item at a time.
+PASS - carousel exposes previous/next, dots and current/total status.
+PASS - desktop media grid remains unchanged.
+PASS - floating logo enlarged and inset from left edge.
