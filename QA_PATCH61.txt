@@ -1,0 +1,8 @@
+PATCH 61 QA
+
+PASS - supplied QR image included in assets/img.
+PASS - people.js references the QR image exactly once for yehonatan_h.
+PASS - QR href points to the existing remember_yehonatan Instagram memorial page.
+PASS - person-page.js renders topMedia images with alt text and keyboard-accessible link behavior.
+PASS - people.js passes node --check.
+PASS - person-page.js passes node --check.

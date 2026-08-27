@@ -1521,6 +1521,14 @@ window.MEMORIAL_PEOPLE = [
             "title": "YouTube video player"
           }
         ],
+        "images": [
+          {
+            "src": "assets/img/yehonatan_h-instagram-qr.jpg",
+            "alt": "ברקוד QR לעמוד האינסטגרם לזכר יהונתן חג׳בי־זהבי",
+            "href": "https://www.instagram.com/remember_yehonatan?igsi=czByN21uNmFvNDBs&utm_source=qr",
+            "label": "סריקה או לחיצה לעמוד האינסטגרם לזכר יהונתן"
+          }
+        ],
         "links": [
           {
             "href": "https://www.mika-care.co.il/home/",
