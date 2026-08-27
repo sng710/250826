@@ -34,8 +34,6 @@
   }
 }
 </style>
-
-
 <style>
 /* PATCH 85: compact desktop left hero so the full panel fits at 100% zoom */
 @media (min-width: 900px){
@@ -126,8 +124,6 @@
   }
 }
 </style>
-
-
 <style>
 /* PATCH 86: mobile collapsible search/filter panel */
 .mobile-filter-toggle{display:none;}
@@ -152,8 +148,6 @@
   .mobile-filter-toggle{display:none !important;}
 }
 </style>
-
-
 <style>
 /* PATCH 87 - guarantee the desktop left memorial panel fits within the viewport at 100% zoom */
 @media (min-width:900px){
@@ -201,8 +195,6 @@
   .home-page .hero-links a{min-height:31px !important;padding-top:3px !important;padding-bottom:3px !important;}
 }
 </style>
-
-
 <style>
 /* PATCH 88 - fuller desktop left panel: use all available space without scrolling */
 @media (min-width:900px){
@@ -315,52 +307,243 @@
   }
 }
 </style>
+<style>
+/* PATCH 89 — title/search relocation only; existing text is untouched */
+.home-page .council-corner{display:none !important;}
 
-</head>
+.main-title-band{
+  width:min(100%,1120px);
+  margin:0 auto clamp(18px,2.4vw,30px);
+  padding:clamp(18px,2.4vw,28px) clamp(18px,3vw,36px) 10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:clamp(18px,2.4vw,30px);
+  text-align:center;
+}
+.main-title-logo-wrap{
+  flex:0 0 auto;
+  width:clamp(86px,7.2vw,116px);
+  height:clamp(86px,7.2vw,116px);
+  padding:9px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(151,205,221,.38);
+  border-radius:22px;
+  background:rgba(240,246,249,.94);
+  box-shadow:0 14px 34px rgba(7,22,42,.22);
+}
+.main-title-logo{display:block;width:100%;height:100%;object-fit:contain;}
+.main-primary-title{
+  margin:0 !important;
+  font-family:var(--serif,serif);
+  font-size:clamp(3.6rem,5.6vw,6.3rem) !important;
+  font-weight:400 !important;
+  line-height:.98 !important;
+  letter-spacing:-.025em;
+  color:#fff;
+  text-shadow:0 0 18px rgba(230,246,255,.18);
+}
+.main-title-copy::after{
+  content:"";
+  display:block;
+  width:min(420px,72%);
+  height:1px;
+  margin:16px auto 0;
+  background:linear-gradient(90deg,transparent,rgba(116,195,221,.72),transparent);
+}
+
+@media (min-width:900px){
+  .home-page .hero,
+  .home-page .hero-inner{
+    height:100vh !important;
+    height:100dvh !important;
+    min-height:0 !important;
+    max-height:100vh !important;
+    max-height:100dvh !important;
+    overflow:hidden !important;
+  }
+  .home-page .hero{
+    padding:clamp(14px,1.9vh,22px) clamp(18px,1.8vw,28px) !important;
+  }
+  .home-page .hero-inner{
+    padding:0 !important;
+    display:grid !important;
+    grid-template-rows:auto auto auto auto minmax(0,auto) auto;
+    align-content:space-between !important;
+    gap:clamp(6px,.9vh,10px) !important;
+  }
+  .left-site-title-wrap{text-align:center;}
+  .left-site-title{
+    margin:0 !important;
+    font-family:var(--serif,serif);
+    font-size:clamp(2.15rem,4.2vh,3.1rem) !important;
+    font-weight:400 !important;
+    line-height:1.02 !important;
+    letter-spacing:-.015em;
+  }
+  .home-page .hero-rule{
+    margin:0 !important;
+    opacity:.78;
+  }
+  .left-quote-wrap{min-height:0;}
+  .home-page .hero .poem{
+    margin:0 !important;
+    padding:0 !important;
+    font-size:clamp(1.45rem,2.65vh,2rem) !important;
+    line-height:1.35 !important;
+  }
+  .home-page .hero .dedication{
+    margin:0 !important;
+    font-size:clamp(1rem,1.82vh,1.3rem) !important;
+    line-height:1.5 !important;
+  }
+  .left-search-wrap{
+    min-height:0;
+    width:100%;
+    margin:0;
+  }
+  .left-search-wrap .mobile-filter-toggle{display:none !important;}
+  .left-search-wrap .mobile-filter-panel{
+    display:block !important;
+    margin:0 !important;
+  }
+  .left-search-wrap .toolbar{
+    margin:0 !important;
+    padding:0 !important;
+    background:transparent !important;
+    border:0 !important;
+    box-shadow:none !important;
+  }
+  .left-search-wrap .search-filter-row{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:clamp(7px,.9vh,10px) !important;
+    width:100%;
+  }
+  .left-search-wrap .search-control,
+  .left-search-wrap .security-filter,
+  .left-search-wrap .place-filter{
+    width:100% !important;
+    max-width:none !important;
+    margin:0 !important;
+  }
+  .left-search-wrap .search-control,
+  .left-search-wrap .security-filter,
+  .left-search-wrap .place-filter-trigger{
+    min-height:clamp(42px,5.4vh,52px) !important;
+    border-radius:999px !important;
+  }
+  .left-search-wrap .place-filter-label{
+    margin:0 8px 3px !important;
+    font-size:.84rem !important;
+    line-height:1.15 !important;
+  }
+  .home-page .hero-links{
+    margin:0 !important;
+    gap:8px !important;
+  }
+  .home-page .hero-links a{
+    min-height:36px !important;
+    padding:5px 12px !important;
+    font-size:.96rem !important;
+  }
+}
+
+@media (min-width:900px) and (max-height:760px){
+  .home-page .hero{padding-top:9px !important;padding-bottom:9px !important;}
+  .home-page .hero-inner{gap:4px !important;}
+  .left-site-title{font-size:clamp(1.9rem,3.8vh,2.55rem) !important;}
+  .home-page .hero .poem{font-size:clamp(1.28rem,2.45vh,1.68rem) !important;line-height:1.28 !important;}
+  .home-page .hero .dedication{font-size:clamp(.92rem,1.7vh,1.12rem) !important;line-height:1.4 !important;}
+  .left-search-wrap .search-filter-row{gap:5px !important;}
+  .left-search-wrap .search-control,
+  .left-search-wrap .security-filter,
+  .left-search-wrap .place-filter-trigger{min-height:39px !important;}
+  .home-page .hero-links a{min-height:32px !important;padding-top:3px !important;padding-bottom:3px !important;}
+}
+
+@media (max-width:899px){
+  .home-layout{display:flex !important;flex-direction:column !important;}
+  .home-page .hero{order:1 !important;min-height:auto !important;height:auto !important;max-height:none !important;overflow:visible !important;}
+  .home-page main{order:0 !important;}
+  .main-title-band{
+    margin:0 auto 10px;
+    padding:18px 14px 8px;
+    gap:12px;
+  }
+  .main-title-logo-wrap{
+    width:72px;
+    height:72px;
+    padding:6px;
+    border-radius:17px;
+  }
+  .main-primary-title{
+    font-size:clamp(2.25rem,9.8vw,3.7rem) !important;
+    line-height:1 !important;
+  }
+  .main-title-copy::after{margin-top:10px;width:84%;}
+  .home-page .hero-inner{
+    min-height:0 !important;
+    height:auto !important;
+    max-height:none !important;
+    overflow:visible !important;
+    padding:18px 14px 22px !important;
+    display:flex !important;
+    flex-direction:column !important;
+    gap:12px !important;
+  }
+  .left-site-title{
+    margin:0 !important;
+    font-family:var(--serif,serif);
+    font-size:clamp(2rem,8vw,2.8rem) !important;
+    font-weight:400 !important;
+    line-height:1.05 !important;
+  }
+  .home-page .hero .poem{
+    margin:0 !important;
+    padding:0 !important;
+  }
+  .home-page .hero .dedication{margin:0 !important;}
+  .left-search-wrap{width:100%;}
+  .left-search-wrap .mobile-filter-toggle{display:flex !important;}
+  .left-search-wrap .mobile-filter-panel{width:100%;}
+  .home-page .hero-links{margin:0 !important;}
+  .home-page .index-section{padding-top:0 !important;}
+}
+
+@media (max-width:520px){
+  .main-title-band{align-items:center;gap:9px;padding-inline:10px;}
+  .main-title-logo-wrap{width:62px;height:62px;border-radius:15px;}
+  .main-primary-title{font-size:clamp(1.95rem,9.1vw,2.85rem) !important;}
+}
+</style></head>
 <body class="home-page">
 <a class="skip-link" href="#mainContent">דילוג לתוכן הראשי</a>
 <div class="home-layout">
 <header aria-labelledby="siteTitle" class="hero">
-<div class="hero-inner gentle-enter">
-<p class="eyebrow">שער הנגב זוכרת</p>
-<div aria-hidden="true" class="hero-rule"></div>
-<div class="hero-composition">
-<h1 id="siteTitle">רקמה<br/>אנושית<br/>אחת</h1>
-<blockquote class="poem">
+<div class="hero-inner gentle-enter"><div class="left-site-title-wrap"><h1 class="left-site-title" id="siteTitle">רקמה<br/>אנושית<br/>אחת</h1></div><div aria-hidden="true" class="hero-rule"></div><div class="left-quote-wrap"><blockquote class="poem">
 <span>וְאִם אֶחָד מֵאִתָּנוּ</span>
 <span>הוֹלֵךְ מֵעִמָּנוּ</span>
 <span>מַשֶּׁהוּ מֵת בָּנוּ</span>
 <span>וּמַשֶּׁהוּ נִשְׁאָר אִתּוֹ.</span>
-</blockquote>
-</div>
-<div aria-hidden="true" class="hero-rule hero-rule-bottom"></div>
-<p class="dedication">נזכור בכבוד ובאהבה את בנותינו ובנינו לנצח, ונישא את זכרם בליבנו כחלק בלתי נפרד מהסיפור שלנו ומהתקווה לעתיד של שלום וביטחון לכולנו.</p>
-<nav aria-label="ניווט ברשימת ההנצחה" class="hero-links">
-<a href="#memorialGrid">2023</a>
-<a href="#previousYearsDivider">השנים הקודמות</a>
-</nav>
-</div>
-</header>
-<main id="mainContent">
-<section aria-label="רשימת ההנצחה" class="index-section">
-<button class="mobile-filter-toggle" id="mobileFilterToggle" type="button" aria-expanded="false" aria-controls="mobileFilterPanel">חיפוש וסינון</button>
-<div class="mobile-filter-panel" id="mobileFilterPanel" hidden>
-<div class="toolbar" role="search" aria-label="חיפוש וסינון ברשימת ההנצחה">
+</blockquote></div><div aria-hidden="true" class="hero-rule hero-rule-bottom"></div><p class="dedication">נזכור בכבוד ובאהבה את בנותינו ובנינו לנצח, ונישא את זכרם בליבנו כחלק בלתי נפרד מהסיפור שלנו ומהתקווה לעתיד של שלום וביטחון לכולנו.</p><div class="left-search-wrap"><button aria-controls="mobileFilterPanel" aria-expanded="false" class="mobile-filter-toggle" id="mobileFilterToggle" type="button">חיפוש וסינון</button><div class="mobile-filter-panel" id="mobileFilterPanel">
+<div aria-label="חיפוש וסינון ברשימת ההנצחה" class="toolbar" role="search">
 <div class="search-filter-row">
 <label class="search-control" for="searchInput">
 <svg aria-hidden="true" viewbox="0 0 24 24"><path d="m20.7 19.3-4.2-4.2a7 7 0 1 0-1.4 1.4l4.2 4.2a1 1 0 0 0 1.4-1.4ZM5 11a6 6 0 1 1 12 0 6 6 0 0 1-12 0Z"></path></svg>
-<input aria-label="חיפוש לפי שם או יישוב" autocomplete="off" enterkeyhint="search" id="searchInput" aria-describedby="statusText" placeholder="חיפוש לפי שם או יישוב" type="search"/>
+<input aria-describedby="statusText" aria-label="חיפוש לפי שם או יישוב" autocomplete="off" enterkeyhint="search" id="searchInput" placeholder="חיפוש לפי שם או יישוב" type="search"/>
 </label>
-<button class="filter-chip security-filter" type="button" data-group-filter="security" aria-pressed="false">חברי כיתות הכוננות</button>
+<button aria-pressed="false" class="filter-chip security-filter" data-group-filter="security" type="button">חברי כיתות הכוננות</button>
 <div class="place-filter" id="placeFilterWrap">
 <span class="place-filter-label" id="placeFilterLabel">לפי יישוב</span>
-<select id="placeFilter" aria-describedby="statusText" hidden="" tabindex="-1">
+<select aria-describedby="statusText" hidden="" id="placeFilter" tabindex="-1">
 <option value="">כל היישובים</option>
 </select>
 <button aria-controls="placeFilterList" aria-describedby="statusText" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="placeFilterLabel placeFilterValue" class="place-filter-trigger" id="placeFilterButton" type="button">
 <span class="place-filter-current" id="placeFilterValue">כל היישובים</span>
 <span aria-hidden="true" class="place-filter-caret">
-<svg viewBox="0 0 20 20"><path d="M5.25 7.75 10 12.5l4.75-4.75" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+<svg viewbox="0 0 20 20"><path d="M5.25 7.75 10 12.5l4.75-4.75" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
 </span>
 </button>
 <div class="place-filter-panel" hidden="" id="placeFilterPanel">
@@ -369,7 +552,15 @@
 </div>
 </div>
 </div>
-</div>
+</div></div><nav aria-label="ניווט ברשימת ההנצחה" class="hero-links">
+<a href="#memorialGrid">2023</a>
+<a href="#previousYearsDivider">השנים הקודמות</a>
+</nav></div>
+</header>
+<main id="mainContent">
+<section aria-label="רשימת ההנצחה" class="index-section"><div aria-label="שער הנגב זוכרת" class="main-title-band"><div aria-hidden="true" class="main-title-logo-wrap"><img alt="" class="main-title-logo" src="assets/favicon-sng.svg"/></div><div class="main-title-copy"><p class="main-primary-title">שער הנגב זוכרת</p></div></div>
+
+
 <p aria-live="polite" class="visually-hidden" id="statusText"></p>
 <div aria-live="polite" class="empty-search" hidden="" id="emptySearch">לא נמצאו תוצאות לחיפוש הזה.</div>
 <div class="memorial-grid" id="memorialGrid"></div>
@@ -396,8 +587,25 @@
 </div>
 </article>
 </div>
-
 <script>
+(function(){
+  const band = document.querySelector('.main-title-band');
+  const hero = document.querySelector('.hero');
+  const section = document.querySelector('.index-section');
+  if(!band || !hero || !section) return;
+  const mq = window.matchMedia('(max-width: 899px)');
+  const place = () => {
+    if(mq.matches){
+      hero.parentNode.insertBefore(band, hero);
+    }else{
+      section.insertBefore(band, section.firstChild);
+    }
+  };
+  if(mq.addEventListener) mq.addEventListener('change', place);
+  else if(mq.addListener) mq.addListener(place);
+  place();
+})();
+</script><script>
 (function(){
   const btn = document.getElementById('mobileFilterToggle');
   const panel = document.getElementById('mobileFilterPanel');
@@ -424,7 +632,6 @@
   syncState();
 })();
 </script>
-
 <script defer="" src="assets/js/people.js?v=269"></script>
 <script defer="" src="assets/js/app.js?v=267"></script>
 </body>

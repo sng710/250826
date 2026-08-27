@@ -1,0 +1,7 @@
+PATCH 89 QA
+- Existing visible Hebrew strings are reused/moved rather than rewritten.
+- SearchInput, placeFilter, security-filter IDs/classes are preserved for existing app.js behavior.
+- Desktop: search panel is always visible in the left panel.
+- Mobile: existing search/filter toggle remains available.
+- Desktop left panel is constrained to viewport height with short-screen fallback sizes.
+- No "נזכור. נלמד. נשמר." text was introduced.
