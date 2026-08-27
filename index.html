@@ -1401,6 +1401,97 @@
 }
 </style>
 
+
+<style>
+/* PATCH 96 — add decorative marks/dividers like the approved mockup. No text changes. */
+
+/* Main title ornament */
+.main-title-band{
+  position:relative !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  gap:0 !important;
+  padding-bottom:26px !important;
+}
+.main-title-copy{
+  position:relative !important;
+  display:block !important;
+  width:100% !important;
+  text-align:center !important;
+}
+.main-title-copy::before,
+.main-title-copy::after{
+  content:"" !important;
+  position:absolute !important;
+  bottom:-15px !important;
+  width:min(25vw,220px) !important;
+  height:1px !important;
+  background:linear-gradient(90deg, rgba(135,191,214,.12), rgba(135,191,214,.82), rgba(135,191,214,.12)) !important;
+}
+.main-title-copy::before{
+  right:50% !important;
+  margin-right:34px !important;
+}
+.main-title-copy::after{
+  left:50% !important;
+  margin-left:34px !important;
+}
+.main-primary-title::after{
+  content:"❦" !important;
+  position:absolute !important;
+  left:50% !important;
+  bottom:-33px !important;
+  transform:translateX(-50%) !important;
+  font-size:1.7rem !important;
+  line-height:1 !important;
+  color:rgba(220,233,241,.82) !important;
+  text-shadow:0 0 10px rgba(111,179,211,.24) !important;
+}
+.main-primary-title{
+  position:relative !important;
+}
+
+/* Left quote divider ornament */
+.home-page .hero .hero-rule-bottom{
+  position:relative !important;
+}
+.home-page .hero .hero-rule-bottom::after{
+  content:"❦" !important;
+  position:absolute !important;
+  left:50% !important;
+  top:50% !important;
+  transform:translate(-50%,-55%) !important;
+  padding:0 14px !important;
+  font-size:1.45rem !important;
+  line-height:1 !important;
+  color:rgba(220,233,241,.72) !important;
+  background:rgba(10,45,74,.72) !important;
+  text-shadow:0 0 8px rgba(111,179,211,.18) !important;
+}
+
+/* Keep proportions on smaller screens */
+@media (max-width:899px){
+  .main-title-band{padding-bottom:20px !important;}
+  .main-title-copy::before,
+  .main-title-copy::after{
+    width:min(19vw,92px) !important;
+    bottom:-12px !important;
+  }
+  .main-title-copy::before{margin-right:24px !important;}
+  .main-title-copy::after{margin-left:24px !important;}
+  .main-primary-title::after{
+    bottom:-27px !important;
+    font-size:1.32rem !important;
+  }
+  .home-page .hero .hero-rule-bottom::after{
+    font-size:1.2rem !important;
+    padding:0 10px !important;
+  }
+}
+</style>
+
 </head>
 <body class="home-page">
 <a class="skip-link" href="#mainContent">דילוג לתוכן הראשי</a>
