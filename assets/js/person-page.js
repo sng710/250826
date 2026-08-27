@@ -643,6 +643,298 @@ body{
   }
 }
 
+/* PATCH 70 - mobile-first personal pages + local video support */
+.video-embed .local-video{
+  position:absolute;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+  border:0;
+  background:#0d1a2d;
+  object-fit:contain;
+}
+.person-intro>.person-portrait{
+  grid-row:1 / span 2;
+}
+.person-intro>.facts-panel{
+  grid-column:2;
+  margin-top:-7px;
+}
+
+@media(max-width:820px){
+  .person-main{
+    width:min(calc(100% - 16px),740px);
+    padding:12px 0 34px;
+  }
+  .person-intro{
+    padding:20px 16px 22px;
+    gap:14px;
+  }
+  .person-intro>.person-portrait{
+    grid-row:auto;
+  }
+  .person-intro>.facts-panel{
+    grid-column:1;
+    margin-top:0;
+  }
+  .person-portrait{
+    width:min(138px,42vw);
+    height:min(138px,42vw);
+  }
+  .person-head h1{
+    margin-bottom:7px;
+    font-size:clamp(2.08rem,9vw,3rem);
+  }
+  .facts-panel{
+    margin-top:12px;
+  }
+  .fact{
+    min-height:40px;
+    padding:6px 0;
+    font-size:.98rem;
+    line-height:1.48;
+  }
+  .role{
+    font-size:1.01rem;
+    line-height:1.58;
+  }
+
+  .unified-media-section{
+    --media-stage-height:188px;
+    padding:18px 12px 20px;
+  }
+  .unified-media-section .media-stage,
+  .unified-media-section .media-stage[data-media-count="1"],
+  .unified-media-section .media-stage[data-media-count="2"],
+  .unified-media-section .media-stage[data-media-count="3"]{
+    height:var(--media-stage-height);
+    display:flex;
+    align-items:center;
+    gap:8px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    padding:7px;
+    scroll-snap-type:x mandatory;
+    scrollbar-width:none;
+    overscroll-behavior-inline:contain;
+  }
+  .unified-media-section .media-stage::-webkit-scrollbar{display:none;}
+  .media-stage-item{
+    height:100%;
+    flex:0 0 100%;
+    scroll-snap-align:center;
+  }
+  .media-stage[data-media-count="2"] .media-stage-item{
+    flex-basis:calc(50% - 4px);
+  }
+  .media-stage[data-media-count="3"] .media-stage-item{
+    flex-basis:min(76vw,280px);
+  }
+  .media-stage-item .video-embed,
+  .media-stage[data-media-count="3"] .media-stage-item .video-embed{
+    width:100%;
+    max-width:none;
+    aspect-ratio:16/9;
+  }
+  .media-stage-item .media-image-link{
+    width:min(100%,210px);
+    max-width:210px;
+    max-height:100%;
+  }
+  .media-stage-item .media-image-link img{
+    height:min(132px,calc(var(--media-stage-height) - 42px));
+    max-height:none;
+  }
+  .unified-media-section .media-actions{
+    margin-top:10px;
+  }
+
+  .story-section{
+    padding:24px 15px 30px;
+  }
+  .story-section>h2{
+    margin-bottom:1.25rem;
+    font-size:1.78rem;
+  }
+  .story-main-grid{
+    gap:2rem;
+  }
+  .story-main-grid .story-chapter.event{
+    padding-top:1.35rem;
+  }
+  .story-chapter>h3{
+    margin-bottom:1.15rem;
+    font-size:1.38rem;
+  }
+  .story-main-grid .story-text p,
+  .story-text p{
+    margin-bottom:1em;
+    font-size:1.07rem;
+    line-height:1.74;
+  }
+  .story-chapter.legacy{
+    margin-top:2rem;
+    padding-top:1.35rem;
+  }
+  .story-media-break,
+  .story-media-break.side-left,
+  .story-media-break.side-right,
+  .story-media-break.media-landscape,
+  .story-media-break.media-square,
+  .story-media-break.media-portrait{
+    width:100%;
+    max-width:100%;
+    margin:1.05rem auto 1.55rem;
+  }
+  .story-media-break figure{
+    height:220px;
+    padding:5px;
+    border-radius:12px;
+  }
+  .story-media-break img{
+    border-radius:8px;
+  }
+  .family-contact{
+    margin-top:14px;
+    padding:16px 13px;
+  }
+  .family-contact-text{
+    margin-bottom:10px;
+    font-size:.98rem;
+  }
+}
+
+@media(max-width:560px){
+  .person-topbar{
+    padding:6px 9px;
+  }
+  .person-topbar-inner{
+    gap:8px;
+  }
+  .person-brand{
+    font-size:.88rem;
+    white-space:nowrap;
+  }
+  .back-link{
+    min-height:36px;
+    font-size:.80rem;
+    white-space:nowrap;
+  }
+  .council-corner{
+    top:52px;
+    left:8px;
+    width:38px;
+    height:38px;
+    padding:5px;
+  }
+  .person-main{
+    width:calc(100% - 12px);
+    padding-top:8px;
+  }
+  .person-intro{
+    grid-template-columns:104px minmax(0,1fr);
+    align-items:center;
+    gap:12px;
+    padding:14px 13px 16px;
+    text-align:right;
+  }
+  .person-portrait{
+    width:104px;
+    height:104px;
+    margin:0;
+    padding:4px;
+  }
+  .person-head{
+    align-self:center;
+  }
+  .person-head h1{
+    margin-bottom:5px;
+    font-size:clamp(1.82rem,8.3vw,2.25rem);
+    line-height:1.04;
+  }
+  .place{
+    margin-bottom:3px;
+    font-size:.88rem;
+  }
+  .service-line{
+    justify-content:flex-start;
+    gap:5px;
+    margin-bottom:3px;
+    font-size:.91rem;
+  }
+  .role{
+    margin:3px 0 0;
+    font-size:.94rem;
+    line-height:1.48;
+  }
+  .person-intro>.facts-panel{
+    grid-column:1 / -1;
+    width:100%;
+    margin-top:3px;
+  }
+  .fact{
+    min-height:36px;
+    padding:5px 2px;
+    font-size:.93rem;
+  }
+  .media-section,.story-section,.links-section{
+    margin-top:10px;
+    border-radius:13px;
+  }
+  .media-section h2,.story-section>h2,.links-section h2{
+    font-size:1.62rem;
+    margin-bottom:1rem;
+  }
+  .unified-media-section{
+    --media-stage-height:174px;
+    padding:16px 10px 18px;
+  }
+  .story-section{
+    padding:20px 13px 26px;
+  }
+  .story-main-grid .story-text p,
+  .story-text p{
+    font-size:1.02rem;
+    line-height:1.68;
+  }
+  .story-chapter>h3{
+    gap:9px;
+    font-size:1.28rem;
+  }
+  .story-media-break figure{
+    height:200px;
+  }
+  .media-actions a,.memorial-links a,.family-contact-btn{
+    min-height:44px;
+    padding:8px 13px;
+    font-size:.94rem;
+  }
+  .page-footer{
+    margin-top:22px;
+  }
+}
+
+@media(max-width:380px){
+  .person-brand{font-size:.82rem;}
+  .back-link{font-size:.75rem;}
+  .person-intro{
+    grid-template-columns:94px minmax(0,1fr);
+    gap:10px;
+    padding-inline:11px;
+  }
+  .person-portrait{
+    width:94px;
+    height:94px;
+  }
+  .person-head h1{
+    font-size:1.78rem;
+  }
+  .story-section{
+    padding-inline:11px;
+  }
+}
+
 `;
 
   const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -686,7 +978,14 @@ body{
   const facts = (person.generalDetails || []).filter(Boolean).map((x) => `<div class="fact">${esc(x)}</div>`).join('');
 
   const renderTopMedia = () => (person.topMedia || []).map((group, groupIndex) => {
-    const videoItems = (group.videos || []).map((video, i) => `<div class="media-stage-item media-video-item"><div class="video-embed"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="${esc(video.src)}" title="${esc(video.title && video.title !== 'YouTube video player' ? video.title : `${group.heading || 'סרטון הנצחה'} — ${person.name || ''}${(group.videos || []).length > 1 ? ` ${i + 1}` : ''}`)}"></iframe></div></div>`);
+    const videoItems = (group.videos || []).map((video, i) => {
+      const title = esc(video.title && video.title !== 'YouTube video player' ? video.title : `${group.heading || 'סרטון הנצחה'} — ${person.name || ''}${(group.videos || []).length > 1 ? ` ${i + 1}` : ''}`);
+      const isLocalVideo = video.type === 'file' || /\.(?:mp4|webm|ogg)(?:[?#].*)?$/i.test(String(video.src || ''));
+      const player = isLocalVideo
+        ? `<video class="local-video" controls playsinline preload="metadata" src="${esc(assetUrl(video.src))}" aria-label="${title}"></video>`
+        : `<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="${esc(video.src)}" title="${title}"></iframe>`;
+      return `<div class="media-stage-item media-video-item"><div class="video-embed">${player}</div></div>`;
+    });
     const imageItems = (group.images || []).map((image) => {
       const body = `<img alt="${esc(image.alt || '')}" decoding="async" loading="lazy" src="${esc(assetUrl(image.src))}">${image.label ? `<span class="media-image-label">${esc(image.label)}</span>` : ''}`;
       const card = image.href ? `<a class="media-image-link" href="${esc(image.href)}" rel="noopener noreferrer" target="_blank">${body}</a>` : `<div class="media-image-link">${body}</div>`;
@@ -744,7 +1043,7 @@ body{
 <div class="council-corner" aria-hidden="true"><img alt="" src="${esc(assetUrl('favicon-sng.svg'))}"></div>
 <header class="person-topbar"><div class="person-topbar-inner"><a class="person-brand" href="${esc(new URL('index.html', siteRoot).href)}">רקמה אנושית אחת</a><a class="back-link" href="${esc(new URL('index.html', siteRoot).href)}">← חזרה לרשימת ההנצחה</a></div></header>
 <main class="person-main" id="mainContent">
-  <section class="person-intro" aria-labelledby="personName"><figure class="person-portrait">${portrait}</figure><div class="person-head"><p class="place">${esc(person.place || '')}</p><h1 id="personName">${esc(person.name || '')}</h1>${serviceHtml}${person.role ? `<p class="role">${esc(person.role)}</p>` : ''}${facts ? `<div class="facts-panel">${facts}</div>` : ''}</div></section>
+  <section class="person-intro" aria-labelledby="personName"><figure class="person-portrait">${portrait}</figure><div class="person-head"><p class="place">${esc(person.place || '')}</p><h1 id="personName">${esc(person.name || '')}</h1>${serviceHtml}${person.role ? `<p class="role">${esc(person.role)}</p>` : ''}</div>${facts ? `<div class="facts-panel">${facts}</div>` : ''}</section>
   ${renderTopMedia()}
   ${storyHtml}
   ${pageLinks}

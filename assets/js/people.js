@@ -309,7 +309,19 @@ window.MEMORIAL_PEOPLE = [
       "ariaLabel": "יצירת קשר ב-WhatsApp בנוגע לעמוד של ניצן"
     },
     "footerText": "יהי זכרו ברוך",
-    "portraitAlt": "ליבשטיין ניצן ז\"ל"
+    "portraitAlt": "ליבשטיין ניצן ז\"ל",
+    "topMedia": [
+      {
+        "heading": "סרטון לזכרו",
+        "videos": [
+          {
+            "type": "file",
+            "src": "assets/media/nitzan-libstein-memorial.mp4",
+            "title": "ניצן ליבשטיין ז״ל — זיכרונות וסיפורים של משפחה וחברים"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "tzachi_i",

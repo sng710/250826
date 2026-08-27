@@ -1,0 +1,11 @@
+PATCH 70 QA
+
+PASS - node --check assets/js/people.js
+PASS - node --check assets/js/person-page.js
+PASS - central validator: 154 records / 154 stable loaders
+PASS - 110 structured biographies / 51 story images
+PASS - event heading rules remain consistent
+PASS - Nitzan MP4 exists locally and is referenced from people.js
+PASS - MP4 duration ~749.42 seconds; H.264/AAC source retained
+PASS - MP4 fast-start remux performed without re-encoding
+PASS - no biography text changed in this patch
