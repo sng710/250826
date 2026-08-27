@@ -1492,6 +1492,47 @@
 }
 </style>
 
+
+<style>
+/* PATCH 97 — restore the original leaf background. No text/layout changes. */
+.home-page .hero{
+  background:
+    linear-gradient(90deg, rgba(35,58,99,.72) 0%, rgba(48,74,125,.88) 52%, rgba(48,74,125,.97) 100%),
+    url('assets/img/leaf-bg.webp') 38% center / cover no-repeat !important;
+  background-color:#263f6b !important;
+}
+.home-page .hero-inner,
+.left-site-title-wrap,
+.left-quote-wrap,
+.left-search-wrap,
+.left-search-wrap .toolbar,
+.left-search-wrap .search-filter-row{
+  background:transparent !important;
+  background-color:transparent !important;
+  box-shadow:none !important;
+}
+
+/* Restore the subtle leaf texture in the main memorial area too, as in the original design. */
+.home-page .index-section{
+  background:
+    linear-gradient(rgba(20,55,87,.965), rgba(14,42,68,.985)),
+    url('assets/img/leaf-bg.webp') left 18% / min(980px,72vw) auto no-repeat !important;
+}
+
+@media (max-width:899px){
+  .home-page .hero{
+    background:
+      linear-gradient(rgba(35,58,99,.82), rgba(48,74,125,.94)),
+      url('assets/img/leaf-bg.webp') 30% center / cover no-repeat !important;
+  }
+  .home-page .index-section{
+    background:
+      linear-gradient(rgba(20,55,87,.975), rgba(14,42,68,.99)),
+      url('assets/img/leaf-bg.webp') 20% top / auto 760px no-repeat !important;
+  }
+}
+</style>
+
 </head>
 <body class="home-page">
 <a class="skip-link" href="#mainContent">דילוג לתוכן הראשי</a>
