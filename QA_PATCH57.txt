@@ -1,0 +1,10 @@
+PATCH 57 QA
+
+PASS - Amir Naim has both requested YouTube embeds in topMedia.
+PASS - Amir Naim's event section begins with the 7 October 2023 morning paragraph.
+PASS - No wording was changed while moving Amir's pre-7.10 paragraphs back to the personal section.
+PASS - Yehonatan's displayed name is יהונתן חג׳בי־זהבי הי״ד.
+PASS - Yehonatan's 7.10 section states he was on the roof of the family home.
+PASS - The same paragraph identifies Ariel Zehavi as רבש״צ המועצה.
+PASS - Central people.js parses successfully as JSON data.
+PASS - No duplicate memorial record IDs.

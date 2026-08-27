@@ -1,0 +1,7 @@
+PATCH 58 QA
+
+PASS - people.js passes node --check.
+PASS - Active topMedia contains Mika Care once and Instagram once for Yehonatan.
+PASS - Legacy supplementalMedia contains Mika Care once and Instagram once for Yehonatan.
+PASS - Old 'Ravshatz council' wording is absent from Yehonatan's record.
+PASS - 'Ravshatz Yakhini' wording is present consistently in fullStory and structured story data.
