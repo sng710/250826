@@ -10,6 +10,31 @@
 <link href="assets/favicon-sng.svg" rel="icon" type="image/svg+xml"/>
 <link href="assets/favicon-sng.png" rel="icon" sizes="256x256" type="image/png"/>
 <link href="assets/css/site.css?v=267" rel="stylesheet"/>
+<style>
+/* PATCH 83: enlarge only the homepage memorial quote + dedication text */
+.hero .poem{
+  font-size: clamp(2rem, 1.55rem + 1.45vw, 3rem) !important;
+  line-height: 1.55 !important;
+}
+.hero .poem span{
+  display:block;
+}
+.hero .dedication{
+  font-size: clamp(1.28rem, 1.08rem + 0.55vw, 1.62rem) !important;
+  line-height: 1.95 !important;
+}
+@media (max-width: 820px){
+  .hero .poem{
+    font-size: clamp(1.55rem, 5.8vw, 2.2rem) !important;
+    line-height: 1.6 !important;
+  }
+  .hero .dedication{
+    font-size: clamp(1.08rem, 4vw, 1.28rem) !important;
+    line-height: 1.9 !important;
+  }
+}
+</style>
+
 </head>
 <body class="home-page">
 <a class="skip-link" href="#mainContent">דילוג לתוכן הראשי</a>
