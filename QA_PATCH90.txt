@@ -1,0 +1,8 @@
+PATCH 90 QA
+- index.html only.
+- No memorial copy strings were changed.
+- Search/filter IDs preserved.
+- MobileFilterToggle and MobileFilterPanel IDs preserved.
+- Main title remains “שער הנגב זוכרת”.
+- Quote title remains “רקמה אנושית אחת”.
+- Mobile main content is explicitly ordered after the hero memorial panel.
