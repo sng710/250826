@@ -854,6 +854,272 @@
 }
 </style>
 
+
+<style>
+/* PATCH 92 — stronger visual polish for homepage layout only. No text changes. */
+:root{
+  --home-side-w: clamp(360px, 26vw, 430px);
+}
+body.home-page{
+  background:
+    radial-gradient(1200px 700px at 78% 18%, rgba(37,107,155,.15), transparent 55%),
+    linear-gradient(180deg, #0b3557 0%, #123c62 100%) !important;
+}
+.home-layout{
+  display:grid !important;
+  grid-template-columns: var(--home-side-w) minmax(0,1fr) !important;
+  min-height:100vh !important;
+  min-height:100dvh !important;
+  align-items:stretch !important;
+}
+.home-page .hero{
+  position:sticky !important;
+  top:0 !important;
+  height:100vh !important;
+  height:100dvh !important;
+  min-height:100vh !important;
+  min-height:100dvh !important;
+  overflow:auto !important;
+  overscroll-behavior:contain;
+  padding:24px 22px 18px !important;
+  border-left:1px solid rgba(140,194,220,.18) !important;
+  background:
+    linear-gradient(180deg, rgba(41,70,117,.92) 0%, rgba(18,48,84,.96) 100%),
+    radial-gradient(circle at 20% 10%, rgba(255,255,255,.08), transparent 35%) !important;
+  backdrop-filter: blur(6px);
+  box-shadow: inset -1px 0 0 rgba(255,255,255,.04);
+  scrollbar-width:thin;
+  scrollbar-color: rgba(171,220,235,.38) transparent;
+}
+.home-page .hero::-webkit-scrollbar{width:10px;}
+.home-page .hero::-webkit-scrollbar-track{background:transparent;}
+.home-page .hero::-webkit-scrollbar-thumb{background:rgba(171,220,235,.34);border-radius:999px;border:2px solid transparent;background-clip:padding-box;}
+.home-page .hero-inner{
+  min-height:100% !important;
+  height:auto !important;
+  max-height:none !important;
+  overflow:visible !important;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:flex-start !important;
+  gap:16px !important;
+  padding:0 !important;
+}
+.left-site-title-wrap{
+  order:1;
+  margin-top:0 !important;
+}
+.left-site-title{
+  font-size: clamp(2.3rem, 2.1rem + 0.7vw, 3.05rem) !important;
+  line-height:1.06 !important;
+  margin:0 0 2px !important;
+  letter-spacing:.01em;
+}
+.home-page .hero .hero-rule:first-of-type{
+  order:2;
+  margin:4px 0 2px !important;
+  opacity:.72;
+}
+.left-quote-wrap{
+  order:3;
+}
+.home-page .hero .poem{
+  font-size: clamp(2rem, 1.85rem + 0.6vw, 2.55rem) !important;
+  line-height:1.48 !important;
+  letter-spacing:.01em;
+  text-shadow:0 1px 0 rgba(0,0,0,.08);
+}
+.home-page .hero .poem span{display:block;}
+.home-page .hero-rule-bottom{
+  order:4;
+  margin:4px 0 2px !important;
+  opacity:.72;
+}
+.home-page .hero .dedication{
+  order:5;
+  font-size: clamp(1.28rem, 1.16rem + 0.34vw, 1.62rem) !important;
+  line-height:1.78 !important;
+  margin:0 !important;
+}
+.left-search-wrap{
+  order:6;
+  margin-top:auto !important;
+  padding:18px 0 0 !important;
+}
+.left-search-wrap .toolbar{
+  padding:0 !important;
+  background:transparent !important;
+  border:none !important;
+  box-shadow:none !important;
+}
+.left-search-wrap .search-filter-row{
+  gap:10px !important;
+}
+.left-search-wrap .search-control,
+.left-search-wrap .security-filter,
+.left-search-wrap .place-filter-trigger{
+  min-height:48px !important;
+  border-radius:999px !important;
+  background:rgba(255,255,255,.05) !important;
+  border:1px solid rgba(183,224,241,.25) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.05) !important;
+}
+.left-search-wrap input,
+.left-search-wrap button,
+.left-search-wrap .place-filter-current,
+.left-search-wrap .place-filter-label{
+  font-size:1.03rem !important;
+}
+.left-search-wrap .place-filter-label{
+  margin:0 10px 5px !important;
+  opacity:.85;
+}
+.home-page .hero-links{
+  order:7;
+  display:flex !important;
+  flex-wrap:wrap !important;
+  gap:10px !important;
+  margin-top:14px !important;
+}
+.home-page .hero-links a{
+  min-height:42px !important;
+  padding:8px 16px !important;
+  border-radius:999px !important;
+  font-size:1.08rem !important;
+}
+#mainContent{
+  min-width:0 !important;
+}
+.index-section{
+  padding:18px 28px 42px !important;
+}
+.main-title-band{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:18px !important;
+  margin:0 auto 28px !important;
+  max-width:1300px !important;
+  padding:10px 6px 4px !important;
+}
+.main-title-logo-wrap{
+  width:104px !important;
+  height:104px !important;
+  padding:10px !important;
+  border-radius:28px !important;
+  background:linear-gradient(145deg, rgba(78,108,153,.95), rgba(31,55,96,.98)) !important;
+  border:1px solid rgba(190,227,242,.4) !important;
+  box-shadow:0 16px 32px rgba(7,19,36,.18), inset 0 0 0 1px rgba(255,255,255,.08) !important;
+}
+.main-primary-title{
+  font-size: clamp(3.4rem, 4.7vw, 5.8rem) !important;
+  line-height:.96 !important;
+  letter-spacing:.02em !important;
+  text-wrap:balance;
+}
+.memorial-grid{
+  display:grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(178px, 1fr)) !important;
+  gap: 34px 26px !important;
+  align-items:start !important;
+  max-width:1320px !important;
+  margin:0 auto !important;
+}
+.memorial-grid > *{
+  width:100% !important;
+  max-width:208px !important;
+  margin-inline:auto !important;
+}
+/* A generic polish layer for card children regardless of exact tag/class. */
+.memorial-grid > *{
+  padding:8px 6px 10px !important;
+  border-radius:22px !important;
+  transition:transform .18s ease, background-color .18s ease, box-shadow .18s ease;
+}
+.memorial-grid > *:hover,
+.memorial-grid > *:focus-within{
+  transform:translateY(-2px);
+  background:rgba(255,255,255,.03) !important;
+  box-shadow:0 16px 30px rgba(8,20,38,.10);
+}
+@media (max-width:1360px){
+  .index-section{padding:16px 22px 36px !important;}
+  .main-primary-title{font-size: clamp(3rem, 4.2vw, 4.7rem) !important;}
+  .main-title-logo-wrap{width:92px !important;height:92px !important;}
+}
+@media (max-width:1180px){
+  .home-layout{
+    grid-template-columns: minmax(320px, 380px) minmax(0,1fr) !important;
+  }
+  .home-page .hero{padding:20px 18px 16px !important;}
+  .left-site-title{font-size: clamp(2rem, 1.85rem + .5vw, 2.55rem) !important;}
+  .home-page .hero .poem{font-size: clamp(1.72rem, 1.58rem + .42vw, 2.05rem) !important;}
+  .home-page .hero .dedication{font-size: clamp(1.12rem, 1.05rem + .2vw, 1.32rem) !important;}
+}
+@media (max-width:899px){
+  .home-layout{
+    grid-template-columns:1fr !important;
+  }
+  .home-page .hero{
+    position:relative !important;
+    top:auto !important;
+    height:auto !important;
+    min-height:0 !important;
+    overflow:visible !important;
+    padding:18px 16px 16px !important;
+    border-left:none !important;
+    border-bottom:1px solid rgba(140,194,220,.18) !important;
+  }
+  .home-page .hero-inner{gap:12px !important;}
+  .left-site-title{
+    font-size: clamp(2rem, 7.1vw, 2.6rem) !important;
+  }
+  .home-page .hero .poem{
+    font-size: clamp(1.58rem, 6.2vw, 2.05rem) !important;
+    line-height:1.52 !important;
+  }
+  .home-page .hero .dedication{
+    font-size: clamp(1.12rem, 4.45vw, 1.36rem) !important;
+    line-height:1.75 !important;
+  }
+  .left-search-wrap{
+    margin-top:8px !important;
+    padding-top:8px !important;
+  }
+  .index-section{padding:10px 12px 28px !important;}
+  .main-title-band{
+    gap:12px !important;
+    margin:0 auto 18px !important;
+    padding:6px 4px 0 !important;
+  }
+  .main-title-logo-wrap{
+    width:76px !important;
+    height:76px !important;
+    padding:7px !important;
+    border-radius:20px !important;
+  }
+  .main-primary-title{
+    font-size: clamp(2.2rem, 9vw, 3.2rem) !important;
+    line-height:1 !important;
+  }
+  .memorial-grid{
+    grid-template-columns: repeat(2, minmax(0,1fr)) !important;
+    gap:26px 14px !important;
+  }
+  .memorial-grid > *{max-width:100% !important;}
+}
+@media (max-width:560px){
+  .home-page .hero{padding:16px 14px 14px !important;}
+  .main-title-band{flex-wrap:nowrap !important;}
+  .main-primary-title{font-size: clamp(2rem, 8.7vw, 2.8rem) !important;}
+  .main-title-logo-wrap{width:68px !important;height:68px !important;}
+  .memorial-grid{
+    grid-template-columns: repeat(2, minmax(130px,1fr)) !important;
+    gap:20px 10px !important;
+  }
+}
+</style>
+
 </head>
 <body class="home-page">
 <a class="skip-link" href="#mainContent">דילוג לתוכן הראשי</a>
