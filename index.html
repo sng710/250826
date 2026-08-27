@@ -1375,6 +1375,32 @@
 }
 </style>
 
+
+<style>
+/* PATCH 95 — shift left-panel title/quote/content downward so title sits below the logo. No text changes. */
+@media (min-width:900px){
+  .home-page .hero{
+    padding-top:118px !important;
+  }
+  .home-page .hero-inner{
+    justify-content:flex-start !important;
+  }
+  .left-site-title-wrap{
+    margin-top:0 !important;
+    padding-top:0 !important;
+  }
+}
+@media (max-width:899px){
+  .home-page .hero{
+    padding-top:92px !important;
+  }
+  .left-site-title-wrap{
+    margin-top:0 !important;
+    padding-top:0 !important;
+  }
+}
+</style>
+
 </head>
 <body class="home-page">
 <a class="skip-link" href="#mainContent">דילוג לתוכן הראשי</a>
