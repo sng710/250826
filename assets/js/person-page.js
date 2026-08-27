@@ -1738,6 +1738,32 @@ body{
   .media-v2-image-card img{height:165px;}
 }
 
+
+/* PATCH 86 - mobile media clarity: stack items vertically instead of horizontal rail */
+.media-v2-mobile-note{display:none;}
+@media(max-width:820px){
+  .media-v2-mobile-note{display:block;margin:2px 0 14px;color:#dcebf0;text-align:center;font-size:.92rem;line-height:1.45;}
+  .unified-media-v2-section .media-v2-grid,
+  .unified-media-v2-section .media-v2-grid[data-media-count="1"],
+  .unified-media-v2-section .media-v2-grid[data-media-count="2"],
+  .unified-media-v2-section .media-v2-grid[data-media-count="3"],
+  .unified-media-v2-section .media-v2-grid[data-media-count="4"],
+  .unified-media-v2-section .media-v2-grid[data-media-count="5"],
+  .unified-media-v2-section .media-v2-grid[data-media-count="6"]{
+    display:grid !important;grid-template-columns:minmax(0,1fr) !important;gap:12px !important;
+    max-width:none !important;overflow:visible !important;overflow-x:visible !important;overflow-y:visible !important;
+    padding:0 !important;scroll-snap-type:none !important;
+  }
+  .unified-media-v2-section .media-v2-item{flex:none !important;width:100% !important;min-width:0 !important;max-width:none !important;scroll-snap-align:none !important;}
+  .unified-media-v2-section .media-v2-youtube-shell{width:100% !important;max-width:100% !important;margin-inline:auto;}
+  .unified-media-v2-section .media-v2-facebook-shell{margin-inline:auto;}
+  .unified-media-v2-section .media-v2-facebook.is-landscape .media-v2-facebook-shell{width:100% !important;max-width:100% !important;}
+  .unified-media-v2-section .media-v2-facebook.is-square .media-v2-facebook-shell{width:min(100%,320px) !important;max-width:320px !important;}
+  .unified-media-v2-section .media-v2-facebook.is-portrait .media-v2-facebook-shell{width:min(100%,260px) !important;max-width:260px !important;}
+  .unified-media-v2-section .media-v2-instagram-card{width:min(100%,340px) !important;min-height:170px !important;margin-inline:auto;}
+  .unified-media-v2-section .media-v2-image-card{max-width:250px !important;margin-inline:auto;}
+}
+
 `;
 
   const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -1834,7 +1860,8 @@ body{
 
     const mediaItems = [...videoItems, ...instagramItems, ...facebookItems, ...imageItems];
     const links = (group.links || []).map((link) => `<a href="${esc(link.href)}" rel="noopener noreferrer" target="_blank">${esc(link.label)}</a>`).join('');
-    return `<section class="media-section unified-media-v2-section" aria-labelledby="mediaHeading${groupIndex}"><h2 id="mediaHeading${groupIndex}">${esc(group.heading || 'סרטון לזכרו')}</h2>${mediaItems.length ? `<div class="media-v2-grid" data-media-count="${mediaItems.length}">${mediaItems.join('')}</div>` : ''}${links ? `<div class="media-actions">${links}</div>` : ''}</section>`;
+    const mobileNote = mediaItems.length > 1 ? `<p class="media-v2-mobile-note">מופיעים כאן ${mediaItems.length} פריטי מדיה לזכרו.</p>` : '';
+    return `<section class="media-section unified-media-v2-section" aria-labelledby="mediaHeading${groupIndex}"><h2 id="mediaHeading${groupIndex}">${esc(group.heading || 'סרטון לזכרו')}</h2>${mobileNote}${mediaItems.length ? `<div class="media-v2-grid" data-media-count="${mediaItems.length}">${mediaItems.join('')}</div>` : ''}${links ? `<div class="media-actions">${links}</div>` : ''}</section>`;
   }).join('');
 
   const mediaBySection = new Map();

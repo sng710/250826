@@ -1,0 +1,6 @@
+QA checklist:
+- Mobile homepage: tap “חיפוש וסינון” to open/close search panel.
+- Desktop homepage: search remains visible as usual.
+- Mobile person pages with multiple media (e.g. Omer Zadikevich): media items appear stacked vertically.
+- Mobile person pages with one media item: media still displays full width correctly.
+- Facebook, YouTube, Instagram cards remain contained and do not overlap story text.
