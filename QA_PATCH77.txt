@@ -1,0 +1,9 @@
+PATCH 77 QA
+
+PASS - person-page.js syntax check passes.
+PASS - desktop-only final override appended successfully.
+PASS - 1-item media stage narrowed and centered.
+PASS - 2-item video/social cards constrained to equal contained widths.
+PASS - 3-item video/social cards constrained to a smaller one-row layout.
+PASS - media section overflow hidden to prevent spill over story section.
+PASS - site-version.json bumped to 277.

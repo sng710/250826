@@ -1084,6 +1084,84 @@ body{
   }
 }
 
+
+/* PATCH 77 - final desktop top-media equalization */
+@media(min-width:821px){
+  .media-section.unified-media-section{
+    position:relative;
+    z-index:1;
+    overflow:hidden;
+  }
+  .unified-media-section + .story-section{
+    position:relative;
+    z-index:0;
+  }
+  .unified-media-section .media-stage,
+  .unified-media-section .media-stage[data-media-count="1"],
+  .unified-media-section .media-stage[data-media-count="2"],
+  .unified-media-section .media-stage[data-media-count="3"]{
+    --media-card-max-height:min(250px,calc(var(--media-stage-height) - 30px));
+    align-items:center;
+    justify-items:center;
+    overflow:hidden;
+  }
+  .unified-media-section .media-stage[data-media-count="1"]{
+    grid-template-columns:minmax(0,620px);
+    max-width:680px;
+  }
+  .unified-media-section .media-stage[data-media-count="1"] .media-stage-item,
+  .unified-media-section .media-stage[data-media-count="2"] .media-stage-item,
+  .unified-media-section .media-stage[data-media-count="3"] .media-stage-item{
+    align-self:center;
+    justify-self:center;
+    overflow:hidden;
+  }
+  .unified-media-section .media-stage .media-video-item,
+  .unified-media-section .media-stage .media-instagram-item,
+  .unified-media-section .media-stage .media-facebook-item,
+  .unified-media-section .media-stage .media-image-item{
+    width:100%;
+  }
+  .unified-media-section .media-stage .video-embed,
+  .unified-media-section .media-stage .instagram-embed,
+  .unified-media-section .media-stage .facebook-embed{
+    overflow:hidden;
+  }
+  .unified-media-section .media-stage[data-media-count="1"] .media-video-item .video-embed{
+    width:min(100%,560px);
+  }
+  .unified-media-section .media-stage[data-media-count="2"] .media-video-item .video-embed{
+    width:min(100%,390px);
+  }
+  .unified-media-section .media-stage[data-media-count="3"] .media-video-item .video-embed{
+    width:min(100%,292px);
+  }
+  .unified-media-section .media-stage[data-media-count="2"] .media-instagram-item .instagram-embed,
+  .unified-media-section .media-stage[data-media-count="2"] .media-facebook-item .facebook-embed{
+    width:min(100%,292px);
+  }
+  .unified-media-section .media-stage[data-media-count="3"] .media-instagram-item .instagram-embed,
+  .unified-media-section .media-stage[data-media-count="3"] .media-facebook-item .facebook-embed{
+    width:min(100%,232px);
+  }
+  .unified-media-section .media-stage[data-media-count="2"] .media-facebook-item.is-landscape .facebook-embed iframe,
+  .unified-media-section .media-stage[data-media-count="3"] .media-facebook-item.is-landscape .facebook-embed iframe{
+    width:100%;
+    height:auto;
+  }
+  .unified-media-section .media-stage[data-media-count="2"] .media-facebook-item.is-portrait .facebook-embed iframe,
+  .unified-media-section .media-stage[data-media-count="3"] .media-facebook-item.is-portrait .facebook-embed iframe{
+    width:auto;
+    height:100%;
+  }
+  .unified-media-section .media-stage[data-media-count="2"] .media-image-item .media-image-link{
+    max-width:220px;
+  }
+  .unified-media-section .media-stage[data-media-count="3"] .media-image-item .media-image-link{
+    max-width:188px;
+  }
+}
+
 `;
 
   const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
