@@ -1,0 +1,9 @@
+PATCH 82 QA
+PASS - person-page.js syntax check.
+PASS - renderTopMedia migrated to new media-v2 class namespace.
+PASS - old media-stage classes are no longer emitted by renderTopMedia.
+PASS - YouTube uses dedicated 16:9 shell.
+PASS - Facebook uses dedicated shell with per-item source aspect ratio.
+PASS - Instagram remains clean card links.
+PASS - section height is content-driven, not fixed.
+PASS - site version bumped to 282.

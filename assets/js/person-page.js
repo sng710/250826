@@ -1400,6 +1400,344 @@ body{
   }
 }
 
+
+/* PATCH 81 - stable desktop media grid; prevents collapsed YouTube cells */
+@media(min-width:821px){
+  .media-section.unified-media-section{
+    overflow:visible !important;
+  }
+  .unified-media-section .media-stage,
+  .unified-media-section .media-stage[data-media-count="1"],
+  .unified-media-section .media-stage[data-media-count="2"],
+  .unified-media-section .media-stage[data-media-count="3"]{
+    display:grid !important;
+    height:auto !important;
+    min-height:0 !important;
+    align-items:start !important;
+    justify-items:stretch !important;
+    overflow:visible !important;
+    gap:14px !important;
+  }
+  .unified-media-section .media-stage[data-media-count="1"]{
+    grid-template-columns:minmax(0,620px) !important;
+    justify-content:center !important;
+    max-width:680px !important;
+    margin-inline:auto !important;
+  }
+  .unified-media-section .media-stage[data-media-count="2"]{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    max-width:820px !important;
+    margin-inline:auto !important;
+  }
+  .unified-media-section .media-stage[data-media-count="3"]{
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    max-width:920px !important;
+    margin-inline:auto !important;
+  }
+  .unified-media-section .media-stage-item,
+  .unified-media-section .media-video-item,
+  .unified-media-section .media-instagram-item,
+  .unified-media-section .media-facebook-item,
+  .unified-media-section .media-image-item{
+    box-sizing:border-box;
+    width:100% !important;
+    min-width:0 !important;
+    height:auto !important;
+    min-height:0 !important;
+    overflow:visible !important;
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    justify-content:flex-start !important;
+    gap:6px !important;
+  }
+  .unified-media-section .media-video-item .video-embed{
+    box-sizing:border-box;
+    width:100% !important;
+    max-width:none !important;
+    height:auto !important;
+    max-height:none !important;
+    aspect-ratio:16/9 !important;
+    overflow:hidden !important;
+  }
+  .unified-media-section .media-video-item .video-embed iframe,
+  .unified-media-section .media-video-item .video-embed .local-video{
+    position:absolute !important;
+    inset:0 !important;
+    width:100% !important;
+    height:100% !important;
+    display:block !important;
+  }
+  .unified-media-section .media-stage[data-media-count="1"] .media-video-item .video-embed{
+    max-width:560px !important;
+  }
+
+  .unified-media-section .media-instagram-item .instagram-card{
+    width:min(100%,300px) !important;
+    height:auto !important;
+    min-height:180px !important;
+  }
+  .unified-media-section .media-stage[data-media-count="3"] .media-instagram-item .instagram-card{
+    width:min(100%,240px) !important;
+  }
+
+  .unified-media-section .media-facebook-item .facebook-embed{
+    position:relative !important;
+    width:100% !important;
+    height:auto !important;
+    max-height:none !important;
+    aspect-ratio:var(--facebook-ratio,560/314) !important;
+    overflow:hidden !important;
+  }
+  .unified-media-section .media-facebook-item.is-landscape .facebook-embed{
+    max-width:560px !important;
+  }
+  .unified-media-section .media-facebook-item.is-portrait .facebook-embed{
+    width:min(100%,320px) !important;
+    max-width:320px !important;
+  }
+  .unified-media-section .media-stage[data-media-count="2"] .media-facebook-item.is-portrait .facebook-embed{
+    max-width:280px !important;
+  }
+  .unified-media-section .media-stage[data-media-count="3"] .media-facebook-item.is-portrait .facebook-embed{
+    max-width:220px !important;
+  }
+  .unified-media-section .media-facebook-item .facebook-embed iframe,
+  .unified-media-section .media-facebook-item.is-landscape .facebook-embed iframe,
+  .unified-media-section .media-facebook-item.is-portrait .facebook-embed iframe{
+    position:absolute !important;
+    inset:0 !important;
+    display:block !important;
+    width:100% !important;
+    height:100% !important;
+    min-width:0 !important;
+    min-height:0 !important;
+    max-width:none !important;
+    max-height:none !important;
+    aspect-ratio:auto !important;
+    border:0 !important;
+  }
+
+  .unified-media-section .media-image-item .media-image-link{
+    width:min(100%,260px) !important;
+    max-width:260px !important;
+    height:auto !important;
+  }
+  .unified-media-section + .story-section{
+    position:relative !important;
+    z-index:0 !important;
+    margin-top:24px !important;
+  }
+}
+
+
+/* PATCH 82 - clean media engine (new class names, isolated from legacy media CSS) */
+.unified-media-v2-section{
+  max-width:1040px;
+  margin-inline:auto;
+  overflow:visible;
+}
+.media-v2-grid{
+  width:100%;
+  display:grid;
+  gap:14px;
+  align-items:start;
+  justify-content:center;
+  margin-inline:auto;
+}
+.media-v2-grid[data-media-count="1"]{
+  grid-template-columns:minmax(0,620px);
+  max-width:660px;
+}
+.media-v2-grid[data-media-count="2"]{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  max-width:860px;
+}
+.media-v2-grid[data-media-count="3"]{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  max-width:980px;
+}
+.media-v2-grid[data-media-count="4"],
+.media-v2-grid[data-media-count="5"],
+.media-v2-grid[data-media-count="6"]{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  max-width:980px;
+}
+.media-v2-item{
+  width:100%;
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  gap:7px;
+}
+.media-v2-youtube-shell{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/9;
+  overflow:hidden;
+  border:1px solid rgba(248,247,243,.18);
+  border-radius:12px;
+  background:#101c31;
+  box-shadow:0 10px 24px rgba(7,18,34,.18);
+}
+.media-v2-youtube-shell iframe,
+.media-v2-youtube-shell video{
+  position:absolute;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+  border:0;
+  object-fit:contain;
+  background:#101c31;
+}
+.media-v2-facebook-shell{
+  position:relative;
+  width:100%;
+  max-width:100%;
+  aspect-ratio:var(--media-v2-ratio,16/9);
+  overflow:hidden;
+  border:1px solid rgba(248,247,243,.18);
+  border-radius:12px;
+  background:#101c31;
+  box-shadow:0 10px 24px rgba(7,18,34,.18);
+}
+.media-v2-facebook.is-square .media-v2-facebook-shell{max-width:320px;}
+.media-v2-facebook.is-portrait .media-v2-facebook-shell{max-width:260px;}
+.media-v2-grid[data-media-count="1"] .media-v2-facebook.is-square .media-v2-facebook-shell{max-width:390px;}
+.media-v2-grid[data-media-count="1"] .media-v2-facebook.is-portrait .media-v2-facebook-shell{max-width:320px;}
+.media-v2-grid[data-media-count="3"] .media-v2-facebook.is-square .media-v2-facebook-shell{max-width:260px;}
+.media-v2-grid[data-media-count="3"] .media-v2-facebook.is-portrait .media-v2-facebook-shell{max-width:210px;}
+.media-v2-facebook-shell iframe{
+  position:absolute;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+  border:0;
+}
+.media-v2-social-link{
+  color:#dcebf0;
+  font-size:.78rem;
+  line-height:1.2;
+  text-decoration:none;
+  border-bottom:1px solid rgba(151,205,221,.45);
+}
+.media-v2-social-link:hover,.media-v2-social-link:focus-visible{
+  color:#fff;
+  border-bottom-color:#fff;
+}
+.media-v2-instagram-card{
+  width:100%;
+  min-height:190px;
+  display:grid;
+  grid-template-rows:1fr auto auto;
+  align-items:center;
+  justify-items:center;
+  gap:8px;
+  padding:22px 16px 17px;
+  border:1px solid rgba(248,247,243,.22);
+  border-radius:12px;
+  color:#fff;
+  text-align:center;
+  text-decoration:none;
+  background:
+    radial-gradient(circle at 28% 110%,rgba(255,194,51,.52),transparent 34%),
+    radial-gradient(circle at 88% 4%,rgba(129,52,175,.55),transparent 40%),
+    linear-gradient(145deg,#7b2db5 0%,#c72f77 48%,#e85e49 100%);
+  box-shadow:0 10px 24px rgba(7,18,34,.18);
+  transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease;
+}
+.media-v2-grid[data-media-count="3"] .media-v2-instagram-card{min-height:165px;padding:16px 12px 13px;}
+.media-v2-instagram-card:hover,.media-v2-instagram-card:focus-visible{
+  transform:translateY(-2px);
+  border-color:rgba(255,255,255,.55);
+  box-shadow:0 14px 30px rgba(7,18,34,.25);
+}
+.media-v2-instagram-icon{
+  width:58px;
+  height:58px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(255,255,255,.46);
+  border-radius:50%;
+  background:rgba(15,18,35,.18);
+}
+.media-v2-instagram-icon svg{display:block;width:32px;height:32px;}
+.media-v2-instagram-title{max-width:24ch;font-weight:700;line-height:1.35;text-wrap:balance;}
+.media-v2-instagram-cta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:34px;
+  padding:6px 12px;
+  border:1px solid rgba(255,255,255,.42);
+  border-radius:999px;
+  background:rgba(14,20,38,.18);
+  font-size:.8rem;
+  font-weight:700;
+}
+.media-v2-image-card{
+  width:100%;
+  max-width:280px;
+  display:grid;
+  gap:7px;
+  justify-items:center;
+  padding:8px;
+  border:1px solid rgba(248,247,243,.22);
+  border-radius:12px;
+  background:rgba(16,32,55,.28);
+  color:#fff;
+  text-decoration:none;
+}
+.media-v2-image-card img{
+  display:block;
+  width:100%;
+  height:210px;
+  object-fit:contain;
+  border-radius:8px;
+  background:#fff;
+}
+.media-v2-image-label{text-align:center;font-size:.88rem;line-height:1.35;}
+.unified-media-v2-section .media-actions{justify-content:center;margin-top:12px;}
+
+@media(max-width:820px){
+  .unified-media-v2-section{overflow:hidden;}
+  .media-v2-grid,
+  .media-v2-grid[data-media-count="1"],
+  .media-v2-grid[data-media-count="2"],
+  .media-v2-grid[data-media-count="3"],
+  .media-v2-grid[data-media-count="4"],
+  .media-v2-grid[data-media-count="5"],
+  .media-v2-grid[data-media-count="6"]{
+    display:flex;
+    max-width:none;
+    gap:10px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    padding:2px 1px 8px;
+    scroll-snap-type:x mandatory;
+    scrollbar-width:none;
+  }
+  .media-v2-grid::-webkit-scrollbar{display:none;}
+  .media-v2-item{
+    flex:0 0 min(82vw,330px);
+    scroll-snap-align:center;
+  }
+  .media-v2-grid[data-media-count="1"] .media-v2-item{flex-basis:100%;}
+  .media-v2-youtube-shell{width:100%;}
+  .media-v2-facebook.is-square .media-v2-facebook-shell{max-width:280px;}
+  .media-v2-facebook.is-portrait .media-v2-facebook-shell{max-width:220px;}
+  .media-v2-instagram-card{min-height:168px;padding:16px 12px 13px;}
+  .media-v2-instagram-icon{width:48px;height:48px;}
+  .media-v2-instagram-icon svg{width:27px;height:27px;}
+  .media-v2-instagram-title{font-size:.9rem;}
+  .media-v2-image-card{max-width:230px;}
+  .media-v2-image-card img{height:165px;}
+}
+
 `;
 
   const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -1464,36 +1802,39 @@ body{
       const title = esc(video.title && video.title !== 'YouTube video player' ? video.title : `${group.heading || 'סרטון הנצחה'} — ${person.name || ''}${(group.videos || []).length > 1 ? ` ${i + 1}` : ''}`);
       const isLocalVideo = video.type === 'file' || /\.(?:mp4|webm|ogg)(?:[?#].*)?$/i.test(String(video.src || ''));
       const player = isLocalVideo
-        ? `<video class="local-video" controls playsinline preload="metadata" src="${esc(assetUrl(video.src))}" aria-label="${title}"></video>`
+        ? `<video controls playsinline preload="metadata" src="${esc(assetUrl(video.src))}" aria-label="${title}"></video>`
         : `<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="${esc(video.src)}" title="${title}"></iframe>`;
-      return `<div class="media-stage-item media-video-item"><div class="video-embed">${player}</div></div>`;
+      return `<div class="media-v2-item media-v2-youtube"><div class="media-v2-youtube-shell">${player}</div></div>`;
     });
+
     const instagramItems = (group.instagram || []).map((item, i) => {
       const permalink = String(item.permalink || item.href || '').trim();
       if (!permalink) return '';
       const titleText = String(item.title || `Instagram Reel — ${person.name || ''}${(group.instagram || []).length > 1 ? ` ${i + 1}` : ''}`);
-      const title = esc(titleText);
-      return `<div class="media-stage-item media-instagram-item"><a class="instagram-card" href="${esc(permalink)}" rel="noopener noreferrer" target="_blank" aria-label="${esc(`צפייה באינסטגרם: ${titleText}`)}"><span class="instagram-card-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M17 5h14c6.6 0 12 5.4 12 12v14c0 6.6-5.4 12-12 12H17C10.4 43 5 37.6 5 31V17C5 10.4 10.4 5 17 5Z" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="24" cy="24" r="8" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="34" cy="14" r="2.3" fill="currentColor"/><path d="M21 19.2 30 24l-9 4.8Z" fill="currentColor"/></svg></span><span class="instagram-card-title">${title}</span><span class="instagram-card-cta">צפייה באינסטגרם</span></a></div>`;
+      return `<div class="media-v2-item media-v2-instagram"><a class="media-v2-instagram-card" href="${esc(permalink)}" rel="noopener noreferrer" target="_blank" aria-label="${esc(`צפייה באינסטגרם: ${titleText}`)}"><span class="media-v2-instagram-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M17 5h14c6.6 0 12 5.4 12 12v14c0 6.6-5.4 12-12 12H17C10.4 43 5 37.6 5 31V17C5 10.4 10.4 5 17 5Z" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="24" cy="24" r="8" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="34" cy="14" r="2.3" fill="currentColor"/><path d="M21 19.2 30 24l-9 4.8Z" fill="currentColor"/></svg></span><span class="media-v2-instagram-title">${esc(titleText)}</span><span class="media-v2-instagram-cta">צפייה באינסטגרם</span></a></div>`;
     }).filter(Boolean);
+
     const facebookItems = (group.facebook || []).map((item, i) => {
       const permalink = String(item.permalink || item.href || '').trim();
       if (!permalink) return '';
       const width = Number(item.width) > 0 ? Number(item.width) : 560;
       const height = Number(item.height) > 0 ? Number(item.height) : 314;
-      const portrait = height >= width;
-      const title = esc(item.title || `Facebook Reel — ${person.name || ''}${(group.facebook || []).length > 1 ? ` ${i + 1}` : ''}`);
+      const ratioValue = width / height;
+      const shape = ratioValue < .86 ? 'is-portrait' : ratioValue <= 1.14 ? 'is-square' : 'is-landscape';
+      const title = esc(item.title || `Facebook video — ${person.name || ''}${(group.facebook || []).length > 1 ? ` ${i + 1}` : ''}`);
       const embedSrc = esc(facebookEmbedUrl(permalink, width, height));
-      const ratio = `${Math.round(width)}/${Math.round(height)}`;
-      return `<div class="media-stage-item media-facebook-item ${portrait ? 'is-portrait' : 'is-landscape'}" style="--facebook-ratio:${esc(ratio)}"><div class="facebook-embed"><iframe allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" scrolling="no" src="${embedSrc}" title="${title}"></iframe></div><a class="facebook-open-link" href="${esc(permalink)}" rel="noopener noreferrer" target="_blank">פתיחה בפייסבוק</a></div>`;
+      return `<div class="media-v2-item media-v2-facebook ${shape}"><div class="media-v2-facebook-shell" style="--media-v2-ratio:${Math.round(width)}/${Math.round(height)}"><iframe allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" scrolling="no" src="${embedSrc}" title="${title}"></iframe></div><a class="media-v2-social-link" href="${esc(permalink)}" rel="noopener noreferrer" target="_blank">פתיחה בפייסבוק</a></div>`;
     }).filter(Boolean);
+
     const imageItems = (group.images || []).map((image) => {
-      const body = `<img alt="${esc(image.alt || '')}" decoding="async" loading="lazy" src="${esc(assetUrl(image.src))}">${image.label ? `<span class="media-image-label">${esc(image.label)}</span>` : ''}`;
-      const card = image.href ? `<a class="media-image-link" href="${esc(image.href)}" rel="noopener noreferrer" target="_blank">${body}</a>` : `<div class="media-image-link">${body}</div>`;
-      return `<div class="media-stage-item media-image-item">${card}</div>`;
+      const tag = image.href ? 'a' : 'div';
+      const attrs = image.href ? ` href="${esc(image.href)}" rel="noopener noreferrer" target="_blank"` : '';
+      return `<div class="media-v2-item media-v2-image"><${tag} class="media-v2-image-card"${attrs}><img alt="${esc(image.alt || '')}" decoding="async" loading="lazy" src="${esc(assetUrl(image.src))}">${image.label ? `<span class="media-v2-image-label">${esc(image.label)}</span>` : ''}</${tag}></div>`;
     });
+
     const mediaItems = [...videoItems, ...instagramItems, ...facebookItems, ...imageItems];
     const links = (group.links || []).map((link) => `<a href="${esc(link.href)}" rel="noopener noreferrer" target="_blank">${esc(link.label)}</a>`).join('');
-    return `<section class="media-section unified-media-section" aria-labelledby="mediaHeading${groupIndex}"><h2 id="mediaHeading${groupIndex}">${esc(group.heading || 'סרטון לזכרו')}</h2>${mediaItems.length ? `<div class="media-stage" data-media-count="${mediaItems.length}">${mediaItems.join('')}</div>` : ''}${links ? `<div class="media-actions">${links}</div>` : ''}</section>`;
+    return `<section class="media-section unified-media-v2-section" aria-labelledby="mediaHeading${groupIndex}"><h2 id="mediaHeading${groupIndex}">${esc(group.heading || 'סרטון לזכרו')}</h2>${mediaItems.length ? `<div class="media-v2-grid" data-media-count="${mediaItems.length}">${mediaItems.join('')}</div>` : ''}${links ? `<div class="media-actions">${links}</div>` : ''}</section>`;
   }).join('');
 
   const mediaBySection = new Map();
