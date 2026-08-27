@@ -1,0 +1,15 @@
+PATCH 62 QA
+
+PASS - Existing memorial data file is untouched.
+PASS - 154 records validate.
+PASS - 154 stable person-page loaders validate.
+PASS - 110 structured biographies validate.
+PASS - 51 story images validate.
+PASS - All referenced local assets exist.
+PASS - Current-period / previous-years event-heading rules remain valid.
+PASS - person-page.js passes node --check.
+PASS - Homepage stylesheet brace balance is zero.
+PASS - Homepage now references site.css?v=262.
+PASS - Patch ZIP integrity checked with unzip -t.
+
+This is a presentation-only patch. It does not change memorial wording or data.
