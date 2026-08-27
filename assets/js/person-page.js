@@ -471,6 +471,16 @@ body{
 .unified-media-section .media-stage[data-media-count="1"]{--media-count:1;}
 .unified-media-section .media-stage[data-media-count="2"]{--media-count:2;}
 .unified-media-section .media-stage[data-media-count="3"]{--media-count:3;}
+.unified-media-section .media-stage[data-media-count="1"]{
+  grid-template-columns:minmax(0,820px);
+  max-width:860px;
+  margin-inline:auto;
+  padding:12px;
+}
+.unified-media-section .media-stage[data-media-count="1"] .media-stage-item{
+  width:100%;
+  justify-self:center;
+}
 .media-stage-item{
   min-width:0;
   height:100%;
@@ -483,6 +493,17 @@ body{
   aspect-ratio:16/9;
   border-radius:10px;
   box-shadow:0 10px 24px rgba(7,18,34,.18);
+}
+.media-stage[data-media-count="1"] .media-stage-item .video-embed{
+  width:100%;
+  max-width:820px;
+}
+.media-stage[data-media-count="1"] .media-stage-item .instagram-embed{
+  width:100%;
+  max-width:460px;
+}
+.media-stage[data-media-count="1"] .media-stage-item .media-image-link{
+  max-width:320px;
 }
 .media-stage[data-media-count="3"] .media-stage-item .video-embed{
   max-width:none;
@@ -643,6 +664,37 @@ body{
   }
 }
 
+/* PATCH 71 - Instagram Reel media support */
+.media-instagram-item{
+  grid-template-rows:minmax(0,1fr) auto;
+  gap:5px;
+}
+.instagram-embed{
+  width:min(100%,340px);
+  height:100%;
+  min-height:0;
+  overflow:hidden;
+  border:1px solid rgba(248,247,243,.18);
+  border-radius:10px;
+  background:#fff;
+  box-shadow:0 10px 24px rgba(7,18,34,.18);
+}
+.instagram-embed iframe{
+  display:block;
+  width:100%;
+  height:100%;
+  border:0;
+  background:#fff;
+}
+.instagram-open-link{
+  color:#dcebf0;
+  font-size:.78rem;
+  line-height:1.2;
+  text-decoration:none;
+  border-bottom:1px solid rgba(151,205,221,.45);
+}
+.instagram-open-link:hover,.instagram-open-link:focus-visible{color:#fff;border-bottom-color:#fff;}
+
 /* PATCH 70 - mobile-first personal pages + local video support */
 .video-embed .local-video{
   position:absolute;
@@ -725,6 +777,16 @@ body{
     flex:0 0 100%;
     scroll-snap-align:center;
   }
+  .media-instagram-item{
+    grid-template-rows:minmax(0,1fr) auto;
+  }
+  .instagram-embed{
+    width:min(100%,260px);
+  }
+  .instagram-open-link{font-size:.72rem;}
+  .media-stage[data-media-count="1"] .media-stage-item{
+    flex-basis:100%;
+  }
   .media-stage[data-media-count="2"] .media-stage-item{
     flex-basis:calc(50% - 4px);
   }
@@ -736,6 +798,18 @@ body{
     width:100%;
     max-width:none;
     aspect-ratio:16/9;
+  }
+  .media-stage[data-media-count="1"] .media-stage-item .video-embed{
+    width:min(100%,560px);
+    max-width:560px;
+  }
+  .media-stage[data-media-count="1"] .media-stage-item .instagram-embed{
+    width:min(100%,300px);
+    max-width:300px;
+  }
+  .media-stage[data-media-count="1"] .media-stage-item .media-image-link{
+    width:min(100%,220px);
+    max-width:220px;
   }
   .media-stage-item .media-image-link{
     width:min(100%,210px);
@@ -977,6 +1051,16 @@ body{
   const serviceHtml = serviceParts.length ? `<div class="service-line">${serviceParts.map((x) => `<span>${esc(x)}</span>`).join('<span class="dot" aria-hidden="true">•</span>')}</div>` : '';
   const facts = (person.generalDetails || []).filter(Boolean).map((x) => `<div class="fact">${esc(x)}</div>`).join('');
 
+  const instagramEmbedUrl = (permalink) => {
+    try {
+      const url = new URL(String(permalink || ''));
+      const cleanPath = url.pathname.replace(/\/+$/, '');
+      return `https://www.instagram.com${cleanPath}/embed/captioned/`;
+    } catch {
+      return String(permalink || '');
+    }
+  };
+
   const renderTopMedia = () => (person.topMedia || []).map((group, groupIndex) => {
     const videoItems = (group.videos || []).map((video, i) => {
       const title = esc(video.title && video.title !== 'YouTube video player' ? video.title : `${group.heading || 'סרטון הנצחה'} — ${person.name || ''}${(group.videos || []).length > 1 ? ` ${i + 1}` : ''}`);
@@ -986,12 +1070,19 @@ body{
         : `<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="${esc(video.src)}" title="${title}"></iframe>`;
       return `<div class="media-stage-item media-video-item"><div class="video-embed">${player}</div></div>`;
     });
+    const instagramItems = (group.instagram || []).map((item, i) => {
+      const permalink = String(item.permalink || item.href || '').trim();
+      if (!permalink) return '';
+      const title = esc(item.title || `Instagram Reel — ${person.name || ''}${(group.instagram || []).length > 1 ? ` ${i + 1}` : ''}`);
+      const embedSrc = esc(instagramEmbedUrl(permalink));
+      return `<div class="media-stage-item media-instagram-item"><div class="instagram-embed"><iframe allow="autoplay; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="${embedSrc}" title="${title}"></iframe></div><a class="instagram-open-link" href="${esc(permalink)}" rel="noopener noreferrer" target="_blank">פתיחה באינסטגרם</a></div>`;
+    }).filter(Boolean);
     const imageItems = (group.images || []).map((image) => {
       const body = `<img alt="${esc(image.alt || '')}" decoding="async" loading="lazy" src="${esc(assetUrl(image.src))}">${image.label ? `<span class="media-image-label">${esc(image.label)}</span>` : ''}`;
       const card = image.href ? `<a class="media-image-link" href="${esc(image.href)}" rel="noopener noreferrer" target="_blank">${body}</a>` : `<div class="media-image-link">${body}</div>`;
       return `<div class="media-stage-item media-image-item">${card}</div>`;
     });
-    const mediaItems = [...videoItems, ...imageItems];
+    const mediaItems = [...videoItems, ...instagramItems, ...imageItems];
     const links = (group.links || []).map((link) => `<a href="${esc(link.href)}" rel="noopener noreferrer" target="_blank">${esc(link.label)}</a>`).join('');
     return `<section class="media-section unified-media-section" aria-labelledby="mediaHeading${groupIndex}"><h2 id="mediaHeading${groupIndex}">${esc(group.heading || 'סרטון לזכרו')}</h2>${mediaItems.length ? `<div class="media-stage" data-media-count="${mediaItems.length}">${mediaItems.join('')}</div>` : ''}${links ? `<div class="media-actions">${links}</div>` : ''}</section>`;
   }).join('');

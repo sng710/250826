@@ -1,0 +1,9 @@
+PATCH 72 QA
+
+PASS - person-page.js syntax check passes.
+PASS - single-item media stage gets centered max-width styling.
+PASS - single YouTube video can expand up to 820px on desktop within a narrower centered frame.
+PASS - single Instagram embed and single image card receive narrower centered widths.
+PASS - 2-item and 3-item media layouts remain unchanged.
+PASS - mobile keeps the same stacked/scroll behavior with better single-item sizing.
+PASS - site-version.json bumped to 272 for cache refresh.
