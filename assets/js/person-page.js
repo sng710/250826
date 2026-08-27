@@ -684,36 +684,86 @@ body{
   }
 }
 
-/* PATCH 71 - Instagram Reel media support */
+/* PATCH 79 - clean Instagram link cards (no full post chrome) */
 .media-instagram-item{
-  grid-template-rows:minmax(0,1fr) auto;
-  gap:5px;
+  display:grid;
+  place-items:center;
+  min-width:0;
+  min-height:0;
 }
-.instagram-embed{
+.instagram-card{
   width:min(100%,340px);
   height:min(100%,var(--media-card-max-height));
-  min-height:0;
+  min-height:180px;
+  display:grid;
+  grid-template-rows:1fr auto auto;
+  align-items:center;
+  justify-items:center;
+  gap:8px;
+  padding:22px 18px 18px;
+  border:1px solid rgba(248,247,243,.22);
+  border-radius:12px;
   overflow:hidden;
-  border:1px solid rgba(248,247,243,.18);
-  border-radius:10px;
-  background:#fff;
-  box-shadow:0 10px 24px rgba(7,18,34,.18);
-}
-.instagram-embed iframe{
-  display:block;
-  width:100%;
-  height:100%;
-  border:0;
-  background:#fff;
-}
-.instagram-open-link{
-  color:#dcebf0;
-  font-size:.78rem;
-  line-height:1.2;
+  color:#fff;
+  text-align:center;
   text-decoration:none;
-  border-bottom:1px solid rgba(151,205,221,.45);
+  background:
+    radial-gradient(circle at 28% 110%,rgba(255,194,51,.52),transparent 34%),
+    radial-gradient(circle at 88% 4%,rgba(129,52,175,.55),transparent 40%),
+    linear-gradient(145deg,#7b2db5 0%,#c72f77 48%,#e85e49 100%);
+  box-shadow:0 10px 24px rgba(7,18,34,.18);
+  transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease;
 }
-.instagram-open-link:hover,.instagram-open-link:focus-visible{color:#fff;border-bottom-color:#fff;}
+.instagram-card:hover,
+.instagram-card:focus-visible{
+  transform:translateY(-2px);
+  border-color:rgba(255,255,255,.55);
+  box-shadow:0 14px 30px rgba(7,18,34,.25);
+}
+.instagram-card-icon{
+  width:64px;
+  height:64px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(255,255,255,.46);
+  border-radius:50%;
+  background:rgba(15,18,35,.18);
+  box-shadow:0 8px 20px rgba(17,10,33,.18);
+}
+.instagram-card-icon svg{display:block;width:34px;height:34px;}
+.instagram-card-title{
+  max-width:24ch;
+  font-size:1rem;
+  font-weight:700;
+  line-height:1.35;
+  text-wrap:balance;
+}
+.instagram-card-cta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:36px;
+  padding:7px 13px;
+  border:1px solid rgba(255,255,255,.42);
+  border-radius:999px;
+  background:rgba(14,20,38,.18);
+  font-size:.82rem;
+  font-weight:700;
+  line-height:1;
+}
+@media(max-width:820px){
+  .instagram-card{
+    width:min(100%,260px);
+    height:100%;
+    min-height:0;
+    padding:13px 10px 11px;
+    gap:5px;
+  }
+  .instagram-card-icon{width:46px;height:46px;}
+  .instagram-card-icon svg{width:26px;height:26px;}
+  .instagram-card-title{font-size:.86rem;line-height:1.24;}
+  .instagram-card-cta{min-height:30px;padding:5px 10px;font-size:.72rem;}
+}
 
 /* PATCH 74 - Facebook Reel media support */
 .media-facebook-item{
@@ -838,14 +888,7 @@ body{
     flex:0 0 100%;
     scroll-snap-align:center;
   }
-  .media-instagram-item,
-  .media-facebook-item{
-    grid-template-rows:minmax(0,1fr) auto;
-  }
-  .instagram-embed{
-    width:min(100%,260px);
-  }
-  .instagram-open-link,.facebook-open-link{font-size:.72rem;}
+  .facebook-open-link{font-size:.72rem;}
   .media-facebook-item.is-landscape .facebook-embed iframe{
     width:100%;
     height:auto;
@@ -873,10 +916,6 @@ body{
   .media-stage[data-media-count="1"] .media-stage-item .video-embed{
     width:min(100%,560px);
     max-width:560px;
-  }
-  .media-stage[data-media-count="1"] .media-stage-item .instagram-embed{
-    width:min(100%,300px);
-    max-width:300px;
   }
   .media-stage[data-media-count="1"] .media-stage-item .media-image-link{
     width:min(100%,220px);
@@ -1229,6 +1268,14 @@ body{
   }
 }
 
+
+/* PATCH 79 - final Instagram card sizing override */
+@media(min-width:821px){
+  .unified-media-section .media-stage[data-media-count="1"] .media-instagram-item .instagram-card{width:min(100%,430px);}
+  .unified-media-section .media-stage[data-media-count="2"] .media-instagram-item .instagram-card{width:min(100%,292px);}
+  .unified-media-section .media-stage[data-media-count="3"] .media-instagram-item .instagram-card{width:min(100%,232px);}
+}
+
 `;
 
   const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -1300,9 +1347,9 @@ body{
     const instagramItems = (group.instagram || []).map((item, i) => {
       const permalink = String(item.permalink || item.href || '').trim();
       if (!permalink) return '';
-      const title = esc(item.title || `Instagram Reel — ${person.name || ''}${(group.instagram || []).length > 1 ? ` ${i + 1}` : ''}`);
-      const embedSrc = esc(instagramEmbedUrl(permalink));
-      return `<div class="media-stage-item media-instagram-item"><div class="instagram-embed"><iframe allow="autoplay; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="${embedSrc}" title="${title}"></iframe></div><a class="instagram-open-link" href="${esc(permalink)}" rel="noopener noreferrer" target="_blank">פתיחה באינסטגרם</a></div>`;
+      const titleText = String(item.title || `Instagram Reel — ${person.name || ''}${(group.instagram || []).length > 1 ? ` ${i + 1}` : ''}`);
+      const title = esc(titleText);
+      return `<div class="media-stage-item media-instagram-item"><a class="instagram-card" href="${esc(permalink)}" rel="noopener noreferrer" target="_blank" aria-label="${esc(`צפייה באינסטגרם: ${titleText}`)}"><span class="instagram-card-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M17 5h14c6.6 0 12 5.4 12 12v14c0 6.6-5.4 12-12 12H17C10.4 43 5 37.6 5 31V17C5 10.4 10.4 5 17 5Z" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="24" cy="24" r="8" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="34" cy="14" r="2.3" fill="currentColor"/><path d="M21 19.2 30 24l-9 4.8Z" fill="currentColor"/></svg></span><span class="instagram-card-title">${title}</span><span class="instagram-card-cta">צפייה באינסטגרם</span></a></div>`;
     }).filter(Boolean);
     const facebookItems = (group.facebook || []).map((item, i) => {
       const permalink = String(item.permalink || item.href || '').trim();

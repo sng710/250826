@@ -697,14 +697,6 @@ window.MEMORIAL_PEOPLE = [
             "permalink": "https://www.instagram.com/reel/CzlKtJio6rA/",
             "title": "המשאלה של ליבנת"
           }
-        ],
-        "facebook": [
-          {
-            "permalink": "https://www.facebook.com/reel/1921193012039933/",
-            "title": "סרטון לזכר ליבנת קוץ",
-            "width": 267,
-            "height": 476
-          }
         ]
       }
     ]

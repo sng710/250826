@@ -1,0 +1,9 @@
+PATCH 79 QA
+
+PASS - people.js syntax check passes.
+PASS - person-page.js syntax check passes.
+PASS - Livnat Kutz no longer has a Facebook media item.
+PASS - Instagram media is rendered as outbound clean cards, not iframe embeds.
+PASS - Facebook media render code remains embedded iframe code.
+PASS - YouTube media render code remains embedded iframe code.
+PASS - Site version bumped to 279.
