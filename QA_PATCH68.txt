@@ -1,0 +1,9 @@
+PATCH 68 QA
+
+PASS - person-page.js passes node --check.
+PASS - memorial validator: 154 records / 154 stable loaders.
+PASS - 110 structured biographies / 51 story images.
+PASS - current-period and previous-years heading rules remain consistent.
+PASS - Ilan Fiorentino has 3 top-media videos; unified stage renders 3 cells.
+PASS - Yehonatan Hagbi-Zahavi has 2 top-media videos + 1 QR image; unified stage renders 3 cells.
+PASS - no memorial data changed by this patch.

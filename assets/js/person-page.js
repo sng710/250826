@@ -452,6 +452,197 @@ body{
   .story-chapter>h3{font-size:1.42rem;}
 }
 
+
+/* PATCH 68 - unified media stage + compact two-column story */
+.unified-media-section{
+  --media-stage-height:290px;
+}
+.unified-media-section .media-stage{
+  height:var(--media-stage-height);
+  display:grid;
+  grid-template-columns:repeat(var(--media-count,1),minmax(0,1fr));
+  gap:clamp(10px,1.6vw,18px);
+  align-items:center;
+  padding:14px;
+  border:1px solid rgba(85,184,212,.18);
+  border-radius:14px;
+  background:rgba(13,29,50,.20);
+}
+.unified-media-section .media-stage[data-media-count="1"]{--media-count:1;}
+.unified-media-section .media-stage[data-media-count="2"]{--media-count:2;}
+.unified-media-section .media-stage[data-media-count="3"]{--media-count:3;}
+.media-stage-item{
+  min-width:0;
+  height:100%;
+  display:grid;
+  place-items:center;
+}
+.media-stage-item .video-embed{
+  width:100%;
+  max-width:480px;
+  aspect-ratio:16/9;
+  border-radius:10px;
+  box-shadow:0 10px 24px rgba(7,18,34,.18);
+}
+.media-stage[data-media-count="3"] .media-stage-item .video-embed{
+  max-width:none;
+}
+.media-stage-item .media-image-link{
+  width:100%;
+  max-width:240px;
+  max-height:100%;
+  padding:8px;
+  gap:6px;
+  border-radius:12px;
+}
+.media-stage-item .media-image-link img{
+  width:100%;
+  height:min(205px,calc(var(--media-stage-height) - 58px));
+  max-height:none;
+  object-fit:contain;
+}
+.media-stage-item .media-image-label{
+  font-size:.88rem;
+  line-height:1.35;
+}
+.unified-media-section .media-actions{
+  justify-content:center;
+  margin-top:14px;
+}
+
+.story-section{
+  max-width:1180px;
+}
+.story-copy{
+  max-width:none;
+}
+.story-main-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);
+  gap:clamp(26px,4vw,48px);
+  align-items:start;
+}
+.story-main-grid.single-column{
+  grid-template-columns:minmax(0,1fr);
+}
+.story-main-grid .story-chapter{
+  min-width:0;
+  margin:0;
+  padding:0;
+  border-top:0;
+}
+.story-main-grid .story-chapter.event{
+  padding-inline-start:clamp(18px,2.4vw,30px);
+  border-inline-start:1px solid rgba(85,184,212,.25);
+}
+.story-main-grid.single-column .story-chapter.event{
+  padding-inline-start:0;
+  border-inline-start:0;
+}
+.story-main-grid .story-text{
+  max-width:none;
+}
+.story-main-grid .story-text p{
+  font-size:clamp(1.12rem,1.08rem + .16vw,1.22rem);
+  line-height:1.84;
+}
+.story-main-grid .story-chapter.event>h3{
+  margin-bottom:1.25rem;
+}
+.story-chapter.legacy{
+  max-width:88ch;
+  margin:clamp(2.5rem,4.5vw,3.8rem) auto 0;
+  padding-top:clamp(1.6rem,3vw,2.2rem);
+  border-top:1px solid rgba(85,184,212,.30);
+}
+
+/* All in-story images use the same editorial frame. */
+.story-media-break,
+.story-media-break.side-left,
+.story-media-break.side-right,
+.story-media-break.media-landscape,
+.story-media-break.media-square,
+.story-media-break.media-portrait{
+  width:100%;
+  max-width:100%;
+  margin:1.35rem auto 1.8rem;
+}
+.story-media-break figure{
+  display:flex;
+  width:100%;
+  height:280px;
+  padding:7px;
+  align-items:center;
+  justify-content:center;
+  border-radius:14px;
+  background:rgba(18,38,65,.35);
+}
+.story-media-break img{
+  width:100%;
+  height:100%;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  border-radius:9px;
+}
+.story-chapter.legacy .story-media-break{
+  max-width:580px;
+}
+
+@media(max-width:900px){
+  .story-main-grid{
+    grid-template-columns:1fr;
+    gap:2.4rem;
+  }
+  .story-main-grid .story-chapter.event{
+    padding-inline-start:0;
+    padding-top:1.7rem;
+    border-inline-start:0;
+    border-top:1px solid rgba(85,184,212,.30);
+  }
+}
+
+@media(max-width:820px){
+  .unified-media-section{--media-stage-height:auto;}
+  .unified-media-section .media-stage,
+  .unified-media-section .media-stage[data-media-count="1"],
+  .unified-media-section .media-stage[data-media-count="2"],
+  .unified-media-section .media-stage[data-media-count="3"]{
+    height:auto;
+    grid-template-columns:1fr;
+    gap:12px;
+    padding:10px;
+  }
+  .media-stage-item{
+    height:auto;
+  }
+  .media-stage-item .video-embed{
+    width:min(100%,560px);
+    max-width:560px;
+  }
+  .media-stage-item .media-image-link{
+    width:min(100%,300px);
+    max-width:300px;
+  }
+  .media-stage-item .media-image-link img{
+    height:auto;
+    max-height:260px;
+  }
+  .story-media-break figure{
+    height:clamp(230px,64vw,340px);
+  }
+}
+
+@media(max-width:520px){
+  .story-main-grid .story-text p{
+    font-size:1.10rem;
+    line-height:1.82;
+  }
+  .story-media-break figure{
+    height:250px;
+  }
+}
+
 `;
 
   const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -495,13 +686,15 @@ body{
   const facts = (person.generalDetails || []).filter(Boolean).map((x) => `<div class="fact">${esc(x)}</div>`).join('');
 
   const renderTopMedia = () => (person.topMedia || []).map((group, groupIndex) => {
-    const vids = (group.videos || []).map((video, i) => `<div class="video-embed"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="${esc(video.src)}" title="${esc(video.title && video.title !== 'YouTube video player' ? video.title : `${group.heading || 'סרטון הנצחה'} — ${person.name || ''}${(group.videos || []).length > 1 ? ` ${i + 1}` : ''}`)}"></iframe></div>`).join('');
-    const images = (group.images || []).map((image) => {
+    const videoItems = (group.videos || []).map((video, i) => `<div class="media-stage-item media-video-item"><div class="video-embed"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="${esc(video.src)}" title="${esc(video.title && video.title !== 'YouTube video player' ? video.title : `${group.heading || 'סרטון הנצחה'} — ${person.name || ''}${(group.videos || []).length > 1 ? ` ${i + 1}` : ''}`)}"></iframe></div></div>`);
+    const imageItems = (group.images || []).map((image) => {
       const body = `<img alt="${esc(image.alt || '')}" decoding="async" loading="lazy" src="${esc(assetUrl(image.src))}">${image.label ? `<span class="media-image-label">${esc(image.label)}</span>` : ''}`;
-      return image.href ? `<a class="media-image-link" href="${esc(image.href)}" rel="noopener noreferrer" target="_blank">${body}</a>` : `<div class="media-image-link">${body}</div>`;
-    }).join('');
+      const card = image.href ? `<a class="media-image-link" href="${esc(image.href)}" rel="noopener noreferrer" target="_blank">${body}</a>` : `<div class="media-image-link">${body}</div>`;
+      return `<div class="media-stage-item media-image-item">${card}</div>`;
+    });
+    const mediaItems = [...videoItems, ...imageItems];
     const links = (group.links || []).map((link) => `<a href="${esc(link.href)}" rel="noopener noreferrer" target="_blank">${esc(link.label)}</a>`).join('');
-    return `<section class="media-section" aria-labelledby="mediaHeading${groupIndex}"><h2 id="mediaHeading${groupIndex}">${esc(group.heading || 'סרטון לזכרו')}</h2>${vids ? `<div class="media-grid">${vids}</div>` : ''}${images ? `<div class="media-image-grid">${images}</div>` : ''}${links ? `<div class="media-actions">${links}</div>` : ''}</section>`;
+    return `<section class="media-section unified-media-section" aria-labelledby="mediaHeading${groupIndex}"><h2 id="mediaHeading${groupIndex}">${esc(group.heading || 'סרטון לזכרו')}</h2>${mediaItems.length ? `<div class="media-stage" data-media-count="${mediaItems.length}">${mediaItems.join('')}</div>` : ''}${links ? `<div class="media-actions">${links}</div>` : ''}</section>`;
   }).join('');
 
   const mediaBySection = new Map();
@@ -530,14 +723,16 @@ body{
   const story = person.story || null;
   let storyHtml = '';
   if (story && ((story.personal || []).length || (story.event || []).length || (story.legacy || []).length)) {
-    let chapters = '';
-    if ((story.personal || []).length) chapters += `<div class="story-chapter personal">${renderParagraphs(story.personal, 'personal')}</div>`;
+    let personalChapter = '';
+    let eventChapter = '';
+    if ((story.personal || []).length) personalChapter = `<div class="story-chapter personal">${renderParagraphs(story.personal, 'personal')}</div>`;
     if ((story.event || []).length) {
       const eventHeading = person.isPreviousYears ? 'יום הנפילה והנסיבות' : (story.eventHeading || 'שבת ה7.10.2023');
-      chapters += `<section class="story-chapter event" aria-labelledby="eventHeading"><h3 id="eventHeading">${esc(eventHeading)}</h3>${renderParagraphs(story.event, 'event')}</section>`;
+      eventChapter = `<section class="story-chapter event" aria-labelledby="eventHeading"><h3 id="eventHeading">${esc(eventHeading)}</h3>${renderParagraphs(story.event, 'event')}</section>`;
     }
-    if ((story.legacy || []).length) chapters += `<section class="story-chapter legacy" aria-labelledby="legacyHeading"><h3 id="legacyHeading">${esc(story.legacyHeading || 'זיכרון, מורשת והנצחה')}</h3>${renderParagraphs(story.legacy, 'legacy')}</section>`;
-    storyHtml = `<article class="story-section" aria-labelledby="lifeStoryHeading"><h2 id="lifeStoryHeading">סיפור חיים</h2><div class="story-copy">${chapters}</div></article>`;
+    const mainChapters = personalChapter || eventChapter ? `<div class="story-main-grid${personalChapter && eventChapter ? '' : ' single-column'}">${personalChapter}${eventChapter}</div>` : '';
+    const legacyChapter = (story.legacy || []).length ? `<section class="story-chapter legacy" aria-labelledby="legacyHeading"><h3 id="legacyHeading">${esc(story.legacyHeading || 'זיכרון, מורשת והנצחה')}</h3>${renderParagraphs(story.legacy, 'legacy')}</section>` : '';
+    storyHtml = `<article class="story-section" aria-labelledby="lifeStoryHeading"><h2 id="lifeStoryHeading">סיפור חיים</h2><div class="story-copy">${mainChapters}${legacyChapter}</div></article>`;
   }
 
   const pageLinks = (person.pageLinks || []).length ? `<section class="links-section" aria-labelledby="pageLinksHeading"><h2 id="pageLinksHeading">קישורים</h2><div class="memorial-links">${person.pageLinks.map((link) => `<a href="${esc(link.href)}" rel="noopener noreferrer" target="_blank">${esc(link.label)}</a>`).join('')}</div></section>` : '';
