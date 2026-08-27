@@ -3885,3 +3885,60 @@ body {
   }
   .home-page .place-filter-list{max-height:min(280px,46vh);}
 }
+
+/* PATCH 67 - compact filter toolbar */
+.home-page .search-filter-row{
+  width:min(920px,100%);
+  margin-inline:auto;
+  display:grid;
+  grid-template-columns:minmax(230px,390px) auto minmax(180px,220px);
+  gap:10px;
+  align-items:end;
+  justify-content:start;
+}
+.home-page .search-control{
+  width:100%;
+  max-width:390px;
+}
+.home-page .security-filter{
+  min-height:54px;
+  margin:0;
+  align-self:end;
+  padding:9px 18px;
+  border-radius:18px;
+  white-space:nowrap;
+  font-size:.94rem;
+  font-weight:700;
+  box-shadow:0 10px 24px rgba(8,19,35,.12);
+}
+.home-page .security-filter.is-active{
+  border-color:rgba(151,205,221,.75);
+  background:linear-gradient(180deg,rgba(85,184,212,.25),rgba(85,184,212,.15));
+  color:#fff;
+  box-shadow:0 12px 28px rgba(8,19,35,.18), inset 0 1px 0 rgba(255,255,255,.08);
+}
+.home-page .filter-chips{display:none !important;}
+
+@media (max-width:1080px){
+  .home-page .search-filter-row{
+    grid-template-columns:minmax(220px,1fr) auto minmax(165px,210px);
+  }
+  .home-page .search-control{max-width:none;}
+}
+
+@media (max-width:760px){
+  .home-page .search-filter-row{
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+  .home-page .search-control{
+    max-width:none;
+    width:100%;
+  }
+  .home-page .security-filter{
+    width:100%;
+    min-height:46px;
+    border-radius:14px;
+    justify-self:stretch;
+  }
+}

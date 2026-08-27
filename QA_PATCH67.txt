@@ -1,0 +1,9 @@
+PATCH 67 QA
+
+PASS - visible "הכול" group-filter button removed.
+PASS - security-team filter button moved into search-filter-row.
+PASS - security-team button toggles between filtered and unfiltered state.
+PASS - settlement combobox remains functional with the same hidden native select data source.
+PASS - index cache keys updated to CSS v=267 and app.js v=267.
+PASS - app.js passes node --check.
+PASS - no memorial content changed.
