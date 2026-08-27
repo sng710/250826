@@ -1,7 +1,11 @@
 const people=Array.isArray(window.MEMORIAL_PEOPLE)?window.MEMORIAL_PEOPLE:[];
-const grid=document.getElementById('memorialGrid'),search=document.getElementById('searchInput'),count=document.getElementById('statusText'),empty=document.getElementById('emptySearch');
+const grid=document.getElementById('memorialGrid'),search=document.getElementById('searchInput'),count=document.getElementById('statusText'),empty=document.getElementById('emptySearch'),placeFilter=document.getElementById('placeFilter'),groupFilterButtons=[...document.querySelectorAll('[data-group-filter]')];
 const box=document.getElementById('lightbox'),closeBtn=document.getElementById('lightboxClose'),boxImg=document.getElementById('lightboxImg'),boxTitle=document.getElementById('lightboxTitle'),boxPlace=document.getElementById('lightboxPlace'),boxRole=document.getElementById('lightboxRole'),boxFacts=document.getElementById('lightboxFacts'),boxService=document.getElementById('lightboxService'),pageLink=document.getElementById('personPageLink'),copyBtn=document.getElementById('copyPersonLink');
-let lastFocus=null,active=null;
+let lastFocus=null,active=null,activeGroupFilter='all';
+function isSecurityTeam(p){const r=String(p.role||'');return /כיתת הכוננות|רבש["״]?ץ|סגן רבש["״]?ץ/.test(r)}
+function passesFilters(p){const place=placeFilter?.value||'';if(place&&String(p.place||'')!==place)return false;if(activeGroupFilter==='security'&&!isSecurityTeam(p))return false;return true}
+function initPlaceFilter(){if(!placeFilter)return;const places=[...new Set(people.map(p=>String(p.place||'').trim()).filter(x=>x&&x!=='תאילנד'))].sort((a,b)=>a.localeCompare(b,'he'));for(const place of places){const o=document.createElement('option');o.value=place;o.textContent=place;placeFilter.append(o)}}
+function setGroupFilter(value){activeGroupFilter=value;groupFilterButtons.forEach(btn=>{const on=btn.dataset.groupFilter===value;btn.classList.toggle('is-active',on);btn.setAttribute('aria-pressed',String(on))});render()}
 function e(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function norm(s){return String(s||'').replace(/[״“”]/g,'"').replace(/[׳‘’]/g,"'").replace(/ז\s*["'׳״]{0,2}\s*ל/g,'').replace(/[()\[\]{}.,/:;!?+\-־\u2013\u2014]+/g,' ').replace(/\s+/g,' ').trim().toLowerCase()}
 function displayName(p){return String(p.name||'').replace(/\s+ז[״"']?ל\s*$/,'').trim()}
@@ -13,7 +17,7 @@ function firstName(p){
 }
 function pic(p,cls=''){const pos=/^\d{1,3}%\s+\d{1,3}%$/.test(String(p.portrait?.position||''))?p.portrait.position:'50% 38%';const fit=p.portrait?.fit==='contain'?'contain':'cover';const rawScale=Number(p.portrait?.scale);const scale=Number.isFinite(rawScale)&&rawScale>=.8&&rawScale<=1.2?rawScale:1;return p.image?`<img class="${cls}" src="${e(p.image)}" alt="${e(displayName(p))}" loading="lazy" decoding="async" style="--fit:${fit};--pos:${e(pos)};--scale:${scale}">`:`<span class="portrait-placeholder memorial-candle" role="img" aria-label="${e('נר זיכרון לזכר '+displayName(p))}"></span>`}
 function matches(p,q){const t=norm(q);if(!t)return true;return t.split(' ').every(x=>norm(p.name).includes(x)||norm((p.name||'').split(' ').reverse().join(' ')).includes(x)||norm(p.place).includes(x))}
-function render(){const q=search?.value||'';const list=people.filter(p=>matches(p,q)).sort((a,b)=>Number(!!a.isPreviousYears)-Number(!!b.isPreviousYears));grid.innerHTML='';let divider=false;for(const p of list){if(p.isPreviousYears&&!divider){const d=document.createElement('div');d.className='period-divider';d.id='previousYearsDivider';d.innerHTML='<span>נופלות ונופלים משנים קודמות</span>';grid.append(d);divider=true}const b=document.createElement('button');b.type='button';b.className='memory-card';b.dataset.id=p.id;b.setAttribute('aria-haspopup','dialog');b.setAttribute('aria-controls','lightbox');b.innerHTML=`<span class="portrait-ring">${pic(p)}</span><span class="card-name">${e(p.name)}</span><span class="card-place">${e(p.place||'')}</span>`;b.addEventListener('click',()=>openPreview(p,true));grid.append(b)}if(count){const total=list.length;const label=total===1?'תוצאה אחת':`${total} תוצאות`;count.textContent=q?`נמצאו ${label} עבור "${q}"`:`מוצגות ${label} ברשימת ההנצחה`;}empty.hidden=!!list.length}
+function render(){const q=search?.value||'';const list=people.filter(p=>matches(p,q)&&passesFilters(p)).sort((a,b)=>Number(!!a.isPreviousYears)-Number(!!b.isPreviousYears));grid.innerHTML='';let divider=false;for(const p of list){if(p.isPreviousYears&&!divider){const d=document.createElement('div');d.className='period-divider';d.id='previousYearsDivider';d.innerHTML='<span>נופלות ונופלים משנים קודמות</span>';grid.append(d);divider=true}const b=document.createElement('button');b.type='button';b.className='memory-card';b.dataset.id=p.id;b.setAttribute('aria-haspopup','dialog');b.setAttribute('aria-controls','lightbox');b.innerHTML=`<span class="portrait-ring">${pic(p)}</span><span class="card-name">${e(p.name)}</span><span class="card-place">${e(p.place||'')}</span>`;b.addEventListener('click',()=>openPreview(p,true));grid.append(b)}if(count){const total=list.length;const label=total===1?'תוצאה אחת':`${total} תוצאות`;const filters=[];if(activeGroupFilter==='security')filters.push('חברי כיתות הכוננות');if(placeFilter?.value)filters.push(placeFilter.value);const suffix=filters.length?` · ${filters.join(' · ')}`:'';count.textContent=q?`נמצאו ${label} עבור "${q}"${suffix}`:`מוצגות ${label}${suffix}`;}empty.hidden=!!list.length}
 function service(p){const r=p.serviceRecord||{};const a=[];if(r.rank)a.push(e(r.rank));if(r.unit)a.push(e(r.unit));return a.length?`<div class="service-line">${a.map(x=>`<span>${x}</span>`).join('<span class="dot" aria-hidden="true">•</span>')}</div>`:''}
 function setHash(p){history.replaceState(null,'',`${location.pathname}${location.search}#${encodeURIComponent(p.id)}`)}
 function clearHash(){history.replaceState(null,'',`${location.pathname}${location.search}`)}
@@ -90,6 +94,8 @@ function resetPreviewState(){
 }
 
 search.addEventListener('input',render);
+placeFilter?.addEventListener('change',render);
+groupFilterButtons.forEach(btn=>btn.addEventListener('click',()=>setGroupFilter(btn.dataset.groupFilter||'all')));
 
 function fromHash(){
   const id=decodeURIComponent(location.hash.slice(1)||'');
@@ -109,6 +115,7 @@ window.addEventListener('pageshow',event=>{
   }
 });
 
+initPlaceFilter();
 render();
 setTimeout(()=>{
   if(location.hash)fromHash();

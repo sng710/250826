@@ -9,10 +9,11 @@
 <meta content="#304a7d" name="theme-color"/>
 <link href="assets/favicon-sng.svg" rel="icon" type="image/svg+xml"/>
 <link href="assets/favicon-sng.png" rel="icon" sizes="256x256" type="image/png"/>
-<link href="assets/css/site.css?v=263" rel="stylesheet"/>
+<link href="assets/css/site.css?v=264" rel="stylesheet"/>
 </head>
 <body class="home-page">
 <a class="skip-link" href="#mainContent">דילוג לתוכן הראשי</a>
+<div class="home-layout">
 <header aria-labelledby="siteTitle" class="hero">
 <div class="hero-inner gentle-enter">
 <p class="eyebrow">שער הנגב זוכרת</p>
@@ -36,17 +37,30 @@
 </header>
 <main id="mainContent">
 <section aria-label="רשימת ההנצחה" class="index-section">
-<div class="toolbar" role="search">
+<div class="toolbar" role="search" aria-label="חיפוש וסינון ברשימת ההנצחה">
+<div class="search-filter-row">
 <label class="search-control" for="searchInput">
 <svg aria-hidden="true" viewbox="0 0 24 24"><path d="m20.7 19.3-4.2-4.2a7 7 0 1 0-1.4 1.4l4.2 4.2a1 1 0 0 0 1.4-1.4ZM5 11a6 6 0 1 1 12 0 6 6 0 0 1-12 0Z"></path></svg>
 <input aria-label="חיפוש לפי שם או יישוב" autocomplete="off" enterkeyhint="search" id="searchInput" aria-describedby="statusText" placeholder="חיפוש לפי שם או יישוב" type="search"/>
 </label>
+<label class="place-filter" for="placeFilter">
+<span>לפי יישוב</span>
+<select id="placeFilter" aria-describedby="statusText">
+<option value="">כל היישובים</option>
+</select>
+</label>
+</div>
+<div class="filter-chips" aria-label="סינון לפי קבוצה">
+<button class="filter-chip is-active" type="button" data-group-filter="all" aria-pressed="true">הכול</button>
+<button class="filter-chip" type="button" data-group-filter="security" aria-pressed="false">חברי כיתות הכוננות</button>
+</div>
 </div>
 <p aria-live="polite" class="visually-hidden" id="statusText"></p>
 <div aria-live="polite" class="empty-search" hidden="" id="emptySearch">לא נמצאו תוצאות לחיפוש הזה.</div>
 <div class="memorial-grid" id="memorialGrid"></div>
 </section>
 </main>
+</div>
 <div aria-hidden="true" class="lightbox" id="lightbox" inert="">
 <div class="lightbox-backdrop" data-close="1"></div>
 <article aria-labelledby="lightboxTitle" aria-modal="true" class="lightbox-card" role="dialog">
@@ -68,6 +82,6 @@
 </article>
 </div>
 <script defer="" src="assets/js/people.js"></script>
-<script defer="" src="assets/js/app.js?v=237"></script>
+<script defer="" src="assets/js/app.js?v=264"></script>
 </body>
 </html>
