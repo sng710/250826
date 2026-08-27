@@ -1,0 +1,9 @@
+PATCH 75 QA
+
+PASS - Aviv Baram record found (id aviv_b).
+PASS - Neither supplied media URL was previously present in Aviv's topMedia.
+PASS - Facebook media added with 476x476 source aspect ratio.
+PASS - Instagram Reel C5kymwSMcHV added.
+PASS - people.js syntax check passes.
+PASS - person-page.js remains compatible and syntax check passes.
+PASS - site version bumped to 275 for cache refresh.

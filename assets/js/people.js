@@ -2281,7 +2281,26 @@ window.MEMORIAL_PEOPLE = [
       "legacyHeading": "זיכרון, מורשת והנצחה"
     },
     "footerText": "יהי זכרו ברוך",
-    "portraitAlt": "אביב ברעם"
+    "portraitAlt": "אביב ברעם",
+    "topMedia": [
+      {
+        "heading": "סרטונים לזכרו",
+        "instagram": [
+          {
+            "permalink": "https://www.instagram.com/reel/C5kymwSMcHV/",
+            "title": "עברי לידר — לזכר אביב ברעם"
+          }
+        ],
+        "facebook": [
+          {
+            "permalink": "https://www.facebook.com/ivri.lider.official/videos/460831996620309/",
+            "title": "עברי לידר — לזכר אביב ברעם",
+            "width": 476,
+            "height": 476
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "amir_n",
