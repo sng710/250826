@@ -1,0 +1,6 @@
+PATCH 59 QA
+
+PASS - No ז״ל remains in Yehonatan's loader title/meta/fallback.
+PASS - Browser title uses יהונתן חג׳בי־זהבי הי״ד.
+PASS - Noscript H1 uses יהונתן חג׳בי־זהבי הי״ד.
+PASS - No other personal pages changed.
