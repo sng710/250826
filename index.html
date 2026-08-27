@@ -856,267 +856,313 @@
 
 
 <style>
-/* PATCH 92 — stronger visual polish for homepage layout only. No text changes. */
-:root{
-  --home-side-w: clamp(360px, 26vw, 430px);
-}
-body.home-page{
-  background:
-    radial-gradient(1200px 700px at 78% 18%, rgba(37,107,155,.15), transparent 55%),
-    linear-gradient(180deg, #0b3557 0%, #123c62 100%) !important;
-}
-.home-layout{
-  display:grid !important;
-  grid-template-columns: var(--home-side-w) minmax(0,1fr) !important;
-  min-height:100vh !important;
-  min-height:100dvh !important;
-  align-items:stretch !important;
-}
-.home-page .hero{
-  position:sticky !important;
-  top:0 !important;
-  height:100vh !important;
-  height:100dvh !important;
-  min-height:100vh !important;
-  min-height:100dvh !important;
-  overflow:auto !important;
-  overscroll-behavior:contain;
-  padding:24px 22px 18px !important;
-  border-left:1px solid rgba(140,194,220,.18) !important;
-  background:
-    linear-gradient(180deg, rgba(41,70,117,.92) 0%, rgba(18,48,84,.96) 100%),
-    radial-gradient(circle at 20% 10%, rgba(255,255,255,.08), transparent 35%) !important;
-  backdrop-filter: blur(6px);
-  box-shadow: inset -1px 0 0 rgba(255,255,255,.04);
-  scrollbar-width:thin;
-  scrollbar-color: rgba(171,220,235,.38) transparent;
-}
-.home-page .hero::-webkit-scrollbar{width:10px;}
-.home-page .hero::-webkit-scrollbar-track{background:transparent;}
-.home-page .hero::-webkit-scrollbar-thumb{background:rgba(171,220,235,.34);border-radius:999px;border:2px solid transparent;background-clip:padding-box;}
-.home-page .hero-inner{
-  min-height:100% !important;
-  height:auto !important;
-  max-height:none !important;
-  overflow:visible !important;
-  display:flex !important;
-  flex-direction:column !important;
-  justify-content:flex-start !important;
-  gap:16px !important;
-  padding:0 !important;
-}
-.left-site-title-wrap{
-  order:1;
-  margin-top:0 !important;
-}
-.left-site-title{
-  font-size: clamp(2.3rem, 2.1rem + 0.7vw, 3.05rem) !important;
-  line-height:1.06 !important;
-  margin:0 0 2px !important;
-  letter-spacing:.01em;
-}
-.home-page .hero .hero-rule:first-of-type{
-  order:2;
-  margin:4px 0 2px !important;
-  opacity:.72;
-}
-.left-quote-wrap{
-  order:3;
-}
-.home-page .hero .poem{
-  font-size: clamp(2rem, 1.85rem + 0.6vw, 2.55rem) !important;
-  line-height:1.48 !important;
-  letter-spacing:.01em;
-  text-shadow:0 1px 0 rgba(0,0,0,.08);
-}
-.home-page .hero .poem span{display:block;}
-.home-page .hero-rule-bottom{
-  order:4;
-  margin:4px 0 2px !important;
-  opacity:.72;
-}
-.home-page .hero .dedication{
-  order:5;
-  font-size: clamp(1.28rem, 1.16rem + 0.34vw, 1.62rem) !important;
-  line-height:1.78 !important;
-  margin:0 !important;
-}
-.left-search-wrap{
-  order:6;
-  margin-top:auto !important;
-  padding:18px 0 0 !important;
-}
-.left-search-wrap .toolbar{
-  padding:0 !important;
-  background:transparent !important;
-  border:none !important;
-  box-shadow:none !important;
-}
-.left-search-wrap .search-filter-row{
-  gap:10px !important;
-}
-.left-search-wrap .search-control,
-.left-search-wrap .security-filter,
-.left-search-wrap .place-filter-trigger{
-  min-height:48px !important;
-  border-radius:999px !important;
-  background:rgba(255,255,255,.05) !important;
-  border:1px solid rgba(183,224,241,.25) !important;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.05) !important;
-}
-.left-search-wrap input,
-.left-search-wrap button,
-.left-search-wrap .place-filter-current,
-.left-search-wrap .place-filter-label{
-  font-size:1.03rem !important;
-}
-.left-search-wrap .place-filter-label{
-  margin:0 10px 5px !important;
-  opacity:.85;
-}
-.home-page .hero-links{
-  order:7;
-  display:flex !important;
-  flex-wrap:wrap !important;
-  gap:10px !important;
-  margin-top:14px !important;
-}
-.home-page .hero-links a{
-  min-height:42px !important;
-  padding:8px 16px !important;
-  border-radius:999px !important;
-  font-size:1.08rem !important;
-}
-#mainContent{
-  min-width:0 !important;
-}
-.index-section{
-  padding:18px 28px 42px !important;
-}
-.main-title-band{
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  gap:18px !important;
-  margin:0 auto 28px !important;
-  max-width:1300px !important;
-  padding:10px 6px 4px !important;
-}
-.main-title-logo-wrap{
-  width:104px !important;
-  height:104px !important;
-  padding:10px !important;
-  border-radius:28px !important;
-  background:linear-gradient(145deg, rgba(78,108,153,.95), rgba(31,55,96,.98)) !important;
-  border:1px solid rgba(190,227,242,.4) !important;
-  box-shadow:0 16px 32px rgba(7,19,36,.18), inset 0 0 0 1px rgba(255,255,255,.08) !important;
-}
-.main-primary-title{
-  font-size: clamp(3.4rem, 4.7vw, 5.8rem) !important;
-  line-height:.96 !important;
-  letter-spacing:.02em !important;
-  text-wrap:balance;
-}
-.memorial-grid{
-  display:grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(178px, 1fr)) !important;
-  gap: 34px 26px !important;
-  align-items:start !important;
-  max-width:1320px !important;
-  margin:0 auto !important;
-}
-.memorial-grid > *{
-  width:100% !important;
-  max-width:208px !important;
-  margin-inline:auto !important;
-}
-/* A generic polish layer for card children regardless of exact tag/class. */
-.memorial-grid > *{
-  padding:8px 6px 10px !important;
-  border-radius:22px !important;
-  transition:transform .18s ease, background-color .18s ease, box-shadow .18s ease;
-}
-.memorial-grid > *:hover,
-.memorial-grid > *:focus-within{
-  transform:translateY(-2px);
-  background:rgba(255,255,255,.03) !important;
-  box-shadow:0 16px 30px rgba(8,20,38,.10);
-}
-@media (max-width:1360px){
-  .index-section{padding:16px 22px 36px !important;}
-  .main-primary-title{font-size: clamp(3rem, 4.2vw, 4.7rem) !important;}
-  .main-title-logo-wrap{width:92px !important;height:92px !important;}
-}
-@media (max-width:1180px){
+/* PATCH 93 — corrective homepage layout. No text changes. */
+
+/* Restore correct desktop structure: memorial panel LEFT, people/main area RIGHT. */
+@media (min-width:900px){
   .home-layout{
-    grid-template-columns: minmax(320px, 380px) minmax(0,1fr) !important;
-  }
-  .home-page .hero{padding:20px 18px 16px !important;}
-  .left-site-title{font-size: clamp(2rem, 1.85rem + .5vw, 2.55rem) !important;}
-  .home-page .hero .poem{font-size: clamp(1.72rem, 1.58rem + .42vw, 2.05rem) !important;}
-  .home-page .hero .dedication{font-size: clamp(1.12rem, 1.05rem + .2vw, 1.32rem) !important;}
-}
-@media (max-width:899px){
-  .home-layout{
-    grid-template-columns:1fr !important;
+    display:flex !important;
+    flex-direction:row !important;
+    direction:ltr !important;
+    min-height:100vh !important;
+    min-height:100dvh !important;
+    align-items:stretch !important;
   }
   .home-page .hero{
-    position:relative !important;
-    top:auto !important;
-    height:auto !important;
+    direction:rtl !important;
+    flex:0 0 clamp(380px,26vw,470px) !important;
+    width:clamp(380px,26vw,470px) !important;
+    min-width:380px !important;
+    order:0 !important;
+    position:sticky !important;
+    top:0 !important;
+    height:100vh !important;
+    height:100dvh !important;
     min-height:0 !important;
-    overflow:visible !important;
-    padding:18px 16px 16px !important;
-    border-left:none !important;
-    border-bottom:1px solid rgba(140,194,220,.18) !important;
+    max-height:100vh !important;
+    max-height:100dvh !important;
+    overflow:hidden !important;
+    padding:clamp(14px,1.7vh,20px) clamp(20px,1.8vw,28px) !important;
+    border-left:1px solid rgba(134,196,220,.18) !important;
+    box-sizing:border-box !important;
   }
-  .home-page .hero-inner{gap:12px !important;}
+  .home-page main{
+    direction:rtl !important;
+    flex:1 1 auto !important;
+    min-width:0 !important;
+    order:1 !important;
+  }
+  .home-page .hero-inner{
+    height:100% !important;
+    min-height:0 !important;
+    max-height:100% !important;
+    overflow:hidden !important;
+    display:grid !important;
+    grid-template-rows:auto auto auto auto minmax(0,1fr) auto !important;
+    align-content:stretch !important;
+    gap:clamp(6px,.8vh,10px) !important;
+    padding:0 !important;
+  }
+
+  /* Quote title directly above quote. */
+  .left-site-title-wrap{
+    margin:0 !important;
+    padding:0 !important;
+    align-self:end !important;
+  }
   .left-site-title{
-    font-size: clamp(2rem, 7.1vw, 2.6rem) !important;
+    margin:0 0 clamp(3px,.5vh,6px) !important;
+    padding:0 !important;
+    font-size:clamp(2.15rem,3.6vh,2.9rem) !important;
+    line-height:1.04 !important;
+    white-space:normal !important;
+    text-align:center !important;
+  }
+  .home-page .hero .hero-rule:first-of-type{
+    display:none !important;
+  }
+  .left-quote-wrap{
+    margin:0 !important;
+    padding:0 !important;
   }
   .home-page .hero .poem{
-    font-size: clamp(1.58rem, 6.2vw, 2.05rem) !important;
-    line-height:1.52 !important;
+    margin:0 !important;
+    padding:0 !important;
+    font-size:clamp(1.68rem,2.75vh,2.15rem) !important;
+    line-height:1.4 !important;
+    text-align:right !important;
+  }
+  .home-page .hero-rule-bottom{
+    margin:clamp(4px,.6vh,7px) 0 !important;
   }
   .home-page .hero .dedication{
-    font-size: clamp(1.12rem, 4.45vw, 1.36rem) !important;
-    line-height:1.75 !important;
+    margin:0 !important;
+    font-size:clamp(1.12rem,1.85vh,1.42rem) !important;
+    line-height:1.62 !important;
+    text-align:right !important;
   }
+
+  /* Search stays fully usable in the left panel and fits without clipping. */
   .left-search-wrap{
-    margin-top:8px !important;
-    padding-top:8px !important;
+    min-height:0 !important;
+    align-self:end !important;
+    width:100% !important;
+    margin:0 !important;
+    padding-top:clamp(5px,.7vh,8px) !important;
   }
-  .index-section{padding:10px 12px 28px !important;}
+  .left-search-wrap .mobile-filter-toggle{display:none !important;}
+  .left-search-wrap .mobile-filter-panel{
+    display:block !important;
+    margin:0 !important;
+  }
+  .left-search-wrap .toolbar{
+    margin:0 !important;
+    padding:0 !important;
+    background:transparent !important;
+    border:0 !important;
+    box-shadow:none !important;
+  }
+  .left-search-wrap .search-filter-row{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:clamp(5px,.7vh,8px) !important;
+  }
+  .left-search-wrap .search-control,
+  .left-search-wrap .security-filter,
+  .left-search-wrap .place-filter,
+  .left-search-wrap .place-filter-trigger{
+    width:100% !important;
+    max-width:none !important;
+    margin:0 !important;
+  }
+  .left-search-wrap .search-control,
+  .left-search-wrap .security-filter,
+  .left-search-wrap .place-filter-trigger{
+    min-height:clamp(38px,4.8vh,46px) !important;
+    border-radius:999px !important;
+  }
+  .left-search-wrap .place-filter-label{
+    margin:0 9px 2px !important;
+    font-size:.8rem !important;
+    line-height:1.1 !important;
+  }
+  .left-search-wrap input,
+  .left-search-wrap button,
+  .left-search-wrap .place-filter-current{
+    font-size:clamp(.92rem,1.45vh,1.02rem) !important;
+  }
+  .home-page .hero-links{
+    display:flex !important;
+    justify-content:center !important;
+    align-items:center !important;
+    gap:8px !important;
+    margin:0 !important;
+  }
+  .home-page .hero-links a{
+    min-height:34px !important;
+    padding:5px 12px !important;
+    font-size:.98rem !important;
+    border-radius:999px !important;
+  }
+
+  /* Main title area: logo to the LEFT of title, one clean row. */
+  .index-section{
+    padding:clamp(14px,1.5vw,24px) clamp(18px,1.8vw,30px) 36px !important;
+  }
   .main-title-band{
-    gap:12px !important;
-    margin:0 auto 18px !important;
-    padding:6px 4px 0 !important;
+    direction:ltr !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:clamp(14px,1.4vw,22px) !important;
+    width:100% !important;
+    max-width:1200px !important;
+    margin:0 auto clamp(20px,2.2vh,30px) !important;
+    padding:4px 0 8px !important;
+  }
+  .main-title-copy{
+    direction:rtl !important;
+    min-width:0 !important;
   }
   .main-title-logo-wrap{
-    width:76px !important;
-    height:76px !important;
-    padding:7px !important;
-    border-radius:20px !important;
+    flex:0 0 auto !important;
+    width:clamp(88px,6vw,108px) !important;
+    height:clamp(88px,6vw,108px) !important;
+    padding:9px !important;
+    border-radius:24px !important;
+    border:1px solid rgba(168,215,232,.45) !important;
+    background:linear-gradient(145deg,rgba(58,89,132,.92),rgba(26,53,89,.96)) !important;
+    box-shadow:0 14px 30px rgba(4,18,34,.18),inset 0 0 0 1px rgba(255,255,255,.07) !important;
   }
   .main-primary-title{
-    font-size: clamp(2.2rem, 9vw, 3.2rem) !important;
-    line-height:1 !important;
+    margin:0 !important;
+    font-size:clamp(3.5rem,5vw,5.9rem) !important;
+    line-height:.96 !important;
+    white-space:nowrap !important;
   }
+  .main-title-copy::after{
+    width:min(440px,78%) !important;
+    margin-top:13px !important;
+  }
+
+  /* Keep the people grid in the large right area and visually balanced. */
   .memorial-grid{
-    grid-template-columns: repeat(2, minmax(0,1fr)) !important;
-    gap:26px 14px !important;
+    width:100% !important;
+    max-width:1320px !important;
+    margin:0 auto !important;
+    display:grid !important;
+    grid-template-columns:repeat(6,minmax(0,1fr)) !important;
+    gap:clamp(28px,3.2vh,42px) clamp(16px,1.6vw,28px) !important;
+    align-items:start !important;
   }
-  .memorial-grid > *{max-width:100% !important;}
+  .memorial-grid > *{
+    width:100% !important;
+    min-width:0 !important;
+  }
 }
-@media (max-width:560px){
-  .home-page .hero{padding:16px 14px 14px !important;}
-  .main-title-band{flex-wrap:nowrap !important;}
-  .main-primary-title{font-size: clamp(2rem, 8.7vw, 2.8rem) !important;}
-  .main-title-logo-wrap{width:68px !important;height:68px !important;}
-  .memorial-grid{
-    grid-template-columns: repeat(2, minmax(130px,1fr)) !important;
-    gap:20px 10px !important;
+
+/* Slightly tighter only for shorter desktop screens, still no clipping. */
+@media (min-width:900px) and (max-height:780px){
+  .home-page .hero{padding-top:10px !important;padding-bottom:10px !important;}
+  .home-page .hero-inner{gap:4px !important;}
+  .left-site-title{font-size:clamp(1.92rem,3.25vh,2.38rem) !important;}
+  .home-page .hero .poem{font-size:clamp(1.42rem,2.42vh,1.74rem) !important;line-height:1.32 !important;}
+  .home-page .hero .dedication{font-size:clamp(1rem,1.65vh,1.18rem) !important;line-height:1.48 !important;}
+  .left-search-wrap .search-filter-row{gap:4px !important;}
+  .left-search-wrap .search-control,
+  .left-search-wrap .security-filter,
+  .left-search-wrap .place-filter-trigger{min-height:35px !important;}
+  .home-page .hero-links a{min-height:31px !important;padding:3px 10px !important;font-size:.92rem !important;}
+}
+
+/* Responsive right-area portrait count while keeping left panel structure. */
+@media (min-width:900px) and (max-width:1550px){
+  .memorial-grid{grid-template-columns:repeat(5,minmax(0,1fr)) !important;}
+  .main-primary-title{font-size:clamp(3.15rem,4.5vw,5rem) !important;}
+}
+@media (min-width:900px) and (max-width:1250px){
+  .home-page .hero{flex-basis:360px !important;width:360px !important;min-width:360px !important;}
+  .memorial-grid{grid-template-columns:repeat(4,minmax(0,1fr)) !important;}
+}
+
+/* Mobile: title/logo first, quote/search second, people after — all visible. */
+@media (max-width:899px){
+  .home-layout{
+    display:flex !important;
+    flex-direction:column !important;
+    direction:rtl !important;
+    min-height:0 !important;
   }
+  .home-page main{order:0 !important;width:100% !important;}
+  .home-page .hero{
+    order:1 !important;
+    position:relative !important;
+    top:auto !important;
+    width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+    overflow:visible !important;
+    padding:18px 15px 20px !important;
+  }
+  .home-page .hero-inner{
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+    overflow:visible !important;
+    display:flex !important;
+    flex-direction:column !important;
+    gap:12px !important;
+    padding:0 !important;
+  }
+  .left-site-title{
+    font-size:clamp(1.95rem,7.5vw,2.55rem) !important;
+    margin:0 0 3px !important;
+  }
+  .home-page .hero .hero-rule:first-of-type{display:none !important;}
+  .home-page .hero .poem{
+    font-size:clamp(1.46rem,5.65vw,1.95rem) !important;
+    line-height:1.5 !important;
+  }
+  .home-page .hero .dedication{
+    font-size:clamp(1.14rem,4.35vw,1.38rem) !important;
+    line-height:1.78 !important;
+  }
+  .left-search-wrap{width:100% !important;margin:2px 0 0 !important;}
+  .left-search-wrap .mobile-filter-toggle{display:flex !important;}
+  .home-page .hero-links{margin:0 !important;}
+
+  .index-section{padding:10px 12px 28px !important;}
+  .main-title-band{
+    direction:ltr !important;
+    width:100% !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:10px !important;
+    margin:0 auto 16px !important;
+    padding:8px 4px 4px !important;
+  }
+  .main-title-copy{direction:rtl !important;}
+  .main-title-logo-wrap{
+    width:70px !important;
+    height:70px !important;
+    padding:7px !important;
+    border-radius:18px !important;
+  }
+  .main-primary-title{
+    font-size:clamp(2.15rem,9vw,3.1rem) !important;
+    line-height:1 !important;
+    white-space:normal !important;
+  }
+  .memorial-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:24px 12px !important;
+  }
+}
+@media (max-width:520px){
+  .main-title-logo-wrap{width:62px !important;height:62px !important;}
+  .main-primary-title{font-size:clamp(1.95rem,8.6vw,2.7rem) !important;}
 }
 </style>
 
