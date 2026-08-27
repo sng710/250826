@@ -1,0 +1,8 @@
+PATCH 69 QA
+
+PASS - All 3 requested YouTube IDs were absent before insertion (no duplicates).
+PASS - Ofir Libstein now has exactly 3 newly-added topMedia videos.
+PASS - people.js passes JavaScript syntax check.
+PASS - Memorial validator passes: 154 records / 154 stable loaders.
+PASS - All local referenced assets exist.
+PASS - Current-period / previous-years heading consistency remains intact.

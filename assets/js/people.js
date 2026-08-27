@@ -110,7 +110,27 @@ window.MEMORIAL_PEOPLE = [
       "legacyHeading": "זיכרון, מורשת והנצחה"
     },
     "footerText": "יהי זכרו ברוך",
-    "portraitAlt": "אופיר ליבשטיין"
+    "portraitAlt": "אופיר ליבשטיין",
+    "topMedia": [
+      {
+        "heading": "סרטונים לזכרו",
+        "videos": [
+          {
+            "src": "https://www.youtube.com/embed/raimmfDD4X8?si=V_pjAs_pShyUfdmB",
+            "title": "סרטון לזכר אופיר ליבשטיין"
+          },
+          {
+            "src": "https://www.youtube.com/embed/s9IiWCEFCXI?si=a4spYjNu42aofxxD",
+            "title": "סרטון לזכר אופיר ליבשטיין"
+          },
+          {
+            "src": "https://www.youtube.com/embed/rQgn12bRHFI?si=GLKxujb0HsHsdvRa",
+            "title": "סרטון לזכר אופיר ליבשטיין"
+          }
+        ],
+        "links": []
+      }
+    ]
   },
   {
     "id": "omer_z",
