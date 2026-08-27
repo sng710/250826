@@ -1,0 +1,10 @@
+PATCH 60 QA
+
+PASS - assets/js/person-page.js exists.
+PASS - assets/js/people.js exists.
+PASS - יהונתן loader references ../../assets/js/person-page.js.
+PASS - יהונתן loader references ../../assets/js/people.js.
+PASS - יהונתן title/fallback uses הי״ד.
+PASS - person-page.js passes node --check.
+PASS - people.js passes node --check.
+PASS - ZIP integrity checked.
