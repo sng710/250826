@@ -695,6 +695,165 @@
 }
 </style>
 
+
+<style>
+/* PATCH 91 — left panel fit cleanup, single logo, tighter quote block, larger dedication */
+
+/* Absolute hide for any legacy left-side logo wrappers if they exist from older cached markup/classes */
+.home-page .hero [class*="council"],
+.home-page .hero [class*="logo-corner"],
+.home-page .hero [class*="corner-logo"],
+.home-page .hero .council-corner,
+.home-page .hero .council-lockup,
+.home-page .hero .hero-logo,
+.home-page .hero .hero-logo-wrap,
+.home-page .hero .corner-badge{
+  display:none !important;
+  visibility:hidden !important;
+}
+
+/* Quote title should sit directly above the quote */
+.left-site-title-wrap{
+  margin:0 !important;
+  padding:0 !important;
+}
+.left-site-title{
+  margin:0 0 6px !important;
+  white-space:normal !important;
+}
+.home-page .hero .hero-rule:first-of-type{
+  display:none !important;
+}
+.left-quote-wrap{
+  margin:0 !important;
+  padding:0 !important;
+}
+.home-page .hero .poem{
+  margin:0 !important;
+  padding:0 !important;
+}
+
+/* Main title/logo row polish */
+.main-title-band{
+  gap:18px !important;
+}
+.main-title-logo-wrap{
+  margin-inline-start:0 !important;
+  flex:0 0 auto !important;
+  border-radius:24px !important;
+  border:1px solid rgba(171,220,235,.48) !important;
+  background:linear-gradient(145deg,rgba(46,78,122,.92),rgba(26,54,91,.96)) !important;
+  box-shadow:0 12px 26px rgba(7,19,36,.18), inset 0 0 0 1px rgba(255,255,255,.08) !important;
+}
+
+@media (min-width:900px){
+  .home-page .hero,
+  .home-page .hero-inner{
+    height:100vh !important;
+    height:100dvh !important;
+    max-height:100vh !important;
+    max-height:100dvh !important;
+    overflow:hidden !important;
+  }
+  .home-page .hero{
+    padding:12px 22px !important;
+  }
+  .home-page .hero-inner{
+    display:grid !important;
+    grid-template-rows:auto auto auto auto auto !important;
+    align-content:stretch !important;
+    gap:8px !important;
+  }
+  .left-site-title-wrap{align-self:end !important;}
+  .left-site-title{
+    font-size:clamp(2rem,3.8vh,2.65rem) !important;
+    line-height:1.06 !important;
+  }
+  .home-page .hero .poem{
+    font-size:clamp(1.52rem,2.75vh,1.95rem) !important;
+    line-height:1.36 !important;
+  }
+  .home-page .hero-rule-bottom{
+    margin:4px 0 2px !important;
+  }
+  .home-page .hero .dedication{
+    font-size:clamp(1.12rem,2vh,1.42rem) !important;
+    line-height:1.62 !important;
+  }
+  .left-search-wrap .search-filter-row{gap:6px !important;}
+  .left-search-wrap .search-control,
+  .left-search-wrap .security-filter,
+  .left-search-wrap .place-filter-trigger{
+    min-height:40px !important;
+    height:auto !important;
+  }
+  .left-search-wrap .place-filter-label{
+    margin:0 8px 2px !important;
+    font-size:.8rem !important;
+  }
+  .home-page .hero-links{
+    gap:8px !important;
+    margin-top:2px !important;
+  }
+  .home-page .hero-links a{
+    min-height:34px !important;
+    padding:5px 12px !important;
+    font-size:1rem !important;
+  }
+}
+
+@media (min-width:900px) and (max-height:820px){
+  .home-page .hero{padding:10px 20px !important;}
+  .home-page .hero-inner{gap:6px !important;}
+  .left-site-title{font-size:clamp(1.84rem,3.4vh,2.28rem) !important;}
+  .left-site-title-wrap{align-self:center !important;}
+  .home-page .hero .poem{font-size:clamp(1.34rem,2.38vh,1.7rem) !important;line-height:1.3 !important;}
+  .home-page .hero .dedication{font-size:clamp(1.02rem,1.82vh,1.24rem) !important;line-height:1.5 !important;}
+  .left-search-wrap .search-control,
+  .left-search-wrap .security-filter,
+  .left-search-wrap .place-filter-trigger{min-height:37px !important;}
+  .home-page .hero-links a{min-height:31px !important;padding:4px 11px !important;font-size:.95rem !important;}
+}
+
+/* On smaller desktop widths, let page scroll normally instead of clipping left controls. */
+@media (min-width:900px) and (max-width:1365px){
+  .home-layout{align-items:flex-start !important;}
+  .home-page .hero,
+  .home-page .hero-inner{
+    height:auto !important;
+    min-height:100vh !important;
+    min-height:100dvh !important;
+    max-height:none !important;
+    overflow:visible !important;
+  }
+}
+
+@media (max-width:899px){
+  .left-site-title-wrap{margin-bottom:2px !important;}
+  .left-site-title{
+    margin:0 0 4px !important;
+    font-size:clamp(1.9rem,7.6vw,2.45rem) !important;
+    line-height:1.08 !important;
+  }
+  .home-page .hero .hero-rule:first-of-type{display:none !important;}
+  .home-page .hero .poem{
+    font-size:clamp(1.46rem,5.55vw,1.92rem) !important;
+    line-height:1.5 !important;
+  }
+  .home-page .hero .dedication{
+    font-size:clamp(1.18rem,4.5vw,1.42rem) !important;
+    line-height:1.82 !important;
+  }
+  .main-title-band{padding:16px 12px 10px !important;gap:10px !important;}
+  .main-title-logo-wrap{width:72px !important;height:72px !important;padding:7px !important;}
+}
+
+@media (max-width:520px){
+  .main-primary-title{font-size:clamp(1.95rem,8.5vw,2.8rem) !important;}
+  .main-title-logo-wrap{width:64px !important;height:64px !important;}
+}
+</style>
+
 </head>
 <body class="home-page">
 <a class="skip-link" href="#mainContent">דילוג לתוכן הראשי</a>
