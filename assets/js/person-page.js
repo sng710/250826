@@ -711,6 +711,46 @@ body{
 }
 .instagram-open-link:hover,.instagram-open-link:focus-visible{color:#fff;border-bottom-color:#fff;}
 
+/* PATCH 74 - Facebook Reel media support */
+.media-facebook-item{
+  grid-template-rows:minmax(0,1fr) auto;
+  gap:5px;
+}
+.facebook-embed{
+  display:grid;
+  place-items:center;
+  width:100%;
+  height:100%;
+  min-height:0;
+}
+.facebook-embed iframe{
+  display:block;
+  max-width:100%;
+  max-height:100%;
+  border:0;
+  border-radius:10px;
+  background:#101c31;
+  box-shadow:0 10px 24px rgba(7,18,34,.18);
+}
+.media-facebook-item.is-landscape .facebook-embed iframe{
+  width:100%;
+  height:auto;
+  aspect-ratio:var(--facebook-ratio,560/314);
+}
+.media-facebook-item.is-portrait .facebook-embed iframe{
+  width:auto;
+  height:100%;
+  aspect-ratio:var(--facebook-ratio,267/476);
+}
+.facebook-open-link{
+  color:#dcebf0;
+  font-size:.78rem;
+  line-height:1.2;
+  text-decoration:none;
+  border-bottom:1px solid rgba(151,205,221,.45);
+}
+.facebook-open-link:hover,.facebook-open-link:focus-visible{color:#fff;border-bottom-color:#fff;}
+
 /* PATCH 70 - mobile-first personal pages + local video support */
 .video-embed .local-video{
   position:absolute;
@@ -793,13 +833,22 @@ body{
     flex:0 0 100%;
     scroll-snap-align:center;
   }
-  .media-instagram-item{
+  .media-instagram-item,
+  .media-facebook-item{
     grid-template-rows:minmax(0,1fr) auto;
   }
   .instagram-embed{
     width:min(100%,260px);
   }
-  .instagram-open-link{font-size:.72rem;}
+  .instagram-open-link,.facebook-open-link{font-size:.72rem;}
+  .media-facebook-item.is-landscape .facebook-embed iframe{
+    width:100%;
+    height:auto;
+  }
+  .media-facebook-item.is-portrait .facebook-embed iframe{
+    width:auto;
+    height:100%;
+  }
   .media-stage[data-media-count="1"] .media-stage-item{
     flex-basis:100%;
   }
@@ -1081,6 +1130,13 @@ body{
     }
   };
 
+  const facebookEmbedUrl = (permalink, width = 560, height = 314) => {
+    const safeWidth = Number.isFinite(Number(width)) && Number(width) > 0 ? Math.round(Number(width)) : 560;
+    const safeHeight = Number.isFinite(Number(height)) && Number(height) > 0 ? Math.round(Number(height)) : 314;
+    const href = encodeURIComponent(String(permalink || ''));
+    return `https://www.facebook.com/plugins/video.php?height=${safeHeight}&href=${href}&show_text=false&width=${safeWidth}&t=0`;
+  };
+
   const renderTopMedia = () => (person.topMedia || []).map((group, groupIndex) => {
     const videoItems = (group.videos || []).map((video, i) => {
       const title = esc(video.title && video.title !== 'YouTube video player' ? video.title : `${group.heading || 'סרטון הנצחה'} — ${person.name || ''}${(group.videos || []).length > 1 ? ` ${i + 1}` : ''}`);
@@ -1097,12 +1153,23 @@ body{
       const embedSrc = esc(instagramEmbedUrl(permalink));
       return `<div class="media-stage-item media-instagram-item"><div class="instagram-embed"><iframe allow="autoplay; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="${embedSrc}" title="${title}"></iframe></div><a class="instagram-open-link" href="${esc(permalink)}" rel="noopener noreferrer" target="_blank">פתיחה באינסטגרם</a></div>`;
     }).filter(Boolean);
+    const facebookItems = (group.facebook || []).map((item, i) => {
+      const permalink = String(item.permalink || item.href || '').trim();
+      if (!permalink) return '';
+      const width = Number(item.width) > 0 ? Number(item.width) : 560;
+      const height = Number(item.height) > 0 ? Number(item.height) : 314;
+      const portrait = height > width;
+      const title = esc(item.title || `Facebook Reel — ${person.name || ''}${(group.facebook || []).length > 1 ? ` ${i + 1}` : ''}`);
+      const embedSrc = esc(facebookEmbedUrl(permalink, width, height));
+      const ratio = `${Math.round(width)}/${Math.round(height)}`;
+      return `<div class="media-stage-item media-facebook-item ${portrait ? 'is-portrait' : 'is-landscape'}" style="--facebook-ratio:${esc(ratio)}"><div class="facebook-embed"><iframe allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" scrolling="no" src="${embedSrc}" title="${title}"></iframe></div><a class="facebook-open-link" href="${esc(permalink)}" rel="noopener noreferrer" target="_blank">פתיחה בפייסבוק</a></div>`;
+    }).filter(Boolean);
     const imageItems = (group.images || []).map((image) => {
       const body = `<img alt="${esc(image.alt || '')}" decoding="async" loading="lazy" src="${esc(assetUrl(image.src))}">${image.label ? `<span class="media-image-label">${esc(image.label)}</span>` : ''}`;
       const card = image.href ? `<a class="media-image-link" href="${esc(image.href)}" rel="noopener noreferrer" target="_blank">${body}</a>` : `<div class="media-image-link">${body}</div>`;
       return `<div class="media-stage-item media-image-item">${card}</div>`;
     });
-    const mediaItems = [...videoItems, ...instagramItems, ...imageItems];
+    const mediaItems = [...videoItems, ...instagramItems, ...facebookItems, ...imageItems];
     const links = (group.links || []).map((link) => `<a href="${esc(link.href)}" rel="noopener noreferrer" target="_blank">${esc(link.label)}</a>`).join('');
     return `<section class="media-section unified-media-section" aria-labelledby="mediaHeading${groupIndex}"><h2 id="mediaHeading${groupIndex}">${esc(group.heading || 'סרטון לזכרו')}</h2>${mediaItems.length ? `<div class="media-stage" data-media-count="${mediaItems.length}">${mediaItems.join('')}</div>` : ''}${links ? `<div class="media-actions">${links}</div>` : ''}</section>`;
   }).join('');

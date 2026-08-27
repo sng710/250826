@@ -208,11 +208,17 @@ window.MEMORIAL_PEOPLE = [
     },
     "topMedia": [
       {
-        "heading": "סרטון לזכרו",
+        "heading": "סרטונים לזכרו",
         "videos": [
           {
             "src": "https://www.youtube.com/embed/DOzJfE6xz8I?si=7W08GD6AJw_V1usV",
-            "title": "YouTube video player"
+            "title": "סרטון לזכר עומר צדיקביץ׳"
+          }
+        ],
+        "instagram": [
+          {
+            "permalink": "https://www.instagram.com/reel/DXYgV45DWwx/",
+            "title": "Reel לזכר עומר צדיקביץ׳ — Kfar Azza Foundation"
           }
         ],
         "links": []
@@ -313,11 +319,10 @@ window.MEMORIAL_PEOPLE = [
     "topMedia": [
       {
         "heading": "סרטון לזכרו",
-        "videos": [
+        "instagram": [
           {
-            "type": "file",
-            "src": "assets/media/nitzan-libstein-memorial.mp4",
-            "title": "ניצן ליבשטיין ז״ל — זיכרונות וסיפורים של משפחה וחברים"
+            "permalink": "https://www.instagram.com/reel/DBtNGGEKrmS/",
+            "title": "Reel לזכר ניצן ליבשטיין — הניצנים של אופיר"
           }
         ]
       }
@@ -679,7 +684,30 @@ window.MEMORIAL_PEOPLE = [
       "legacyHeading": "זיכרון, מורשת והנצחה"
     },
     "footerText": "יהי זכרה ברוך",
-    "portraitAlt": "קוץ ליבנת ז\"ל"
+    "portraitAlt": "קוץ ליבנת ז\"ל",
+    "topMedia": [
+      {
+        "heading": "סרטונים לזכרה",
+        "instagram": [
+          {
+            "permalink": "https://www.instagram.com/reel/Cy--ePyM-9w/",
+            "title": "המשאלה של ליבנת"
+          },
+          {
+            "permalink": "https://www.instagram.com/reel/CzlKtJio6rA/",
+            "title": "המשאלה של ליבנת"
+          }
+        ],
+        "facebook": [
+          {
+            "permalink": "https://www.facebook.com/reel/1921193012039933/",
+            "title": "סרטון לזכר ליבנת קוץ",
+            "width": 267,
+            "height": 476
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "rotem_k",
@@ -867,7 +895,20 @@ window.MEMORIAL_PEOPLE = [
       "legacyHeading": "זיכרון, מורשת והנצחה"
     },
     "footerText": "יהי זכרו ברוך",
-    "portraitAlt": "קוץ יונתן ז\"ל"
+    "portraitAlt": "קוץ יונתן ז\"ל",
+    "topMedia": [
+      {
+        "heading": "סרטון לזכרו",
+        "facebook": [
+          {
+            "permalink": "https://www.facebook.com/reel/1135084864770350/",
+            "title": "סרטון לזכר יונתן קוץ",
+            "width": 560,
+            "height": 314
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "yiftach_k",
@@ -953,7 +994,20 @@ window.MEMORIAL_PEOPLE = [
       "legacyHeading": "זיכרון, מורשת והנצחה"
     },
     "footerText": "יהי זכרו ברוך",
-    "portraitAlt": "קוץ יפתח ז\"ל"
+    "portraitAlt": "קוץ יפתח ז\"ל",
+    "topMedia": [
+      {
+        "heading": "סרטון לזכרו",
+        "facebook": [
+          {
+            "permalink": "https://www.facebook.com/reel/1135084864770350/",
+            "title": "סרטון לזכר יפתח קוץ",
+            "width": 560,
+            "height": 314
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "ilan_f",
