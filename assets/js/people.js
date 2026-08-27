@@ -334,7 +334,7 @@ window.MEMORIAL_PEOPLE = [
     "place": "נחל עוז",
     "image": "assets/img/tzachi_i.webp",
     "age": 50,
-    "role": "איש הייטק, איש משפחה וחבר קהילת נחל עוז",
+    "role": "איש הייטק, איש משפחה",
     "summary": "דף הנצחה לזכר עידן צחי ז\"ל במסגרת ״רקמה אנושית אחת״.",
     "firstNameHebrew": "צחי",
     "generalDetails": [
@@ -428,7 +428,7 @@ window.MEMORIAL_PEOPLE = [
     "place": "נחל עוז",
     "image": "assets/img/maayan_i.webp",
     "age": 18,
-    "role": "חברת קהילת נחל עוז",
+    "role": "",
     "summary": "דף הנצחה לזכר עידן מעיין ז\"ל במסגרת ״רקמה אנושית אחת״.",
     "firstNameHebrew": "מעיין",
     "generalDetails": [
@@ -1404,7 +1404,7 @@ window.MEMORIAL_PEOPLE = [
     "place": "כפר עזה",
     "image": "assets/img/bilha_e.webp",
     "age": 81,
-    "role": "חברת קהילת כפר עזה",
+    "role": "",
     "summary": "דף הנצחה לזכר אפשטיין בלהה ז\"ל במסגרת ״רקמה אנושית אחת״.",
     "firstNameHebrew": "בלהה",
     "generalDetails": [
@@ -2410,7 +2410,7 @@ window.MEMORIAL_PEOPLE = [
     "place": "נחל עוז",
     "image": "assets/img/yaniv_z.webp",
     "age": 53,
-    "role": "חבר קהילת נחל עוז",
+    "role": "",
     "summary": "דף הנצחה לזכר זוהר יניב ז\"ל במסגרת ״רקמה אנושית אחת״.",
     "firstNameHebrew": "יניב",
     "generalDetails": [
@@ -2527,7 +2527,7 @@ window.MEMORIAL_PEOPLE = [
     "place": "נחל עוז",
     "image": "assets/img/yasmin_z-1.webp",
     "age": 48,
-    "role": "חברת קהילת נחל עוז",
+    "role": "",
     "summary": "דף הנצחה לזכר זוהר יסמין ז\"ל במסגרת ״רקמה אנושית אחת״.",
     "firstNameHebrew": "יסמין",
     "generalDetails": [
@@ -2634,7 +2634,7 @@ window.MEMORIAL_PEOPLE = [
     "place": "נחל עוז",
     "image": "assets/img/keshet_z-1.webp",
     "age": 20,
-    "role": "חברת קהילת נחל עוז",
+    "role": "",
     "summary": "דף הנצחה לזכר זוהר קשת ז\"ל במסגרת ״רקמה אנושית אחת״.",
     "firstNameHebrew": "קשת",
     "generalDetails": [
@@ -2746,7 +2746,7 @@ window.MEMORIAL_PEOPLE = [
     "place": "נחל עוז",
     "image": "assets/img/techelet_z_p.webp",
     "age": 18,
-    "role": "חברת קהילת נחל עוז",
+    "role": "",
     "summary": "דף הנצחה לזכר זוהר תכלת ז\"ל במסגרת ״רקמה אנושית אחת״.",
     "firstNameHebrew": "תכלת",
     "generalDetails": [
@@ -3810,7 +3810,7 @@ window.MEMORIAL_PEOPLE = [
     "place": "כפר עזה",
     "image": "assets/img/tova_g.webp",
     "age": 65,
-    "role": "חברת קהילת כפר עזה",
+    "role": "",
     "summary": "דף הנצחה לזכר גורן טובה ז\"ל במסגרת ״רקמה אנושית אחת״.",
     "firstNameHebrew": "טובה",
     "generalDetails": [
@@ -3894,7 +3894,7 @@ window.MEMORIAL_PEOPLE = [
     "place": "כפר עזה",
     "image": "assets/img/aran_g.webp",
     "age": 33,
-    "role": "חברת קהילת כפר עזה",
+    "role": "",
     "summary": "דף הנצחה לזכר גורן ארן ז\"ל במסגרת ״רקמה אנושית אחת״.",
     "firstNameHebrew": "ארן",
     "generalDetails": [
@@ -3960,7 +3960,7 @@ window.MEMORIAL_PEOPLE = [
     "place": "כפר עזה",
     "image": "assets/img/dorit_w.webp",
     "age": 54,
-    "role": "חברת קהילת כפר עזה",
+    "role": "",
     "summary": "דף הנצחה לזכר ורטהיים דורית (כסלו) ז\"ל במסגרת ״רקמה אנושית אחת״.",
     "firstNameHebrew": "דורית",
     "generalDetails": [
@@ -4017,7 +4017,7 @@ window.MEMORIAL_PEOPLE = [
     "place": "כפר עזה",
     "image": "assets/img/aviv_w.webp",
     "age": 57,
-    "role": "חבר קהילת כפר עזה",
+    "role": "",
     "summary": "דף הנצחה לזכר ורטהיים אביב ז\"ל במסגרת ״רקמה אנושית אחת״.",
     "firstNameHebrew": "אביב",
     "generalDetails": [
@@ -7609,7 +7609,7 @@ window.MEMORIAL_PEOPLE = [
     "place": "כפר עזה",
     "image": "assets/img/david_k.webp",
     "age": 72,
-    "role": "חבר קהילת כפר עזה ואוהב טיולי ג'יפים",
+    "role": "אוהב טיולי ג'יפים",
     "summary": "דף הנצחה לזכר קציר דוד קצ'קו ז\"ל במסגרת ״רקמה אנושית אחת״.",
     "firstNameHebrew": "דוד",
     "generalDetails": [
@@ -8139,7 +8139,7 @@ window.MEMORIAL_PEOPLE = [
     "place": "כפר עזה",
     "image": "assets/img/nira_r.webp",
     "age": 85,
-    "role": "חברת קהילת כפר עזה",
+    "role": "",
     "summary": "דף הנצחה לזכר רונן נירה ז\"ל במסגרת ״רקמה אנושית אחת״.",
     "firstNameHebrew": "נירה",
     "generalDetails": [
@@ -8222,7 +8222,7 @@ window.MEMORIAL_PEOPLE = [
     "place": "נחל עוז",
     "image": "assets/img/chaim_l.webp",
     "age": 87,
-    "role": "חבר קהילת נחל עוז",
+    "role": "",
     "summary": "דף הנצחה לזכר ליבנה חיים ז\"ל במסגרת ״רקמה אנושית אחת״.",
     "firstNameHebrew": "חיים",
     "generalDetails": [
