@@ -1162,6 +1162,73 @@ body{
   }
 }
 
+
+/* PATCH 78 - strict media cell fit (Facebook/Instagram included) */
+@media(min-width:821px){
+  .unified-media-section .media-stage{
+    overflow:hidden;
+  }
+  .unified-media-section .media-stage-item{
+    box-sizing:border-box;
+    width:100%;
+    height:100%;
+    min-width:0;
+    min-height:0;
+    overflow:hidden;
+  }
+  .unified-media-section .media-instagram-item,
+  .unified-media-section .media-facebook-item{
+    display:grid;
+    grid-template-rows:minmax(0,1fr) 22px;
+    align-items:stretch;
+    justify-items:center;
+    gap:4px;
+  }
+  .unified-media-section .instagram-embed,
+  .unified-media-section .facebook-embed{
+    box-sizing:border-box;
+    width:100%;
+    height:100%;
+    min-width:0;
+    min-height:0;
+    max-width:100%;
+    max-height:100%;
+    overflow:hidden;
+  }
+  .unified-media-section .instagram-embed iframe,
+  .unified-media-section .facebook-embed iframe,
+  .unified-media-section .media-facebook-item.is-landscape .facebook-embed iframe,
+  .unified-media-section .media-facebook-item.is-portrait .facebook-embed iframe{
+    display:block;
+    box-sizing:border-box;
+    width:100% !important;
+    height:100% !important;
+    min-width:0 !important;
+    min-height:0 !important;
+    max-width:100% !important;
+    max-height:100% !important;
+    aspect-ratio:auto !important;
+    border:0;
+    overflow:hidden;
+  }
+  .unified-media-section .instagram-open-link,
+  .unified-media-section .facebook-open-link{
+    align-self:center;
+    justify-self:center;
+    max-width:100%;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    line-height:18px;
+  }
+  .unified-media-section .media-stage[data-media-count="2"] .media-instagram-item,
+  .unified-media-section .media-stage[data-media-count="2"] .media-facebook-item,
+  .unified-media-section .media-stage[data-media-count="3"] .media-instagram-item,
+  .unified-media-section .media-stage[data-media-count="3"] .media-facebook-item{
+    height:100%;
+  }
+}
+
 `;
 
   const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));

@@ -1,0 +1,7 @@
+PATCH 78 QA
+PASS - person-page.js syntax check.
+PASS - desktop social cells use minmax(0,1fr) + fixed link row.
+PASS - Facebook/Instagram iframes forced to 100% width/height of allocated embed box.
+PASS - max/min dimensions reset so intrinsic embed dimensions cannot overflow.
+PASS - media stage and media items clip any external embed overflow.
+PASS - site version 278.
