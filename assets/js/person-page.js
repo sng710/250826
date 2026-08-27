@@ -467,6 +467,7 @@ body{
   line-height:1.16;
 }
 .unified-media-section .media-stage{
+  --media-card-max-height:calc(var(--media-stage-height) - 28px);
   height:var(--media-stage-height);
   display:grid;
   grid-template-columns:repeat(var(--media-count,1),minmax(0,1fr));
@@ -492,20 +493,22 @@ body{
 }
 .media-stage-item{
   min-width:0;
+  min-height:0;
   height:100%;
   display:grid;
   place-items:center;
 }
 .media-stage-item .video-embed{
-  width:100%;
-  max-width:480px;
+  width:min(100%,480px);
+  max-width:100%;
+  height:min(100%,var(--media-card-max-height));
   aspect-ratio:16/9;
   border-radius:10px;
   box-shadow:0 10px 24px rgba(7,18,34,.18);
 }
 .media-stage[data-media-count="1"] .media-stage-item .video-embed{
-  width:100%;
-  max-width:820px;
+  width:min(100%,820px);
+  max-width:100%;
 }
 .media-stage[data-media-count="1"] .media-stage-item .instagram-embed{
   width:100%;
@@ -645,6 +648,7 @@ body{
   .unified-media-section .media-stage[data-media-count="1"],
   .unified-media-section .media-stage[data-media-count="2"],
   .unified-media-section .media-stage[data-media-count="3"]{
+    --media-card-max-height:none;
     height:auto;
     grid-template-columns:1fr;
     gap:12px;
@@ -687,7 +691,7 @@ body{
 }
 .instagram-embed{
   width:min(100%,340px);
-  height:100%;
+  height:min(100%,var(--media-card-max-height));
   min-height:0;
   overflow:hidden;
   border:1px solid rgba(248,247,243,.18);
@@ -720,7 +724,7 @@ body{
   display:grid;
   place-items:center;
   width:100%;
-  height:100%;
+  height:min(100%,var(--media-card-max-height));
   min-height:0;
 }
 .facebook-embed iframe{
@@ -816,6 +820,7 @@ body{
   .unified-media-section .media-stage[data-media-count="1"],
   .unified-media-section .media-stage[data-media-count="2"],
   .unified-media-section .media-stage[data-media-count="3"]{
+    --media-card-max-height:calc(var(--media-stage-height) - 22px);
     height:var(--media-stage-height);
     display:flex;
     align-items:center;
@@ -862,6 +867,7 @@ body{
   .media-stage[data-media-count="3"] .media-stage-item .video-embed{
     width:100%;
     max-width:none;
+    height:min(100%,var(--media-card-max-height));
     aspect-ratio:16/9;
   }
   .media-stage[data-media-count="1"] .media-stage-item .video-embed{
@@ -1158,7 +1164,7 @@ body{
       if (!permalink) return '';
       const width = Number(item.width) > 0 ? Number(item.width) : 560;
       const height = Number(item.height) > 0 ? Number(item.height) : 314;
-      const portrait = height > width;
+      const portrait = height >= width;
       const title = esc(item.title || `Facebook Reel — ${person.name || ''}${(group.facebook || []).length > 1 ? ` ${i + 1}` : ''}`);
       const embedSrc = esc(facebookEmbedUrl(permalink, width, height));
       const ratio = `${Math.round(width)}/${Math.round(height)}`;

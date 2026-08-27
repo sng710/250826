@@ -1,0 +1,9 @@
+PATCH 76 QA
+
+PASS - person-page.js syntax check passes.
+PASS - top media stage now defines a media-card max height for contained rendering.
+PASS - YouTube/local video embeds are height-constrained to stay inside the media stage.
+PASS - Instagram embeds are constrained to the media-card max height.
+PASS - Facebook embeds are constrained to the media-card max height.
+PASS - Square Facebook embeds are now treated as portrait-like contained cards (height >= width).
+PASS - site-version.json bumped to 276.
