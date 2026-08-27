@@ -1,0 +1,9 @@
+PATCH 80 QA
+
+PASS - person-page.js syntax check passes.
+PASS - Instagram remains clean link-card style.
+PASS - Facebook remains embedded.
+PASS - desktop media stage now auto-sizes by content height.
+PASS - desktop Facebook embeds preserve original aspect ratio instead of stretching to a wide fixed cell.
+PASS - desktop YouTube sizes remain constrained by item count.
+PASS - site-version.json bumped to 280.

@@ -1276,6 +1276,130 @@ body{
   .unified-media-section .media-stage[data-media-count="3"] .media-instagram-item .instagram-card{width:min(100%,232px);}
 }
 
+
+/* PATCH 80 - preserve social/video aspect ratios without stretching */
+@media(min-width:821px){
+  .unified-media-section .media-stage,
+  .unified-media-section .media-stage[data-media-count="1"],
+  .unified-media-section .media-stage[data-media-count="2"],
+  .unified-media-section .media-stage[data-media-count="3"]{
+    display:flex !important;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:flex-start;
+    gap:14px;
+    height:auto !important;
+    max-width:100%;
+    overflow:visible !important;
+  }
+  .unified-media-section .media-stage-item{
+    width:auto !important;
+    height:auto !important;
+    min-height:0 !important;
+    overflow:visible !important;
+  }
+  .unified-media-section .media-video-item,
+  .unified-media-section .media-instagram-item,
+  .unified-media-section .media-facebook-item,
+  .unified-media-section .media-image-item{
+    flex:0 0 auto;
+    display:flex !important;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+    gap:6px;
+    grid-template-rows:none !important;
+  }
+  .unified-media-section .video-embed{
+    height:auto !important;
+    max-height:none !important;
+    overflow:hidden;
+  }
+  .unified-media-section .video-embed iframe,
+  .unified-media-section .video-embed .local-video{
+    width:100%;
+    height:100%;
+    display:block;
+  }
+  .unified-media-section .facebook-embed{
+    height:auto !important;
+    max-height:none !important;
+    overflow:hidden;
+    border-radius:12px;
+  }
+  .unified-media-section .facebook-embed iframe,
+  .unified-media-section .media-facebook-item.is-landscape .facebook-embed iframe,
+  .unified-media-section .media-facebook-item.is-portrait .facebook-embed iframe{
+    display:block;
+    width:100% !important;
+    height:100% !important;
+    min-width:0 !important;
+    min-height:0 !important;
+    max-width:100% !important;
+    max-height:none !important;
+    aspect-ratio:var(--facebook-ratio,560/314) !important;
+    border:0;
+    overflow:hidden;
+  }
+  .unified-media-section .media-stage[data-media-count="1"] .media-video-item .video-embed{
+    width:min(100%,560px) !important;
+    aspect-ratio:16/9;
+  }
+  .unified-media-section .media-stage[data-media-count="2"] .media-video-item .video-embed{
+    width:min(100%,392px) !important;
+    aspect-ratio:16/9;
+  }
+  .unified-media-section .media-stage[data-media-count="3"] .media-video-item .video-embed{
+    width:min(100%,292px) !important;
+    aspect-ratio:16/9;
+  }
+  .unified-media-section .media-stage[data-media-count="1"] .media-facebook-item.is-landscape .facebook-embed{
+    width:min(100%,560px) !important;
+    aspect-ratio:var(--facebook-ratio,560/314);
+  }
+  .unified-media-section .media-stage[data-media-count="1"] .media-facebook-item.is-portrait .facebook-embed{
+    width:min(100%,340px) !important;
+    aspect-ratio:var(--facebook-ratio,267/476);
+  }
+  .unified-media-section .media-stage[data-media-count="2"] .media-facebook-item.is-landscape .facebook-embed{
+    width:min(100%,340px) !important;
+    aspect-ratio:var(--facebook-ratio,560/314);
+  }
+  .unified-media-section .media-stage[data-media-count="2"] .media-facebook-item.is-portrait .facebook-embed{
+    width:min(100%,250px) !important;
+    aspect-ratio:var(--facebook-ratio,267/476);
+  }
+  .unified-media-section .media-stage[data-media-count="3"] .media-facebook-item.is-landscape .facebook-embed{
+    width:min(100%,250px) !important;
+    aspect-ratio:var(--facebook-ratio,560/314);
+  }
+  .unified-media-section .media-stage[data-media-count="3"] .media-facebook-item.is-portrait .facebook-embed{
+    width:min(100%,190px) !important;
+    aspect-ratio:var(--facebook-ratio,267/476);
+  }
+  .unified-media-section .media-stage[data-media-count="1"] .media-instagram-item .instagram-card{
+    width:min(100%,320px) !important;
+    height:auto !important;
+  }
+  .unified-media-section .media-stage[data-media-count="2"] .media-instagram-item .instagram-card{
+    width:min(100%,250px) !important;
+    height:auto !important;
+  }
+  .unified-media-section .media-stage[data-media-count="3"] .media-instagram-item .instagram-card{
+    width:min(100%,190px) !important;
+    height:auto !important;
+  }
+  .unified-media-section .media-stage[data-media-count="1"] .media-image-item .media-image-link{
+    max-width:280px !important;
+  }
+  .unified-media-section .media-stage[data-media-count="2"] .media-image-item .media-image-link{
+    max-width:220px !important;
+  }
+  .unified-media-section .media-stage[data-media-count="3"] .media-image-item .media-image-link{
+    max-width:188px !important;
+  }
+}
+
 `;
 
   const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
