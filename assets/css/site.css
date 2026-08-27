@@ -3732,3 +3732,156 @@ body {
     font-size:.86rem;
   }
 }
+
+/* PATCH 66 - custom settlement combobox */
+.home-page .place-filter{
+  position:relative;
+  min-height:auto;
+  display:block;
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:none;
+  color:inherit;
+  white-space:normal;
+}
+.home-page .place-filter[hidden],
+.home-page .place-filter select[hidden]{display:none !important;}
+.home-page .place-filter-label{
+  display:block;
+  margin:0 0 6px;
+  padding-inline:14px;
+  color:#c6dbe3;
+  font-size:.82rem;
+  font-weight:700;
+  letter-spacing:.01em;
+}
+.home-page .place-filter-trigger{
+  width:100%;
+  min-height:54px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:0 12px 0 16px;
+  border:1px solid rgba(213,235,242,.28);
+  border-radius:18px;
+  background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.04));
+  color:#fff;
+  box-shadow:0 12px 30px rgba(8,19,35,.20), inset 0 1px 0 rgba(255,255,255,.07);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  cursor:pointer;
+  transition:border-color .18s ease,background .18s ease,transform .18s ease,box-shadow .18s ease;
+}
+.home-page .place-filter-trigger:hover,
+.home-page .place-filter-trigger:focus-visible,
+.home-page .place-filter.is-open .place-filter-trigger{
+  border-color:rgba(151,205,221,.72);
+  background:linear-gradient(180deg,rgba(255,255,255,.11),rgba(255,255,255,.06));
+  box-shadow:0 16px 36px rgba(8,19,35,.26), inset 0 1px 0 rgba(255,255,255,.08);
+}
+.home-page .place-filter-current{
+  min-width:0;
+  flex:1 1 auto;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  text-align:right;
+  font-size:.98rem;
+  font-weight:700;
+}
+.home-page .place-filter-caret{
+  width:34px;
+  height:34px;
+  flex:0 0 34px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(213,235,242,.18);
+  border-radius:50%;
+  background:rgba(255,255,255,.05);
+  color:#dce8eb;
+  transition:transform .18s ease, background .18s ease;
+}
+.home-page .place-filter-caret svg{display:block;width:18px;height:18px;}
+.home-page .place-filter.is-open .place-filter-caret{transform:rotate(180deg);background:rgba(85,184,212,.18);}
+.home-page .place-filter-panel{
+  position:absolute;
+  inset-inline:0;
+  top:calc(100% + 8px);
+  z-index:50;
+  padding:8px;
+  border:1px solid rgba(151,205,221,.28);
+  border-radius:20px;
+  background:linear-gradient(180deg,rgba(16,37,63,.98),rgba(20,45,76,.97));
+  box-shadow:0 22px 48px rgba(6,16,31,.34);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+}
+.home-page .place-filter-list{
+  max-height:min(360px,52vh);
+  overflow:auto;
+  padding:2px;
+  scrollbar-width:thin;
+}
+.home-page .place-filter-option{
+  width:100%;
+  min-height:44px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:10px 12px;
+  border:0;
+  border-radius:12px;
+  background:transparent;
+  color:#eef5f7;
+  font:inherit;
+  font-size:.95rem;
+  text-align:right;
+  cursor:pointer;
+  transition:background .16s ease,color .16s ease;
+}
+.home-page .place-filter-option::after{
+  content:'';
+  width:8px;
+  height:8px;
+  flex:0 0 8px;
+  border-radius:50%;
+  background:transparent;
+  box-shadow:0 0 0 1px rgba(213,235,242,.22) inset;
+}
+.home-page .place-filter-option:hover,
+.home-page .place-filter-option:focus-visible{
+  background:rgba(255,255,255,.08);
+}
+.home-page .place-filter-option[aria-selected="true"]{
+  background:linear-gradient(90deg,rgba(85,184,212,.26),rgba(85,184,212,.12));
+  color:#fff;
+}
+.home-page .place-filter-option[aria-selected="true"]::after{
+  background:#8ed7ec;
+  box-shadow:0 0 0 4px rgba(142,215,236,.16);
+}
+.home-page .place-filter-option.is-highlighted{
+  background:rgba(255,255,255,.10);
+}
+@media (max-width:760px){
+  .home-page .place-filter-label{
+    padding-inline:4px;
+    margin-bottom:5px;
+  }
+  .home-page .place-filter-trigger{
+    min-height:48px;
+    border-radius:14px;
+    padding-inline:14px 10px;
+  }
+  .home-page .place-filter-current{font-size:.94rem;}
+  .home-page .place-filter-caret{width:30px;height:30px;flex-basis:30px;}
+  .home-page .place-filter-panel{
+    top:calc(100% + 6px);
+    border-radius:16px;
+    padding:6px;
+  }
+  .home-page .place-filter-list{max-height:min(280px,46vh);}
+}

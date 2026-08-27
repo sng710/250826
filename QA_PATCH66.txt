@@ -1,0 +1,10 @@
+PATCH 66 QA
+
+PASS - Homepage index.html updated to CSS v=266 and app.js v=266.
+PASS - Native place filter remains present in DOM with id=placeFilter.
+PASS - Custom combobox elements added: placeFilterWrap, placeFilterButton, placeFilterPanel, placeFilterList, placeFilterValue.
+PASS - app.js syntax check passes.
+PASS - app.js still populates places from MEMORIAL_PEOPLE data.
+PASS - keyboard support added for the custom combobox.
+PASS - outside-click close behavior added.
+PASS - no changes to memorial data or personal-page templates.

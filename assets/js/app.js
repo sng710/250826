@@ -1,123 +1,57 @@
 const people=Array.isArray(window.MEMORIAL_PEOPLE)?window.MEMORIAL_PEOPLE:[];
 const grid=document.getElementById('memorialGrid'),search=document.getElementById('searchInput'),count=document.getElementById('statusText'),empty=document.getElementById('emptySearch'),placeFilter=document.getElementById('placeFilter'),groupFilterButtons=[...document.querySelectorAll('[data-group-filter]')];
+const placeFilterWrap=document.getElementById('placeFilterWrap'),placeFilterButton=document.getElementById('placeFilterButton'),placeFilterPanel=document.getElementById('placeFilterPanel'),placeFilterList=document.getElementById('placeFilterList'),placeFilterValue=document.getElementById('placeFilterValue');
 const box=document.getElementById('lightbox'),closeBtn=document.getElementById('lightboxClose'),boxImg=document.getElementById('lightboxImg'),boxTitle=document.getElementById('lightboxTitle'),boxPlace=document.getElementById('lightboxPlace'),boxRole=document.getElementById('lightboxRole'),boxFacts=document.getElementById('lightboxFacts'),boxService=document.getElementById('lightboxService'),pageLink=document.getElementById('personPageLink'),copyBtn=document.getElementById('copyPersonLink');
-let lastFocus=null,active=null,activeGroupFilter='all';
+let lastFocus=null,active=null,activeGroupFilter='all',activePlaceOptionIndex=0;
+
 function isSecurityTeam(p){const r=String(p.role||'');return /כיתת הכוננות|רבש["״]?ץ|סגן רבש["״]?ץ/.test(r)}
 function passesFilters(p){const place=placeFilter?.value||'';if(place&&String(p.place||'')!==place)return false;if(activeGroupFilter==='security'&&!isSecurityTeam(p))return false;return true}
-function initPlaceFilter(){if(!placeFilter)return;const places=[...new Set(people.map(p=>String(p.place||'').trim()).filter(x=>x&&x!=='תאילנד'))].sort((a,b)=>a.localeCompare(b,'he'));for(const place of places){const o=document.createElement('option');o.value=place;o.textContent=place;placeFilter.append(o)}}
-function setGroupFilter(value){activeGroupFilter=value;groupFilterButtons.forEach(btn=>{const on=btn.dataset.groupFilter===value;btn.classList.toggle('is-active',on);btn.setAttribute('aria-pressed',String(on))});render()}
 function e(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function norm(s){return String(s||'').replace(/[״“”]/g,'"').replace(/[׳‘’]/g,"'").replace(/ז\s*["'׳״]{0,2}\s*ל/g,'').replace(/[()\[\]{}.,/:;!?+\-־\u2013\u2014]+/g,' ').replace(/\s+/g,' ').trim().toLowerCase()}
 function displayName(p){return String(p.name||'').replace(/\s+ז[״"']?ל\s*$/,'').trim()}
-function firstName(p){
-  const explicit=String(p.firstNameHebrew||'').trim();
-  if(explicit)return explicit;
-  const parts=displayName(p).split(/\s+/).filter(Boolean);
-  return parts.at(-1)||displayName(p);
-}
+function firstName(p){const explicit=String(p.firstNameHebrew||'').trim();if(explicit)return explicit;const parts=displayName(p).split(/\s+/).filter(Boolean);return parts.at(-1)||displayName(p)}
 function pic(p,cls=''){const pos=/^\d{1,3}%\s+\d{1,3}%$/.test(String(p.portrait?.position||''))?p.portrait.position:'50% 38%';const fit=p.portrait?.fit==='contain'?'contain':'cover';const rawScale=Number(p.portrait?.scale);const scale=Number.isFinite(rawScale)&&rawScale>=.8&&rawScale<=1.2?rawScale:1;return p.image?`<img class="${cls}" src="${e(p.image)}" alt="${e(displayName(p))}" loading="lazy" decoding="async" style="--fit:${fit};--pos:${e(pos)};--scale:${scale}">`:`<span class="portrait-placeholder memorial-candle" role="img" aria-label="${e('נר זיכרון לזכר '+displayName(p))}"></span>`}
 function matches(p,q){const t=norm(q);if(!t)return true;return t.split(' ').every(x=>norm(p.name).includes(x)||norm((p.name||'').split(' ').reverse().join(' ')).includes(x)||norm(p.place).includes(x))}
+
+function getPlaceOptions(){return placeFilter?[...placeFilter.options].map(option=>({value:option.value,label:option.textContent||''})):[]}
+function syncPlaceButton(){if(!placeFilterValue||!placeFilter)return;const selected=placeFilter.options[placeFilter.selectedIndex];placeFilterValue.textContent=selected?.textContent||'כל היישובים'}
+function closePlaceFilter({restoreFocus=false}={}){if(!placeFilterWrap||!placeFilterButton||!placeFilterPanel)return;placeFilterWrap.classList.remove('is-open');placeFilterButton.setAttribute('aria-expanded','false');placeFilterPanel.hidden=true;if(restoreFocus)placeFilterButton.focus({preventScroll:true})}
+function highlightPlaceOption(index){if(!placeFilterList)return;const options=[...placeFilterList.querySelectorAll('.place-filter-option')];if(!options.length)return;activePlaceOptionIndex=((index%options.length)+options.length)%options.length;options.forEach((option,i)=>option.classList.toggle('is-highlighted',i===activePlaceOptionIndex));options[activePlaceOptionIndex].scrollIntoView({block:'nearest'})}
+function commitPlaceValue(value,{focusButton=true}={}){if(!placeFilter)return;placeFilter.value=value;syncPlaceButton();renderPlaceFilterOptions();render();closePlaceFilter({restoreFocus:focusButton})}
+function renderPlaceFilterOptions(){if(!placeFilterList||!placeFilter)return;const current=placeFilter.value;const options=getPlaceOptions();placeFilterList.innerHTML='';options.forEach((option,index)=>{const btn=document.createElement('button');btn.type='button';btn.className='place-filter-option';btn.role='option';btn.dataset.value=option.value;btn.id=`placeFilterOption${index}`;btn.setAttribute('aria-selected',String(option.value===current));btn.textContent=option.label;btn.addEventListener('click',()=>commitPlaceValue(option.value));btn.addEventListener('mouseenter',()=>highlightPlaceOption(index));placeFilterList.append(btn)});activePlaceOptionIndex=Math.max(0,options.findIndex(option=>option.value===current));highlightPlaceOption(activePlaceOptionIndex)}
+function openPlaceFilter(){if(!placeFilterWrap||!placeFilterButton||!placeFilterPanel)return;renderPlaceFilterOptions();placeFilterWrap.classList.add('is-open');placeFilterButton.setAttribute('aria-expanded','true');placeFilterPanel.hidden=false;requestAnimationFrame(()=>{highlightPlaceOption(activePlaceOptionIndex);placeFilterList.querySelectorAll('.place-filter-option')[activePlaceOptionIndex]?.focus({preventScroll:true})})}
+function togglePlaceFilter(){if(placeFilterPanel?.hidden!==false)openPlaceFilter();else closePlaceFilter({restoreFocus:true})}
+function initPlaceFilter(){if(!placeFilter)return;const places=[...new Set(people.map(p=>String(p.place||'').trim()).filter(x=>x&&x!=='תאילנד'))].sort((a,b)=>a.localeCompare(b,'he'));for(const place of places){const o=document.createElement('option');o.value=place;o.textContent=place;placeFilter.append(o)}syncPlaceButton();renderPlaceFilterOptions()}
+
+function setGroupFilter(value){activeGroupFilter=value;groupFilterButtons.forEach(btn=>{const on=btn.dataset.groupFilter===value;btn.classList.toggle('is-active',on);btn.setAttribute('aria-pressed',String(on))});render()}
 function render(){const q=search?.value||'';const list=people.filter(p=>matches(p,q)&&passesFilters(p)).sort((a,b)=>Number(!!a.isPreviousYears)-Number(!!b.isPreviousYears));grid.innerHTML='';let divider=false;for(const p of list){if(p.isPreviousYears&&!divider){const d=document.createElement('div');d.className='period-divider';d.id='previousYearsDivider';d.innerHTML='<span>נופלות ונופלים משנים קודמות</span>';grid.append(d);divider=true}const b=document.createElement('button');b.type='button';b.className='memory-card';b.dataset.id=p.id;b.setAttribute('aria-haspopup','dialog');b.setAttribute('aria-controls','lightbox');b.innerHTML=`<span class="portrait-ring">${pic(p)}</span><span class="card-name">${e(p.name)}</span><span class="card-place">${e(p.place||'')}</span>`;b.addEventListener('click',()=>openPreview(p,true));grid.append(b)}if(count){const total=list.length;const label=total===1?'תוצאה אחת':`${total} תוצאות`;const filters=[];if(activeGroupFilter==='security')filters.push('חברי כיתות הכוננות');if(placeFilter?.value)filters.push(placeFilter.value);const suffix=filters.length?` · ${filters.join(' · ')}`:'';count.textContent=q?`נמצאו ${label} עבור "${q}"${suffix}`:`מוצגות ${label}${suffix}`;}empty.hidden=!!list.length}
 function service(p){const r=p.serviceRecord||{};const a=[];if(r.rank)a.push(e(r.rank));if(r.unit)a.push(e(r.unit));return a.length?`<div class="service-line">${a.map(x=>`<span>${x}</span>`).join('<span class="dot" aria-hidden="true">•</span>')}</div>`:''}
 function setHash(p){history.replaceState(null,'',`${location.pathname}${location.search}#${encodeURIComponent(p.id)}`)}
 function clearHash(){history.replaceState(null,'',`${location.pathname}${location.search}`)}
-function openPreview(p,hash=true){
-  active=p;
-  lastFocus=document.activeElement;
-  if(hash)setHash(p);
-
-  boxTitle.textContent=p.name||'';
-  boxPlace.textContent=p.place||'';
-  boxRole.textContent=p.role||'';
-  boxRole.hidden=!String(p.role||'').trim();
-  boxService.innerHTML=service(p);
-  boxFacts.innerHTML=(p.generalDetails||[]).map(x=>`<li>${e(x)}</li>`).join('');
-  boxImg.innerHTML=pic(p);
-
-  const first=firstName(p);
-  pageLink.href=p.page;
-  pageLink.textContent=`לדף של ${first}`;
-  pageLink.setAttribute('aria-label',`לדף של ${first}`);
-  pageLink.hidden=false;
-  pageLink.removeAttribute('hidden');
-
-  copyBtn.textContent='העתקת קישור';
-  box.inert=false;
-  box.removeAttribute('inert');
-  box.setAttribute('aria-hidden','false');
-  box.classList.add('is-open');
-  document.body.style.overflow='hidden';
-  setTimeout(()=>closeBtn.focus({preventScroll:true}),0);
-}
+function openPreview(p,hash=true){active=p;lastFocus=document.activeElement;if(hash)setHash(p);boxTitle.textContent=p.name||'';boxPlace.textContent=p.place||'';boxRole.textContent=p.role||'';boxRole.hidden=!String(p.role||'').trim();boxService.innerHTML=service(p);boxFacts.innerHTML=(p.generalDetails||[]).map(x=>`<li>${e(x)}</li>`).join('');boxImg.innerHTML=pic(p);const first=firstName(p);pageLink.href=p.page;pageLink.textContent=`לדף של ${first}`;pageLink.setAttribute('aria-label',`לדף של ${first}`);pageLink.hidden=false;pageLink.removeAttribute('hidden');copyBtn.textContent='העתקת קישור';box.inert=false;box.removeAttribute('inert');box.setAttribute('aria-hidden','false');box.classList.add('is-open');document.body.style.overflow='hidden';setTimeout(()=>closeBtn.focus({preventScroll:true}),0)}
 function closePreview(ev,hash=true){ev?.preventDefault();if(!box.classList.contains('is-open'))return;box.classList.remove('is-open');box.setAttribute('aria-hidden','true');box.inert=true;box.setAttribute('inert','');document.body.style.overflow='';if(hash)clearHash();(lastFocus&&document.contains(lastFocus)?lastFocus:search)?.focus?.({preventScroll:true});active=null}
 closeBtn.addEventListener('pointerdown',ev=>{ev.preventDefault();ev.stopPropagation()});closeBtn.addEventListener('click',ev=>closePreview(ev));box.addEventListener('click',ev=>{if(ev.target===box||ev.target.closest?.('[data-close="1"]'))closePreview(ev)});
 document.addEventListener('keydown',ev=>{if(!box.classList.contains('is-open'))return;if(ev.key==='Escape'){closePreview(ev);return}if(ev.key==='Tab'){const fs=[...box.querySelectorAll('button,a[href]')].filter(x=>!x.disabled);if(!fs.length)return;const f=fs[0],l=fs.at(-1);if(ev.shiftKey&&document.activeElement===f){ev.preventDefault();l.focus()}else if(!ev.shiftKey&&document.activeElement===l){ev.preventDefault();f.focus()}}});
-copyBtn.addEventListener('click',async()=>{
-  if(!active)return;
-  const u=new URL(active.page,location.href).href;
-  try{
-    await navigator.clipboard.writeText(u);
-    copyBtn.textContent='הקישור הועתק';
-  }catch{
-    copyBtn.textContent='לא ניתן להעתיק';
-  }
-});
+copyBtn.addEventListener('click',async()=>{if(!active)return;const u=new URL(active.page,location.href).href;try{await navigator.clipboard.writeText(u);copyBtn.textContent='הקישור הועתק'}catch{copyBtn.textContent='לא ניתן להעתיק'}});
 
 const RETURN_SCROLL_KEY='memorial:return-scroll';
-
-pageLink.addEventListener('click',()=>{
-  try{sessionStorage.setItem(RETURN_SCROLL_KEY,String(window.scrollY));}catch{}
-  // Keep the homepage history entry clean before leaving for the personal page.
-  clearHash();
-  closePreview(null,false);
-});
-
-function restoreReturnScroll(){
-  let raw=null;
-  try{
-    raw=sessionStorage.getItem(RETURN_SCROLL_KEY);
-    sessionStorage.removeItem(RETURN_SCROLL_KEY);
-  }catch{}
-  const y=Number(raw);
-  if(Number.isFinite(y)&&y>=0){
-    requestAnimationFrame(()=>window.scrollTo({top:y,left:0,behavior:'auto'}));
-  }
-}
-
-function resetPreviewState(){
-  box.classList.remove('is-open');
-  box.setAttribute('aria-hidden','true');
-  box.inert=true;
-  box.setAttribute('inert','');
-  document.body.style.overflow='';
-  active=null;
-}
+pageLink.addEventListener('click',()=>{try{sessionStorage.setItem(RETURN_SCROLL_KEY,String(window.scrollY));}catch{}clearHash();closePreview(null,false)});
+function restoreReturnScroll(){let raw=null;try{raw=sessionStorage.getItem(RETURN_SCROLL_KEY);sessionStorage.removeItem(RETURN_SCROLL_KEY)}catch{}const y=Number(raw);if(Number.isFinite(y)&&y>=0){requestAnimationFrame(()=>window.scrollTo({top:y,left:0,behavior:'auto'}))}}
+function resetPreviewState(){box.classList.remove('is-open');box.setAttribute('aria-hidden','true');box.inert=true;box.setAttribute('inert','');document.body.style.overflow='';active=null}
 
 search.addEventListener('input',render);
-placeFilter?.addEventListener('change',render);
+placeFilter?.addEventListener('change',()=>{syncPlaceButton();renderPlaceFilterOptions();render()});
 groupFilterButtons.forEach(btn=>btn.addEventListener('click',()=>setGroupFilter(btn.dataset.groupFilter||'all')));
+placeFilterButton?.addEventListener('click',togglePlaceFilter);
+placeFilterButton?.addEventListener('keydown',ev=>{if(ev.key==='ArrowDown'||ev.key==='ArrowUp'){ev.preventDefault();openPlaceFilter()}});
+placeFilterList?.addEventListener('keydown',ev=>{const options=[...placeFilterList.querySelectorAll('.place-filter-option')];if(!options.length)return;if(ev.key==='Escape'){ev.preventDefault();closePlaceFilter({restoreFocus:true});return}if(ev.key==='ArrowDown'){ev.preventDefault();highlightPlaceOption(activePlaceOptionIndex+1);options[activePlaceOptionIndex]?.focus();return}if(ev.key==='ArrowUp'){ev.preventDefault();highlightPlaceOption(activePlaceOptionIndex-1);options[activePlaceOptionIndex]?.focus();return}if(ev.key==='Home'){ev.preventDefault();highlightPlaceOption(0);options[activePlaceOptionIndex]?.focus();return}if(ev.key==='End'){ev.preventDefault();highlightPlaceOption(options.length-1);options[activePlaceOptionIndex]?.focus();return}if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();options[activePlaceOptionIndex]?.click()}});
+document.addEventListener('pointerdown',ev=>{if(!placeFilterWrap||placeFilterPanel?.hidden!==false)return;if(!placeFilterWrap.contains(ev.target))closePlaceFilter()});
+document.addEventListener('keydown',ev=>{if(ev.key==='Escape'&&placeFilterPanel?.hidden===false)closePlaceFilter({restoreFocus:true})});
 
-function fromHash(){
-  const id=decodeURIComponent(location.hash.slice(1)||'');
-  const p=people.find(x=>x.id===id);
-  if(p)openPreview(p,false);
-}
-
+function fromHash(){const id=decodeURIComponent(location.hash.slice(1)||'');const p=people.find(x=>x.id===id);if(p)openPreview(p,false)}
 window.addEventListener('hashchange',fromHash);
-
-// Browser Back may restore the page from the back-forward cache.
-// Re-render and reset the modal so the homepage always returns in the same state.
-window.addEventListener('pageshow',event=>{
-  if(event.persisted){
-    resetPreviewState();
-    render();
-    restoreReturnScroll();
-  }
-});
+window.addEventListener('pageshow',event=>{if(event.persisted){resetPreviewState();render();restoreReturnScroll();closePlaceFilter()}});
 
 initPlaceFilter();
 render();
-setTimeout(()=>{
-  if(location.hash)fromHash();
-  else restoreReturnScroll();
-},80);
+setTimeout(()=>{if(location.hash)fromHash();else restoreReturnScroll();},80);

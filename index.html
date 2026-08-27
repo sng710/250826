@@ -9,7 +9,7 @@
 <meta content="#304a7d" name="theme-color"/>
 <link href="assets/favicon-sng.svg" rel="icon" type="image/svg+xml"/>
 <link href="assets/favicon-sng.png" rel="icon" sizes="256x256" type="image/png"/>
-<link href="assets/css/site.css?v=264" rel="stylesheet"/>
+<link href="assets/css/site.css?v=266" rel="stylesheet"/>
 </head>
 <body class="home-page">
 <a class="skip-link" href="#mainContent">דילוג לתוכן הראשי</a>
@@ -43,12 +43,21 @@
 <svg aria-hidden="true" viewbox="0 0 24 24"><path d="m20.7 19.3-4.2-4.2a7 7 0 1 0-1.4 1.4l4.2 4.2a1 1 0 0 0 1.4-1.4ZM5 11a6 6 0 1 1 12 0 6 6 0 0 1-12 0Z"></path></svg>
 <input aria-label="חיפוש לפי שם או יישוב" autocomplete="off" enterkeyhint="search" id="searchInput" aria-describedby="statusText" placeholder="חיפוש לפי שם או יישוב" type="search"/>
 </label>
-<label class="place-filter" for="placeFilter">
-<span>לפי יישוב</span>
-<select id="placeFilter" aria-describedby="statusText">
+<div class="place-filter" id="placeFilterWrap">
+<span class="place-filter-label" id="placeFilterLabel">לפי יישוב</span>
+<select id="placeFilter" aria-describedby="statusText" hidden="" tabindex="-1">
 <option value="">כל היישובים</option>
 </select>
-</label>
+<button aria-controls="placeFilterList" aria-describedby="statusText" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="placeFilterLabel placeFilterValue" class="place-filter-trigger" id="placeFilterButton" type="button">
+<span class="place-filter-current" id="placeFilterValue">כל היישובים</span>
+<span aria-hidden="true" class="place-filter-caret">
+<svg viewBox="0 0 20 20"><path d="M5.25 7.75 10 12.5l4.75-4.75" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+</span>
+</button>
+<div class="place-filter-panel" hidden="" id="placeFilterPanel">
+<div aria-label="רשימת יישובים" class="place-filter-list" id="placeFilterList" role="listbox" tabindex="-1"></div>
+</div>
+</div>
 </div>
 <div class="filter-chips" aria-label="סינון לפי קבוצה">
 <button class="filter-chip is-active" type="button" data-group-filter="all" aria-pressed="true">הכול</button>
@@ -82,6 +91,6 @@
 </article>
 </div>
 <script defer="" src="assets/js/people.js?v=265"></script>
-<script defer="" src="assets/js/app.js?v=264"></script>
+<script defer="" src="assets/js/app.js?v=266"></script>
 </body>
 </html>
