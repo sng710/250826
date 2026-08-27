@@ -23,10 +23,10 @@ for p in people:
     else:
         html=loader.read_text(encoding='utf-8')
         if f'data-person-id="{pid}"' not in html: errors.append(f'{pid}: loader id mismatch')
-        for required in ('../../assets/js/people.js','../../assets/js/person-page.js'):
-            if required not in html: errors.append(f'{pid}: missing shared script {required}')
-        for forbidden in ('assets/css/site.css','gallery-viewer.js','person-template.js'):
-            if forbidden in html: errors.append(f'{pid}: legacy person-page dependency remains: {forbidden}')
+        required='../../assets/js/person-bootstrap.js'
+        if required not in html: errors.append(f'{pid}: missing bootstrap script {required}')
+        for forbidden in ('assets/css/site.css','gallery-viewer.js','person-template.js','../../assets/js/people.js','../../assets/js/person-page.js'):
+            if forbidden in html: errors.append(f'{pid}: legacy/direct person-page dependency remains: {forbidden}')
     refs=[]
     if p.get('image'): refs.append(p['image'])
     refs.extend(x.get('src','') for x in p.get('storyMedia',[]))
@@ -57,6 +57,22 @@ for p in people:
     for paragraph in paragraphs:
         if paragraph in seen: errors.append(f'{pid}: duplicate biography paragraph: {paragraph[:60]}')
         seen.add(paragraph)
+
+
+bootstrap=ROOT/'assets/js/person-bootstrap.js'
+if not bootstrap.exists(): errors.append('missing assets/js/person-bootstrap.js')
+else:
+    b=bootstrap.read_text(encoding='utf-8')
+    for required in ('js/people.js','js/person-page.js','site-version.json'):
+        if required not in b: errors.append(f'bootstrap missing reference to {required}')
+version_file=ROOT/'assets/site-version.json'
+if not version_file.exists(): errors.append('missing assets/site-version.json')
+else:
+    try:
+        version=json.loads(version_file.read_text(encoding='utf-8')).get('version')
+        if not version: errors.append('site-version.json has no version')
+    except Exception as exc:
+        errors.append(f'invalid site-version.json: {exc}')
 
 loaders=list((ROOT/'people').glob('*/index.html'))
 if len(loaders)!=len(people): errors.append(f'loader count {len(loaders)} != people count {len(people)}')
