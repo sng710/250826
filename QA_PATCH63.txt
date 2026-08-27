@@ -1,0 +1,9 @@
+PATCH 63 QA
+
+PASS - 154/154 personal loader pages now use the stable person-bootstrap.js loader.
+PASS - No loader directly references people.js or person-page.js anymore.
+PASS - Homepage stylesheet cache key updated to v=263.
+PASS - site-version.json is valid JSON and version=263.
+PASS - person-bootstrap.js passes node --check.
+PASS - person-page.js passes node --check.
+PASS - Patch only changes presentation/bootstrap behavior; people.js memorial content is not included or modified.

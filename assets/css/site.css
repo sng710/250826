@@ -3280,3 +3280,221 @@ body {
   .home-page .card-name{font-size:1.02rem;}
   .home-page .hero h1{font-size:3.35rem;}
 }
+
+/* =========================================================
+   PATCH 63 - VISIBLE REFINEMENT, SAME MEMORIAL IDENTITY
+   ========================================================= */
+
+/* Hero: establish clearer hierarchy without changing the visual language. */
+.home-page .hero{
+  min-height:620px;
+  padding:38px 28px 46px;
+  background:
+    linear-gradient(90deg,rgba(24,53,91,.86),rgba(38,68,116,.91)),
+    url('../img/bg-wide.webp') center / cover no-repeat;
+}
+.home-page .hero::after{
+  inset:18px;
+  border-color:rgba(213,235,242,.16);
+}
+.home-page .hero-inner{
+  width:min(1120px,100%);
+}
+.home-page .eyebrow{
+  width:fit-content;
+  margin:0 0 20px auto;
+  padding:0 0 9px;
+  border-bottom:1px solid rgba(85,184,212,.62);
+  color:#eef5f6;
+  font-size:.98rem;
+  letter-spacing:.13em;
+}
+.home-page .hero-inner > .hero-rule:not(.hero-rule-bottom){
+  display:none;
+}
+.home-page .hero-composition{
+  position:relative;
+  grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);
+  gap:clamp(48px,7vw,82px);
+  padding:38px 28px 36px;
+}
+.home-page .hero h1{
+  font-size:clamp(4rem,7vw,6rem);
+  line-height:.9;
+  padding-inline-end:clamp(18px,2.5vw,32px);
+  border-inline-end:1px solid rgba(151,205,221,.28);
+  text-shadow:0 10px 32px rgba(7,25,46,.16);
+}
+.home-page .poem{
+  font-size:clamp(1.48rem,2.25vw,2rem);
+  line-height:1.68;
+  color:#fbfcfb;
+}
+.home-page .hero-rule-bottom{
+  width:min(850px,82%);
+  margin:0 auto 24px;
+  background:linear-gradient(90deg,transparent,rgba(85,184,212,.62),transparent);
+}
+.home-page .dedication{
+  max-width:800px;
+  padding:16px 24px 17px;
+  border:1px solid rgba(213,235,242,.13);
+  border-radius:14px;
+  background:rgba(13,39,67,.18);
+  color:#edf3f3;
+  font-size:1.08rem;
+  line-height:1.86;
+}
+.home-page .hero-links{
+  margin-top:18px;
+  gap:10px;
+}
+.home-page .hero-links a{
+  min-height:44px;
+  padding:8px 17px;
+  border:1px solid rgba(151,205,221,.48);
+  border-radius:999px;
+  background:rgba(14,39,67,.24);
+  font-weight:650;
+  text-decoration:none;
+}
+.home-page .hero-links a:hover,
+.home-page .hero-links a:focus-visible{
+  background:rgba(255,255,255,.09);
+  border-color:rgba(248,247,243,.78);
+}
+
+/* Index: a slightly clearer transition from hero to memorial list. */
+.home-page .index-section{
+  padding-bottom:82px;
+  background:
+    radial-gradient(circle at 50% 0,rgba(85,184,212,.055),transparent 34rem),
+    linear-gradient(#102f49,#0d263c);
+}
+.home-page .toolbar{
+  padding:12px 0;
+  border-bottom-color:rgba(151,205,221,.15);
+}
+.home-page .search-control{
+  min-height:54px;
+  border-color:rgba(213,235,242,.33);
+  background:rgba(255,255,255,.055);
+}
+.home-page .memorial-grid{
+  margin-top:36px;
+  gap:42px 28px;
+}
+.home-page .memory-card{
+  padding:9px 7px 10px;
+}
+.home-page .portrait-ring{
+  border-width:2px;
+  border-color:rgba(213,235,242,.42);
+  box-shadow:0 12px 30px rgba(2,18,33,.19);
+}
+.home-page .card-name{
+  font-size:1.22rem;
+  line-height:1.28;
+}
+.home-page .card-place{
+  margin-top:1px;
+  font-size:.9rem;
+  color:#c9d9df;
+}
+.home-page .period-divider{
+  margin-top:42px;
+  font-size:1.62rem;
+}
+
+/* Phone hero: intentionally redesigned for the small screen, not compressed desktop. */
+@media(max-width:760px){
+  :root{--portrait-size:118px;}
+  .home-page .hero{
+    min-height:auto;
+    padding:28px 16px 34px;
+  }
+  .home-page .hero::after{inset:9px;}
+  .home-page .hero-inner{width:100%;}
+  .home-page .eyebrow{
+    margin:0 auto 14px;
+    padding-bottom:7px;
+    font-size:.82rem;
+    letter-spacing:.1em;
+  }
+  .home-page .hero-composition{
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+    padding:20px 8px 24px;
+  }
+  .home-page .hero h1{
+    order:0;
+    padding:0;
+    border:0;
+    text-align:center;
+    font-size:clamp(3.45rem,16.5vw,4.65rem);
+    line-height:.9;
+  }
+  .home-page .poem{
+    order:1;
+    width:min(100%,360px);
+    margin-inline:auto;
+    padding-top:19px;
+    border-top:1px solid rgba(151,205,221,.28);
+    text-align:center;
+    font-size:clamp(1.22rem,5.5vw,1.5rem);
+    line-height:1.7;
+  }
+  .home-page .hero-rule-bottom{
+    width:min(320px,82vw);
+    margin-bottom:18px;
+  }
+  .home-page .dedication{
+    max-width:36ch;
+    padding:14px 15px;
+    font-size:1rem;
+    line-height:1.75;
+  }
+  .home-page .hero-links{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    width:min(360px,100%);
+    margin:14px auto 0;
+  }
+  .home-page .hero-links a{
+    justify-content:center;
+    min-height:46px;
+    padding:8px 10px;
+    font-size:.94rem;
+  }
+  .home-page .index-section{padding-inline:12px;padding-bottom:64px;}
+  .home-page .toolbar{
+    position:sticky;
+    top:0;
+    padding:9px 0;
+  }
+  .home-page .memorial-grid{
+    margin-top:22px;
+    gap:27px 12px;
+  }
+  .home-page .memory-card{
+    min-height:190px;
+    padding:6px 2px 8px;
+  }
+  .home-page .card-name{
+    min-height:2.55em;
+    font-size:1.04rem;
+    line-height:1.28;
+  }
+  .home-page .card-place{font-size:.85rem;}
+  .home-page .period-divider{
+    margin-top:30px;
+    font-size:1.3rem;
+  }
+}
+
+@media(max-width:380px){
+  :root{--portrait-size:108px;}
+  .home-page .memorial-grid{gap-inline:8px;}
+  .home-page .card-name{font-size:.98rem;}
+}

@@ -278,6 +278,180 @@ body{
   .council-corner{width:40px;height:40px;}
 }
 
+
+/* PATCH 63 - CLEARER EDITORIAL STORY DESIGN */
+.person-main{width:min(1120px,calc(100% - 34px));}
+.person-intro{
+  border-color:rgba(213,235,242,.17);
+  border-top-color:rgba(85,184,212,.62);
+  box-shadow:0 18px 48px rgba(8,25,46,.13);
+}
+
+.story-section{
+  margin-top:26px;
+  padding:clamp(38px,4.6vw,54px) clamp(24px,5.4vw,62px) clamp(44px,5vw,60px);
+  border:0;
+  border-top:1px solid rgba(85,184,212,.46);
+  border-radius:20px;
+  background:linear-gradient(180deg,rgba(32,55,94,.64),rgba(31,53,90,.50));
+  box-shadow:0 18px 52px rgba(8,25,46,.10);
+}
+.story-section>h2{
+  margin-bottom:2rem;
+  font-size:clamp(2.05rem,1.84rem + .8vw,2.55rem);
+}
+.story-section>h2::after{
+  width:82px;
+  height:2px;
+  margin-top:.85rem;
+}
+.story-copy{max-width:84ch;}
+.story-text{
+  max-width:70ch;
+  margin-inline:auto;
+}
+.story-text p{
+  margin-bottom:1.34em;
+  font-size:clamp(1.25rem,1.18rem + .26vw,1.38rem);
+  line-height:1.9;
+}
+
+/* Chapter transitions: no floating/pill heading, one clean editorial rule. */
+.story-chapter+.story-chapter{
+  margin-top:clamp(3.2rem,5vw,4.5rem);
+  padding-top:0;
+  border-top:0;
+}
+.story-chapter>h3{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  width:100%;
+  margin:0 0 1.8rem;
+  padding:0;
+  border:0;
+  color:#f8f7f3;
+  font-size:clamp(1.58rem,1.38rem + .72vw,2rem);
+  font-weight:700;
+  line-height:1.3;
+}
+.story-chapter>h3::after{
+  content:"";
+  flex:1 1 auto;
+  height:1px;
+  background:linear-gradient(90deg,rgba(85,184,212,.08),rgba(85,184,212,.55));
+}
+.story-chapter.event>h3{
+  color:#fffaf0;
+}
+.story-chapter.event>h3::before{
+  content:"";
+  flex:0 0 8px;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#e5a93c;
+  box-shadow:0 0 0 4px rgba(229,169,60,.10);
+}
+.story-chapter.legacy>h3::before{
+  content:"";
+  flex:0 0 8px;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#55b8d4;
+  box-shadow:0 0 0 4px rgba(85,184,212,.10);
+}
+
+/* Photos are deliberate full editorial pauses, never awkward side floats. */
+.story-media-break,
+.story-media-break.side-left,
+.story-media-break.side-right{
+  width:100%;
+  max-width:600px;
+  margin:clamp(2rem,3.5vw,2.7rem) auto clamp(2.8rem,4.8vw,3.8rem);
+}
+.story-media-break.media-landscape{max-width:760px;}
+.story-media-break.media-square{max-width:560px;}
+.story-media-break.media-portrait{max-width:420px;}
+.story-media-break figure{
+  display:block;
+  width:100%;
+  padding:0;
+  border:0;
+  border-radius:16px;
+  background:transparent;
+  box-shadow:0 18px 44px rgba(5,20,39,.20);
+  overflow:hidden;
+}
+.story-media-break img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:680px;
+  object-fit:contain;
+  border-radius:16px;
+  background:rgba(15,31,54,.28);
+}
+
+.media-section,.links-section{
+  border-radius:18px;
+  border-color:rgba(213,235,242,.16);
+}
+.family-contact{
+  border-radius:16px;
+  border-color:rgba(151,205,221,.28);
+}
+
+@media(max-width:820px){
+  .person-main{width:min(100% - 18px,740px);}
+  .person-intro{padding:24px 17px 27px;}
+  .story-section{
+    margin-top:17px;
+    padding:30px 17px 38px;
+    border-radius:16px;
+  }
+  .story-section>h2{
+    margin-bottom:1.6rem;
+    font-size:2rem;
+  }
+  .story-text p{
+    font-size:1.17rem;
+    line-height:1.88;
+    margin-bottom:1.3em;
+  }
+  .story-chapter+.story-chapter{
+    margin-top:2.9rem;
+  }
+  .story-chapter>h3{
+    gap:11px;
+    margin-bottom:1.45rem;
+    font-size:1.5rem;
+  }
+  .story-media-break,
+  .story-media-break.side-left,
+  .story-media-break.side-right,
+  .story-media-break.media-landscape,
+  .story-media-break.media-square{
+    width:100%;
+    max-width:100%;
+    margin:1.8rem auto 2.8rem;
+  }
+  .story-media-break.media-portrait{
+    max-width:min(88%,420px);
+  }
+  .story-media-break figure,
+  .story-media-break img{border-radius:13px;}
+}
+
+@media(max-width:440px){
+  .person-main{width:calc(100% - 12px);}
+  .person-intro{padding-inline:14px;}
+  .story-section{padding:27px 14px 34px;}
+  .story-text p{font-size:1.14rem;line-height:1.86;}
+  .story-chapter>h3{font-size:1.42rem;}
+}
+
 `;
 
   const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
