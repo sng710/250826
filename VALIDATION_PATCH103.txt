@@ -1,0 +1,9 @@
+PATCH 103 VALIDATION
+
+Records: 154
+Yehonatan Hajabi-Zahavi unchanged: YES
+Missing age fields fixed: 6
+Previous-years burial/event paragraphs separated: 16
+fullStory re-synced from personal+event+legacy for all records with story: YES
+Targeted sensitive/graphic phrases absent after cleanup: YES
+No stories fabricated for 43 previous-years records without source story text: YES
