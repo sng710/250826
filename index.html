@@ -1790,6 +1790,31 @@
 }
 </style>
 
+
+<style>
+/* PATCH 104 — center only the poem directly under "רקמה אנושית אחת". No text/content changes. */
+.left-quote-wrap{
+  width:100% !important;
+  display:flex !important;
+  justify-content:center !important;
+  align-items:flex-start !important;
+}
+.home-page .hero .poem{
+  width:100% !important;
+  max-width:360px !important;
+  margin-inline:auto !important;
+  text-align:center !important;
+}
+.home-page .hero .poem span{
+  display:block !important;
+  width:100% !important;
+  text-align:center !important;
+}
+@media (max-width:899px){
+  .home-page .hero .poem{max-width:340px !important;}
+}
+</style>
+
 </head>
 <body class="home-page">
 <a class="skip-link" href="#mainContent">דילוג לתוכן הראשי</a>
