@@ -9,7 +9,7 @@
 <meta content="#304a7d" name="theme-color"/>
 <link href="assets/favicon-sng.svg" rel="icon" type="image/svg+xml"/>
 <link href="assets/favicon-sng.png" rel="icon" sizes="256x256" type="image/png"/>
-<link href="assets/css/site.css?v=267" rel="stylesheet"/>
+<link href="assets/css/site.css?v=299" rel="stylesheet"/>
 <style>
 /* PATCH 83: enlarge only the homepage memorial quote + dedication text */
 .hero .poem{
@@ -1533,6 +1533,221 @@
 }
 </style>
 
+
+<style>
+/* PATCH 99 — UI polish only. NO visible text/content changes. */
+
+/* 1) Stronger sidebar contrast while preserving the leaf texture */
+.home-page .hero{
+  background:
+    linear-gradient(90deg,rgba(17,43,75,.88) 0%,rgba(31,60,101,.90) 54%,rgba(38,69,115,.93) 100%),
+    url('assets/img/leaf-bg.webp') 38% center / cover no-repeat !important;
+}
+.left-site-title,
+.home-page .hero .poem,
+.home-page .hero .dedication{
+  text-shadow:0 1px 2px rgba(2,13,25,.32),0 0 16px rgba(8,28,48,.16) !important;
+}
+.left-site-title{font-weight:520 !important;}
+.home-page .hero .poem{font-weight:480 !important;}
+.home-page .hero .dedication{font-weight:500 !important;}
+
+/* 2) Header separation and visual balance */
+.main-title-band{
+  margin-bottom:clamp(30px,3.4vw,46px) !important;
+}
+.main-primary-title{
+  letter-spacing:.005em !important;
+}
+
+/* 3) Search/filter controls: visibly interactive, but still integrated into leaf background */
+.left-search-wrap .search-control,
+.left-search-wrap .security-filter,
+.left-search-wrap .place-filter-trigger{
+  background:rgba(87,130,163,.18) !important;
+  border-color:rgba(201,230,241,.44) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 8px 18px rgba(5,20,35,.09) !important;
+}
+.left-search-wrap .search-control:hover,
+.left-search-wrap .search-control:focus-within,
+.left-search-wrap .security-filter:hover,
+.left-search-wrap .security-filter:focus-visible,
+.left-search-wrap .place-filter-trigger:hover,
+.left-search-wrap .place-filter-trigger:focus-visible,
+.left-search-wrap .place-filter.is-open .place-filter-trigger{
+  background:rgba(105,153,186,.25) !important;
+  border-color:rgba(210,238,248,.72) !important;
+  box-shadow:0 0 0 3px rgba(110,188,219,.11),inset 0 1px 0 rgba(255,255,255,.08) !important;
+}
+.left-search-wrap .search-control.has-value,
+.left-search-wrap .place-filter.has-value .place-filter-trigger{
+  border-color:rgba(141,211,235,.72) !important;
+  background:rgba(67,137,174,.24) !important;
+}
+.left-search-wrap .security-filter.is-active{
+  color:#fff !important;
+  border-color:rgba(159,222,243,.86) !important;
+  background:linear-gradient(180deg,rgba(72,153,190,.44),rgba(48,117,156,.34)) !important;
+  box-shadow:0 0 0 3px rgba(111,197,227,.10),inset 0 1px 0 rgba(255,255,255,.09) !important;
+}
+.left-search-wrap .security-filter.is-active::before{
+  content:'✓';
+  display:inline-grid;
+  place-items:center;
+  width:1.35em;
+  height:1.35em;
+  margin-inline-end:.45em;
+  border-radius:50%;
+  background:rgba(255,255,255,.13);
+  font-size:.78em;
+  font-weight:800;
+}
+
+/* Year controls: active view is visibly filled */
+.home-page .hero-links a{
+  border:1px solid rgba(191,224,237,.32) !important;
+  background:rgba(29,66,99,.18) !important;
+  text-decoration:none !important;
+  transition:background .18s ease,border-color .18s ease,box-shadow .18s ease,transform .18s ease !important;
+}
+.home-page .hero-links a:hover,
+.home-page .hero-links a:focus-visible{
+  border-color:rgba(220,241,249,.72) !important;
+  background:rgba(95,151,181,.19) !important;
+}
+.home-page .hero-links a.is-active,
+.home-page .hero-links a[aria-current="true"]{
+  color:#fff !important;
+  border-color:rgba(160,221,242,.88) !important;
+  background:linear-gradient(180deg,rgba(75,154,191,.48),rgba(50,119,157,.38)) !important;
+  box-shadow:0 0 0 3px rgba(110,196,226,.09) !important;
+}
+
+/* 4) Grid rhythm, name consistency and portrait consistency */
+.home-page .memorial-grid{
+  row-gap:clamp(48px,4.7vw,66px) !important;
+  column-gap:clamp(20px,2vw,30px) !important;
+}
+.home-page .memory-card{
+  row-gap:11px !important;
+  border-radius:20px !important;
+  transition:transform .18s ease,background-color .18s ease,box-shadow .18s ease !important;
+}
+.home-page .card-name{
+  min-height:2.65em !important;
+  display:-webkit-box !important;
+  -webkit-box-orient:vertical !important;
+  -webkit-line-clamp:2 !important;
+  overflow:hidden !important;
+  align-items:flex-start !important;
+  font-size:clamp(1.12rem,1.02rem + .22vw,1.28rem) !important;
+  line-height:1.32 !important;
+  font-weight:600 !important;
+  text-wrap:balance;
+}
+.home-page .card-place{
+  margin-top:1px !important;
+  font-size:.92rem !important;
+  color:#d4e2e7 !important;
+}
+.home-page .portrait-ring{
+  transition:transform .20s ease,border-color .20s ease,box-shadow .20s ease !important;
+  border-color:rgba(239,243,242,.46) !important;
+}
+.home-page .portrait-ring img{
+  filter:grayscale(1) contrast(1.08) brightness(1.015) !important;
+}
+@media (hover:hover) and (pointer:fine){
+  .home-page .memory-card:hover,
+  .home-page .memory-card:focus-visible{
+    transform:translateY(-3px) !important;
+    background:rgba(255,255,255,.025) !important;
+    box-shadow:0 15px 30px rgba(4,18,32,.10) !important;
+  }
+  .home-page .memory-card:hover .portrait-ring,
+  .home-page .memory-card:focus-visible .portrait-ring{
+    transform:scale(1.02) !important;
+    border-color:rgba(223,244,250,.82) !important;
+    box-shadow:0 0 0 4px rgba(104,190,220,.08),0 13px 28px rgba(4,18,32,.20) !important;
+  }
+}
+.home-page .memory-card:focus-visible{
+  outline:2px solid rgba(159,222,243,.82) !important;
+  outline-offset:6px !important;
+}
+
+/* 5) Empty state: make existing text feel intentional without adding new copy */
+.home-page .empty-search{
+  width:min(520px,92%);
+  margin:42px auto 20px !important;
+  padding:30px 24px !important;
+  border:1px solid rgba(174,218,234,.24);
+  border-radius:22px;
+  background:rgba(18,50,79,.30);
+  color:#eef5f7 !important;
+  font-size:1.08rem !important;
+  font-weight:650;
+  box-shadow:0 15px 34px rgba(5,19,34,.10);
+}
+.home-page .empty-search::before{
+  content:'⌕';
+  display:block;
+  margin:0 auto 10px;
+  font-size:2rem;
+  line-height:1;
+  color:#9fd4e6;
+}
+
+/* Place dropdown active/selected states */
+.home-page .place-filter-option[aria-selected="true"]{
+  font-weight:750 !important;
+  background:linear-gradient(90deg,rgba(72,155,192,.34),rgba(65,132,171,.16)) !important;
+}
+.home-page .place-filter-option[aria-selected="true"]::after{
+  background:#a8e0f1 !important;
+  box-shadow:0 0 0 4px rgba(168,224,241,.14) !important;
+}
+
+/* 6) Mobile: keep filters collapsible and give the grid breathing room */
+@media (max-width:899px){
+  .home-page .hero{
+    background:
+      linear-gradient(180deg,rgba(20,46,79,.90),rgba(40,69,114,.92)),
+      url('assets/img/leaf-bg.webp') 30% center / cover no-repeat !important;
+  }
+  .mobile-filter-toggle{
+    min-height:50px !important;
+    border-color:rgba(201,230,241,.46) !important;
+    background:rgba(87,130,163,.19) !important;
+    font-weight:750 !important;
+  }
+  .mobile-filter-toggle[aria-expanded="true"]{
+    background:rgba(83,148,182,.26) !important;
+    border-color:rgba(169,222,240,.70) !important;
+  }
+  .mobile-filter-panel{
+    padding-top:4px !important;
+  }
+  .home-page .memorial-grid{
+    row-gap:36px !important;
+    column-gap:14px !important;
+  }
+  .home-page .card-name{
+    font-size:clamp(1.04rem,4.2vw,1.16rem) !important;
+    min-height:2.7em !important;
+  }
+  .home-page .card-place{font-size:.9rem !important;}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .home-page .memory-card,
+  .home-page .portrait-ring,
+  .home-page .hero-links a{
+    transition:none !important;
+  }
+}
+</style>
+
 </head>
 <body class="home-page">
 <a class="skip-link" href="#mainContent">דילוג לתוכן הראשי</a>
@@ -1648,7 +1863,7 @@
   syncState();
 })();
 </script>
-<script defer="" src="assets/js/people.js?v=269"></script>
-<script defer="" src="assets/js/app.js?v=267"></script>
+<script defer="" src="assets/js/people.js?v=298"></script>
+<script defer="" src="assets/js/app.js?v=299"></script>
 </body>
 </html>
