@@ -1,0 +1,10 @@
+SNG-710 PATCH 117 QA
+====================
+Record count: 154
+Unique IDs: 154
+Changed record IDs: david_salomon, tzvi_goldfeld, yitzhak_dabah
+david_salomon: previousYears=True, place=אור הנר, unit=פיקוד העורף, paragraphs=4
+tzvi_goldfeld: previousYears=True, place=אור הנר, unit=חיל שריון, paragraphs=4
+yitzhak_dabah: previousYears=True, place=אור הנר, unit=חיל שריון, paragraphs=3
+site-version: 317
+Patch contains only people.js + site-version + README/QA/checksums.

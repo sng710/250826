@@ -1,24 +1,20 @@
-SNG-710 PATCH 44 - Nadav editorial photo layout + homepage council logo
+SNG-710 PATCH 114 — homepage layout repair
 
-Apply after Patch 43 / the current site that already contains Nadav's 5 added family photos.
+Apply this patch to the CURRENT site from sng-710-main (2).zip.
 
-NADAV AMIKAM ONLY
-- No biography text changed.
-- No top facts changed.
-- No image file changed or removed.
-- All 7 existing gallery images are retained.
-- The separate gallery/sidebar is removed from Nadav's page only.
-- The 7 images are distributed through the life story, alternating right/left on desktop.
-- Story text flows alongside the images.
-- On mobile, images become full-width blocks between the same paragraphs.
-- Images remain clickable in the existing full-screen image viewer.
+Replace ONLY:
+  index.html
 
-HOMEPAGE
-- Adds a Sha'ar HaNegev Regional Council logo/identity lockup above "שער הנגב זוכרת".
-- Uses the existing council emblem and the Hebrew council name.
-- No memorial ordering, text, portraits, popup behavior or search behavior changed.
+Do NOT replace assets/css/site.css.
+Do NOT remove the current Omer Tzadikovich page/video changes.
 
-FILES CHANGED
-- index.html
-- assets/css/site.css
-- people/nadav_a/index.html
+Fixes:
+- restores the homepage search/filter geometry
+- restores the "לפי יישוב" control to normal height
+- restores the dropdown caret to 20x20 instead of the giant SVG
+- prevents the search controls from overlapping the memorial dedication
+- fixes the legacy decorative-rule selector that was shifting the desktop grid
+- adds complete styling for the newer custom settlement dropdown
+- preserves the existing mobile collapsible filter behavior
+
+No memorial text, people data, biography content, images, CNAME or person pages are changed.
