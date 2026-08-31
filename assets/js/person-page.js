@@ -1996,6 +1996,66 @@ body{
   }
 }
 
+/* PATCH 115 — requested media/mobile refinements only. */
+/* A single Reel (notably Nitzan) gets enough vertical room for Instagram's real Reel player. */
+@media(min-width:821px){
+  .unified-media-v2-section .media-v2-grid-has-instagram[data-media-count="1"]{
+    grid-template-columns:minmax(0,430px) !important;
+    max-width:450px !important;
+  }
+  .unified-media-v2-section .media-v2-grid-has-instagram[data-media-count="1"] .media-v2-instagram-embed-shell{
+    height:690px !important;
+    min-height:690px !important;
+    max-height:690px !important;
+  }
+}
+
+@media(max-width:820px){
+  /* Logo stays at the page top, but is not pinned over the story while scrolling. */
+  .council-corner{position:absolute !important;top:10px !important;left:10px !important;}
+
+
+  .unified-media-v2-section .media-v2-grid-has-instagram[data-media-count="1"] .media-v2-instagram-embed-shell{
+    height:min(158vw,650px) !important;
+    min-height:540px !important;
+    max-height:650px !important;
+  }
+
+  /* Long stories remain verbatim, but open in a more manageable mobile reading length. */
+  .story-section.story-mobile-condensed:not(.is-expanded) .story-copy{
+    position:relative;
+    max-height:54rem;
+    overflow:hidden;
+    -webkit-mask-image:linear-gradient(to bottom,#000 0,#000 calc(100% - 7rem),transparent 100%);
+    mask-image:linear-gradient(to bottom,#000 0,#000 calc(100% - 7rem),transparent 100%);
+  }
+  .story-section.story-mobile-condensed.is-expanded .story-copy{
+    max-height:none;
+    overflow:visible;
+    -webkit-mask-image:none;
+    mask-image:none;
+  }
+  .story-mobile-toggle{
+    width:min(100%,260px);
+    min-height:46px;
+    margin:16px auto 0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid rgba(193,224,236,.46);
+    border-radius:999px;
+    background:rgba(65,116,151,.24);
+    color:#fff;
+    font:inherit;
+    font-weight:750;
+    cursor:pointer;
+  }
+  .story-mobile-toggle:hover,.story-mobile-toggle:focus-visible{
+    background:rgba(83,143,177,.34);
+    border-color:rgba(213,238,247,.72);
+  }
+}
+@media(min-width:821px){.story-mobile-toggle{display:none !important;}}
 
 
 `;
@@ -2040,11 +2100,25 @@ body{
   const serviceHtml = serviceParts.length ? `<div class="service-line">${serviceParts.map((x) => `<span>${esc(x)}</span>`).join('<span class="dot" aria-hidden="true">•</span>')}</div>` : '';
   const facts = (person.generalDetails || []).filter(Boolean).map((x) => `<div class="fact">${esc(x)}</div>`).join('');
 
+  const youtubeEmbedUrl = (source) => {
+    try {
+      const url = new URL(String(source || ''));
+      if (/youtube\.com$/i.test(url.hostname) || /youtube-nocookie\.com$/i.test(url.hostname)) {
+        url.searchParams.set('enablejsapi', '1');
+        url.searchParams.set('playsinline', '1');
+        url.searchParams.set('rel', '0');
+      }
+      return url.href;
+    } catch {
+      return String(source || '');
+    }
+  };
+
   const instagramEmbedUrl = (permalink) => {
     try {
       const url = new URL(String(permalink || ''));
       const cleanPath = url.pathname.replace(/\/+$/, '');
-      return `https://www.instagram.com${cleanPath}/embed/captioned/`;
+      return `https://www.instagram.com${cleanPath}/embed/`;
     } catch {
       return String(permalink || '');
     }
@@ -2063,8 +2137,8 @@ body{
       const isLocalVideo = video.type === 'file' || /\.(?:mp4|webm|ogg)(?:[?#].*)?$/i.test(String(video.src || ''));
       const player = isLocalVideo
         ? `<video controls playsinline preload="metadata" src="${esc(assetUrl(video.src))}" aria-label="${title}"></video>`
-        : `<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="${esc(video.src)}" title="${title}"></iframe>`;
-      return `<div class="media-v2-item media-v2-youtube"><div class="media-v2-youtube-shell">${player}</div></div>`;
+        : `<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="${esc(youtubeEmbedUrl(video.src))}" title="${title}"></iframe>`;
+      return `<div class="media-v2-item media-v2-youtube" data-media-provider="${isLocalVideo ? 'local' : 'youtube'}"><div class="media-v2-youtube-shell">${player}</div></div>`;
     });
 
     const instagramItems = (group.instagram || []).map((item, i) => {
@@ -2076,7 +2150,7 @@ body{
         return `<div class="media-v2-item media-v2-instagram"><a class="media-v2-instagram-card" href="${esc(permalink)}" rel="noopener noreferrer" target="_blank" aria-label="${esc(`צפייה באינסטגרם: ${titleText}`)}"><span class="media-v2-instagram-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M17 5h14c6.6 0 12 5.4 12 12v14c0 6.6-5.4 12-12 12H17C10.4 43 5 37.6 5 31V17C5 10.4 10.4 5 17 5Z" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="24" cy="24" r="8" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="34" cy="14" r="2.3" fill="currentColor"/><path d="M21 19.2 30 24l-9 4.8Z" fill="currentColor"/></svg></span><span class="media-v2-instagram-title">${esc(titleText)}</span><span class="media-v2-instagram-cta">צפייה באינסטגרם</span></a></div>`;
       }
       const embedSrc = esc(instagramEmbedUrl(permalink));
-      return `<div class="media-v2-item media-v2-instagram media-v2-instagram-embedded"><div class="media-v2-instagram-embed-shell"><iframe allow="autoplay; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="${embedSrc}" title="${esc(titleText)}"></iframe></div><a class="media-v2-social-link" href="${esc(permalink)}" rel="noopener noreferrer" target="_blank">פתיחה באינסטגרם</a></div>`;
+      return `<div class="media-v2-item media-v2-instagram media-v2-instagram-embedded" data-media-provider="instagram"><div class="media-v2-instagram-embed-shell"><iframe allow="autoplay; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="${embedSrc}" title="${esc(titleText)}"></iframe></div><a class="media-v2-social-link" href="${esc(permalink)}" rel="noopener noreferrer" target="_blank">פתיחה באינסטגרם</a></div>`;
     }).filter(Boolean);
 
     const facebookItems = (group.facebook || []).map((item, i) => {
@@ -2088,7 +2162,7 @@ body{
       const shape = ratioValue < .86 ? 'is-portrait' : ratioValue <= 1.14 ? 'is-square' : 'is-landscape';
       const title = esc(item.title || `Facebook video — ${person.name || ''}${(group.facebook || []).length > 1 ? ` ${i + 1}` : ''}`);
       const embedSrc = esc(facebookEmbedUrl(permalink, width, height));
-      return `<div class="media-v2-item media-v2-facebook ${shape}"><div class="media-v2-facebook-shell" style="--media-v2-ratio:${Math.round(width)}/${Math.round(height)}"><iframe allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" scrolling="no" src="${embedSrc}" title="${title}"></iframe></div><a class="media-v2-social-link" href="${esc(permalink)}" rel="noopener noreferrer" target="_blank">פתיחה בפייסבוק</a></div>`;
+      return `<div class="media-v2-item media-v2-facebook ${shape}" data-media-provider="facebook"><div class="media-v2-facebook-shell" style="--media-v2-ratio:${Math.round(width)}/${Math.round(height)}"><iframe allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" scrolling="no" src="${embedSrc}" title="${title}"></iframe></div><a class="media-v2-social-link" href="${esc(permalink)}" rel="noopener noreferrer" target="_blank">פתיחה בפייסבוק</a></div>`;
     }).filter(Boolean);
 
     const imageItems = (group.images || []).map((image) => {
@@ -2150,7 +2224,7 @@ body{
   root.innerHTML = `
 <a class="skip-link" href="#mainContent">דילוג לתוכן הראשי</a>
 <div class="council-corner" aria-hidden="true"><img alt="" src="${esc(assetUrl('favicon-sng.svg'))}"></div>
-<header class="person-topbar"><div class="person-topbar-inner"><a class="person-brand" href="${esc(new URL('index.html', siteRoot).href)}">רקמה אנושית אחת</a><a class="back-link" href="${esc(new URL('index.html', siteRoot).href)}">← חזרה לרשימת ההנצחה</a></div></header>
+<header class="person-topbar"><div class="person-topbar-inner"><a class="back-link" href="${esc(new URL('index.html', siteRoot).href)}">← חזרה לרשימת ההנצחה</a></div></header>
 <main class="person-main" id="mainContent">
   <section class="person-intro" aria-labelledby="personName"><figure class="person-portrait">${portrait}</figure><div class="person-head"><p class="place">${esc(person.place || '')}</p><h1 id="personName">${esc(person.name || '')}</h1>${serviceHtml}${person.role ? `<p class="role">${esc(person.role)}</p>` : ''}</div>${facts ? `<div class="facts-panel">${facts}</div>` : ''}</section>
   ${renderTopMedia()}
@@ -2175,8 +2249,31 @@ body{
       const dotsWrap = controls.querySelector('.media-v2-carousel-dots');
       dotsWrap.innerHTML = items.map((_, i) => `<button class="media-v2-carousel-dot${i === 0 ? ' is-active' : ''}" type="button" aria-label="מעבר לפריט ${i + 1} מתוך ${items.length}"></button>`).join('');
       const dots = [...dotsWrap.querySelectorAll('.media-v2-carousel-dot')];
+      const stopItemMedia = (item) => {
+        if (!item) return;
+        item.querySelectorAll('video').forEach((video) => {
+          try { video.pause(); } catch {}
+        });
+        item.querySelectorAll('iframe').forEach((frame) => {
+          const src = frame.getAttribute('src') || '';
+          if (/youtube(?:-nocookie)?\.com\/embed\//i.test(src)) {
+            try {
+              frame.contentWindow?.postMessage(JSON.stringify({event:'command',func:'pauseVideo',args:[]}), '*');
+            } catch {}
+            return;
+          }
+          /* Instagram/Facebook do not expose a shared pause API: reloading only the outgoing embed reliably stops playback. */
+          if (/instagram\.com|facebook\.com/i.test(src)) {
+            const saved = src;
+            frame.setAttribute('src', 'about:blank');
+            window.requestAnimationFrame(() => frame.setAttribute('src', saved));
+          }
+        });
+      };
       const update = (nextIndex, focusMedia = false) => {
+        const previousIndex = index;
         index = Math.max(0, Math.min(items.length - 1, nextIndex));
+        if (index !== previousIndex) stopItemMedia(items[previousIndex]);
         items.forEach((item, i) => item.classList.toggle('is-carousel-active', i === index));
         dots.forEach((dot, i) => dot.classList.toggle('is-active', i === index));
         if (status) status.textContent = `${index + 1} / ${items.length}`;
@@ -2193,6 +2290,28 @@ body{
     });
   };
   initMobileMediaCarousels();
+
+  const initMobileStoryDisclosure = () => {
+    const section = document.querySelector('.story-section');
+    if (!section || section.querySelector('.story-mobile-toggle')) return;
+    const paragraphs = [...section.querySelectorAll('.story-text p')];
+    const textLength = paragraphs.reduce((sum, paragraph) => sum + (paragraph.textContent || '').trim().length, 0);
+    if (paragraphs.length < 10 && textLength < 2200) return;
+    section.classList.add('story-mobile-condensed');
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'story-mobile-toggle';
+    button.setAttribute('aria-expanded', 'false');
+    button.textContent = 'המשך קריאה';
+    button.addEventListener('click', () => {
+      const expanded = section.classList.toggle('is-expanded');
+      button.setAttribute('aria-expanded', String(expanded));
+      button.textContent = expanded ? 'צמצום הסיפור' : 'המשך קריאה';
+      if (!expanded) section.scrollIntoView({block:'start', behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+    });
+    section.appendChild(button);
+  };
+  initMobileStoryDisclosure();
 
   const classifyStoryMedia = () => {
     document.querySelectorAll('.story-media-break').forEach((block) => {

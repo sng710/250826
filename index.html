@@ -1970,12 +1970,133 @@
 }
 </style>
 
+
+<style>
+/* PATCH 115 — requested mobile/menu cleanup only. */
+/* Keep result announcements available to assistive tech without showing the result count visually. */
+.visually-hidden,
+#statusText{
+  position:absolute !important;
+  width:1px !important;
+  height:1px !important;
+  padding:0 !important;
+  margin:-1px !important;
+  overflow:hidden !important;
+  clip:rect(0,0,0,0) !important;
+  white-space:nowrap !important;
+  border:0 !important;
+}
+
+.mobile-site-menu{display:none;}
+
+@media (max-width:899px){
+  /* The council logo belongs at the top of the page and scrolls away with it. */
+  .home-page::before,
+  .home-page::after{
+    position:absolute !important;
+  }
+
+  /* Existing year navigation is represented by the compact mobile menu below. */
+  .home-page .hero-links{display:none !important;}
+
+  .mobile-site-menu{
+    display:block;
+    position:fixed;
+    top:12px;
+    right:12px;
+    z-index:1200;
+    direction:rtl;
+  }
+  .mobile-site-menu > summary{
+    list-style:none;
+    width:44px;
+    height:44px;
+    display:grid;
+    place-items:center;
+    border:1px solid rgba(190,224,237,.42);
+    border-radius:14px;
+    background:rgba(17,48,78,.76);
+    color:#fff;
+    box-shadow:0 8px 22px rgba(4,18,32,.18);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    cursor:pointer;
+  }
+  .mobile-site-menu > summary::-webkit-details-marker{display:none;}
+  .mobile-site-menu > summary::marker{content:"";}
+  .mobile-menu-icon{
+    width:20px;
+    display:grid;
+    gap:4px;
+  }
+  .mobile-menu-icon i{
+    display:block;
+    width:20px;
+    height:2px;
+    border-radius:999px;
+    background:currentColor;
+  }
+  .mobile-site-menu[open] > summary{
+    border-color:rgba(206,235,246,.70);
+    background:rgba(30,77,109,.94);
+  }
+  .mobile-site-menu nav{
+    position:absolute;
+    top:52px;
+    right:0;
+    width:min(220px,calc(100vw - 24px));
+    display:grid;
+    gap:4px;
+    padding:8px;
+    border:1px solid rgba(190,224,237,.38);
+    border-radius:15px;
+    background:rgba(17,48,78,.97);
+    box-shadow:0 18px 38px rgba(4,18,32,.28);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+  }
+  .mobile-site-menu nav a,
+  .mobile-site-menu nav button{
+    width:100%;
+    min-height:42px;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    padding:8px 11px;
+    border:0;
+    border-radius:10px;
+    background:transparent;
+    color:#f6f9fa;
+    text-decoration:none;
+    text-align:right;
+    font:inherit;
+    font-weight:650;
+    cursor:pointer;
+  }
+  .mobile-site-menu nav a:hover,
+  .mobile-site-menu nav a:focus-visible,
+  .mobile-site-menu nav button:hover,
+  .mobile-site-menu nav button:focus-visible{
+    outline:none;
+    background:rgba(113,177,205,.18);
+  }
+}
+</style>
+
 </head>
 <body class="home-page">
 <a class="skip-link" href="#mainContent">דילוג לתוכן הראשי</a>
+<details class="mobile-site-menu" id="mobileSiteMenu">
+<summary aria-label="פתיחת תפריט"><span aria-hidden="true" class="mobile-menu-icon"><i></i><i></i><i></i></span></summary>
+<nav aria-label="תפריט נייד">
+<a href="#memorialGrid">2023</a>
+<a href="#previousYearsDivider">השנים הקודמות</a>
+<button data-mobile-open-filters type="button">חיפוש וסינון</button>
+</nav>
+</details>
 <div class="home-layout">
-<header aria-labelledby="quoteTitle" class="hero">
-<div class="hero-inner gentle-enter"><div class="left-site-title-wrap"><h2 class="left-site-title" id="quoteTitle">רקמה אנושית אחת</h2></div><div aria-hidden="true" class="hero-rule"></div><div class="left-quote-wrap"><blockquote class="poem">
+<header aria-label="דברי זיכרון וחיפוש" class="hero">
+<div class="hero-inner gentle-enter"><div aria-hidden="true" class="hero-rule"></div><div class="left-quote-wrap"><blockquote class="poem">
 <span>וְאִם אֶחָד מֵאִתָּנוּ</span>
 <span>הוֹלֵךְ מֵעִמָּנוּ</span>
 <span>מַשֶּׁהוּ מֵת בָּנוּ</span>
@@ -2085,7 +2206,33 @@
   syncState();
 })();
 </script>
+
+<script>
+(function(){
+  const menu = document.getElementById('mobileSiteMenu');
+  if(!menu) return;
+  menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => { menu.open = false; }));
+  const filterButton = menu.querySelector('[data-mobile-open-filters]');
+  filterButton?.addEventListener('click', () => {
+    menu.open = false;
+    const toggle = document.getElementById('mobileFilterToggle');
+    const panel = document.getElementById('mobileFilterPanel');
+    if(toggle && panel){
+      toggle.setAttribute('aria-expanded','true');
+      panel.hidden = false;
+      toggle.scrollIntoView({block:'center', behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+      window.setTimeout(() => document.getElementById('searchInput')?.focus({preventScroll:true}), 250);
+    }
+  });
+  document.addEventListener('pointerdown', (event) => {
+    if(menu.open && !menu.contains(event.target)) menu.open = false;
+  });
+  document.addEventListener('keydown', (event) => {
+    if(event.key === 'Escape' && menu.open) menu.open = false;
+  });
+})();
+</script>
 <script defer="" src="assets/js/people.js?v=298"></script>
-<script defer="" src="assets/js/app.js?v=299"></script>
+<script defer="" src="assets/js/app.js?v=315"></script>
 </body>
 </html>

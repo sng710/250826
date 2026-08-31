@@ -1,0 +1,25 @@
+PATCH 115 QA SUMMARY
+====================
+PASS - node --check assets/js/app.js
+PASS - node --check assets/js/person-page.js
+PASS - node --check assets/js/people.js
+PASS - 154 people records
+PASS - 154 person page paths exist
+PASS - 41 configured video/social items have structurally valid URLs
+       YouTube: 33
+       Instagram: 5
+       Facebook: 3
+PASS - Nitzan uses Instagram /embed/ and single-Reel tall layout
+PASS - YouTube renderer enables JS API and playsinline
+PASS - mobile carousel contains outgoing-media stop logic
+PASS - default "מוצגות 154 תוצאות" is no longer emitted
+PASS - "רקמה אנושית אחת" no longer appears as visible homepage/body heading or personal-page topbar brand
+PASS - mobile menu exists and mobile logo is no longer fixed
+PASS - assets/js/people.js unchanged from Patch-114 baseline
+PASS - Omer memorial story text unchanged (14/14 paragraphs)
+PASS - no duplicate IDs in index.html or Omer page
+
+Repository validator comparison:
+Baseline before Patch 115: 13 existing issues
+After Patch 115:           13 same existing issues
+New validator issues:     0
