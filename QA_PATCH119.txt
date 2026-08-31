@@ -1,0 +1,21 @@
+PATCH 119 QA
+============
+
+PASS — 154 memorial records; 154 unique IDs.
+PASS — 154/154 person pages now use the common person-bootstrap/person-page template.
+PASS — Omer Z was the only remaining legacy/static page; it is now on the common template.
+PASS — 47 embedded media items audited: 33 YouTube/local-video entries, 5 Instagram embeds, 9 Facebook embeds; no malformed provider URLs found.
+PASS — desktop media rule is shared cross-site: one standard size for 1 item, one standard size for 2+ items; multi-item rows use two equal columns.
+PASS — existing mobile media carousel and stop-previous-media logic retained.
+PASS — David Salomon fullStory: 4 paragraphs present and now rendered.
+PASS — Tzvi Goldfeld fullStory: 4 paragraphs present and now rendered.
+PASS — Yitzhak (Zaki) Dabah fullStory: 3 paragraphs present and now rendered.
+PASS — early-years family-contact fallback uses serviceRecord.displayName where available (first-name-first full name).
+PASS — people.js content is byte-identical to Patch 117; no biography/data rewrite was introduced by Patch 119.
+PASS — person-page.js passes node --check.
+
+Project validator:
+- Before Patch 119 / Patch 118 baseline: 13 issues, including 3 Omer-Z legacy-template issues.
+- After Patch 119: 10 issues.
+- The 3 Omer-Z legacy-template issues are resolved.
+- The remaining 10 are pre-existing story-image-position warnings unrelated to this patch.

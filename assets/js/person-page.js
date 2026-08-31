@@ -2057,6 +2057,82 @@ body{
 }
 @media(min-width:821px){.story-mobile-toggle{display:none !important;}}
 
+/* PATCH 119 — cross-site memorial video sizing.
+   One embedded item has one shared size; every section with 2+ embedded items uses
+   the same two-column card size, regardless of provider. */
+@media(min-width:821px){
+  .unified-media-v2-section{
+    max-width:1120px !important;
+  }
+  .unified-media-v2-section .media-v2-grid[data-media-count="1"]{
+    width:100% !important;
+    max-width:760px !important;
+    grid-template-columns:minmax(0,760px) !important;
+    justify-content:center !important;
+    margin-inline:auto !important;
+  }
+  .unified-media-v2-section .media-v2-grid:not([data-media-count="1"]){
+    width:100% !important;
+    max-width:1040px !important;
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:18px !important;
+    align-items:start !important;
+    justify-content:center !important;
+    margin-inline:auto !important;
+  }
+  .unified-media-v2-section .media-v2-grid:not([data-media-count="1"]) > .media-v2-item:last-child:nth-child(odd){
+    grid-column:1 / -1 !important;
+    width:calc(50% - 9px) !important;
+    justify-self:center !important;
+  }
+  .unified-media-v2-section .media-v2-grid > .media-v2-item{
+    min-width:0 !important;
+    max-width:none !important;
+    height:auto !important;
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:stretch !important;
+    justify-content:flex-start !important;
+    gap:7px !important;
+  }
+  .unified-media-v2-section .media-v2-grid[data-media-count="1"] .media-v2-youtube-shell,
+  .unified-media-v2-section .media-v2-grid[data-media-count="1"] .media-v2-instagram-embed-shell,
+  .unified-media-v2-section .media-v2-grid[data-media-count="1"] .media-v2-facebook-shell{
+    width:100% !important;
+    max-width:none !important;
+    height:428px !important;
+    min-height:428px !important;
+    max-height:428px !important;
+    aspect-ratio:auto !important;
+    margin:0 !important;
+  }
+  .unified-media-v2-section .media-v2-grid:not([data-media-count="1"]) .media-v2-youtube-shell,
+  .unified-media-v2-section .media-v2-grid:not([data-media-count="1"]) .media-v2-instagram-embed-shell,
+  .unified-media-v2-section .media-v2-grid:not([data-media-count="1"]) .media-v2-facebook-shell{
+    width:100% !important;
+    max-width:none !important;
+    height:292px !important;
+    min-height:292px !important;
+    max-height:292px !important;
+    aspect-ratio:auto !important;
+    margin:0 !important;
+  }
+  .unified-media-v2-section .media-v2-instagram-embed-shell iframe,
+  .unified-media-v2-section .media-v2-facebook-shell iframe,
+  .unified-media-v2-section .media-v2-youtube-shell iframe,
+  .unified-media-v2-section .media-v2-youtube-shell video{
+    position:absolute !important;
+    inset:0 !important;
+    width:100% !important;
+    height:100% !important;
+    max-width:none !important;
+    max-height:none !important;
+    border:0 !important;
+  }
+  .unified-media-v2-section .media-v2-social-link{
+    align-self:center !important;
+  }
+}
 
 `;
 
@@ -2202,7 +2278,9 @@ body{
     return html;
   };
 
-  const story = person.story || null;
+  const story = person.story || ((person.isPreviousYears && Array.isArray(person.fullStory) && person.fullStory.length)
+    ? { personal: person.fullStory, event: [], legacy: [] }
+    : null);
   let storyHtml = '';
   if (story && ((story.personal || []).length || (story.event || []).length || (story.legacy || []).length)) {
     let personalChapter = '';
@@ -2219,7 +2297,16 @@ body{
 
   const pageLinks = (person.pageLinks || []).length ? `<section class="links-section" aria-labelledby="pageLinksHeading"><h2 id="pageLinksHeading">קישורים</h2><div class="memorial-links">${person.pageLinks.map((link) => `<a href="${esc(link.href)}" rel="noopener noreferrer" target="_blank">${esc(link.label)}</a>`).join('')}</div></section>` : '';
 
-  const family = person.familyContact ? `<section class="family-contact" aria-label="עדכון פרטי ההנצחה"><p class="family-contact-text">${esc(person.familyContact.text || '')}</p><a class="family-contact-btn" href="${esc(person.familyContact.href || '#')}" rel="noopener noreferrer" target="_blank"${person.familyContact.ariaLabel ? ` aria-label="${esc(person.familyContact.ariaLabel)}"` : ''}>${esc(person.familyContact.label || 'ליצירת קשר ב-WhatsApp')}</a></section>` : '';
+  const cleanMemorialName = (value) => String(value || '').replace(/\s+(?:ז״ל|ז"ל|הי״ד|הי"ד)\s*$/u, '').trim();
+  const familyContactName = cleanMemorialName(service.displayName || person.name || '');
+  const defaultFamilyContact = person.isPreviousYears && familyContactName ? {
+    text: `אם אתם בני משפחה של ${familyContactName} וברצונכם להוסיף, לתקן או לעדכן מידע בעמוד, נשמח שתיצרו איתנו קשר.`,
+    href: `https://wa.me/972547100090?text=${encodeURIComponent(`שלום, אני בן/בת משפחה של ${familyContactName} וברצוני להוסיף או לעדכן מידע בעמוד ההנצחה.`)}`,
+    label: 'ליצירת קשר ב-WhatsApp',
+    ariaLabel: `יצירת קשר ב-WhatsApp בנוגע לעמוד של ${person.firstNameHebrew || familyContactName}`
+  } : null;
+  const familyContact = person.familyContact || defaultFamilyContact;
+  const family = familyContact ? `<section class="family-contact" aria-label="עדכון פרטי ההנצחה"><p class="family-contact-text">${esc(familyContact.text || '')}</p><a class="family-contact-btn" href="${esc(familyContact.href || '#')}" rel="noopener noreferrer" target="_blank"${familyContact.ariaLabel ? ` aria-label="${esc(familyContact.ariaLabel)}"` : ''}>${esc(familyContact.label || 'ליצירת קשר ב-WhatsApp')}</a></section>` : '';
 
   root.innerHTML = `
 <a class="skip-link" href="#mainContent">דילוג לתוכן הראשי</a>
