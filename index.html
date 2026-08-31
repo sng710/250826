@@ -1815,6 +1815,161 @@
 }
 </style>
 
+
+<style>
+/* PATCH 114 — restore homepage controls after the Omer video CSS regression.
+   Layout/control geometry only; no memorial text or person data changes. */
+
+.home-page .left-site-title-wrap + .hero-rule{
+  display:none !important;
+}
+
+.home-page .left-search-wrap .toolbar{
+  position:static !important;
+  top:auto !important;
+  inset:auto !important;
+  width:100% !important;
+}
+.home-page .left-search-wrap .search-filter-row{
+  display:grid !important;
+  grid-template-columns:1fr !important;
+  width:100% !important;
+  max-width:none !important;
+  align-content:start !important;
+  grid-auto-rows:max-content !important;
+  gap:8px !important;
+}
+.home-page .left-search-wrap .search-control,
+.home-page .left-search-wrap .security-filter,
+.home-page .left-search-wrap .place-filter,
+.home-page .left-search-wrap .place-filter-trigger{
+  width:100% !important;
+  max-width:none !important;
+  box-sizing:border-box !important;
+}
+.home-page .left-search-wrap .security-filter,
+.home-page .left-search-wrap .place-filter-trigger{
+  -webkit-appearance:none !important;
+  appearance:none !important;
+  color:#fff !important;
+  font-family:inherit !important;
+  line-height:1.2 !important;
+  height:auto !important;
+  padding:0 16px !important;
+  cursor:pointer !important;
+}
+.home-page .left-search-wrap .security-filter{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  text-align:center !important;
+}
+.home-page .left-search-wrap .place-filter{
+  position:relative !important;
+  min-width:0 !important;
+  align-self:start !important;
+}
+.home-page .left-search-wrap .place-filter-label{
+  display:block !important;
+  margin:0 9px 4px !important;
+  color:#dce9ee !important;
+  text-align:right !important;
+  font-size:.8rem !important;
+  line-height:1.1 !important;
+}
+.home-page .left-search-wrap .place-filter-trigger{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:10px !important;
+  text-align:right !important;
+}
+.home-page .left-search-wrap .place-filter-current{
+  display:block !important;
+  min-width:0 !important;
+  flex:1 1 auto !important;
+  overflow:hidden !important;
+  text-overflow:ellipsis !important;
+  white-space:nowrap !important;
+  text-align:right !important;
+}
+.home-page .left-search-wrap .place-filter-caret{
+  display:grid !important;
+  place-items:center !important;
+  width:20px !important;
+  height:20px !important;
+  min-width:20px !important;
+  min-height:20px !important;
+  flex:0 0 20px !important;
+  line-height:0 !important;
+}
+.home-page .left-search-wrap .place-filter-caret svg{
+  display:block !important;
+  width:20px !important;
+  height:20px !important;
+  max-width:20px !important;
+  max-height:20px !important;
+}
+.home-page .left-search-wrap .place-filter-panel{
+  position:absolute !important;
+  width:100% !important;
+  min-width:100% !important;
+  box-sizing:border-box !important;
+}
+.home-page .left-search-wrap .place-filter-panel[hidden]{
+  display:none !important;
+}
+.home-page .left-search-wrap .place-filter-list{
+  display:grid !important;
+  gap:4px !important;
+}
+.home-page .left-search-wrap .place-filter-option{
+  -webkit-appearance:none !important;
+  appearance:none !important;
+  width:100% !important;
+  min-height:42px !important;
+  border:0 !important;
+  border-radius:10px !important;
+  padding:8px 11px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:10px !important;
+  background:transparent !important;
+  color:#f5f8f9 !important;
+  font:inherit !important;
+  line-height:1.25 !important;
+  text-align:right !important;
+  cursor:pointer !important;
+}
+.home-page .left-search-wrap .place-filter-option::after{
+  content:"" !important;
+  width:7px !important;
+  height:7px !important;
+  flex:0 0 7px !important;
+  border-radius:50% !important;
+  background:rgba(191,224,237,.34) !important;
+}
+.home-page .left-search-wrap .place-filter-option:hover,
+.home-page .left-search-wrap .place-filter-option:focus-visible,
+.home-page .left-search-wrap .place-filter-option.is-highlighted{
+  outline:none !important;
+  background:rgba(96,159,191,.20) !important;
+}
+
+.home-page .hero .dedication{
+  height:auto !important;
+  min-height:0 !important;
+}
+
+@media (max-width:899px){
+  .home-page .left-search-wrap .security-filter,
+  .home-page .left-search-wrap .place-filter-trigger{
+    min-height:46px !important;
+  }
+}
+</style>
+
 </head>
 <body class="home-page">
 <a class="skip-link" href="#mainContent">דילוג לתוכן הראשי</a>
