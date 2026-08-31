@@ -1870,6 +1870,134 @@ body{
   }
 }
 
+
+/* PATCH 113 - exact large equal social cards, matching the original Aviv Baram layout. */
+/* Instagram uses the original captioned embed and is allowed to scroll internally, as it did in the first working version. */
+.media-v2-instagram-embed-shell{
+  position:relative;
+  width:100%;
+  max-width:100%;
+  height:430px;
+  min-height:0;
+  overflow:hidden;
+  border:1px solid rgba(248,247,243,.18);
+  border-radius:12px;
+  background:#fff;
+  box-shadow:0 10px 24px rgba(7,18,34,.18);
+}
+.media-v2-instagram-embed-shell iframe{
+  position:absolute;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+  min-width:0;
+  max-width:none;
+  border:0;
+  background:#fff;
+}
+
+@media(min-width:821px){
+  /* When Instagram has a companion item (Aviv: Instagram + Facebook), both cards are identical outer dimensions. */
+  .unified-media-v2-section .media-v2-grid-has-instagram[data-media-count="2"]{
+    width:100% !important;
+    max-width:1040px !important;
+    display:grid !important;
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:18px !important;
+    align-items:stretch !important;
+    justify-content:center !important;
+    margin-inline:auto !important;
+  }
+  .unified-media-v2-section .media-v2-grid-has-instagram[data-media-count="2"] > .media-v2-item{
+    width:100% !important;
+    min-width:0 !important;
+    max-width:none !important;
+    height:458px !important;
+    display:grid !important;
+    grid-template-rows:430px auto !important;
+    align-items:start !important;
+    justify-items:stretch !important;
+    gap:7px !important;
+    margin:0 !important;
+  }
+  .unified-media-v2-section .media-v2-grid-has-instagram[data-media-count="2"] .media-v2-instagram-embed-shell,
+  .unified-media-v2-section .media-v2-grid-has-instagram[data-media-count="2"] .media-v2-facebook-shell,
+  .unified-media-v2-section .media-v2-grid-has-instagram[data-media-count="2"] .media-v2-youtube-shell{
+    width:100% !important;
+    max-width:none !important;
+    height:430px !important;
+    min-height:430px !important;
+    max-height:430px !important;
+    aspect-ratio:auto !important;
+    align-self:stretch !important;
+    justify-self:stretch !important;
+    margin:0 !important;
+    overflow:hidden !important;
+    border-radius:12px !important;
+  }
+  .unified-media-v2-section .media-v2-grid-has-instagram[data-media-count="2"] .media-v2-facebook-shell iframe,
+  .unified-media-v2-section .media-v2-grid-has-instagram[data-media-count="2"] .media-v2-youtube-shell iframe,
+  .unified-media-v2-section .media-v2-grid-has-instagram[data-media-count="2"] .media-v2-youtube-shell video{
+    position:absolute !important;
+    inset:0 !important;
+    width:100% !important;
+    height:100% !important;
+    max-width:none !important;
+    max-height:none !important;
+    border:0 !important;
+  }
+  .unified-media-v2-section .media-v2-grid-has-instagram[data-media-count="2"] .media-v2-social-link{
+    justify-self:center !important;
+  }
+
+  /* Single Instagram remains large and centered. */
+  .unified-media-v2-section .media-v2-grid-has-instagram[data-media-count="1"]{
+    grid-template-columns:minmax(0,500px) !important;
+    max-width:520px !important;
+  }
+  .unified-media-v2-section .media-v2-grid-has-instagram[data-media-count="1"] .media-v2-instagram-embed-shell{
+    height:500px !important;
+  }
+
+  /* Three-item rows keep all three in one balanced row. */
+  .unified-media-v2-section .media-v2-grid-has-instagram[data-media-count="3"]{
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    max-width:1040px !important;
+    gap:14px !important;
+    align-items:stretch !important;
+  }
+  .unified-media-v2-section .media-v2-grid-has-instagram[data-media-count="3"] > .media-v2-item{
+    height:330px !important;
+    display:grid !important;
+    grid-template-rows:304px auto !important;
+    gap:6px !important;
+  }
+  .unified-media-v2-section .media-v2-grid-has-instagram[data-media-count="3"] .media-v2-instagram-embed-shell,
+  .unified-media-v2-section .media-v2-grid-has-instagram[data-media-count="3"] .media-v2-facebook-shell,
+  .unified-media-v2-section .media-v2-grid-has-instagram[data-media-count="3"] .media-v2-youtube-shell{
+    width:100% !important;
+    max-width:none !important;
+    height:304px !important;
+    min-height:304px !important;
+    max-height:304px !important;
+    aspect-ratio:auto !important;
+  }
+}
+
+@media(max-width:820px){
+  /* Preserve the current one-item-at-a-time carousel, but make the Instagram itself full and usable. */
+  .unified-media-v2-section .media-v2-instagram-embed-shell{
+    width:100% !important;
+    max-width:100% !important;
+    height:min(128vw,520px) !important;
+    min-height:390px !important;
+    margin-inline:auto !important;
+  }
+}
+
+
+
 `;
 
   const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -1943,7 +2071,12 @@ body{
       const permalink = String(item.permalink || item.href || '').trim();
       if (!permalink) return '';
       const titleText = String(item.title || `Instagram Reel — ${person.name || ''}${(group.instagram || []).length > 1 ? ` ${i + 1}` : ''}`);
-      return `<div class="media-v2-item media-v2-instagram"><a class="media-v2-instagram-card" href="${esc(permalink)}" rel="noopener noreferrer" target="_blank" aria-label="${esc(`צפייה באינסטגרם: ${titleText}`)}"><span class="media-v2-instagram-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M17 5h14c6.6 0 12 5.4 12 12v14c0 6.6-5.4 12-12 12H17C10.4 43 5 37.6 5 31V17C5 10.4 10.4 5 17 5Z" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="24" cy="24" r="8" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="34" cy="14" r="2.3" fill="currentColor"/><path d="M21 19.2 30 24l-9 4.8Z" fill="currentColor"/></svg></span><span class="media-v2-instagram-title">${esc(titleText)}</span><span class="media-v2-instagram-cta">צפייה באינסטגרם</span></a></div>`;
+      const useEmbed = item.embed !== false;
+      if (!useEmbed) {
+        return `<div class="media-v2-item media-v2-instagram"><a class="media-v2-instagram-card" href="${esc(permalink)}" rel="noopener noreferrer" target="_blank" aria-label="${esc(`צפייה באינסטגרם: ${titleText}`)}"><span class="media-v2-instagram-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M17 5h14c6.6 0 12 5.4 12 12v14c0 6.6-5.4 12-12 12H17C10.4 43 5 37.6 5 31V17C5 10.4 10.4 5 17 5Z" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="24" cy="24" r="8" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="34" cy="14" r="2.3" fill="currentColor"/><path d="M21 19.2 30 24l-9 4.8Z" fill="currentColor"/></svg></span><span class="media-v2-instagram-title">${esc(titleText)}</span><span class="media-v2-instagram-cta">צפייה באינסטגרם</span></a></div>`;
+      }
+      const embedSrc = esc(instagramEmbedUrl(permalink));
+      return `<div class="media-v2-item media-v2-instagram media-v2-instagram-embedded"><div class="media-v2-instagram-embed-shell"><iframe allow="autoplay; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="${embedSrc}" title="${esc(titleText)}"></iframe></div><a class="media-v2-social-link" href="${esc(permalink)}" rel="noopener noreferrer" target="_blank">פתיחה באינסטגרם</a></div>`;
     }).filter(Boolean);
 
     const facebookItems = (group.facebook || []).map((item, i) => {
@@ -1968,7 +2101,8 @@ body{
     const links = (group.links || []).map((link) => `<a href="${esc(link.href)}" rel="noopener noreferrer" target="_blank">${esc(link.label)}</a>`).join('');
     const mobileNote = '';
     const mobileCarouselControls = mediaItems.length > 1 ? `<div class="media-v2-carousel-controls" aria-label="ניווט בין פריטי המדיה"><button class="media-v2-carousel-btn media-v2-carousel-prev" type="button" aria-label="הפריט הקודם">‹</button><div class="media-v2-carousel-dots" aria-hidden="false"></div><span class="media-v2-carousel-status" aria-live="polite"></span><button class="media-v2-carousel-btn media-v2-carousel-next" type="button" aria-label="הפריט הבא">›</button></div>` : '';
-    return `<section class="media-section unified-media-v2-section" aria-labelledby="mediaHeading${groupIndex}"><h2 id="mediaHeading${groupIndex}">${esc(group.heading || 'סרטון לזכרו')}</h2>${mobileNote}${mediaItems.length ? `<div class="media-v2-grid" data-media-count="${mediaItems.length}">${mediaItems.join('')}</div>${mobileCarouselControls}` : ''}${links ? `<div class="media-actions">${links}</div>` : ''}</section>`;
+    const mediaGridClass = instagramItems.length ? 'media-v2-grid media-v2-grid-has-instagram' : 'media-v2-grid';
+    return `<section class="media-section unified-media-v2-section" aria-labelledby="mediaHeading${groupIndex}"><h2 id="mediaHeading${groupIndex}">${esc(group.heading || 'סרטון לזכרו')}</h2>${mobileNote}${mediaItems.length ? `<div class="${mediaGridClass}" data-media-count="${mediaItems.length}">${mediaItems.join('')}</div>${mobileCarouselControls}` : ''}${links ? `<div class="media-actions">${links}</div>` : ''}</section>`;
   }).join('');
 
   const mediaBySection = new Map();
