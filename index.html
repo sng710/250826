@@ -2083,6 +2083,29 @@
 }
 </style>
 
+
+<style>
+/* PATCH 120 — mobile home order only. No visible text changes. */
+.left-site-title-wrap,
+.left-site-title{display:none !important;}
+@media (max-width:899px){
+  .home-layout{
+    display:flex !important;
+    flex-direction:column !important;
+    direction:rtl !important;
+  }
+  .home-page .hero{
+    order:0 !important;
+    width:100% !important;
+    padding-top:88px !important;
+  }
+  .home-page main{
+    order:1 !important;
+    width:100% !important;
+  }
+}
+</style>
+
 </head>
 <body class="home-page">
 <a class="skip-link" href="#mainContent">דילוג לתוכן הראשי</a>
@@ -2232,7 +2255,7 @@
   });
 })();
 </script>
-<script defer="" src="assets/js/people.js?v=298"></script>
+<script defer="" src="assets/js/people.js?v=319"></script>
 <script defer="" src="assets/js/app.js?v=315"></script>
 </body>
 </html>

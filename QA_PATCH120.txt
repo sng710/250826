@@ -1,0 +1,37 @@
+SNG-710 PATCH 120 QA
+====================
+
+Scope: requested layout/ordering corrections only.
+
+DATA / TEXT INTEGRITY
+- people.js is byte-for-byte IDENTICAL to Patch 119.
+- SHA256 people.js: db34dcda7b343ec63338ea2cd62d597eae956c0088293a34e70b37af9a947c7a
+- 154 records; 154 unique IDs.
+- No memorial text/data fields changed in Patch 120.
+- Home-page visible text is identical to Patch 115/119 state; only CSS order and cache query changed.
+- Visible home page contains no “רקמה אנושית אחת” label.
+
+OMER ZADIKOVITCH
+- Omer data still has 2 embedded items: 1 YouTube + 1 Instagram Reel.
+- Instagram-specific grid class removed from rendering so old special-case CSS cannot override the shared layout.
+- Both remain on-site embeds.
+
+CROSS-SITE MEDIA
+- Video-like embeds validated: 47 total (33 YouTube/local, 5 Instagram, 9 Facebook).
+- 1 embedded item: shared desktop stage size.
+- 2 embedded items: shared desktop multi-item size, 2 columns.
+- 3 embedded items: shared desktop multi-item size, 3 columns in ONE row.
+- Current maximum media count per section is 3.
+- Existing mobile carousel and stop-previous-media code retained unchanged.
+
+MOBILE HOME
+- Memorial quotation/dedication panel is now ordered before the people grid/title area.
+- Council logo remains absolute at the top and scrolls away; mobile menu remains fixed and compact.
+- No visible “רקמה אנושית אחת” heading is introduced.
+
+EARLY YEARS
+- David Salomon fullStory paragraphs: 4.
+- Tzvi Goldfeld fullStory paragraphs: 4.
+- Yitzhak (Zaki) Dabah fullStory paragraphs: 3.
+- Template still falls back to fullStory for previous-years records.
+- Automatic family-contact message for previous-years records retained.

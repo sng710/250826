@@ -2134,6 +2134,136 @@ body{
   }
 }
 
+/* PATCH 120 — final cross-site media grid correction.
+   Desktop sizing is based only on item count, never on provider.
+   1 item = one shared large stage; 2+ items = one shared multi-item stage size.
+   Exactly 3 items stay in one row. */
+@media(min-width:821px){
+  .unified-media-v2-section{
+    max-width:1240px !important;
+  }
+  .unified-media-v2-section .media-v2-grid{
+    width:100% !important;
+    margin-inline:auto !important;
+    align-items:stretch !important;
+    justify-content:center !important;
+  }
+  .unified-media-v2-section .media-v2-grid[data-media-count="1"]{
+    max-width:780px !important;
+    grid-template-columns:minmax(0,780px) !important;
+    gap:0 !important;
+  }
+  .unified-media-v2-section .media-v2-grid[data-media-count="2"]{
+    max-width:1160px !important;
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:18px !important;
+  }
+  .unified-media-v2-section .media-v2-grid[data-media-count="3"]{
+    max-width:1200px !important;
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    gap:14px !important;
+  }
+  .unified-media-v2-section .media-v2-grid[data-media-count="4"],
+  .unified-media-v2-section .media-v2-grid[data-media-count="5"],
+  .unified-media-v2-section .media-v2-grid[data-media-count="6"]{
+    max-width:1200px !important;
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    gap:14px !important;
+  }
+  .unified-media-v2-section .media-v2-grid[data-media-count="3"] > .media-v2-item:last-child:nth-child(odd){
+    grid-column:auto !important;
+    width:100% !important;
+    justify-self:stretch !important;
+  }
+  .unified-media-v2-section .media-v2-grid[data-media-count="1"] > .media-v2-item{
+    width:100% !important;
+    min-width:0 !important;
+    height:500px !important;
+    min-height:500px !important;
+    max-height:500px !important;
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:stretch !important;
+    justify-content:center !important;
+    gap:7px !important;
+  }
+  .unified-media-v2-section .media-v2-grid:not([data-media-count="1"]) > .media-v2-item{
+    width:100% !important;
+    min-width:0 !important;
+    height:388px !important;
+    min-height:388px !important;
+    max-height:388px !important;
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:stretch !important;
+    justify-content:center !important;
+    gap:7px !important;
+  }
+  .unified-media-v2-section .media-v2-grid[data-media-count="1"] .media-v2-youtube-shell,
+  .unified-media-v2-section .media-v2-grid[data-media-count="1"] .media-v2-instagram-embed-shell,
+  .unified-media-v2-section .media-v2-grid[data-media-count="1"] .media-v2-facebook-shell{
+    width:100% !important;
+    max-width:none !important;
+    height:472px !important;
+    min-height:472px !important;
+    max-height:472px !important;
+    aspect-ratio:auto !important;
+    margin:0 !important;
+    flex:0 0 472px !important;
+  }
+  .unified-media-v2-section .media-v2-grid:not([data-media-count="1"]) .media-v2-youtube-shell,
+  .unified-media-v2-section .media-v2-grid:not([data-media-count="1"]) .media-v2-instagram-embed-shell,
+  .unified-media-v2-section .media-v2-grid:not([data-media-count="1"]) .media-v2-facebook-shell{
+    width:100% !important;
+    max-width:none !important;
+    height:360px !important;
+    min-height:360px !important;
+    max-height:360px !important;
+    aspect-ratio:auto !important;
+    margin:0 !important;
+    flex:0 0 360px !important;
+  }
+  .unified-media-v2-section .media-v2-grid .media-v2-youtube-shell iframe,
+  .unified-media-v2-section .media-v2-grid .media-v2-youtube-shell video,
+  .unified-media-v2-section .media-v2-grid .media-v2-instagram-embed-shell iframe,
+  .unified-media-v2-section .media-v2-grid .media-v2-facebook-shell iframe{
+    position:absolute !important;
+    inset:0 !important;
+    display:block !important;
+    width:100% !important;
+    min-width:100% !important;
+    max-width:100% !important;
+    height:100% !important;
+    min-height:100% !important;
+    max-height:100% !important;
+    border:0 !important;
+  }
+  .unified-media-v2-section .media-v2-social-link{
+    flex:0 0 auto !important;
+    align-self:center !important;
+  }
+}
+
+@media(max-width:820px){
+  /* Keep the existing one-item-at-a-time carousel. All Instagram Reels remain real on-site embeds. */
+  .unified-media-v2-section .media-v2-instagram-embed-shell{
+    width:100% !important;
+    min-width:0 !important;
+    max-width:100% !important;
+    height:min(158vw,650px) !important;
+    min-height:540px !important;
+    max-height:650px !important;
+    margin-inline:auto !important;
+  }
+  .unified-media-v2-section .media-v2-instagram-embed-shell iframe{
+    width:100% !important;
+    min-width:100% !important;
+    max-width:100% !important;
+    height:100% !important;
+  }
+}
+
+
 `;
 
   const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -2251,7 +2381,7 @@ body{
     const links = (group.links || []).map((link) => `<a href="${esc(link.href)}" rel="noopener noreferrer" target="_blank">${esc(link.label)}</a>`).join('');
     const mobileNote = '';
     const mobileCarouselControls = mediaItems.length > 1 ? `<div class="media-v2-carousel-controls" aria-label="ניווט בין פריטי המדיה"><button class="media-v2-carousel-btn media-v2-carousel-prev" type="button" aria-label="הפריט הקודם">‹</button><div class="media-v2-carousel-dots" aria-hidden="false"></div><span class="media-v2-carousel-status" aria-live="polite"></span><button class="media-v2-carousel-btn media-v2-carousel-next" type="button" aria-label="הפריט הבא">›</button></div>` : '';
-    const mediaGridClass = instagramItems.length ? 'media-v2-grid media-v2-grid-has-instagram' : 'media-v2-grid';
+    const mediaGridClass = 'media-v2-grid';
     return `<section class="media-section unified-media-v2-section" aria-labelledby="mediaHeading${groupIndex}"><h2 id="mediaHeading${groupIndex}">${esc(group.heading || 'סרטון לזכרו')}</h2>${mobileNote}${mediaItems.length ? `<div class="${mediaGridClass}" data-media-count="${mediaItems.length}">${mediaItems.join('')}</div>${mobileCarouselControls}` : ''}${links ? `<div class="media-actions">${links}</div>` : ''}</section>`;
   }).join('');
 
